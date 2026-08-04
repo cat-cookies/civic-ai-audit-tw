@@ -3,7 +3,7 @@ from __future__ import annotations
 import json, shutil
 from pathlib import Path
 ROOT=Path(__file__).resolve().parents[1]; OUT=ROOT/"_site"
-PUBLIC_FILES=["index.html","styles.css","app.js",".nojekyll","DISCLAIMER.md","SECURITY.md","LICENSE","VERSION"]
+PUBLIC_FILES=["index.html","styles.css","app.js","DISCLAIMER.md","SECURITY.md","LICENSE","VERSION"]
 PUBLIC_DATA=["sources.json","analyses.json","party_positions.json","theory_catalog.json","methodology.json","search-index.json","model-status.json","connector-status.json"]
 
 def main() -> int:
@@ -12,6 +12,8 @@ def main() -> int:
     for name in PUBLIC_FILES:
         src=ROOT/name
         if src.exists(): shutil.copy2(src,OUT/name)
+    # GitHub 網頁上傳可能漏掉點開頭檔案；公開站建置時一律建立 .nojekyll。
+    (OUT/".nojekyll").write_text("", encoding="utf-8")
     (OUT/"data").mkdir(); (OUT/"config").mkdir()
     for name in PUBLIC_DATA:
         src=ROOT/"data"/name

@@ -12,4 +12,5 @@ class BuildTest(unittest.TestCase):
         subprocess.check_call([sys.executable,str(ROOT/'scripts/check_site.py')])
         self.assertFalse((ROOT/'_site/config/models.json').exists())
         self.assertFalse((ROOT/'_site/review').exists())
+        self.assertTrue((ROOT/'_site/.nojekyll').exists())
 if __name__=='__main__': unittest.main()

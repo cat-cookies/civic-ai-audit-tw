@@ -1,0 +1,41 @@
+name: Verify free model registry
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "17 20 * * 1"
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Clone repository
+        env:
+          REPOSITORY: ${{ github.repository }}
+          SHA: ${{ github.sha }}
+          TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          git init . && git remote add origin "https://x-access-token:${TOKEN}@github.com/${REPOSITORY}.git"
+          git fetch --depth=1 origin "${SHA}" && git checkout --detach FETCH_HEAD
+      - name: Discover only eligible free or local models
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
+          OPENROUTER_ALLOWED_PROVIDER_SLUGS: ${{ vars.OPENROUTER_ALLOWED_PROVIDER_SLUGS }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          CLOUDFLARE_AUTH_TOKEN: ${{ secrets.CLOUDFLARE_AUTH_TOKEN }}
+        run: python3 scripts/model_registry.py
+      - name: Show fail-closed status
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
+          CLOUDFLARE_AUTH_TOKEN: ${{ secrets.CLOUDFLARE_AUTH_TOKEN }}
+        run: |
+          cat data/model-status.json
+          if [ -n "${GEMINI_API_KEY}${GROQ_API_KEY}${OPENROUTER_API_KEY}${CLOUDFLARE_AUTH_TOKEN}" ]; then
+            python3 -c "import json; d=json.load(open('data/model-status.json',encoding='utf-8')); assert any(p.get('status')=='ready' and p.get('eligible') for p in d.get('providers',[])), '已設定模型金鑰，但沒有任何符合免費與白名單政策的模型。'"
+          fi

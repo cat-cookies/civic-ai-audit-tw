@@ -34,6 +34,10 @@
 
 只有全部成立才可列入候選。沒有合格模型即停止；`allow_paid_fallback=false`，不會自動付費。模型更名、退役、限流或免費層變更時，系統只會在預先核准的候選範圍內替換。
 
+## GitHub 網頁上傳注意事項
+
+若使用瀏覽器上傳，完成後必須在 Code 頁面確認 `.github` 存在。GitHub Actions 只辨識根目錄的 `.github/workflows/*.yml`。若 Actions 顯示「Get started」，請依 `GITHUB_WEB_UPLOAD_GUIDE.md`，使用 Actions 編輯器建立 `.github/workflows/pages.yml`。本版另在 `GITHUB_ACTIONS_BOOTSTRAP/` 保存可見備份，避免點開頭路徑漏傳後無法取用。
+
 ## 直接部署
 
 1. 將本專案全部內容上傳至 GitHub 公開儲存庫的 `main` 分支。
@@ -43,7 +47,7 @@
 python scripts/init_repo.py --owner 你的帳號 --repo 你的儲存庫名稱
 ```
 
-3. 在 GitHub `Settings → Pages` 選擇 `Deploy from a branch`，指定 `gh-pages`／`root`。
+3. 先確認 Actions 已辨識 `.github/workflows/pages.yml`；工作流程成功建立 `gh-pages` 後，在 GitHub `Settings → Pages` 選擇 `Deploy from a branch`，指定 `gh-pages`／`root`。
 4. 推送 `main` 後，`pages.yml` 只把經白名單建置的 `_site` 推至 `gh-pages`。
 5. 啟用 branch protection、secret scanning、private vulnerability reporting 與 Actions environment 保護。
 

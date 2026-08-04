@@ -1,7 +1,7 @@
 {
   "project": "國家資料 AI 查證與改革觀測站",
-  "version": "2.0.0",
-  "build_time": "2026-08-04T09:03:07+08:00",
+  "version": "2.0.1",
+  "build_time": "2026-08-04T13:21:44+08:00",
   "status": "可部署暨待整合驗證 MVP",
   "tests": {
     "offline_unit_tests": 15,
@@ -30,10 +30,12 @@
     "review_queue_excluded": true,
     "raw_and_private_data_excluded": true,
     "codeql_workflow": true,
-    "sbom": "SBOM.cdx.json"
+    "sbom": "SBOM.cdx.json",
+    "nojekyll_generated_by_build": true
   },
   "notes": [
     "封裝環境沒有外部DNS，官方API與模型僅完成連接器、政策與離線測試。",
-    "雜湊只能驗證檔案一致性，不能證明內容正確、安全或具有法律效力。"
+    "雜湊只能驗證檔案一致性，不能證明內容正確、安全或具有法律效力。",
+    "v2.0.1 新增 GitHub 網頁上傳漏失點開頭路徑的修復與可見 Actions 備份。"
   ]
 }

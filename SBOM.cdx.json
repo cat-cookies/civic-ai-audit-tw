@@ -4,11 +4,11 @@
   "serialNumber": "urn:uuid:civic-ai-audit-v2",
   "version": 1,
   "metadata": {
-    "timestamp": "2026-08-04T09:09:46.382726+00:00",
+    "timestamp": "2026-08-04T10:02:02.191430+00:00",
     "component": {
       "type": "application",
       "name": "civic-ai-audit",
-      "version": "5.0.0"
+      "version": "6.0.0"
     }
   },
   "components": [
@@ -148,7 +148,7 @@
       "hashes": [
         {
           "alg": "SHA-256",
-          "content": "6ccdd6a80c0f9d70e533fcf59b690bd3d470c5d21b371c317854fa01531eb0c1"
+          "content": "3007d09395b694060cdbbfdfff7e7f4de23d50a6d0314427d00c8adbab009025"
         }
       ]
     },
@@ -158,7 +158,7 @@
       "hashes": [
         {
           "alg": "SHA-256",
-          "content": "9057c4ec8857251ca8b944f52b9e5958b39c74c323035971a8f5f196da664710"
+          "content": "5136f9d52ae48e2b371d2d38c1a14ae1216323c87047efcf8c19132f98a562a6"
         }
       ]
     },
@@ -168,7 +168,7 @@
       "hashes": [
         {
           "alg": "SHA-256",
-          "content": "9acaa96d1469846869d63786efd894c689d2a1dcde9cedff2fe396122d7e879e"
+          "content": "c9a285a5d90815ca56613c59c274c27dad4cfb9145dc5d1282c1e39cfafe48b3"
         }
       ]
     },
@@ -198,7 +198,7 @@
       "hashes": [
         {
           "alg": "SHA-256",
-          "content": "1cc3d76ac7c21a664e79848fd481e9791016451b244e7de5feeeb9bea5fd2184"
+          "content": "54ef76332b31df830699e9d4138396885ab72bae260a034a81ff02bf32d8e90a"
         }
       ]
     },
@@ -228,7 +228,7 @@
       "hashes": [
         {
           "alg": "SHA-256",
-          "content": "dd6289bac14bb6dc6a42f3458feebea775b5392c6418564aebbbf881e58c1e5b"
+          "content": "92f257b1b352fae62b8dba7600b5621b67cd405459ba7f3c0e2069bbe8ad09b8"
         }
       ]
     },
@@ -248,7 +248,7 @@
       "hashes": [
         {
           "alg": "SHA-256",
-          "content": "72b8693bf09736c75ec98d57325b23e50cded94e2a2b5f8c52dc5c0f0b275a9f"
+          "content": "5dad6ce9b4f5803e21aff0716d8295721cd4f140edb6b5811b90c25c538816d5"
         }
       ]
     },
@@ -258,7 +258,7 @@
       "hashes": [
         {
           "alg": "SHA-256",
-          "content": "07948968ad4e9584f596ae556c41b365eff746ed1267eeb8163e6a94fea3102b"
+          "content": "e7849409e1a56714c1d998eaaba1e7d8de64c688ce2cda63735b5e541dfc2d25"
         }
       ]
     },
@@ -268,7 +268,7 @@
       "hashes": [
         {
           "alg": "SHA-256",
-          "content": "aba781da5c69da4f4d7a8dada5607874c388650e08520b9cb560e9423a264b2e"
+          "content": "5d236df76de160f9c642dad6aa4699efd95cba176d9d797d2667f5ffd53f3ddf"
         }
       ]
     },
@@ -328,7 +328,7 @@
       "hashes": [
         {
           "alg": "SHA-256",
-          "content": "881810c7d1f779cc9a519c35430f8c2d86b9c78f3aa467e2e98483ec062bd8bd"
+          "content": "4d5a8f26d69068c793cbff637a66d30f8aecd7ce3c9a13b4bfd8a08718a81cbc"
         }
       ]
     },
@@ -349,6 +349,16 @@
         {
           "alg": "SHA-256",
           "content": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570"
+        }
+      ]
+    },
+    {
+      "type": "file",
+      "name": "data/comparative_applicability.json",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "391c9bbb821bdf8f1b05069decf360c0b9ae1fd0c3f203ad452f42f24b061bd6"
         }
       ]
     },
@@ -398,7 +408,27 @@
       "hashes": [
         {
           "alg": "SHA-256",
-          "content": "073f99010d8e67bcbf1af8189f22c3d3dbc685221880bea5392734e9cfcd4a4c"
+          "content": "dec452a2dd7b2743d9a85d24188481790403fbed76bd323e253883c24a01713c"
+        }
+      ]
+    },
+    {
+      "type": "file",
+      "name": "data/media_methodology.json",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "bb5822df0e8f99e66c1f9caac976470e04eb279435dde02f53d0be242aff7639"
+        }
+      ]
+    },
+    {
+      "type": "file",
+      "name": "data/media_ownership_registry.json",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "1dcc5be6f945a7f8234db9867b138272821a6625d45cdcefc6d1175fe5053aa8"
         }
       ]
     },
@@ -424,11 +454,31 @@
     },
     {
       "type": "file",
+      "name": "data/party_ideology_profiles.json",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "804f3fe8494fa80553584a71c86100b364a91139005cf5356f121cefa94b30fb"
+        }
+      ]
+    },
+    {
+      "type": "file",
       "name": "data/party_positions.json",
       "hashes": [
         {
           "alg": "SHA-256",
           "content": "23d63a7b4501f7de8274bae02b1adb22040a90645728e820a35d5ec8c7a646e8"
+        }
+      ]
+    },
+    {
+      "type": "file",
+      "name": "data/party_source_registry.json",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "b766c652781d9a39c997b8456e2b97c36e11a3f45cacc9ec775d26c2ac2754f6"
         }
       ]
     },
@@ -448,7 +498,7 @@
       "hashes": [
         {
           "alg": "SHA-256",
-          "content": "04819fb331e0f02e063bfb7e0989d8807ca9bf6b27121f5ce917e5035b09e933"
+          "content": "a22d0eb5adcae166a1be7925b23af36c1214ae71c73d8a0465b3f4577df07019"
         }
       ]
     },
@@ -468,7 +518,7 @@
       "hashes": [
         {
           "alg": "SHA-256",
-          "content": "1d52673c24d0e8373d0618a931c3c83706b602d4f16cdb6dd708df0f00a0e2d9"
+          "content": "4a6d0bf988ae48ad696e62bade1b767e663030bb93c90a420175ff49f26706f0"
         }
       ]
     },
@@ -534,6 +584,16 @@
     },
     {
       "type": "file",
+      "name": "docs/PARTY_MEDIA_METHOD.md",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "c0405c71e2b871b3aa37dd0cf2820b1ffb063e6163e4ffc8be3f6ff3ffefba1c"
+        }
+      ]
+    },
+    {
+      "type": "file",
       "name": "docs/SELF_CRITIQUE_V4.md",
       "hashes": [
         {
@@ -574,11 +634,31 @@
     },
     {
       "type": "file",
+      "name": "examples/media_corpus_template.csv",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "5672e27fbcd25ab7ae9fbf873b3fdfd153ce8b201c217b1627719312058d1492"
+        }
+      ]
+    },
+    {
+      "type": "file",
+      "name": "examples/party_social_import_template.csv",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "d7196c8ac9ca455a4d1a9202a18b6e31cffbe040f71d21bb4ae125090367949a"
+        }
+      ]
+    },
+    {
+      "type": "file",
       "name": "index.html",
       "hashes": [
         {
           "alg": "SHA-256",
-          "content": "5440b6c4bbed76498dd16a081a24bd7d6074a4c4ee1a42c3b9d8069a09055f31"
+          "content": "f1bba8c76d4d8da9b64e57212401af4d7f8a81f5a53daaaed14d8c2776181b41"
         }
       ]
     },
@@ -589,6 +669,16 @@
         {
           "alg": "SHA-256",
           "content": "4044b20938ac7e2e0f76a692ca79ec2bca75e045a1fb0bbf84a17d3fa7b50db8"
+        }
+      ]
+    },
+    {
+      "type": "file",
+      "name": "political-analysis.js",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "1bca28ee06d7ef77f9fd966bf2d0fb6e2ac7895a6a69fd2015990e084e76ffa7"
         }
       ]
     },
@@ -638,7 +728,7 @@
       "hashes": [
         {
           "alg": "SHA-256",
-          "content": "67930d985cf43d69d4d2ce13acaf2f09e6dc589e4470444e504a0c9da2fc3008"
+          "content": "11fb04dc456c31565045937dfab2dbe24d08af19c4d141ac8560735aeabcd03e"
         }
       ]
     },
@@ -648,7 +738,7 @@
       "hashes": [
         {
           "alg": "SHA-256",
-          "content": "12a893b76845fff56803178e3b85b2bfb915d4daf5659faa8493f42151024732"
+          "content": "09624613bbd34d88aad4f674723ea636fb1241eb04768ae027fdc59a16b5ac18"
         }
       ]
     },
@@ -718,7 +808,7 @@
       "hashes": [
         {
           "alg": "SHA-256",
-          "content": "14528b530c29bf858b50a614b5c16ba3f4ff693f412cb570adedde813b30a550"
+          "content": "ecb8f6788e827e4975b979bd4587fc42ae513a3d65fa4c4c8d830af8caf78a87"
         }
       ]
     },
@@ -798,7 +888,7 @@
       "hashes": [
         {
           "alg": "SHA-256",
-          "content": "1527843f6666e93ed694457cd5b6002f726a01cc06922e1d92386e2e26f857d3"
+          "content": "207c924d449d3b4f5b8ddb2a8f94de3497093e5f24e952cea94cdf7073c3439d"
         }
       ]
     },
@@ -938,7 +1028,7 @@
       "hashes": [
         {
           "alg": "SHA-256",
-          "content": "391cbb77aed280646513a5c4184692fe843ddf31ffac142137cf6663875e4575"
+          "content": "32d542830c647a9461e8087d9d83bc151cc4805b9bbafca7f6c2829d4a147c63"
         }
       ]
     },
@@ -974,6 +1064,16 @@
     },
     {
       "type": "file",
+      "name": "tests/__pycache__/test_political_media_features.cpython-313.pyc",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "2758dcef604ca0962ff829807be764db46822bb3e375fb0f84aa7eb78f98c231"
+        }
+      ]
+    },
+    {
+      "type": "file",
       "name": "tests/__pycache__/test_query_router.cpython-313.pyc",
       "hashes": [
         {
@@ -988,7 +1088,7 @@
       "hashes": [
         {
           "alg": "SHA-256",
-          "content": "1d6a55bef963c03e55e5e91c752b1d6185f0b76942fde20d4eba7ae6314a3b0e"
+          "content": "0139038f45a368f7712faf6de94842b0d572ad86f8dbf863a13a4f3d7c80a23f"
         }
       ]
     },
@@ -998,7 +1098,7 @@
       "hashes": [
         {
           "alg": "SHA-256",
-          "content": "787021b50c816e6bc9c8f292e37c0d656125d4f54d80008ea81b8ee89401b6cc"
+          "content": "5de0e4dddcf459756f9123f86c0a25e82b636f17de74edb8e9ad752bf5a95dbc"
         }
       ]
     },
@@ -1008,7 +1108,7 @@
       "hashes": [
         {
           "alg": "SHA-256",
-          "content": "acc0a77eb11caaac0e07845d418e1c5e3892e663adb165a73caa7092904723c6"
+          "content": "ec2a79086423c1304edb0d896d5a46ecbdd03dae9f30ee88c95f32e35aeb889d"
         }
       ]
     },
@@ -1039,6 +1139,16 @@
         {
           "alg": "SHA-256",
           "content": "f560d26a8fe18406907fd14c8c08a4a8dae97a15ed146fa5721c17960882b531"
+        }
+      ]
+    },
+    {
+      "type": "file",
+      "name": "tests/political_media.test.js",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "cc52482bec0a9891bb8c6b3cf715994c9d17febf8eec1c3016f2ccb4f6159c4f"
         }
       ]
     },
@@ -1084,6 +1194,16 @@
     },
     {
       "type": "file",
+      "name": "tests/test_political_media_features.py",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "c666d38c467132aabf771083fd5822ebc01ce57a2df56e85ed0ed6ccd62a2ac8"
+        }
+      ]
+    },
+    {
+      "type": "file",
       "name": "tests/test_query_router.py",
       "hashes": [
         {
@@ -1118,7 +1238,7 @@
       "hashes": [
         {
           "alg": "SHA-256",
-          "content": "65f2e21273656d99833dcd829b2c37219e7c047563414841dd585f2f36613912"
+          "content": "37f0b793ddbea74403695fdce8a385ab432a5d3926a865666bdc339e8df1d71f"
         }
       ]
     },

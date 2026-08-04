@@ -79,3 +79,8 @@ code{font-family:ui-monospace,SFMono-Regular,Consolas,monospace;background:var(-
 .caution-note{border-left:5px solid #b7791f;background:#fffaf0}
 .evidence-packet-view{margin-top:1.25rem}
 .reference-list small{color:var(--muted)}
+
+
+.danger-text{border-left:4px solid var(--danger);padding-left:.8rem}
+.warning{background:#fff3cd;color:#5f4300}
+blockquote{margin:.35rem 0;padding:.45rem .65rem;border-left:3px solid var(--border);background:var(--soft);font-size:.86rem}

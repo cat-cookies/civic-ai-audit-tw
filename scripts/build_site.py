@@ -3,8 +3,8 @@ from __future__ import annotations
 import json, shutil
 from pathlib import Path
 ROOT=Path(__file__).resolve().parents[1]; OUT=ROOT/"_site"
-PUBLIC_FILES=["index.html","styles.css","search.js","legislation.js","xlsx-export.js","ai-engine.js","app.js","DISCLAIMER.md","SECURITY.md","LICENSE","VERSION"]
-PUBLIC_DATA=["sources.json","analyses.json","party_positions.json","theory_catalog.json","methodology.json","search-index.json","model-status.json","connector-status.json","jurisdictions.json","research_methods.json","curiosity_examples.json"]
+PUBLIC_FILES=["index.html","styles.css","search.js","academic.js","legislation.js","xlsx-export.js","ai-engine.js","app.js","DISCLAIMER.md","SECURITY.md","LICENSE","VERSION"]
+PUBLIC_DATA=["sources.json","analyses.json","party_positions.json","theory_catalog.json","literature_catalog.json","concept_ontology.json","methodology.json","search-index.json","model-status.json","connector-status.json","jurisdictions.json","research_methods.json","curiosity_examples.json"]
 
 def main() -> int:
     if OUT.exists(): shutil.rmtree(OUT)

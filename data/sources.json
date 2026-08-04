@@ -2658,5 +2658,43 @@
     "language": "依入口",
     "jurisdiction_level": "中央／聯邦／區域",
     "search_template": ""
+  },
+  {
+    "category": "國際學術資料",
+    "agency": "Crossref",
+    "name": "Crossref REST API",
+    "data": "DOI、題名、作者、期刊、年份、出版類型、更新與授權等學術中繼資料",
+    "best_for": "依題名、作者或研究問題定位跨領域期刊論文與DOI",
+    "limitations": "中繼資料由出版者登錄；相關排序與完整性不等於研究品質，摘要並非每筆都有",
+    "url": "https://api.crossref.org/",
+    "level": "核心",
+    "official": true,
+    "id": "int-crossref",
+    "country": "國際組織",
+    "country_code": "INT",
+    "portal_category": "學術文獻與研究",
+    "priority": 1,
+    "language": "多語",
+    "jurisdiction_level": "國際",
+    "search_template": "https://api.crossref.org/works?query.bibliographic={query}"
+  },
+  {
+    "category": "國際學術資料",
+    "agency": "Europe PMC",
+    "name": "Europe PMC",
+    "data": "生命科學與健康相關期刊、摘要、引文、資助與部分開放全文",
+    "best_for": "醫療、護理、公共衛生、實施科學與生命科學文獻檢索",
+    "limitations": "領域集中於生命科學；是否有全文與授權依個別文獻而異",
+    "url": "https://europepmc.org/",
+    "level": "核心",
+    "official": true,
+    "id": "int-europepmc",
+    "country": "國際組織",
+    "country_code": "INT",
+    "portal_category": "學術文獻與研究",
+    "priority": 1,
+    "language": "英文為主",
+    "jurisdiction_level": "國際",
+    "search_template": "https://europepmc.org/search?query={query}"
   }
 ]

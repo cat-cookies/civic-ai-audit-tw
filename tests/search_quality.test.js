@@ -1,6 +1,7 @@
 'use strict';
 const assert = require('assert');
 const Search = require('../search.js');
+Search.configure(require('../data/concept_ontology.json'));
 
 const corpus = [
   {title:'政府電子採購網', body:'查詢招標、決標、採購公告及廠商資訊。', tags:['政府採購','決標'], official:true},
@@ -18,7 +19,12 @@ assert.ok(results.some(x => x.title === '全國法規資料庫'));
 assert.ok(Search.explainExpansion('個資法').some(x => x.term === '個人資料保護法'));
 
 results = Search.searchDocuments(corpus, '長期照護');
-assert.strictEqual(results.length, 0, '不得把長期照護自動擴張成長期照顧或高齡照護');
+assert.ok(results.some(x => x.title === '長期照顧政策'), '可將長期照護視為長期照顧的低權重常用語形，但不得擴張為高齡照護或居家服務');
+
+
+results = Search.searchDocuments(corpus, '政府採購為什麼總是同一家廠商得標');
+assert.ok(results.some(x => x.title === '政府電子採購網'));
+assert.ok(results.every(x => x.title !== '長期照顧政策'));
 
 results = Search.searchDocuments(corpus, '預算');
 assert.strictEqual(results[0].title, '中央政府總預算');

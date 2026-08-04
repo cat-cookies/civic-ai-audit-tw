@@ -31,5 +31,6 @@ The router never intentionally selects paid fallback models. OpenRouter models m
 - `GET /models`
 - `POST /api/research`
 - `POST /api/legislation`
+- `POST /api/literature`
 
 The backend accepts only public-source research material. Personal data, medical records, private complaints and unpublished documents are rejected.

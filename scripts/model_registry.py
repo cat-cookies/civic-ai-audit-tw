@@ -16,7 +16,7 @@ ALLOWED = ("google/", "meta-llama/", "mistralai/", "openai/", "nvidia/", "micros
 
 
 def get_json(url: str, headers: dict[str, str] | None = None, timeout: int = 18) -> dict:
-    req = urllib.request.Request(url, headers=headers or {"User-Agent": "civic-ai-audit/4.0"})
+    req = urllib.request.Request(url, headers=headers or {"User-Agent": "civic-ai-audit/5.0"})
     with urllib.request.urlopen(req, timeout=timeout) as response:
         return json.load(response)
 
@@ -72,7 +72,7 @@ def main() -> int:
     args = parser.parse_args()
     results = [openrouter(), gemini(), groq()]
     out = {
-        "schema_version": "4.0",
+        "schema_version": "5.0",
         "checked_at": dt.datetime.now(dt.timezone.utc).isoformat(),
         "paid_fallback_allowed": False,
         "providers": results,

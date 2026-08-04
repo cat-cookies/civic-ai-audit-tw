@@ -1,8 +1,8 @@
 {
   "project": "國家資料 AI 查證與改革觀測站",
-  "version": "4.0.0",
-  "build_time": "2026-08-04T16:04:34+08:00",
-  "status": "可部署暨待線上模型與官方 API 驗證 MVP",
+  "version": "5.0.0",
+  "build_time": "2026-08-04T17:05:37+08:00",
+  "status": "可部署暨待線上模型、官方 API 與正式瀏覽器環境驗證 MVP",
   "tests": {
     "offline_unit_tests": 20,
     "python_compile": true,
@@ -11,20 +11,24 @@
     "public_allowlist_check": true,
     "live_api_tests": false,
     "live_model_tests": false,
-    "javascript_modules": 5,
+    "javascript_modules": 6,
     "xlsx_ooxml_import_verified": true,
-    "virtual_backend_compile": true
+    "virtual_backend_compile": true,
+    "offline_python_unit_tests": 27,
+    "javascript_quality_suites": 3,
+    "browser_runtime_smoke_test": false,
+    "browser_runtime_note": "容器瀏覽器政策阻擋 localhost 與 file 導航；已完成語法、資料契約、DOM必要檔案與建置測試，仍須在 GitHub Pages 正式環境人工驗收。"
   },
   "source_archives": [
     {
-      "name": "multilingual-professor-academic-assistant-v3.0.0（備份）.zip",
-      "size": 48087311,
-      "sha256": "f39f25e2bd7cdab059d213443bdb00151383682e479d170dbdb1a8bbc4295139"
+      "name": "civic-ai-audit-tw-main.zip",
+      "size": 161163,
+      "sha256": "f32ab739ccfbad217f50c0a6f121174873229dd5a26f77d547477cab861a484d"
     },
     {
-      "name": "國家資料_AI查證改革觀測站_GitHub_MVP(1).zip",
-      "size": 76922,
-      "sha256": "a6182145ba1c0cfe4671eac61c1c82ed40fae26723d8e81657c44e0505bdb11e"
+      "name": "國家資料_AI查證改革觀測站_GitHub_v4.0.0_學術AI修法版.zip",
+      "size": 155670,
+      "sha256": "72f39d2405a1ba5a295d3e5a30ae2eca1e6641e508b5bc8cbd114c6be8e48f58"
     }
   ],
   "security": {
@@ -41,17 +45,30 @@
     "雜湊只能驗證檔案一致性，不能證明內容正確、安全或具有法律效力。",
     "v2.0.1 新增 GitHub 網頁上傳漏失點開頭路徑的修復與可見 Actions 備份。",
     "v3.1.0：修正官方來源固定加分造成的無關搜尋結果；新增相關性硬門檻、結果分組、符合原因及議題直達入口。",
-    "v4.0.0：網站不再以使用者過去議題建立搜尋例子或語意關聯；所有自動詞彙展開限於受控名稱變體。"
+    "v4.0.0：網站不再以使用者過去議題建立搜尋例子或語意關聯；所有自動詞彙展開限於受控名稱變體。",
+    "v5.0.0：新增學說—機制—期刊文獻資料庫、Crossref／Europe PMC、查詢意圖、證據封包、原子主張、推論帳本與自動節省資源模式。",
+    "v5.0.0 第二輪：自然語句切詞不再把完整問句當唯一檢索詞；官方性只作小幅同分排序。",
+    "期刊目錄為理論與方法的代表性起點，不是系統性回顧或臨床／法律權威層級判定。",
+    "OpenRouter 只自動接受價格明確為零的模型；Gemini／Groq 預設須人工確認帳戶方案後啟用。"
   ],
-  "release_name": "學術研究流程、節能多模型、三版本修法與虛擬後端版",
+  "release_name": "研究型查證、可驗證推論、期刊文獻與節能免費模型版",
   "changes": [
-    "搜尋改採詞彙證據、文件頻率與欄位權重；只展開正式名稱與常用縮寫，不再以主題聯想充當近義詞。",
-    "首頁範例改為一般民眾常見的預算、電價、房價、立法、少子化、酒駕、高齡駕駛、採購、裁判與能源問題。",
-    "AI 改為節能一階、標準二階、高風險三階的最小充分呼叫策略。",
-    "研究輸出增加主張—證據矩陣、法律與政策分流、反方、研究方法、跨國選國理由與移植限制。",
-    "修法頁提供最小、權衡、制度性三種版本，表格比較並下載真正的 XLSX。",
-    "國家資料入口整併為八類，預設公民模式只顯示核心用途，研究限制按需展開。",
-    "新增可部署的 Hugging Face Docker Space 後端，集中保管 API Key、抓取白名單官方來源並路由免費／開發額度模型。",
-    "新增 docs/SELF_CRITIQUE_V4.md，記錄失敗、修正策略、殘餘風險與驗收門檻。"
-  ]
+    "比較目前 GitHub 主線與 v4 學術版後，以目前主線為底重構，保留既有 Pages 部署、修法三版本與 XLSX 匯出。",
+    "搜尋加入問題意圖、自然問句核心詞切分、受控名稱變體、文件頻率與欄位權重；一般公共議題詞只用於切分，不建立任意近義關係。",
+    "新增學說—作用機制—診斷問題—適用限制—研究方法—代表性期刊論文的關聯資料庫。",
+    "納入22項理論／架構與33篇具 DOI 的代表性文獻，增加比例原則、法律安定性與法律明確性等法學內容。",
+    "學說頁支援本地文獻、Crossref、Europe PMC、APA複製、RIS與BibTeX下載；學術API只取中繼資料，不以排序或引用次數代替品質評讀。",
+    "AI輸出新增直接回答、回答範圍、精準摘要、原子主張—證據矩陣、反證、來源衝突、推論帳本、法律／政策／政治／執行分流、可檢驗理論命題與完整文獻引用。",
+    "前端驗證來源ID、文獻ID、理論ID與推論前提ID；法律主張缺少官方法源時自動降為證據不足。",
+    "AI工作流改為階段專屬輸出契約：規劃、批判與綜合不再共用同一JSON格式；一般題1次、複雜題2次、高風險題3次。",
+    "Hugging Face Docker Space後端加入零價格／人工核准模型政策、每小時任務上限、有限技術備援、輸入大小限制、疑似個資阻擋與重新導向網域二次檢查。",
+    "修正即時文獻查詢後重複綁定事件的問題，避免同一按鈕被多次執行。",
+    "新增第二輪自我批判文件，明示本地索引、中文斷詞、學術中繼資料、理論推薦、免費模型與正式瀏覽器驗收限制。"
+  ],
+  "academic_catalog": {
+    "theories": 22,
+    "representative_literature": 33,
+    "all_literature_has_doi": true,
+    "scope": "代表性起點，非系統性回顧"
+  }
 }

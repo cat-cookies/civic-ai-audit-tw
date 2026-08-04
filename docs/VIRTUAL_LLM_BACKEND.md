@@ -13,6 +13,9 @@
    - `BACKEND_TOKEN=自行產生的長隨機字串`
    - 至少一個供應商金鑰：`OPENROUTER_API_KEY`、`GEMINI_API_KEY` 或 `GROQ_API_KEY`
    - OpenRouter 建議設定 `OPENROUTER_ALLOWED_PROVIDER_SLUGS`
+   - 若已人工確認 Gemini 專案使用免費層，再設定 `ENABLE_GEMINI_FREE_TIER=true`
+   - 若已人工確認 Groq 帳戶使用開發方案，再設定 `ENABLE_GROQ_DEVELOPER_TIER=true`
+   - 建議設定 `MAX_TASKS_PER_HOUR=12`、`MAX_FALLBACKS_PER_STAGE=1`，限制免費資源消耗
 4. Space 啟動後，在網站「免費 AI 與後端」填入 Space 網址及後端權杖。
 5. 先按「測試虛擬後端」，再檢查模型。
 
@@ -37,3 +40,12 @@
 - https://huggingface.co/docs/hub/spaces-overview
 - https://huggingface.co/docs/hub/spaces-sdks-docker
 - https://huggingface.co/docs/hub/security-secrets
+
+
+## 成本與安全硬限制
+
+- OpenRouter 只有 prompt 與 completion 價格均明確為零的模型才會進入候選清單。
+- Gemini 與 Groq 的模型清單 API 不足以證明目前帳戶不會被收費，因此預設不加入後端模型候選；必須由管理者核對帳戶方案後明確啟用。
+- 每小時任務量與每階段備援次數都有上限。備援只處理技術失敗，不以多模型投票取代證據。
+- 外部來源僅允許白名單政府網域；重新導向後仍會再檢查最終網域，避免跳轉至非核准來源。
+- 後端拒絕疑似個資與過大請求；Space Secrets 不得寫入公開儲存庫或前端 JavaScript。

@@ -1,0 +1,301 @@
+[
+  {
+    "id": "long_term_care",
+    "canonical": "長期照顧",
+    "aliases": [
+      {
+        "term": "長照",
+        "relation": "abbreviation",
+        "weight": 0.95
+      },
+      {
+        "term": "長期照護",
+        "relation": "common_variant",
+        "weight": 0.78
+      }
+    ],
+    "related": [
+      "高齡照顧",
+      "居家服務",
+      "失能照顧"
+    ],
+    "domains": [
+      "社會福利",
+      "醫療與照護"
+    ],
+    "note": "「長期照護」可作一般語言變體，但不自動等同高齡照顧、居家服務或所有失能照顧。"
+  },
+  {
+    "id": "personal_data",
+    "canonical": "個人資料保護法",
+    "aliases": [
+      {
+        "term": "個資法",
+        "relation": "abbreviation",
+        "weight": 0.96
+      }
+    ],
+    "related": [
+      "隱私權",
+      "資料治理",
+      "GDPR"
+    ],
+    "domains": [
+      "法律",
+      "數位治理"
+    ]
+  },
+  {
+    "id": "labor_standards",
+    "canonical": "勞動基準法",
+    "aliases": [
+      {
+        "term": "勞基法",
+        "relation": "abbreviation",
+        "weight": 0.96
+      }
+    ],
+    "related": [
+      "工時",
+      "工資",
+      "勞動契約"
+    ],
+    "domains": [
+      "勞動",
+      "法律"
+    ]
+  },
+  {
+    "id": "national_health_insurance",
+    "canonical": "全民健康保險",
+    "aliases": [
+      {
+        "term": "健保",
+        "relation": "abbreviation",
+        "weight": 0.94
+      }
+    ],
+    "related": [
+      "醫療支付",
+      "健康保險"
+    ],
+    "domains": [
+      "醫療",
+      "社會保險"
+    ]
+  },
+  {
+    "id": "social_housing",
+    "canonical": "社會住宅",
+    "aliases": [
+      {
+        "term": "社宅",
+        "relation": "abbreviation",
+        "weight": 0.94
+      }
+    ],
+    "related": [
+      "住宅政策",
+      "租屋",
+      "居住權"
+    ],
+    "domains": [
+      "住宅",
+      "社會政策"
+    ]
+  },
+  {
+    "id": "legislature",
+    "canonical": "立法院",
+    "aliases": [
+      {
+        "term": "國會",
+        "relation": "functional_name",
+        "weight": 0.8
+      }
+    ],
+    "related": [
+      "立法委員",
+      "議事程序"
+    ],
+    "domains": [
+      "政治",
+      "立法"
+    ]
+  },
+  {
+    "id": "judgment",
+    "canonical": "裁判書",
+    "aliases": [
+      {
+        "term": "判決",
+        "relation": "common_variant",
+        "weight": 0.82
+      }
+    ],
+    "related": [
+      "裁定",
+      "判例",
+      "司法解釋"
+    ],
+    "domains": [
+      "司法",
+      "法律"
+    ]
+  },
+  {
+    "id": "public_procurement",
+    "canonical": "政府採購",
+    "aliases": [],
+    "related": [
+      "招標",
+      "投標",
+      "決標"
+    ],
+    "domains": [
+      "財政",
+      "行政"
+    ]
+  },
+  {
+    "id": "central_budget",
+    "canonical": "中央政府總預算",
+    "aliases": [
+      {
+        "term": "總預算",
+        "relation": "short_name",
+        "weight": 0.88
+      }
+    ],
+    "related": [
+      "歲入",
+      "歲出",
+      "決算"
+    ],
+    "domains": [
+      "財政",
+      "預算"
+    ]
+  },
+  {
+    "id": "regulatory_impact",
+    "canonical": "法規影響評估",
+    "aliases": [
+      {
+        "term": "RIA",
+        "relation": "abbreviation",
+        "weight": 0.92
+      }
+    ],
+    "related": [
+      "成本效益",
+      "替代方案",
+      "分配影響"
+    ],
+    "domains": [
+      "立法",
+      "公共政策"
+    ]
+  },
+  {
+    "id": "difference_in_differences",
+    "canonical": "差異中的差異",
+    "aliases": [
+      {
+        "term": "DID",
+        "relation": "abbreviation",
+        "weight": 0.92
+      },
+      {
+        "term": "DiD",
+        "relation": "abbreviation",
+        "weight": 0.92
+      }
+    ],
+    "related": [
+      "因果推論",
+      "政策評估"
+    ],
+    "domains": [
+      "統計",
+      "政策評估"
+    ]
+  },
+  {
+    "id": "high_reliability",
+    "canonical": "高可靠度組織",
+    "aliases": [
+      {
+        "term": "HRO",
+        "relation": "abbreviation",
+        "weight": 0.94
+      }
+    ],
+    "related": [
+      "安全文化",
+      "弱訊號",
+      "韌性"
+    ],
+    "domains": [
+      "安全科學",
+      "組織"
+    ]
+  },
+  {
+    "id": "normalization_process",
+    "canonical": "常態化歷程理論",
+    "aliases": [
+      {
+        "term": "NPT",
+        "relation": "abbreviation",
+        "weight": 0.92
+      }
+    ],
+    "related": [
+      "實施科學",
+      "介入整合"
+    ],
+    "domains": [
+      "實施科學",
+      "醫療"
+    ]
+  },
+  {
+    "id": "cfir",
+    "canonical": "整合性實施研究架構",
+    "aliases": [
+      {
+        "term": "CFIR",
+        "relation": "abbreviation",
+        "weight": 0.96
+      }
+    ],
+    "related": [
+      "實施科學",
+      "組織變革"
+    ],
+    "domains": [
+      "實施科學",
+      "醫療"
+    ]
+  },
+  {
+    "id": "reaim",
+    "canonical": "RE-AIM架構",
+    "aliases": [
+      {
+        "term": "RE-AIM",
+        "relation": "formal_alias",
+        "weight": 1.0
+      }
+    ],
+    "related": [
+      "公共衛生影響",
+      "介入評估"
+    ],
+    "domains": [
+      "公共衛生",
+      "實施科學"
+    ]
+  }
+]

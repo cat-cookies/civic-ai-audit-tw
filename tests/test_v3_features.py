@@ -32,7 +32,7 @@ class V3FeatureTest(unittest.TestCase):
         self.assertTrue((ROOT/'_site/data/jurisdictions.json').exists())
         self.assertTrue((ROOT/'_site/data/research_methods.json').exists())
         app=(ROOT/'_site/app.js').read_text(encoding='utf-8')
-        self.assertIn('discoverModels', app)
+        self.assertIn('fetchEligibleModels', app)
         self.assertIn('methodRecommendation', app)
         self.assertIn('OpenRouter', app)
         self.assertTrue((ROOT/'_site/search.js').exists())

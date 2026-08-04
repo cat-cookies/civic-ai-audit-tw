@@ -81,11 +81,19 @@ def main() -> int:
             ))
 
     for idx, theory in enumerate(load("theory_catalog.json", [])):
+        ident = theory.get("id", str(idx))
         docs.append(make_doc(
-            "theory", str(idx), theory.get("name", "未命名理論"), compact(theory), "#compare",
-            [theory.get("category", "")], category=theory.get("category", ""), official=False,
+            "theory", ident, theory.get("name", "未命名理論"), compact(theory), f"#theory?theory={ident}",
+            [theory.get("category", ""), *theory.get("keywords", [])], category=theory.get("category", ""), official=False, peer_reviewed=True,
         ))
 
+    for idx, item in enumerate(load("literature_catalog.json", [])):
+        ident = item.get("id", str(idx))
+        docs.append(make_doc(
+            "literature", ident, item.get("title", "未命名文獻"), compact(item), f"#theory?lit={ident}",
+            [item.get("journal", ""), str(item.get("year", "")), *item.get("domains", []), *item.get("keywords", [])],
+            official=False, peer_reviewed=bool(item.get("peer_reviewed")), doi=item.get("doi", ""), year=item.get("year", ""),
+        ))
 
     for idx, method in enumerate(load("research_methods.json", [])):
         docs.append(make_doc(
@@ -106,7 +114,7 @@ def main() -> int:
 
     docs.sort(key=lambda x: (x["kind"], x["title"]))
     payload = {
-        "schema_version": "3.0",
+        "schema_version": "5.0",
         "built_at": datetime.now(timezone(timedelta(hours=8))).isoformat(timespec="seconds"),
         "document_count": len(docs),
         "documents": docs,

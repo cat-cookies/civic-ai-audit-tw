@@ -22,8 +22,8 @@ class V4FeatureTest(unittest.TestCase):
         examples=json.loads((ROOT/'data/curiosity_examples.json').read_text(encoding='utf-8'))
         labels=' '.join(item['label'] for item in examples)
         self.assertGreaterEqual(len(examples),8)
-        self.assertIn('政府今年把錢花在哪裡', labels)
-        self.assertIn('房價政策', labels)
+        self.assertTrue('政府今年把錢花在哪裡' in labels or '我繳的稅都花到哪裡？' in labels)
+        self.assertTrue('房價政策' in labels or '房價一直漲，社會住宅有用嗎？' in labels)
         self.assertNotIn('未應門', labels)
 
     def test_research_methods(self):

@@ -1,14 +1,769 @@
 [
-  {"category":"民主治理","name":"責任政治","question":"權限、資源、決策與責任是否對應？失敗時能否追溯到負責機關與改正機制？"},
-  {"category":"民主治理","name":"審議民主","question":"是否提供充分資訊、正反意見、受影響群體參與與可回應的理由？"},
-  {"category":"法治","name":"法律保留與明確性","question":"限制人民權利、課予義務或裁罰是否有法律依據，構成要件是否可理解與預見？"},
-  {"category":"法治","name":"比例原則","question":"措施是否適合、必要，且利益與侵害之間不失衡？"},
-  {"category":"公共政策","name":"多元流程架構","question":"問題、可行方案與政治條件是否真正匯合，或只是利用短期事件推動既定方案？"},
-  {"category":"公共政策","name":"倡議聯盟架構","question":"不同團體的核心信念、資源、證據與長期聯盟如何影響政策變遷？"},
-  {"category":"政策執行","name":"街頭官僚","question":"第一線人力、裁量、案件量與資源限制是否使紙面政策產生執行落差？"},
-  {"category":"政策執行","name":"高可靠度組織","question":"制度是否重視微弱異常訊號、避免過早簡化、建立升級通報與閉環結案？"},
-  {"category":"財政","name":"法規影響評估","question":"是否比較不立法、修法、行政措施及其他替代方案的成本、效益、風險與分配效果？"},
-  {"category":"實證研究","name":"因果推論","question":"觀察到的變化能否歸因於政策，或可能由時間趨勢、選擇偏誤與其他因素造成？"},
-  {"category":"制度變遷","name":"政策回饋與路徑依賴","question":"既有制度是否形成利益、組織與期待，使低效設計持續被鎖定？"},
-  {"category":"人權","name":"權利本位與分配正義","question":"哪些群體承擔成本、誰獲益、是否對弱勢或少數群體造成不成比例影響？"}
+  {
+    "id": "accountability",
+    "category": "民主治理",
+    "name": "公共課責與責任政治",
+    "proposition": "公共權力行使須能被要求說明、接受判斷並承擔改正或制裁後果。",
+    "mechanisms": [
+      "權限與責任對應",
+      "資訊揭露與說明義務",
+      "獨立或政治性論壇判斷",
+      "改正、制裁與學習回饋"
+    ],
+    "diagnostic_questions": [
+      "誰有決策權與資源？",
+      "誰必須向誰說明？",
+      "判斷標準與後果為何？",
+      "是否只有形式報告而無法追責？"
+    ],
+    "when_to_use": "分析跨機關責任、監督、質詢、稽核、申訴與制度失敗。",
+    "limitations": "課責過密也可能造成防禦行政、責任卸載與資訊隱藏。",
+    "keywords": [
+      "責任",
+      "課責",
+      "問責",
+      "監督",
+      "質詢",
+      "誰負責"
+    ],
+    "suitable_methods": [
+      "content",
+      "implementation",
+      "doctrinal"
+    ],
+    "literature_ids": [
+      "bovens2007",
+      "mettlersoss2004"
+    ]
+  },
+  {
+    "id": "participatory_governance",
+    "category": "民主治理",
+    "name": "參與治理與審議民主",
+    "proposition": "參與品質取決於誰能參加、如何交換理由、以及參與結果能否影響權力與決策。",
+    "mechanisms": [
+      "參與者選擇",
+      "資訊與審議模式",
+      "政策權威連結",
+      "代表性與不平等校正"
+    ],
+    "diagnostic_questions": [
+      "受影響群體是否進場？",
+      "正反資訊是否對稱？",
+      "意見如何回應？",
+      "參與是否真正改變決策？"
+    ],
+    "when_to_use": "公聽會、聽證、政策諮詢、公民參與與協作治理。",
+    "limitations": "參與本身不保證公平、專業品質或可執行性。",
+    "keywords": [
+      "參與",
+      "公聽會",
+      "聽證",
+      "審議",
+      "公民"
+    ],
+    "suitable_methods": [
+      "content",
+      "survey",
+      "comparative"
+    ],
+    "literature_ids": [
+      "fung2006",
+      "arnstein1969"
+    ]
+  },
+  {
+    "id": "incrementalism",
+    "category": "公共政策",
+    "name": "有限理性與漸進主義",
+    "proposition": "決策者在資訊、時間與認知受限下，常以小幅調整和局部比較取代全面最適化。",
+    "mechanisms": [
+      "有限搜尋",
+      "可接受而非最適方案",
+      "連續試錯",
+      "政治可行性約束"
+    ],
+    "diagnostic_questions": [
+      "是否只比較少數近似方案？",
+      "增量調整是否迴避結構問題？",
+      "是否有回饋與停止規則？"
+    ],
+    "when_to_use": "解釋預算增減、既有制度小修與危機外的常態決策。",
+    "limitations": "不能以現實限制合理化不處理重大權利侵害或系統性風險。",
+    "keywords": [
+      "漸進",
+      "小幅修正",
+      "有限理性",
+      "妥協"
+    ],
+    "suitable_methods": [
+      "content",
+      "budget",
+      "implementation"
+    ],
+    "literature_ids": [
+      "lindblom1959"
+    ]
+  },
+  {
+    "id": "multiple_streams",
+    "category": "公共政策",
+    "name": "多元流程架構",
+    "proposition": "議題進入決策通常需問題、可行政策方案與政治條件在政策窗口中匯合。",
+    "mechanisms": [
+      "問題指標與焦點事件",
+      "政策社群方案淘汰",
+      "政治氣候與權力變化",
+      "政策企業家耦合"
+    ],
+    "diagnostic_questions": [
+      "問題如何被定義？",
+      "方案在事件前是否已存在？",
+      "窗口由何事件開啟？",
+      "誰推動耦合？"
+    ],
+    "when_to_use": "議程設定、危機後修法與政策突然加速。",
+    "limitations": "須避免事後把任何成功政策都說成三流匯合。",
+    "keywords": [
+      "議程",
+      "政策窗口",
+      "焦點事件",
+      "為何此時"
+    ],
+    "suitable_methods": [
+      "content",
+      "implementation"
+    ],
+    "literature_ids": [
+      "cairneyjones2016"
+    ]
+  },
+  {
+    "id": "advocacy_coalition",
+    "category": "公共政策",
+    "name": "倡議聯盟架構",
+    "proposition": "政策次系統中的行為者依核心信念形成長期聯盟，透過資源、學習與外部衝擊競爭。",
+    "mechanisms": [
+      "信念階層",
+      "聯盟資源",
+      "政策導向學習",
+      "外部衝擊與協商"
+    ],
+    "diagnostic_questions": [
+      "哪些行為者共享核心信念？",
+      "聯盟掌握哪些資源？",
+      "證據是否改變次要信念？",
+      "外部事件如何改變權力？"
+    ],
+    "when_to_use": "長期爭議政策、環境、能源、醫療與社會福利改革。",
+    "limitations": "需多年資料；不適合只看單次新聞或單一表決。",
+    "keywords": [
+      "聯盟",
+      "倡議",
+      "信念",
+      "政策學習",
+      "長期爭議"
+    ],
+    "suitable_methods": [
+      "content",
+      "comparative"
+    ],
+    "literature_ids": [
+      "sabatier1988"
+    ]
+  },
+  {
+    "id": "veto_players",
+    "category": "政治制度",
+    "name": "否決者理論",
+    "proposition": "具否決能力者越多、偏好距離越大，政策現狀通常越穩定、重大變更越困難。",
+    "mechanisms": [
+      "制度性否決點",
+      "黨派否決者",
+      "偏好距離",
+      "議程設定"
+    ],
+    "diagnostic_questions": [
+      "哪些同意是必要條件？",
+      "是否存在實質而非名義否決者？",
+      "議程控制者能排除哪些選項？"
+    ],
+    "when_to_use": "比較法案通過難度、聯合政府、兩院制與多層級治理。",
+    "limitations": "不能忽略行政執行、非正式權力與策略互動。",
+    "keywords": [
+      "否決",
+      "卡關",
+      "席次",
+      "協商",
+      "制度穩定"
+    ],
+    "suitable_methods": [
+      "content",
+      "comparative"
+    ],
+    "literature_ids": [
+      "tsebelis1995"
+    ]
+  },
+  {
+    "id": "implementation_ambiguity_conflict",
+    "category": "政策執行",
+    "name": "模糊—衝突執行模型",
+    "proposition": "政策模糊性與衝突程度共同決定執行主要由行政資源、地方情境、權力競爭或試驗學習支配。",
+    "mechanisms": [
+      "目標與手段模糊",
+      "利益衝突",
+      "資源控制",
+      "地方參與者與情境"
+    ],
+    "diagnostic_questions": [
+      "目標可否操作化？",
+      "手段是否明確？",
+      "誰反對以及掌握何種資源？",
+      "地方差異是否主導結果？"
+    ],
+    "when_to_use": "分析中央政策、地方執行與法規授權後的差異。",
+    "limitations": "分類不能取代具體因果機制與第一線資料。",
+    "keywords": [
+      "執行落差",
+      "模糊",
+      "衝突",
+      "中央地方"
+    ],
+    "suitable_methods": [
+      "implementation",
+      "comparative"
+    ],
+    "literature_ids": [
+      "matland1995"
+    ]
+  },
+  {
+    "id": "street_level",
+    "category": "政策執行",
+    "name": "街頭官僚與第一線組織",
+    "proposition": "第一線工作者在資源不足、案件壓力與模糊規範下，以裁量與工作常規實際塑造政策。",
+    "mechanisms": [
+      "案件篩選",
+      "裁量簡化",
+      "績效指標替代目標",
+      "組織防禦與資源配給"
+    ],
+    "diagnostic_questions": [
+      "第一線的時間與案件量為何？",
+      "規則在哪些情境需裁量？",
+      "績效指標是否扭曲服務？",
+      "服務對象如何被分類？"
+    ],
+    "when_to_use": "社福、醫療、警政、教育、勞檢與基層行政。",
+    "limitations": "不能把所有落差都歸因第一線，也須分析法規、管理與資源。",
+    "keywords": [
+      "第一線",
+      "裁量",
+      "案件量",
+      "SOP",
+      "執行"
+    ],
+    "suitable_methods": [
+      "implementation",
+      "content"
+    ],
+    "literature_ids": [
+      "brodkin2011"
+    ]
+  },
+  {
+    "id": "network_governance",
+    "category": "組織與治理",
+    "name": "網絡治理模式",
+    "proposition": "跨組織合作的有效治理形式取決於信任、規模、目標共識與網絡能力。",
+    "mechanisms": [
+      "參與者共同治理",
+      "主導組織協調",
+      "獨立網絡行政組織",
+      "信任與合法性"
+    ],
+    "diagnostic_questions": [
+      "參與者數量與互賴程度？",
+      "誰負責協調與決策？",
+      "目標共識與信任是否足夠？",
+      "是否有專職治理能力？"
+    ],
+    "when_to_use": "跨部會、中央地方、公私協力與醫療照護網絡。",
+    "limitations": "合作不必然優於層級制，交易成本與責任模糊可能升高。",
+    "keywords": [
+      "跨機關",
+      "協作",
+      "網絡",
+      "公私協力"
+    ],
+    "suitable_methods": [
+      "implementation",
+      "comparative"
+    ],
+    "literature_ids": [
+      "provankenis2008"
+    ]
+  },
+  {
+    "id": "policy_feedback",
+    "category": "制度變遷",
+    "name": "政策回饋與路徑依賴",
+    "proposition": "既有政策會創造資源、利益、組織與認知效果，反過來影響後續政治與制度變遷。",
+    "mechanisms": [
+      "資源效果",
+      "解釋效果",
+      "組織投資",
+      "轉換成本與遞增報酬"
+    ],
+    "diagnostic_questions": [
+      "政策創造了哪些受益者與執行組織？",
+      "民眾如何理解政府與自身身分？",
+      "改制成本與既得利益為何？"
+    ],
+    "when_to_use": "長期制度、福利國家、稅制、保險與基礎設施。",
+    "limitations": "路徑依賴不是「不能改」，須提出具體鎖定機制與轉折條件。",
+    "keywords": [
+      "路徑依賴",
+      "鎖定",
+      "政策回饋",
+      "既得利益"
+    ],
+    "suitable_methods": [
+      "content",
+      "budget",
+      "comparative"
+    ],
+    "literature_ids": [
+      "pierson1993",
+      "mettlersoss2004"
+    ]
+  },
+  {
+    "id": "policy_transfer",
+    "category": "比較政策",
+    "name": "政策移轉與法律刺激",
+    "proposition": "跨國借鏡會受移轉動機、內容、制度脈絡與執行能力影響，常產生變形而非複製。",
+    "mechanisms": [
+      "自願學習或外部壓力",
+      "制度選擇與翻譯",
+      "法律文化互動",
+      "不完全移轉"
+    ],
+    "diagnostic_questions": [
+      "為何選這個國家？",
+      "移轉的是目標、工具還是制度？",
+      "哪些背景條件不可比？",
+      "失敗來自資訊、設計或執行？"
+    ],
+    "when_to_use": "外國法、國際指標、最佳實務與制度移植。",
+    "limitations": "不得用「先進國家」作為充分選國理由。",
+    "keywords": [
+      "跨國",
+      "外國法",
+      "移植",
+      "借鏡",
+      "最佳實務"
+    ],
+    "suitable_methods": [
+      "comparative",
+      "doctrinal"
+    ],
+    "literature_ids": [
+      "dolowitzmarsh2000",
+      "teubner1998"
+    ]
+  },
+  {
+    "id": "ria",
+    "category": "立法與管制",
+    "name": "法規影響評估",
+    "proposition": "管制決策應明確定義問題，比較不作為與多種工具的成本、效益、風險、分配及執行影響。",
+    "mechanisms": [
+      "問題界定",
+      "替代方案比較",
+      "影響量化或質化",
+      "諮詢與事後評估"
+    ],
+    "diagnostic_questions": [
+      "是否先決定修法才補理由？",
+      "是否比較非立法方案？",
+      "成本由誰承擔？",
+      "如何設計日後評估？"
+    ],
+    "when_to_use": "新管制、裁罰、許可、補助、稅費與高成本制度改革。",
+    "limitations": "可能淪為形式文件；量化結果受假設與資料品質限制。",
+    "keywords": [
+      "法規影響",
+      "成本效益",
+      "替代方案",
+      "修法理由"
+    ],
+    "suitable_methods": [
+      "budget",
+      "causal",
+      "survey",
+      "doctrinal"
+    ],
+    "literature_ids": [
+      "radaelli2004"
+    ]
+  },
+  {
+    "id": "hro",
+    "category": "安全科學",
+    "name": "高可靠度組織",
+    "proposition": "高風險組織透過持續關注失敗、避免過早簡化、貼近現場、韌性與尊重專業來管理意外。",
+    "mechanisms": [
+      "弱訊號偵測",
+      "多重解釋",
+      "現場情境覺察",
+      "快速升級與復原"
+    ],
+    "diagnostic_questions": [
+      "異常是否被當作雜訊？",
+      "案件是否過早結案？",
+      "決策是否交給最有專業者？",
+      "是否有閉環回饋？"
+    ],
+    "when_to_use": "醫療、長照、交通、災害、核能與其他高風險服務。",
+    "limitations": "需要組織文化與日常實作證據，不能只靠建立SOP。",
+    "keywords": [
+      "高可靠度",
+      "弱訊號",
+      "安全",
+      "閉環",
+      "事故"
+    ],
+    "suitable_methods": [
+      "safety",
+      "implementation"
+    ],
+    "literature_ids": [
+      "roberts1990"
+    ]
+  },
+  {
+    "id": "stamp",
+    "category": "安全科學",
+    "name": "STAMP系統安全模型",
+    "proposition": "事故源於整體控制結構與安全約束失效，不只來自單一元件故障或個人錯誤。",
+    "mechanisms": [
+      "控制器與受控過程",
+      "安全約束",
+      "回饋缺失",
+      "不安全控制行動"
+    ],
+    "diagnostic_questions": [
+      "系統邊界與安全約束？",
+      "誰發出何種控制？",
+      "回饋是否延遲或缺失？",
+      "組織變更如何改變風險？"
+    ],
+    "when_to_use": "複雜技術—組織系統與跨單位事故。",
+    "limitations": "建模成本高，需避免把所有因素無限納入。",
+    "keywords": [
+      "STAMP",
+      "系統事故",
+      "控制",
+      "安全約束"
+    ],
+    "suitable_methods": [
+      "safety",
+      "implementation"
+    ],
+    "literature_ids": [
+      "leveson2004"
+    ]
+  },
+  {
+    "id": "cfir",
+    "category": "實施科學",
+    "name": "整合性實施研究架構（CFIR）",
+    "proposition": "介入實施受介入特性、外部情境、內部情境、個人與實施過程共同影響。",
+    "mechanisms": [
+      "介入可調整性與複雜度",
+      "組織氣候與資源",
+      "外部政策與需求",
+      "執行者認知",
+      "規劃與反思"
+    ],
+    "diagnostic_questions": [
+      "介入可否調整？",
+      "組織有無時間、人力與領導支持？",
+      "外部誘因與需求？",
+      "過程如何監測與修正？"
+    ],
+    "when_to_use": "醫療、公共衛生、社福與組織導入新服務。",
+    "limitations": "構面多且可能清單化，需事前選擇關鍵機制。",
+    "keywords": [
+      "CFIR",
+      "實施",
+      "導入",
+      "組織情境"
+    ],
+    "suitable_methods": [
+      "implementation",
+      "mixed"
+    ],
+    "literature_ids": [
+      "damschroder2009"
+    ]
+  },
+  {
+    "id": "npt",
+    "category": "實施科學",
+    "name": "常態化歷程理論（NPT）",
+    "proposition": "新實務要常態化，參與者須共同理解、投入、執行並評估其工作。",
+    "mechanisms": [
+      "連貫性",
+      "認知參與",
+      "集體行動",
+      "反思監測"
+    ],
+    "diagnostic_questions": [
+      "大家是否理解新實務目的？",
+      "誰願意投入？",
+      "工作如何重新分配？",
+      "如何評估與調整？"
+    ],
+    "when_to_use": "數位醫療、臨床流程、跨專業照護與服務創新。",
+    "limitations": "主要解釋工作如何被嵌入，不直接證明介入有效。",
+    "keywords": [
+      "NPT",
+      "常態化",
+      "流程整合",
+      "導入"
+    ],
+    "suitable_methods": [
+      "implementation",
+      "mixed"
+    ],
+    "literature_ids": [
+      "mayfinch2009",
+      "may2009npt"
+    ]
+  },
+  {
+    "id": "reaim",
+    "category": "公共衛生",
+    "name": "RE-AIM公共衛生影響架構",
+    "proposition": "介入價值應同時評估觸及、效果、採用、實施與維持，而非只看受控條件下療效。",
+    "mechanisms": [
+      "代表性與觸及",
+      "個人效果",
+      "場域採用",
+      "執行一致性與成本",
+      "長期維持"
+    ],
+    "diagnostic_questions": [
+      "誰未被觸及？",
+      "哪些場域願意採用？",
+      "執行差異與成本？",
+      "效果能否維持？"
+    ],
+    "when_to_use": "健康促進、數位健康、照護服務與社區介入。",
+    "limitations": "各層級分母與追蹤期須清楚，不能只選有利維度。",
+    "keywords": [
+      "RE-AIM",
+      "公共衛生",
+      "觸及",
+      "採用",
+      "維持"
+    ],
+    "suitable_methods": [
+      "causal",
+      "survey",
+      "implementation"
+    ],
+    "literature_ids": [
+      "glasgow1999"
+    ]
+  },
+  {
+    "id": "causal_inference",
+    "category": "實證研究",
+    "name": "反事實因果推論",
+    "proposition": "政策效果是實際結果與同一單位未受政策時的反事實差異，需可信識別策略而非單純前後比較。",
+    "mechanisms": [
+      "處置與潛在結果",
+      "對照組",
+      "自然或準實驗",
+      "識別假設與穩健性檢查"
+    ],
+    "diagnostic_questions": [
+      "反事實由誰提供？",
+      "處置前趨勢可比嗎？",
+      "有無同期衝擊？",
+      "效果是否異質？"
+    ],
+    "when_to_use": "評估修法、補助、價格、公共衛生與地方政策效果。",
+    "limitations": "統計方法不能補救錯誤的政策時間、結果定義與制度理解。",
+    "keywords": [
+      "有效",
+      "造成",
+      "影響",
+      "因果",
+      "差異中的差異",
+      "合成控制"
+    ],
+    "suitable_methods": [
+      "causal"
+    ],
+    "literature_ids": [
+      "imbenswooldridge2009",
+      "callawaysantanna2021",
+      "abadie2010"
+    ]
+  },
+  {
+    "id": "evidence_certainty",
+    "category": "證據評估",
+    "name": "證據確定性與建議強度",
+    "proposition": "證據確定性、效果大小、價值偏好、成本與可行性應分開評估，不能把單一研究直接轉成政策命令。",
+    "mechanisms": [
+      "研究限制",
+      "不一致",
+      "間接性",
+      "不精確",
+      "發表偏誤",
+      "價值與資源考量"
+    ],
+    "diagnostic_questions": [
+      "研究回答的是同一問題嗎？",
+      "結果是否一致與精確？",
+      "對目標群體是否間接？",
+      "建議是否超越證據？"
+    ],
+    "when_to_use": "醫療、健康政策及任何需綜合多項研究的建議。",
+    "limitations": "GRADE原生於健康照護，其他政策領域應調整證據類型與決策準則。",
+    "keywords": [
+      "證據品質",
+      "確定性",
+      "建議強度",
+      "系統性回顧"
+    ],
+    "suitable_methods": [
+      "mixed",
+      "causal"
+    ],
+    "literature_ids": [
+      "guyatt2008grade"
+    ]
+  },
+  {
+    "id": "claim_evidence",
+    "category": "人工智慧查證",
+    "name": "原子主張—證據查核",
+    "proposition": "長文應先拆成可獨立驗證的原子主張，再逐項連結支持、反駁或資訊不足的證據。",
+    "mechanisms": [
+      "主張拆分",
+      "證據檢索",
+      "自然語言推論",
+      "逐項歸因與修訂"
+    ],
+    "diagnostic_questions": [
+      "一句話包含幾個可驗證主張？",
+      "每項主張引用哪個來源範圍？",
+      "來源能直接支持還是只部分支持？",
+      "無證據是否被誤判為錯誤？"
+    ],
+    "when_to_use": "AI摘要、政策說明、政黨主張與長篇查證。",
+    "limitations": "自動拆解、檢索與判定本身也會錯，不能取代人工查核與法源判斷。",
+    "keywords": [
+      "查證",
+      "AI",
+      "原子主張",
+      "引文",
+      "證據矩陣"
+    ],
+    "suitable_methods": [
+      "content",
+      "mixed"
+    ],
+    "literature_ids": [
+      "guo2022factcheck",
+      "thorne2018fever",
+      "min2023factscore",
+      "gao2023rarr"
+    ]
+  },
+  {
+    "id": "proportionality",
+    "category": "法學與憲法",
+    "name": "比例原則與權利限制正當化",
+    "proposition": "國家限制權利時，須逐步檢查目的正當性、手段適合性、必要性與利益衡量；各階段不能被單一成本效益結論取代。",
+    "mechanisms": [
+      "排除不正當目的",
+      "檢查手段與目的的合理關聯",
+      "比較同等有效而侵害較小的替代手段",
+      "要求對權利負擔與公共利益作可爭辯的說理"
+    ],
+    "diagnostic_questions": [
+      "限制所追求的目的是否正當且具體？",
+      "手段是否確實有助於目的，而非僅有象徵效果？",
+      "是否存在同等有效且侵害較小的替代方案？",
+      "權利負擔與預期公共利益的證據確定性為何？",
+      "立法者、行政機關與法院各自應作何種程度的審查？"
+    ],
+    "when_to_use": "涉及基本權限制、行政管制、裁罰、監控、資料治理或比較法上的權利衡量。",
+    "limitations": "比例原則提供說理結構，不會自動產生唯一答案；權重、經驗前提與審查密度仍可能有爭議。",
+    "keywords": [
+      "比例原則",
+      "適合性",
+      "必要性",
+      "狹義比例性",
+      "基本權",
+      "權衡",
+      "侵害最小"
+    ],
+    "suitable_methods": [
+      "doctrinal",
+      "comparative",
+      "causal"
+    ],
+    "literature_ids": [
+      "moller2012",
+      "alexy2018",
+      "peters2021"
+    ]
+  },
+  {
+    "id": "legal_certainty",
+    "category": "法學與法治國",
+    "name": "法律安定性、明確性與可預見性",
+    "proposition": "法規與裁判須具有足夠清楚、穩定、可理解及可預見性，使受規範者能合理安排其行為；但法律安定性也需與個案正義及制度調適能力平衡。",
+    "mechanisms": [
+      "清楚界定構成要件與法律效果",
+      "維持規範穩定與版本可追溯",
+      "提供程序保障與一致解釋",
+      "透過說理提高決定的合理可接受性"
+    ],
+    "diagnostic_questions": [
+      "受規範者能否理解誰在何種情況下負何種義務？",
+      "裁量範圍、例外與授權是否可預見？",
+      "新舊法、施行日期及過渡規定是否清楚？",
+      "相似案件是否受到一致處理？",
+      "追求彈性是否已犧牲最低限度的可預見性？"
+    ],
+    "when_to_use": "分析法律明確性、授權明確性、行政裁量、法規變動、信賴保護及跨層級規範衝突。",
+    "limitations": "文字更詳細不必然更明確；過度僵化可能降低制度回應新風險與個案差異的能力。",
+    "keywords": [
+      "法律安定性",
+      "法律明確性",
+      "可預見性",
+      "法治國",
+      "信賴保護",
+      "授權明確性",
+      "不溯及既往"
+    ],
+    "suitable_methods": [
+      "doctrinal",
+      "comparative",
+      "content"
+    ],
+    "literature_ids": [
+      "paunio2009"
+    ]
+  }
 ]

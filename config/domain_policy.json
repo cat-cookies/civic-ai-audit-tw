@@ -1,0 +1,281 @@
+{
+  "version": "6.1.0",
+  "principles": [
+    "依使用者選擇的資料領域與法域限制搜尋範圍，而非依IP、身分或個人背景推定。",
+    "本地索引只作補充；線上結果須來自官方API、核准搜尋API或可合法擷取的公開頁面。",
+    "使用者指定網域時，只搜尋及擷取那些明確網域，不自動擴張到同集團、相似名稱或外部連結。",
+    "全文擷取前檢查公開DNS、重新導向、robots.txt、Content-Type與大小；不繞過登入、付費牆、驗證碼或存取控制。",
+    "搜尋結果與全文來源保留網址、擷取時間、來源類型與限制；AI不得把片段搜尋結果當成完整證據。"
+  ],
+  "subjects": {
+    "auto": {
+      "label": "自動判斷",
+      "professional_domains": []
+    },
+    "law": {
+      "label": "法律、法規與裁判",
+      "professional_domains": [
+        "worldlii.org",
+        "bailii.org",
+        "canlii.org",
+        "austlii.edu.au",
+        "law.cornell.edu"
+      ]
+    },
+    "policy": {
+      "label": "公共政策與治理",
+      "professional_domains": [
+        "oecd.org",
+        "worldbank.org",
+        "imf.org",
+        "undp.org",
+        "idea.int"
+      ]
+    },
+    "health": {
+      "label": "醫療、公共衛生與長照",
+      "professional_domains": [
+        "who.int",
+        "ncbi.nlm.nih.gov",
+        "europepmc.org",
+        "cochranelibrary.com",
+        "nice.org.uk",
+        "ahrq.gov"
+      ]
+    },
+    "science": {
+      "label": "科學、科技與學術研究",
+      "professional_domains": [
+        "crossref.org",
+        "openalex.org",
+        "europepmc.org",
+        "pubmed.ncbi.nlm.nih.gov",
+        "doi.org"
+      ]
+    },
+    "statistics": {
+      "label": "統計、資料與指標",
+      "professional_domains": [
+        "oecd.org",
+        "worldbank.org",
+        "imf.org",
+        "data.un.org",
+        "ourworldindata.org"
+      ]
+    },
+    "budget": {
+      "label": "預算、採購、審計與績效",
+      "professional_domains": [
+        "oecd.org",
+        "imf.org",
+        "worldbank.org",
+        "pefa.org"
+      ]
+    },
+    "politics": {
+      "label": "政黨、國會與選舉",
+      "professional_domains": [
+        "idea.int",
+        "ipu.org"
+      ]
+    },
+    "media": {
+      "label": "媒體、新聞與政治傳播",
+      "professional_domains": [
+        "reutersinstitute.politics.ox.ac.uk",
+        "journalism.org",
+        "unesco.org"
+      ]
+    },
+    "general": {
+      "label": "一般公共議題",
+      "professional_domains": [
+        "oecd.org",
+        "worldbank.org",
+        "un.org"
+      ]
+    }
+  },
+  "jurisdictions": {
+    "TW": {
+      "label": "中華民國（臺灣）",
+      "country": "tw",
+      "language": "zh",
+      "official_domains": [
+        "gov.tw",
+        "president.gov.tw",
+        "ey.gov.tw",
+        "ly.gov.tw",
+        "ppg.ly.gov.tw",
+        "data.ly.gov.tw",
+        "law.moj.gov.tw",
+        "mojlaw.moj.gov.tw",
+        "judicial.gov.tw",
+        "cons.judicial.gov.tw",
+        "data.gov.tw",
+        "stat.gov.tw",
+        "audit.gov.tw",
+        "cy.gov.tw",
+        "exam.gov.tw",
+        "mohw.gov.tw",
+        "nhi.gov.tw",
+        "cdc.gov.tw",
+        "mol.gov.tw",
+        "moenv.gov.tw",
+        "moea.gov.tw",
+        "moi.gov.tw",
+        "motc.gov.tw",
+        "mof.gov.tw",
+        "edu.tw",
+        "dpp.org.tw",
+        "kmt.org.tw",
+        "tpp.org.tw"
+      ]
+    },
+    "US": {
+      "label": "美國",
+      "country": "us",
+      "language": "en",
+      "official_domains": [
+        "congress.gov",
+        "govinfo.gov",
+        "regulations.gov",
+        "federalregister.gov",
+        "gao.gov",
+        "cbo.gov",
+        "supremecourt.gov",
+        "uscourts.gov",
+        "data.gov",
+        "cdc.gov",
+        "nih.gov"
+      ]
+    },
+    "UK": {
+      "label": "英國",
+      "country": "gb",
+      "language": "en",
+      "official_domains": [
+        "gov.uk",
+        "legislation.gov.uk",
+        "parliament.uk",
+        "judiciary.uk",
+        "supremecourt.uk",
+        "nao.org.uk",
+        "ons.gov.uk"
+      ]
+    },
+    "CA": {
+      "label": "加拿大",
+      "country": "ca",
+      "language": "en",
+      "official_domains": [
+        "canada.ca",
+        "parl.ca",
+        "laws-lois.justice.gc.ca",
+        "scc-csc.ca",
+        "oag-bvg.gc.ca",
+        "statcan.gc.ca",
+        "open.canada.ca"
+      ]
+    },
+    "AU": {
+      "label": "澳洲",
+      "country": "au",
+      "language": "en",
+      "official_domains": [
+        "australia.gov.au",
+        "aph.gov.au",
+        "legislation.gov.au",
+        "hcourt.gov.au",
+        "anao.gov.au",
+        "abs.gov.au",
+        "data.gov.au"
+      ]
+    },
+    "NZ": {
+      "label": "紐西蘭",
+      "country": "nz",
+      "language": "en",
+      "official_domains": [
+        "govt.nz",
+        "parliament.nz",
+        "legislation.govt.nz",
+        "courts.govt.nz",
+        "oag.parliament.nz",
+        "stats.govt.nz",
+        "data.govt.nz"
+      ]
+    },
+    "JP": {
+      "label": "日本",
+      "country": "jp",
+      "language": "ja",
+      "official_domains": [
+        "go.jp",
+        "e-gov.go.jp",
+        "shugiin.go.jp",
+        "sangiin.go.jp",
+        "courts.go.jp",
+        "jbaudit.go.jp",
+        "stat.go.jp"
+      ]
+    },
+    "KR": {
+      "label": "韓國",
+      "country": "kr",
+      "language": "ko",
+      "official_domains": [
+        "go.kr",
+        "law.go.kr",
+        "assembly.go.kr",
+        "scourt.go.kr",
+        "bai.go.kr",
+        "kostat.go.kr",
+        "data.go.kr"
+      ]
+    },
+    "SG": {
+      "label": "新加坡",
+      "country": "sg",
+      "language": "en",
+      "official_domains": [
+        "gov.sg",
+        "sso.agc.gov.sg",
+        "parliament.gov.sg",
+        "judiciary.gov.sg",
+        "ago.gov.sg",
+        "singstat.gov.sg",
+        "data.gov.sg"
+      ]
+    },
+    "EU": {
+      "label": "歐盟",
+      "country": "all",
+      "language": "en",
+      "official_domains": [
+        "europa.eu",
+        "eur-lex.europa.eu",
+        "europarl.europa.eu",
+        "curia.europa.eu",
+        "eca.europa.eu",
+        "ec.europa.eu",
+        "data.europa.eu"
+      ]
+    },
+    "INT": {
+      "label": "國際組織",
+      "country": "all",
+      "language": "en",
+      "official_domains": [
+        "un.org",
+        "who.int",
+        "oecd.org",
+        "worldbank.org",
+        "imf.org",
+        "ilo.org",
+        "unesco.org",
+        "unicef.org"
+      ]
+    }
+  }
+}

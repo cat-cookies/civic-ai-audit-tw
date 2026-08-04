@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="zh-Hant-TW">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="以使用者研究提示為中心，串接合法公開資料、期刊文獻、概念網絡、跨國比較與改革分析的研究型網站。" />
+  <meta name="color-scheme" content="light dark" />
+  <title>國家資料 AI 查證與改革觀測站</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="ai-warning" role="alert">
+    <strong>人工智慧與責任警示：</strong>本站僅提供研究、公共討論與寫作輔助，不構成法律、醫療、投資或其他專業意見。摘要、推論、引用與模型輸出可能錯誤、不完整或過時，使用者應開啟原始來源、核對現行法與文件版本，並自行判斷及承擔使用結果。在法律允許範圍內，網站維護者不對因使用、誤用或依賴本站內容所生損害負責；本警示不排除依法不得排除之責任。
+  </div>
+  <header class="site-header">
+    <div><div class="eyebrow">PROMPT → EVIDENCE → CRITIQUE → REFORM</div><h1>國家資料 AI 查證與改革觀測站</h1><p class="subtitle">從一個社會問題開始，經過追問、合法搜尋、概念理解、證據評讀、文獻與學說、跨國比較、改革方案及反方自我檢驗。</p></div>
+    <div class="header-actions"><a id="repo-link" class="secondary" href="#" target="_blank" rel="noopener noreferrer">GitHub 原始碼</a><button id="theme-toggle" class="secondary" type="button">切換顯示</button></div>
+  </header>
+  <nav class="tabs" aria-label="研究流程">
+    <a href="#home" data-route="home">1 問題界定</a>
+    <a href="#network" data-route="network">2 概念網絡</a>
+    <a href="#evidence" data-route="evidence">3 證據與來源</a>
+    <a href="#literature" data-route="literature">4 文獻、學說與方法</a>
+    <a href="#compare" data-route="compare">5 跨國比較</a>
+    <a href="#politics" data-route="politics">6 政黨與媒體</a>
+    <a href="#reform" data-route="reform">7 改革與修法</a>
+    <a href="#reflection" data-route="reflection">8 反思 Grill-me</a>
+    <a href="#settings" data-route="settings">設定與方法</a>
+  </nav>
+  <main id="app"><div class="empty">載入中……</div></main>
+  <footer>
+    <p><strong>資料政策：</strong>本站不接受使用者上傳檔案，也不從私人附件建立公開分析。只處理使用者提示、合法公開網址及核准 API；公開網址仍須遵守網域、robots.txt、存取控制、著作權與個人資料規範。</p>
+    <p><strong>引用原則：</strong>所有研究摘要應附 APA 參考資料；搜尋片段與書目中繼資料只供定位，不等於已閱讀全文。外國研究只提供可檢驗機制、測量方法或制度比較，必須另評估中華民國的政體、法制、語言、政治競爭、資料可得性與歷史脈絡。</p>
+  </footer>
+  <script src="search.js" defer></script>
+  <script src="academic.js" defer></script>
+  <script src="discovery.js" defer></script>
+  <script src="workflow.js" defer></script>
+  <script src="network.js" defer></script>
+  <script src="legislation.js" defer></script>
+  <script src="xlsx-export.js" defer></script>
+  <script src="ai-engine.js" defer></script>
+  <script src="political-analysis.js" defer></script>
+  <script src="app.js" defer></script>
+</body>
+</html>

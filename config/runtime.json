@@ -1,0 +1,10 @@
+{
+  "site_name": "國家資料 AI 查證與改革觀測站",
+  "repository_url": "https://github.com/cat-cookies/civic-ai-audit-tw",
+  "public_api_base_url": "",
+  "enable_remote_ai": false,
+  "enable_issue_submission": true,
+  "build_label": "公開測試版 v7.0.0；提示詞中心研究流程、概念網絡、動態文獻與反思",
+  "enable_browser_byok": true,
+  "schema_version": "7.0"
+}

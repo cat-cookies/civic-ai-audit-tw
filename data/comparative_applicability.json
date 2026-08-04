@@ -1,0 +1,125 @@
+{
+  "notice": "外國研究只能提供可檢驗的機制、測量方法或制度比較。是否適用於中華民國，須檢查政體、媒體制度、語言、政黨競爭、資料可得性、法律與歷史脈絡；不得只因文獻來自高排名期刊就直接移植結論。",
+  "dimensions": [
+    "制度與法制相似性",
+    "因果機制等值性",
+    "資料與測量可比性",
+    "語言及政治文化適配",
+    "時間與科技環境",
+    "可在臺灣重現或驗證"
+  ],
+  "records": [
+    {
+      "id": "entman1993",
+      "citation": "Entman, R. M. (1993). Framing: Toward clarification of a fractured paradigm. Journal of Communication, 43(4), 51–58. https://doi.org/10.1111/j.1460-2466.1993.tb01304.x",
+      "topic": "媒體框架",
+      "foreign_setting": "美國政治傳播理論",
+      "lesson": "偏向不只存在於正負形容詞，也可能透過問題定義、因果歸屬、道德評價與解決方案選擇形成。",
+      "roc_applicability": "高，但須以繁體中文政治語料重新建立框架標註規則。",
+      "transfer_conditions": [
+        "同一事件跨媒體比較",
+        "人工標註框架要素",
+        "區分新聞與評論"
+      ],
+      "non_transferable": "不能直接把美國兩黨框架字典套用於臺灣三黨及兩岸議題。"
+    },
+    {
+      "id": "gentzkow2010",
+      "citation": "Gentzkow, M., & Shapiro, J. M. (2010). What drives media slant? Evidence from U.S. daily newspapers. Econometrica, 78(1), 35–71. https://doi.org/10.3982/ECTA7195",
+      "topic": "媒體論述接近度",
+      "foreign_setting": "美國報紙與國會兩黨語言",
+      "lesson": "可用媒體用語與政黨政治文本的相似度建立論述接近指標，並區分閱聽人需求、所有權與記者因素。",
+      "roc_applicability": "條件式適用。",
+      "transfer_conditions": [
+        "建立三黨同時期官方語料",
+        "依議題分層",
+        "控制新聞事件與媒體類型"
+      ],
+      "non_transferable": "臺灣不是穩定的單一左右軸兩黨競爭；國家認同與兩岸維度須另建軸線。"
+    },
+    {
+      "id": "budak2016",
+      "citation": "Budak, C., Goel, S., & Rao, J. M. (2016). Fair and balanced? Quantifying media bias through crowdsourced content analysis. Public Opinion Quarterly, 80(S1), 250–271.",
+      "topic": "選擇偏誤與內容偏誤",
+      "foreign_setting": "美國新聞內容大樣本與人工標註",
+      "lesson": "媒體偏向需分開衡量報導什麼、如何報導，以及單篇與媒體整體層級。",
+      "roc_applicability": "高。",
+      "transfer_conditions": [
+        "建立事件母體",
+        "新聞量與語氣分開",
+        "多人標註與一致性檢查"
+      ],
+      "non_transferable": "不能只以「稱讚減批評」形成單一中立或偏向分數。"
+    },
+    {
+      "id": "hamborg2019",
+      "citation": "Hamborg, F., Donnay, K., & Gipp, B. (2019). Automated identification of media bias in news articles: An interdisciplinary literature review. International Journal on Digital Libraries, 20, 391–415. https://doi.org/10.1007/s00799-018-0261-y",
+      "topic": "自動媒體偏向偵測",
+      "foreign_setting": "跨語言計算方法綜述",
+      "lesson": "詞彙、選擇、框架與認知偏誤需分層，純黑箱分類器不足以支撐公共指控。",
+      "roc_applicability": "高。",
+      "transfer_conditions": [
+        "提供可解釋片段",
+        "建立臺灣標註集",
+        "公開錯誤率"
+      ],
+      "non_transferable": "英文資料集的準確率不能視為繁體中文政治語料的準確率。"
+    },
+    {
+      "id": "laver2003",
+      "citation": "Laver, M., Benoit, K., & Garry, J. (2003). Extracting policy positions from political texts using words as data. American Political Science Review, 97(2), 311–331. https://doi.org/10.1017/S0003055403000698",
+      "topic": "政黨政策位置",
+      "foreign_setting": "政黨文本與參考文本的 Wordscores 方法",
+      "lesson": "政黨位置估計須有可辯護的參考文本與維度，不能讓模型自行發明左右軸。",
+      "roc_applicability": "條件式適用。",
+      "transfer_conditions": [
+        "依臺灣議題建立多維基準",
+        "保留版本與時間",
+        "以專家、投票及政策工具驗證"
+      ],
+      "non_transferable": "單一左右軸會掩蓋臺灣的國家認同、兩岸與治理維度。"
+    },
+    {
+      "id": "slapin2008",
+      "citation": "Slapin, J. B., & Proksch, S.-O. (2008). A scaling model for estimating time-series party positions from texts. American Journal of Political Science, 52(3), 705–722. https://doi.org/10.1111/j.1540-5907.2008.00338.x",
+      "topic": "政黨立場跨期變動",
+      "foreign_setting": "德國政黨文本的 Wordfish 尺度",
+      "lesson": "可用時間序列文本觀察相對位置變動，但尺度方向與語料選擇需外部驗證。",
+      "roc_applicability": "條件式適用。",
+      "transfer_conditions": [
+        "同類型文本",
+        "固定時間窗",
+        "外部錨點"
+      ],
+      "non_transferable": "黨綱、社群貼文、新聞稿與立法提案不可混為同一文類直接縮放。"
+    },
+    {
+      "id": "gehlbach2014",
+      "citation": "Gehlbach, S., & Sonin, K. (2014). Government control of the media. Journal of Public Economics, 118, 163–171. https://doi.org/10.1016/j.jpubeco.2014.06.004",
+      "topic": "政府控制與媒體",
+      "foreign_setting": "政治經濟理論模型",
+      "lesson": "政府影響可能透過所有權、補貼與政治目標運作，但市場需求與制度防火牆會改變結果。",
+      "roc_applicability": "僅作風險機制，不能直接判定個別媒體。",
+      "transfer_conditions": [
+        "查明實際控制與任命",
+        "比較財源與編採自主",
+        "以內容資料驗證"
+      ],
+      "non_transferable": "政府資金或公共所有權本身不等於宣傳媒體。"
+    },
+    {
+      "id": "meta_access",
+      "citation": "Meta. Page Public Content Access; Meta Content Library and API; Threads API documentation.",
+      "topic": "社群資料取得",
+      "foreign_setting": "Meta 平台技術與研究權限",
+      "lesson": "公開頁面可見不代表可由一般網站完整自動擷取；研究資料可能受權限、範圍與完整性限制。",
+      "roc_applicability": "直接適用。",
+      "transfer_conditions": [
+        "合法權限",
+        "記錄缺漏",
+        "人工匯入備援"
+      ],
+      "non_transferable": "不能宣稱未經核准的爬蟲已完整取得三黨全部貼文。"
+    }
+  ]
+}

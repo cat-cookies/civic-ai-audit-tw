@@ -1,0 +1,60 @@
+{
+  "verified_at": "2026-08-04",
+  "records": [
+    {
+      "id": "pts",
+      "name": "公共電視",
+      "ownership_type": "公共服務媒體／財團法人",
+      "government_links": [
+        "政府捐贈經費",
+        "行政院提名董監事候選人",
+        "立法院推舉審查委員會"
+      ],
+      "independence_safeguards": [
+        "公共電視法明定獨立自主、不受干涉",
+        "董監事同黨比例限制",
+        "申訴、更正與營運資訊公開"
+      ],
+      "risk_note": "存在公共財源與任命程序的結構性關係，但另有法定獨立與跨黨審查防火牆；不得只憑政府經費判定親執政者。",
+      "sources": [
+        "https://info.pts.org.tw/監督機制/監督機制相關說明",
+        "https://info.pts.org.tw/組織架構/公共電視法"
+      ]
+    },
+    {
+      "id": "cna",
+      "name": "中央通訊社",
+      "ownership_type": "法定國家通訊社／財團法人",
+      "government_links": [
+        "中央政府預算補助",
+        "董事由行政院院長遴聘"
+      ],
+      "independence_safeguards": [
+        "同一黨籍董事不得超過董事總額二分之一",
+        "工作計畫與成果報告公開"
+      ],
+      "risk_note": "政府預算與董事遴聘形成結構性依賴風險；是否偏向執政者仍須以長期內容、編採制度與回應機制驗證。",
+      "sources": [
+        "https://www.cna.com.tw/about/install.aspx",
+        "https://www.cna.com.tw/about/open.aspx"
+      ]
+    }
+  ],
+  "verification_portals": [
+    {
+      "name": "NCC廣播電臺業者資料",
+      "url": "https://data.gov.tw/dataset/29225",
+      "use": "確認廣播業者及基本資料"
+    },
+    {
+      "name": "NCC通傳法規與換照文件",
+      "url": "https://ncclaw.ncc.gov.tw/",
+      "use": "確認股東、董事、股權結構與營運計畫應備文件"
+    },
+    {
+      "name": "商工登記公示資料查詢",
+      "url": "https://findbiz.nat.gov.tw/fts/query/QueryBar/queryInit.do",
+      "use": "確認公司、代表人與登記資料"
+    }
+  ]
+}

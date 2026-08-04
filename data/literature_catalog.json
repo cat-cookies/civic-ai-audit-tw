@@ -1,0 +1,1072 @@
+[
+  {
+    "id": "fung2006",
+    "title": "Varieties of Participation in Complex Governance",
+    "authors": [
+      "Archon Fung"
+    ],
+    "year": 2006,
+    "journal": "Public Administration Review",
+    "doi": "10.1111/j.1540-6210.2006.00667.x",
+    "type": "journal_article",
+    "domains": [
+      "民主治理",
+      "公共參與"
+    ],
+    "keywords": [
+      "參與治理",
+      "審議民主",
+      "制度設計"
+    ],
+    "use": "比較不同參與安排的代表性、溝通方式與對決策影響。",
+    "limitation": "屬制度類型化工具，不能單靠類型判斷個案民主品質。",
+    "peer_reviewed": true,
+    "url": "https://doi.org/10.1111/j.1540-6210.2006.00667.x",
+    "citation_key": "fung2006"
+  },
+  {
+    "id": "arnstein1969",
+    "title": "A Ladder of Citizen Participation",
+    "authors": [
+      "Sherry R. Arnstein"
+    ],
+    "year": 1969,
+    "journal": "Journal of the American Institute of Planners",
+    "doi": "10.1080/01944366908977225",
+    "type": "journal_article",
+    "domains": [
+      "民主治理",
+      "公共參與"
+    ],
+    "keywords": [
+      "公民參與",
+      "權力",
+      "參與階梯"
+    ],
+    "use": "辨識參與是否只是告知、諮詢，或真正分享決策權。",
+    "limitation": "階梯式排序容易過度簡化不同情境與混合治理安排。",
+    "peer_reviewed": true,
+    "url": "https://doi.org/10.1080/01944366908977225",
+    "citation_key": "arnstein1969"
+  },
+  {
+    "id": "bovens2007",
+    "title": "Analysing and Assessing Accountability: A Conceptual Framework",
+    "authors": [
+      "Mark Bovens"
+    ],
+    "year": 2007,
+    "journal": "European Law Journal",
+    "doi": "10.1111/j.1468-0386.2007.00378.x",
+    "type": "journal_article",
+    "domains": [
+      "民主治理",
+      "行政責任"
+    ],
+    "keywords": [
+      "課責",
+      "責任政治",
+      "問責論壇"
+    ],
+    "use": "拆解行為者、說明義務、質詢論壇、判斷及制裁等課責要素。",
+    "limitation": "完整課責關係不必然代表政策實質有效或公平。",
+    "peer_reviewed": true,
+    "url": "https://doi.org/10.1111/j.1468-0386.2007.00378.x",
+    "citation_key": "bovens2007"
+  },
+  {
+    "id": "lindblom1959",
+    "title": "The Science of “Muddling Through”",
+    "authors": [
+      "Charles E. Lindblom"
+    ],
+    "year": 1959,
+    "journal": "Public Administration Review",
+    "doi": "10.2307/973677",
+    "type": "journal_article",
+    "domains": [
+      "公共政策",
+      "決策理論"
+    ],
+    "keywords": [
+      "漸進主義",
+      "有限理性",
+      "政策決策"
+    ],
+    "use": "分析決策者為何採小幅調整、有限比較與連續試錯。",
+    "limitation": "不適合將所有漸進變更合理化，尤其在結構性不正義或重大風險下。",
+    "peer_reviewed": true,
+    "url": "https://doi.org/10.2307/973677",
+    "citation_key": "lindblom1959"
+  },
+  {
+    "id": "sabatier1988",
+    "title": "An Advocacy Coalition Framework of Policy Change and the Role of Policy-Oriented Learning Therein",
+    "authors": [
+      "Paul A. Sabatier"
+    ],
+    "year": 1988,
+    "journal": "Policy Sciences",
+    "doi": "10.1007/BF00136406",
+    "type": "journal_article",
+    "domains": [
+      "公共政策",
+      "政治過程"
+    ],
+    "keywords": [
+      "倡議聯盟",
+      "政策學習",
+      "信念系統"
+    ],
+    "use": "追蹤不同聯盟的核心信念、資源、策略與長期政策變遷。",
+    "limitation": "需要長時間資料與明確政策次系統，不宜僅用單一事件推論。",
+    "peer_reviewed": true,
+    "url": "https://doi.org/10.1007/BF00136406",
+    "citation_key": "sabatier1988"
+  },
+  {
+    "id": "cairneyjones2016",
+    "title": "Kingdon’s Multiple Streams Approach: What Is the Empirical Impact of this Universal Theory?",
+    "authors": [
+      "Paul Cairney",
+      "Michael D. Jones"
+    ],
+    "year": 2016,
+    "journal": "Policy Studies Journal",
+    "doi": "10.1111/psj.12111",
+    "type": "journal_article",
+    "domains": [
+      "公共政策",
+      "議程設定"
+    ],
+    "keywords": [
+      "多元流程",
+      "政策窗口",
+      "政策企業家"
+    ],
+    "use": "分析問題流、政策流與政治流如何在窗口期匯合。",
+    "limitation": "概念彈性高，研究時須預先操作化，避免事後套用。",
+    "peer_reviewed": true,
+    "url": "https://doi.org/10.1111/psj.12111",
+    "citation_key": "cairneyjones2016"
+  },
+  {
+    "id": "tsebelis1995",
+    "title": "Decision Making in Political Systems: Veto Players in Presidentialism, Parliamentarism, Multicameralism and Multipartyism",
+    "authors": [
+      "George Tsebelis"
+    ],
+    "year": 1995,
+    "journal": "British Journal of Political Science",
+    "doi": "10.1017/S0007123400007225",
+    "type": "journal_article",
+    "domains": [
+      "政治學",
+      "制度分析"
+    ],
+    "keywords": [
+      "否決者",
+      "政策穩定",
+      "制度變遷"
+    ],
+    "use": "分析具否決能力的行為者數量、偏好距離與制度變更難度。",
+    "limitation": "偏重正式否決結構，可能低估議程控制、行政能力與非正式權力。",
+    "peer_reviewed": true,
+    "url": "https://doi.org/10.1017/S0007123400007225",
+    "citation_key": "tsebelis1995"
+  },
+  {
+    "id": "matland1995",
+    "title": "Synthesizing the Implementation Literature: The Ambiguity-Conflict Model of Policy Implementation",
+    "authors": [
+      "Richard E. Matland"
+    ],
+    "year": 1995,
+    "journal": "Journal of Public Administration Research and Theory",
+    "doi": "10.1093/oxfordjournals.jpart.a037242",
+    "type": "journal_article",
+    "domains": [
+      "政策執行",
+      "公共行政"
+    ],
+    "keywords": [
+      "執行落差",
+      "模糊性",
+      "衝突"
+    ],
+    "use": "依政策模糊性與衝突程度判斷執行主要受資源、權力、地方條件或試驗影響。",
+    "limitation": "二維分類是診斷起點，不取代具體機制與組織分析。",
+    "peer_reviewed": true,
+    "url": "https://doi.org/10.1093/oxfordjournals.jpart.a037242",
+    "citation_key": "matland1995"
+  },
+  {
+    "id": "brodkin2011",
+    "title": "Policy Work: Street-Level Organizations Under New Managerialism",
+    "authors": [
+      "Evelyn Z. Brodkin"
+    ],
+    "year": 2011,
+    "journal": "Journal of Public Administration Research and Theory",
+    "doi": "10.1093/jopart/muq093",
+    "type": "journal_article",
+    "domains": [
+      "政策執行",
+      "公共行政"
+    ],
+    "keywords": [
+      "街頭官僚",
+      "第一線裁量",
+      "績效管理"
+    ],
+    "use": "分析第一線組織如何在案件量、績效指標與資源限制下重塑政策。",
+    "limitation": "需有組織與第一線資料，不能只由法規文字推斷實作。",
+    "peer_reviewed": true,
+    "url": "https://doi.org/10.1093/jopart/muq093",
+    "citation_key": "brodkin2011"
+  },
+  {
+    "id": "provankenis2008",
+    "title": "Modes of Network Governance: Structure, Management, and Effectiveness",
+    "authors": [
+      "Keith G. Provan",
+      "Patrick Kenis"
+    ],
+    "year": 2008,
+    "journal": "Journal of Public Administration Research and Theory",
+    "doi": "10.1093/jopart/mum015",
+    "type": "journal_article",
+    "domains": [
+      "協力治理",
+      "組織"
+    ],
+    "keywords": [
+      "網絡治理",
+      "跨機關協作",
+      "治理模式"
+    ],
+    "use": "比較參與者自理、主導組織與網絡行政組織等治理模式。",
+    "limitation": "治理模式適配仍取決於信任、規模、目標共識與能力。",
+    "peer_reviewed": true,
+    "url": "https://doi.org/10.1093/jopart/mum015",
+    "citation_key": "provankenis2008"
+  },
+  {
+    "id": "pierson1993",
+    "title": "When Effect Becomes Cause: Policy Feedback and Political Change",
+    "authors": [
+      "Paul Pierson"
+    ],
+    "year": 1993,
+    "journal": "World Politics",
+    "doi": "10.2307/2950710",
+    "type": "journal_article",
+    "domains": [
+      "制度變遷",
+      "公共政策"
+    ],
+    "keywords": [
+      "政策回饋",
+      "路徑依賴",
+      "政治變遷"
+    ],
+    "use": "分析政策如何改變資源、利益、組織與公民認知，反過來影響政治。",
+    "limitation": "回饋方向與強度須用時間序列和機制資料驗證。",
+    "peer_reviewed": true,
+    "url": "https://doi.org/10.2307/2950710",
+    "citation_key": "pierson1993"
+  },
+  {
+    "id": "mettlersoss2004",
+    "title": "The Consequences of Public Policy for Democratic Citizenship: Bridging Policy Studies and Mass Politics",
+    "authors": [
+      "Suzanne Mettler",
+      "Joe Soss"
+    ],
+    "year": 2004,
+    "journal": "Perspectives on Politics",
+    "doi": "10.1017/S1537592704000623",
+    "type": "journal_article",
+    "domains": [
+      "政策回饋",
+      "民主治理"
+    ],
+    "keywords": [
+      "政策回饋",
+      "公民身分",
+      "政治參與"
+    ],
+    "use": "分析政策設計與接觸經驗如何塑造公民態度與參與。",
+    "limitation": "需要區分政策效果、選擇進入制度的人群與其他政治社會化因素。",
+    "peer_reviewed": true,
+    "url": "https://doi.org/10.1017/S1537592704000623",
+    "citation_key": "mettlersoss2004"
+  },
+  {
+    "id": "dolowitzmarsh2000",
+    "title": "Learning from Abroad: The Role of Policy Transfer in Contemporary Policy-Making",
+    "authors": [
+      "David P. Dolowitz",
+      "David Marsh"
+    ],
+    "year": 2000,
+    "journal": "Governance",
+    "doi": "10.1111/0952-1895.00121",
+    "type": "journal_article",
+    "domains": [
+      "比較政策",
+      "制度移植"
+    ],
+    "keywords": [
+      "政策移轉",
+      "政策學習",
+      "跨國比較"
+    ],
+    "use": "分析誰移轉什麼、為何移轉、移轉程度及失敗原因。",
+    "limitation": "相似制度文字不等於相同功能或執行結果。",
+    "peer_reviewed": true,
+    "url": "https://doi.org/10.1111/0952-1895.00121",
+    "citation_key": "dolowitzmarsh2000"
+  },
+  {
+    "id": "teubner1998",
+    "title": "Legal Irritants: Good Faith in British Law or How Unifying Law Ends Up in New Divergences",
+    "authors": [
+      "Gunther Teubner"
+    ],
+    "year": 1998,
+    "journal": "The Modern Law Review",
+    "doi": "10.1111/1468-2230.00125",
+    "type": "journal_article",
+    "domains": [
+      "比較法",
+      "法律社會學"
+    ],
+    "keywords": [
+      "法律移植",
+      "法律文化",
+      "制度差異"
+    ],
+    "use": "提醒外國法進入不同制度後可能產生新變形，而非單純複製。",
+    "limitation": "屬理論性警告，個案仍須具體分析法體系、組織與實務。",
+    "peer_reviewed": true,
+    "url": "https://doi.org/10.1111/1468-2230.00125",
+    "citation_key": "teubner1998"
+  },
+  {
+    "id": "radaelli2004",
+    "title": "The Diffusion of Regulatory Impact Analysis—Best Practice or Lesson-Drawing?",
+    "authors": [
+      "Claudio M. Radaelli"
+    ],
+    "year": 2004,
+    "journal": "European Journal of Political Research",
+    "doi": "10.1111/j.0304-4130.2004.00172.x",
+    "type": "journal_article",
+    "domains": [
+      "法規影響評估",
+      "政策工具"
+    ],
+    "keywords": [
+      "RIA",
+      "法規影響評估",
+      "政策移轉"
+    ],
+    "use": "分析法規影響評估擴散、學習與形式化採納的差異。",
+    "limitation": "有RIA程序不代表實質比較替代方案或真正改變決策。",
+    "peer_reviewed": true,
+    "url": "https://doi.org/10.1111/j.0304-4130.2004.00172.x",
+    "citation_key": "radaelli2004"
+  },
+  {
+    "id": "roberts1990",
+    "title": "Some Characteristics of One Type of High Reliability Organization",
+    "authors": [
+      "Karlene H. Roberts"
+    ],
+    "year": 1990,
+    "journal": "Organization Science",
+    "doi": "10.1287/orsc.1.2.160",
+    "type": "journal_article",
+    "domains": [
+      "安全科學",
+      "組織"
+    ],
+    "keywords": [
+      "高可靠度組織",
+      "事故預防",
+      "複雜系統"
+    ],
+    "use": "分析高風險組織如何在複雜與緊密耦合環境維持低事故率。",
+    "limitation": "不能將高風險產業經驗不加調整套用到一般行政組織。",
+    "peer_reviewed": true,
+    "url": "https://doi.org/10.1287/orsc.1.2.160",
+    "citation_key": "roberts1990"
+  },
+  {
+    "id": "leveson2004",
+    "title": "A New Accident Model for Engineering Safer Systems",
+    "authors": [
+      "Nancy Leveson"
+    ],
+    "year": 2004,
+    "journal": "Safety Science",
+    "doi": "10.1016/S0925-7535(03)00047-X",
+    "type": "journal_article",
+    "domains": [
+      "安全科學",
+      "系統工程"
+    ],
+    "keywords": [
+      "STAMP",
+      "系統事故",
+      "控制結構"
+    ],
+    "use": "以控制與約束失效分析事故，不將原因限縮為元件或個人錯誤。",
+    "limitation": "模型需要完整系統邊界、控制關係與回饋資訊。",
+    "peer_reviewed": true,
+    "url": "https://doi.org/10.1016/S0925-7535(03)00047-X",
+    "citation_key": "leveson2004"
+  },
+  {
+    "id": "damschroder2009",
+    "title": "Fostering Implementation of Health Services Research Findings into Practice: A Consolidated Framework for Advancing Implementation Science",
+    "authors": [
+      "Laura J. Damschroder",
+      "David C. Aron",
+      "Rosalind E. Keith",
+      "Susan R. Kirsh",
+      "Jeffery A. Alexander",
+      "Julie C. Lowery"
+    ],
+    "year": 2009,
+    "journal": "Implementation Science",
+    "doi": "10.1186/1748-5908-4-50",
+    "type": "journal_article",
+    "domains": [
+      "實施科學",
+      "醫療政策"
+    ],
+    "keywords": [
+      "CFIR",
+      "介入執行",
+      "組織情境"
+    ],
+    "use": "從介入特性、內外部情境、個人與過程系統診斷實施條件。",
+    "limitation": "構面多，研究前應選定機制與測量，不宜事後全數套用。",
+    "peer_reviewed": true,
+    "url": "https://doi.org/10.1186/1748-5908-4-50",
+    "citation_key": "damschroder2009"
+  },
+  {
+    "id": "mayfinch2009",
+    "title": "Implementing, Embedding, and Integrating Practices: An Outline of Normalization Process Theory",
+    "authors": [
+      "Carl May",
+      "Tracy Finch"
+    ],
+    "year": 2009,
+    "journal": "Sociology",
+    "doi": "10.1177/0038038509103208",
+    "type": "journal_article",
+    "domains": [
+      "實施科學",
+      "組織社會學"
+    ],
+    "keywords": [
+      "NPT",
+      "常態化",
+      "實務整合"
+    ],
+    "use": "分析新實務如何被理解、投入、執行與持續評估。",
+    "limitation": "重點在集體行動與常態化，不直接回答介入臨床效果。",
+    "peer_reviewed": true,
+    "url": "https://doi.org/10.1177/0038038509103208",
+    "citation_key": "mayfinch2009"
+  },
+  {
+    "id": "may2009npt",
+    "title": "Development of a Theory of Implementation and Integration: Normalization Process Theory",
+    "authors": [
+      "Carl May",
+      "Tracy Finch",
+      "Frances Mair",
+      "Linda Ballini",
+      "Christopher Dowrick",
+      "Martin Eccles",
+      "Luciana Gask",
+      "Anne MacFarlane",
+      "Elizabeth Murray",
+      "Tim Rapley",
+      "Anne Rogers",
+      "Shaun Treweek",
+      "Paul Wallace",
+      "Glyn Elwyn"
+    ],
+    "year": 2009,
+    "journal": "Implementation Science",
+    "doi": "10.1186/1748-5908-4-29",
+    "type": "journal_article",
+    "domains": [
+      "實施科學",
+      "醫療政策"
+    ],
+    "keywords": [
+      "NPT",
+      "介入整合",
+      "實施機制"
+    ],
+    "use": "提供介入實施與整合的理論構念及關係。",
+    "limitation": "實際使用仍需轉化為可觀察指標與資料蒐集設計。",
+    "peer_reviewed": true,
+    "url": "https://doi.org/10.1186/1748-5908-4-29",
+    "citation_key": "may2009npt"
+  },
+  {
+    "id": "glasgow1999",
+    "title": "Evaluating the Public Health Impact of Health Promotion Interventions: The RE-AIM Framework",
+    "authors": [
+      "Russell E. Glasgow",
+      "Thomas M. Vogt",
+      "Shawn M. Boles"
+    ],
+    "year": 1999,
+    "journal": "American Journal of Public Health",
+    "doi": "10.2105/AJPH.89.9.1322",
+    "type": "journal_article",
+    "domains": [
+      "公共衛生",
+      "實施評估"
+    ],
+    "keywords": [
+      "RE-AIM",
+      "可及性",
+      "實施",
+      "維持"
+    ],
+    "use": "同時評估觸及、效果、採用、實施與維持，避免只看平均療效。",
+    "limitation": "各維度資料需求不同，需預先定義分母與層級。",
+    "peer_reviewed": true,
+    "url": "https://doi.org/10.2105/AJPH.89.9.1322",
+    "citation_key": "glasgow1999"
+  },
+  {
+    "id": "guyatt2008grade",
+    "title": "GRADE: An Emerging Consensus on Rating Quality of Evidence and Strength of Recommendations",
+    "authors": [
+      "Gordon H. Guyatt",
+      "Andrew D. Oxman",
+      "Gunn E. Vist",
+      "Regina Kunz",
+      "Yngve Falck-Ytter",
+      "Pablo Alonso-Coello",
+      "Holger J. Schünemann"
+    ],
+    "year": 2008,
+    "journal": "BMJ",
+    "doi": "10.1136/bmj.39489.470347.AD",
+    "type": "journal_article",
+    "domains": [
+      "實證醫療",
+      "證據評估"
+    ],
+    "keywords": [
+      "GRADE",
+      "證據品質",
+      "建議強度"
+    ],
+    "use": "區分證據確定性與建議強度，檢查偏誤、不一致、間接性與不精確。",
+    "limitation": "主要為健康照護建議，移用公共政策時須調整結果與價值取捨。",
+    "peer_reviewed": true,
+    "url": "https://doi.org/10.1136/bmj.39489.470347.AD",
+    "citation_key": "guyatt2008grade"
+  },
+  {
+    "id": "imbenswooldridge2009",
+    "title": "Recent Developments in the Econometrics of Program Evaluation",
+    "authors": [
+      "Guido W. Imbens",
+      "Jeffrey M. Wooldridge"
+    ],
+    "year": 2009,
+    "journal": "Journal of Economic Literature",
+    "doi": "10.1257/jel.47.1.5",
+    "type": "journal_article",
+    "domains": [
+      "因果推論",
+      "政策評估"
+    ],
+    "keywords": [
+      "反事實",
+      "處置效果",
+      "方案評估"
+    ],
+    "use": "建立觀察資料政策評估的處置效果、選擇與識別架構。",
+    "limitation": "方法選擇不能取代識別假設與制度背景論證。",
+    "peer_reviewed": true,
+    "url": "https://doi.org/10.1257/jel.47.1.5",
+    "citation_key": "imbenswooldridge2009"
+  },
+  {
+    "id": "callawaysantanna2021",
+    "title": "Difference-in-Differences with Multiple Time Periods",
+    "authors": [
+      "Brantly Callaway",
+      "Pedro H. C. Sant’Anna"
+    ],
+    "year": 2021,
+    "journal": "Journal of Econometrics",
+    "doi": "10.1016/j.jeconom.2020.12.001",
+    "type": "journal_article",
+    "domains": [
+      "因果推論",
+      "政策評估"
+    ],
+    "keywords": [
+      "差異中的差異",
+      "多期政策",
+      "異質效果"
+    ],
+    "use": "處理分期實施政策及不同群組、時間的處置效果。",
+    "limitation": "仍需條件平行趨勢、無預期效果等假設與診斷。",
+    "peer_reviewed": true,
+    "url": "https://doi.org/10.1016/j.jeconom.2020.12.001",
+    "citation_key": "callawaysantanna2021"
+  },
+  {
+    "id": "abadie2010",
+    "title": "Synthetic Control Methods for Comparative Case Studies: Estimating the Effect of California’s Tobacco Control Program",
+    "authors": [
+      "Alberto Abadie",
+      "Alexis Diamond",
+      "Jens Hainmueller"
+    ],
+    "year": 2010,
+    "journal": "Journal of the American Statistical Association",
+    "doi": "10.1198/jasa.2009.ap08746",
+    "type": "journal_article",
+    "domains": [
+      "因果推論",
+      "比較個案"
+    ],
+    "keywords": [
+      "合成控制",
+      "政策評估",
+      "比較個案"
+    ],
+    "use": "以加權對照單位建立單一受處置地區的反事實趨勢。",
+    "limitation": "需要足夠前期資料、合適供體池與無其他同期重大衝擊。",
+    "peer_reviewed": true,
+    "url": "https://doi.org/10.1198/jasa.2009.ap08746",
+    "citation_key": "abadie2010"
+  },
+  {
+    "id": "guo2022factcheck",
+    "title": "A Survey on Automated Fact-Checking",
+    "authors": [
+      "Zhijiang Guo",
+      "Michael Schlichtkrull",
+      "Andreas Vlachos"
+    ],
+    "year": 2022,
+    "journal": "Transactions of the Association for Computational Linguistics",
+    "doi": "10.1162/tacl_a_00454",
+    "type": "journal_article",
+    "domains": [
+      "人工智慧",
+      "事實查核"
+    ],
+    "keywords": [
+      "自動查核",
+      "證據檢索",
+      "主張驗證"
+    ],
+    "use": "整理自動事實查核的主張偵測、證據檢索與判定流程。",
+    "limitation": "資料集表現不等於開放世界政治與法律查核的可靠度。",
+    "peer_reviewed": true,
+    "url": "https://doi.org/10.1162/tacl_a_00454",
+    "citation_key": "guo2022factcheck"
+  },
+  {
+    "id": "thorne2018fever",
+    "title": "FEVER: A Large-scale Dataset for Fact Extraction and VERification",
+    "authors": [
+      "James Thorne",
+      "Andreas Vlachos",
+      "Christos Christodoulopoulos",
+      "Arpit Mittal"
+    ],
+    "year": 2018,
+    "journal": "Proceedings of NAACL-HLT",
+    "doi": "10.18653/v1/N18-1074",
+    "type": "conference_paper",
+    "domains": [
+      "人工智慧",
+      "事實查核"
+    ],
+    "keywords": [
+      "FEVER",
+      "證據檢索",
+      "自然語言推論"
+    ],
+    "use": "用可核對證據句支援、反駁或判定資訊不足。",
+    "limitation": "以維基百科與封閉標註任務為主，不能直接代表法律效力判斷。",
+    "peer_reviewed": true,
+    "url": "https://doi.org/10.18653/v1/N18-1074",
+    "citation_key": "thorne2018fever"
+  },
+  {
+    "id": "min2023factscore",
+    "title": "FActScore: Fine-grained Atomic Evaluation of Factual Precision in Long Form Text Generation",
+    "authors": [
+      "Sewon Min",
+      "Kalpesh Krishna",
+      "Xinxi Lyu",
+      "Mike Lewis",
+      "Wen-tau Yih",
+      "Pang Wei Koh",
+      "Mohit Iyyer",
+      "Luke Zettlemoyer",
+      "Hannaneh Hajishirzi"
+    ],
+    "year": 2023,
+    "journal": "Proceedings of EMNLP",
+    "doi": "10.18653/v1/2023.emnlp-main.741",
+    "type": "conference_paper",
+    "domains": [
+      "人工智慧",
+      "事實性評估"
+    ],
+    "keywords": [
+      "原子主張",
+      "長文生成",
+      "事實精確度"
+    ],
+    "use": "將長文拆為原子事實，再逐項評估證據支持。",
+    "limitation": "評分仍受知識來源、拆解品質與自動判定器限制。",
+    "peer_reviewed": true,
+    "url": "https://doi.org/10.18653/v1/2023.emnlp-main.741",
+    "citation_key": "min2023factscore"
+  },
+  {
+    "id": "gao2023rarr",
+    "title": "RARR: Researching and Revising What Language Models Say, Using Language Models",
+    "authors": [
+      "Luyu Gao",
+      "Zhuyun Dai",
+      "Panupong Pasupat",
+      "Anthony Chen",
+      "Arun Tejasvi Chaganty",
+      "Yicheng Fan",
+      "Vincent Y. Zhao",
+      "Ni Lao",
+      "Hongrae Lee",
+      "Da-Cheng Juan",
+      "Kelvin Guu"
+    ],
+    "year": 2023,
+    "journal": "Proceedings of ACL",
+    "doi": "10.18653/v1/2023.acl-long.910",
+    "type": "conference_paper",
+    "domains": [
+      "人工智慧",
+      "檢索增強生成"
+    ],
+    "keywords": [
+      "RARR",
+      "研究與修訂",
+      "歸因"
+    ],
+    "use": "以檢索與修訂降低生成內容的無依據陳述並改善歸因。",
+    "limitation": "搜尋結果與修訂模型都可能錯誤，仍需來源白名單與人工覆核。",
+    "peer_reviewed": true,
+    "url": "https://doi.org/10.18653/v1/2023.acl-long.910",
+    "citation_key": "gao2023rarr"
+  },
+  {
+    "id": "moller2012",
+    "title": "Proportionality: Challenging the Critics",
+    "authors": [
+      "Kai Möller"
+    ],
+    "year": 2012,
+    "journal": "International Journal of Constitutional Law",
+    "doi": "10.1093/icon/mos024",
+    "type": "journal_article",
+    "domains": [
+      "法學",
+      "憲法",
+      "比例原則"
+    ],
+    "keywords": [
+      "比例原則",
+      "基本權",
+      "權衡",
+      "必要性"
+    ],
+    "use": "分析比例原則的正當目的、適合性、必要性與狹義比例性，以及對權衡批評的回應。",
+    "limitation": "屬規範與理論論證，不能單獨決定特定案件的比例原則結論。",
+    "peer_reviewed": true,
+    "url": "https://doi.org/10.1093/icon/mos024",
+    "citation_key": "moller2012"
+  },
+  {
+    "id": "alexy2018",
+    "title": "Proportionality, Constitutional Law, and Sub-Constitutional Law: A Reply to Aharon Barak",
+    "authors": [
+      "Robert Alexy"
+    ],
+    "year": 2018,
+    "journal": "International Journal of Constitutional Law",
+    "doi": "10.1093/icon/moy084",
+    "type": "journal_article",
+    "domains": [
+      "法學",
+      "憲法",
+      "比例原則"
+    ],
+    "keywords": [
+      "原則理論",
+      "比例原則",
+      "最佳化要求",
+      "權衡"
+    ],
+    "use": "理解原則作為最佳化要求與比例原則之間的理論連結。",
+    "limitation": "高度依賴特定原則理論；其他權利理論可能不同意其前提。",
+    "peer_reviewed": true,
+    "url": "https://doi.org/10.1093/icon/moy084",
+    "citation_key": "alexy2018"
+  },
+  {
+    "id": "peters2021",
+    "title": "A Plea for Proportionality: A Reply to Yun-chien Chang and Xin Dai",
+    "authors": [
+      "Anne Peters"
+    ],
+    "year": 2021,
+    "journal": "International Journal of Constitutional Law",
+    "doi": "10.1093/icon/moab071",
+    "type": "journal_article",
+    "domains": [
+      "法學",
+      "憲法",
+      "比例原則"
+    ],
+    "keywords": [
+      "比例原則",
+      "必要性",
+      "說理文化",
+      "成本效益"
+    ],
+    "use": "比較比例原則與成本效益分析，特別是法律說理、透明度及可爭辯性。",
+    "limitation": "屬學理辯論，不能取代中華民國憲法法庭及行政法院的現行實務。",
+    "peer_reviewed": true,
+    "url": "https://doi.org/10.1093/icon/moab071",
+    "citation_key": "peters2021"
+  },
+  {
+    "id": "paunio2009",
+    "title": "Beyond Predictability – Reflections on Legal Certainty and the Discourse Theory of Law in the EU Legal Order",
+    "authors": [
+      "Elina Paunio"
+    ],
+    "year": 2009,
+    "journal": "German Law Journal",
+    "doi": "10.1017/S2071832200018332",
+    "type": "journal_article",
+    "domains": [
+      "法學",
+      "法治國",
+      "法律明確性"
+    ],
+    "keywords": [
+      "法律安定性",
+      "可預見性",
+      "明確性",
+      "合理可接受性"
+    ],
+    "use": "區分形式法律安定性與實質法律安定性，分析清楚、穩定、可理解與合理可接受性。",
+    "limitation": "主要置於歐盟法語境；移用至中華民國法須另核對本國憲法與司法實務。",
+    "peer_reviewed": true,
+    "url": "https://doi.org/10.1017/S2071832200018332",
+    "citation_key": "paunio2009"
+  },
+  {
+    "id": "entman1993",
+    "type": "journal_article",
+    "peer_reviewed": true,
+    "title": "Framing: Toward Clarification of a Fractured Paradigm",
+    "authors": [
+      "Robert M. Entman"
+    ],
+    "year": 1993,
+    "journal": "Journal of Communication",
+    "doi": "10.1111/j.1460-2466.1993.tb01304.x",
+    "domains": [
+      "媒體框架",
+      "政治傳播"
+    ],
+    "keywords": [
+      "框架",
+      "因果歸屬",
+      "媒體",
+      "政治"
+    ],
+    "use": "分析媒體如何選擇問題定義、因果、道德評價與解方。",
+    "limitation": "需轉化為可重現的繁體中文標註規則。"
+  },
+  {
+    "id": "gentzkow2010",
+    "type": "journal_article",
+    "peer_reviewed": true,
+    "title": "What Drives Media Slant? Evidence From U.S. Daily Newspapers",
+    "authors": [
+      "Matthew Gentzkow",
+      "Jesse M. Shapiro"
+    ],
+    "year": 2010,
+    "journal": "Econometrica",
+    "doi": "10.3982/ECTA7195",
+    "domains": [
+      "媒體偏向",
+      "政治經濟"
+    ],
+    "keywords": [
+      "媒體論述",
+      "政黨語言",
+      "所有權",
+      "閱聽人"
+    ],
+    "use": "建立媒體語言與政黨語料接近度，但須多維且依議題分層。",
+    "limitation": "美國兩黨單軸設計不能直接移植臺灣。"
+  },
+  {
+    "id": "budak2016",
+    "type": "journal_article",
+    "peer_reviewed": true,
+    "title": "Fair and Balanced? Quantifying Media Bias through Crowdsourced Content Analysis",
+    "authors": [
+      "Ceren Budak",
+      "Sharad Goel",
+      "Justin M. Rao"
+    ],
+    "year": 2016,
+    "journal": "Public Opinion Quarterly",
+    "doi": "10.1093/poq/nfw007",
+    "url": "https://academic.oup.com/poq/article/80/S1/250/2223443",
+    "domains": [
+      "媒體偏向",
+      "內容分析"
+    ],
+    "keywords": [
+      "選擇偏誤",
+      "內容偏誤",
+      "人工標註",
+      "新聞"
+    ],
+    "use": "區分報導選擇與報導內容，避免單一語氣分數代表媒體偏向。",
+    "limitation": "需要事件母體、足夠樣本與標註一致性。"
+  },
+  {
+    "id": "hamborg2019",
+    "type": "journal_article",
+    "peer_reviewed": true,
+    "title": "Automated Identification of Media Bias in News Articles: An Interdisciplinary Literature Review",
+    "authors": [
+      "Felix Hamborg",
+      "Karsten Donnay",
+      "Bela Gipp"
+    ],
+    "year": 2019,
+    "journal": "International Journal on Digital Libraries",
+    "doi": "10.1007/s00799-018-0261-y",
+    "domains": [
+      "媒體偏向",
+      "自然語言處理"
+    ],
+    "keywords": [
+      "自動偵測",
+      "框架",
+      "選擇偏誤",
+      "可解釋性"
+    ],
+    "use": "設計可解釋、多層次的偏向分析。",
+    "limitation": "模型表現需以臺灣繁體中文人工標註資料驗證。"
+  },
+  {
+    "id": "laver2003",
+    "type": "journal_article",
+    "peer_reviewed": true,
+    "title": "Extracting Policy Positions from Political Texts Using Words as Data",
+    "authors": [
+      "Michael Laver",
+      "Kenneth Benoit",
+      "John Garry"
+    ],
+    "year": 2003,
+    "journal": "American Political Science Review",
+    "doi": "10.1017/S0003055403000698",
+    "domains": [
+      "政黨政治",
+      "文字分析"
+    ],
+    "keywords": [
+      "Wordscores",
+      "政黨位置",
+      "政策文本",
+      "參考文本"
+    ],
+    "use": "依明確參考文本估計政黨位置。",
+    "limitation": "參考文本與政治維度設定會決定結果。"
+  },
+  {
+    "id": "slapin2008",
+    "type": "journal_article",
+    "peer_reviewed": true,
+    "title": "A Scaling Model for Estimating Time-Series Party Positions from Texts",
+    "authors": [
+      "Jonathan B. Slapin",
+      "Sven-Oliver Proksch"
+    ],
+    "year": 2008,
+    "journal": "American Journal of Political Science",
+    "doi": "10.1111/j.1540-5907.2008.00338.x",
+    "domains": [
+      "政黨政治",
+      "文字分析"
+    ],
+    "keywords": [
+      "Wordfish",
+      "跨期變動",
+      "政黨立場",
+      "時間序列"
+    ],
+    "use": "觀察同類政黨文本的相對位置變動。",
+    "limitation": "不同文類、平台與篇幅不可直接混合。"
+  },
+  {
+    "id": "gehlbach2014",
+    "type": "journal_article",
+    "peer_reviewed": true,
+    "title": "Government Control of the Media",
+    "authors": [
+      "Scott Gehlbach",
+      "Konstantin Sonin"
+    ],
+    "year": 2014,
+    "journal": "Journal of Public Economics",
+    "doi": "10.1016/j.jpubeco.2014.06.004",
+    "domains": [
+      "媒體所有權",
+      "政治經濟"
+    ],
+    "keywords": [
+      "政府控制",
+      "媒體",
+      "所有權",
+      "補貼"
+    ],
+    "use": "提出政府影響媒體的可能機制，作為風險假設。",
+    "limitation": "理論機制不能取代個別媒體的治理與內容證據。"
+  }
+]

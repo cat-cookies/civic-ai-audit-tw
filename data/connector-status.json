@@ -1,0 +1,5 @@
+{
+  "schema_version": "2.0",
+  "runs": [],
+  "notice": "目前封裝環境無外部網路，官方 API 尚待 GitHub Actions 或正式環境線上契約測試。"
+}

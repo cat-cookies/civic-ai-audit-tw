@@ -1,0 +1,4437 @@
+{
+  "schema_version": "5.0",
+  "built_at": "2026-08-04T20:15:05+08:00",
+  "document_count": 222,
+  "documents": [
+    {
+      "id": "law_guide:0",
+      "kind": "law_guide",
+      "title": "全國法規資料庫",
+      "body": "確認現行中央法規、法規沿革、公布與施行日期。",
+      "url": "https://law.moj.gov.tw/",
+      "tags": [
+        "法律",
+        "法條",
+        "現行法",
+        "立法歷程"
+      ],
+      "searchable": "全國法規資料庫 確認現行中央法規 法規沿革 公布與施行日期 法律 法條 現行法 立法歷程",
+      "official": true
+    },
+    {
+      "id": "law_guide:2",
+      "kind": "law_guide",
+      "title": "立法院法律系統",
+      "body": "追查法律制定修正沿革與立法資料。",
+      "url": "https://lis.ly.gov.tw/lglawc/lglawkm",
+      "tags": [
+        "法律",
+        "法條",
+        "現行法",
+        "立法歷程"
+      ],
+      "searchable": "立法院法律系統 追查法律制定修正沿革與立法資料 法律 法條 現行法 立法歷程",
+      "official": true
+    },
+    {
+      "id": "law_guide:1",
+      "kind": "law_guide",
+      "title": "立法院議事暨公報資訊網",
+      "body": "追查提案、一讀、委員會審查、協商、二讀、三讀與議事紀錄。",
+      "url": "https://ppg.ly.gov.tw/ppg/",
+      "tags": [
+        "法律",
+        "法條",
+        "現行法",
+        "立法歷程"
+      ],
+      "searchable": "立法院議事暨公報資訊網 追查提案 一讀 委員會審查 協商 二讀 三讀與議事紀錄 法律 法條 現行法 立法歷程",
+      "official": true
+    },
+    {
+      "id": "law_guide:4",
+      "kind": "law_guide",
+      "title": "總統府公報",
+      "body": "核對法律公布與總統令。",
+      "url": "https://www.president.gov.tw/Page/129",
+      "tags": [
+        "法律",
+        "法條",
+        "現行法",
+        "立法歷程"
+      ],
+      "searchable": "總統府公報 核對法律公布與總統令 法律 法條 現行法 立法歷程",
+      "official": true
+    },
+    {
+      "id": "law_guide:3",
+      "kind": "law_guide",
+      "title": "行政院公報資訊網",
+      "body": "核對法規命令、行政規則、預告與正式公告。",
+      "url": "https://gazette.nat.gov.tw/",
+      "tags": [
+        "法律",
+        "法條",
+        "現行法",
+        "立法歷程"
+      ],
+      "searchable": "行政院公報資訊網 核對法規命令 行政規則 預告與正式公告 法律 法條 現行法 立法歷程",
+      "official": true
+    },
+    {
+      "id": "literature:arnstein1969",
+      "kind": "literature",
+      "title": "A Ladder of Citizen Participation",
+      "body": "arnstein1969 A Ladder of Citizen Participation Sherry R. Arnstein 1969 Journal of the American Institute of Planners 10.1080/01944366908977225 journal_article 民主治理 公共參與 公民參與 權力 參與階梯 辨識參與是否只是告知、諮詢，或真正分享決策權。 階梯式排序容易過度簡化不同情境與混合治理安排。 True https://doi.org/10.1080/01944366908977225 arnstein1969",
+      "url": "#theory?lit=arnstein1969",
+      "tags": [
+        "Journal of the American Institute of Planners",
+        "1969",
+        "民主治理",
+        "公共參與",
+        "公民參與",
+        "權力",
+        "參與階梯"
+      ],
+      "searchable": "a ladder of citizen participation arnstein1969 a ladder of citizen participation sherry r arnstein 1969 journal of the american institute of planners 10 1080 01944366908977225 journal article 民主治理 公共參與 公民參與 權力 參與階梯 辨識參與是否只是告知 諮詢 或真正分享決策權 階梯式排序容易過度簡化不同情境與混合治理安排 true https doi org 10 1080 01944366908977225 arnstein1969 journal of the american institute of planners 1969 民主治理 公共參與 公民參與 權力 參與階梯",
+      "official": false,
+      "peer_reviewed": true,
+      "doi": "10.1080/01944366908977225",
+      "year": 1969
+    },
+    {
+      "id": "literature:leveson2004",
+      "kind": "literature",
+      "title": "A New Accident Model for Engineering Safer Systems",
+      "body": "leveson2004 A New Accident Model for Engineering Safer Systems Nancy Leveson 2004 Safety Science 10.1016/S0925-7535(03)00047-X journal_article 安全科學 系統工程 STAMP 系統事故 控制結構 以控制與約束失效分析事故，不將原因限縮為元件或個人錯誤。 模型需要完整系統邊界、控制關係與回饋資訊。 True https://doi.org/10.1016/S0925-7535(03)00047-X leveson2004",
+      "url": "#theory?lit=leveson2004",
+      "tags": [
+        "Safety Science",
+        "2004",
+        "安全科學",
+        "系統工程",
+        "STAMP",
+        "系統事故",
+        "控制結構"
+      ],
+      "searchable": "a new accident model for engineering safer systems leveson2004 a new accident model for engineering safer systems nancy leveson 2004 safety science 10 1016 s0925 7535 03 00047 x journal article 安全科學 系統工程 stamp 系統事故 控制結構 以控制與約束失效分析事故 不將原因限縮為元件或個人錯誤 模型需要完整系統邊界 控制關係與回饋資訊 true https doi org 10 1016 s0925 7535 03 00047 x leveson2004 safety science 2004 安全科學 系統工程 stamp 系統事故 控制結構",
+      "official": false,
+      "peer_reviewed": true,
+      "doi": "10.1016/S0925-7535(03)00047-X",
+      "year": 2004
+    },
+    {
+      "id": "literature:peters2021",
+      "kind": "literature",
+      "title": "A Plea for Proportionality: A Reply to Yun-chien Chang and Xin Dai",
+      "body": "peters2021 A Plea for Proportionality: A Reply to Yun-chien Chang and Xin Dai Anne Peters 2021 International Journal of Constitutional Law 10.1093/icon/moab071 journal_article 法學 憲法 比例原則 比例原則 必要性 說理文化 成本效益 比較比例原則與成本效益分析，特別是法律說理、透明度及可爭辯性。 屬學理辯論，不能取代中華民國憲法法庭及行政法院的現行實務。 True https://doi.org/10.1093/icon/moab071 peters2021",
+      "url": "#theory?lit=peters2021",
+      "tags": [
+        "International Journal of Constitutional Law",
+        "2021",
+        "法學",
+        "憲法",
+        "比例原則",
+        "比例原則",
+        "必要性",
+        "說理文化",
+        "成本效益"
+      ],
+      "searchable": "a plea for proportionality a reply to yun chien chang and xin dai peters2021 a plea for proportionality a reply to yun chien chang and xin dai anne peters 2021 international journal of constitutional law 10 1093 icon moab071 journal article 法學 憲法 比例原則 比例原則 必要性 說理文化 成本效益 比較比例原則與成本效益分析 特別是法律說理 透明度及可爭辯性 屬學理辯論 不能取代中華民國憲法法庭及行政法院的現行實務 true https doi org 10 1093 icon moab071 peters2021 international journal of constitutional law 2021 法學 憲法 比例原則 比例原則 必要性 說理文化 成本效益",
+      "official": false,
+      "peer_reviewed": true,
+      "doi": "10.1093/icon/moab071",
+      "year": 2021
+    },
+    {
+      "id": "literature:slapin2008",
+      "kind": "literature",
+      "title": "A Scaling Model for Estimating Time-Series Party Positions from Texts",
+      "body": "slapin2008 journal_article True A Scaling Model for Estimating Time-Series Party Positions from Texts Jonathan B. Slapin Sven-Oliver Proksch 2008 American Journal of Political Science 10.1111/j.1540-5907.2008.00338.x 政黨政治 文字分析 Wordfish 跨期變動 政黨立場 時間序列 觀察同類政黨文本的相對位置變動。 不同文類、平台與篇幅不可直接混合。",
+      "url": "#theory?lit=slapin2008",
+      "tags": [
+        "American Journal of Political Science",
+        "2008",
+        "政黨政治",
+        "文字分析",
+        "Wordfish",
+        "跨期變動",
+        "政黨立場",
+        "時間序列"
+      ],
+      "searchable": "a scaling model for estimating time series party positions from texts slapin2008 journal article true a scaling model for estimating time series party positions from texts jonathan b slapin sven oliver proksch 2008 american journal of political science 10 1111 j 1540 5907 2008 00338 x 政黨政治 文字分析 wordfish 跨期變動 政黨立場 時間序列 觀察同類政黨文本的相對位置變動 不同文類 平台與篇幅不可直接混合 american journal of political science 2008 政黨政治 文字分析 wordfish 跨期變動 政黨立場 時間序列",
+      "official": false,
+      "peer_reviewed": true,
+      "doi": "10.1111/j.1540-5907.2008.00338.x",
+      "year": 2008
+    },
+    {
+      "id": "literature:guo2022factcheck",
+      "kind": "literature",
+      "title": "A Survey on Automated Fact-Checking",
+      "body": "guo2022factcheck A Survey on Automated Fact-Checking Zhijiang Guo Michael Schlichtkrull Andreas Vlachos 2022 Transactions of the Association for Computational Linguistics 10.1162/tacl_a_00454 journal_article 人工智慧 事實查核 自動查核 證據檢索 主張驗證 整理自動事實查核的主張偵測、證據檢索與判定流程。 資料集表現不等於開放世界政治與法律查核的可靠度。 True https://doi.org/10.1162/tacl_a_00454 guo2022factcheck",
+      "url": "#theory?lit=guo2022factcheck",
+      "tags": [
+        "Transactions of the Association for Computational Linguistics",
+        "2022",
+        "人工智慧",
+        "事實查核",
+        "自動查核",
+        "證據檢索",
+        "主張驗證"
+      ],
+      "searchable": "a survey on automated fact checking guo2022factcheck a survey on automated fact checking zhijiang guo michael schlichtkrull andreas vlachos 2022 transactions of the association for computational linguistics 10 1162 tacl a 00454 journal article 人工智慧 事實查核 自動查核 證據檢索 主張驗證 整理自動事實查核的主張偵測 證據檢索與判定流程 資料集表現不等於開放世界政治與法律查核的可靠度 true https doi org 10 1162 tacl a 00454 guo2022factcheck transactions of the association for computational linguistics 2022 人工智慧 事實查核 自動查核 證據檢索 主張驗證",
+      "official": false,
+      "peer_reviewed": true,
+      "doi": "10.1162/tacl_a_00454",
+      "year": 2022
+    },
+    {
+      "id": "literature:sabatier1988",
+      "kind": "literature",
+      "title": "An Advocacy Coalition Framework of Policy Change and the Role of Policy-Oriented Learning Therein",
+      "body": "sabatier1988 An Advocacy Coalition Framework of Policy Change and the Role of Policy-Oriented Learning Therein Paul A. Sabatier 1988 Policy Sciences 10.1007/BF00136406 journal_article 公共政策 政治過程 倡議聯盟 政策學習 信念系統 追蹤不同聯盟的核心信念、資源、策略與長期政策變遷。 需要長時間資料與明確政策次系統，不宜僅用單一事件推論。 True https://doi.org/10.1007/BF00136406 sabatier1988",
+      "url": "#theory?lit=sabatier1988",
+      "tags": [
+        "Policy Sciences",
+        "1988",
+        "公共政策",
+        "政治過程",
+        "倡議聯盟",
+        "政策學習",
+        "信念系統"
+      ],
+      "searchable": "an advocacy coalition framework of policy change and the role of policy oriented learning therein sabatier1988 an advocacy coalition framework of policy change and the role of policy oriented learning therein paul a sabatier 1988 policy sciences 10 1007 bf00136406 journal article 公共政策 政治過程 倡議聯盟 政策學習 信念系統 追蹤不同聯盟的核心信念 資源 策略與長期政策變遷 需要長時間資料與明確政策次系統 不宜僅用單一事件推論 true https doi org 10 1007 bf00136406 sabatier1988 policy sciences 1988 公共政策 政治過程 倡議聯盟 政策學習 信念系統",
+      "official": false,
+      "peer_reviewed": true,
+      "doi": "10.1007/BF00136406",
+      "year": 1988
+    },
+    {
+      "id": "literature:bovens2007",
+      "kind": "literature",
+      "title": "Analysing and Assessing Accountability: A Conceptual Framework",
+      "body": "bovens2007 Analysing and Assessing Accountability: A Conceptual Framework Mark Bovens 2007 European Law Journal 10.1111/j.1468-0386.2007.00378.x journal_article 民主治理 行政責任 課責 責任政治 問責論壇 拆解行為者、說明義務、質詢論壇、判斷及制裁等課責要素。 完整課責關係不必然代表政策實質有效或公平。 True https://doi.org/10.1111/j.1468-0386.2007.00378.x bovens2007",
+      "url": "#theory?lit=bovens2007",
+      "tags": [
+        "European Law Journal",
+        "2007",
+        "民主治理",
+        "行政責任",
+        "課責",
+        "責任政治",
+        "問責論壇"
+      ],
+      "searchable": "analysing and assessing accountability a conceptual framework bovens2007 analysing and assessing accountability a conceptual framework mark bovens 2007 european law journal 10 1111 j 1468 0386 2007 00378 x journal article 民主治理 行政責任 課責 責任政治 問責論壇 拆解行為者 說明義務 質詢論壇 判斷及制裁等課責要素 完整課責關係不必然代表政策實質有效或公平 true https doi org 10 1111 j 1468 0386 2007 00378 x bovens2007 european law journal 2007 民主治理 行政責任 課責 責任政治 問責論壇",
+      "official": false,
+      "peer_reviewed": true,
+      "doi": "10.1111/j.1468-0386.2007.00378.x",
+      "year": 2007
+    },
+    {
+      "id": "literature:hamborg2019",
+      "kind": "literature",
+      "title": "Automated Identification of Media Bias in News Articles: An Interdisciplinary Literature Review",
+      "body": "hamborg2019 journal_article True Automated Identification of Media Bias in News Articles: An Interdisciplinary Literature Review Felix Hamborg Karsten Donnay Bela Gipp 2019 International Journal on Digital Libraries 10.1007/s00799-018-0261-y 媒體偏向 自然語言處理 自動偵測 框架 選擇偏誤 可解釋性 設計可解釋、多層次的偏向分析。 模型表現需以臺灣繁體中文人工標註資料驗證。",
+      "url": "#theory?lit=hamborg2019",
+      "tags": [
+        "International Journal on Digital Libraries",
+        "2019",
+        "媒體偏向",
+        "自然語言處理",
+        "自動偵測",
+        "框架",
+        "選擇偏誤",
+        "可解釋性"
+      ],
+      "searchable": "automated identification of media bias in news articles an interdisciplinary literature review hamborg2019 journal article true automated identification of media bias in news articles an interdisciplinary literature review felix hamborg karsten donnay bela gipp 2019 international journal on digital libraries 10 1007 s00799 018 0261 y 媒體偏向 自然語言處理 自動偵測 框架 選擇偏誤 可解釋性 設計可解釋 多層次的偏向分析 模型表現需以臺灣繁體中文人工標註資料驗證 international journal on digital libraries 2019 媒體偏向 自然語言處理 自動偵測 框架 選擇偏誤 可解釋性",
+      "official": false,
+      "peer_reviewed": true,
+      "doi": "10.1007/s00799-018-0261-y",
+      "year": 2019
+    },
+    {
+      "id": "literature:paunio2009",
+      "kind": "literature",
+      "title": "Beyond Predictability – Reflections on Legal Certainty and the Discourse Theory of Law in the EU Legal Order",
+      "body": "paunio2009 Beyond Predictability – Reflections on Legal Certainty and the Discourse Theory of Law in the EU Legal Order Elina Paunio 2009 German Law Journal 10.1017/S2071832200018332 journal_article 法學 法治國 法律明確性 法律安定性 可預見性 明確性 合理可接受性 區分形式法律安定性與實質法律安定性，分析清楚、穩定、可理解與合理可接受性。 主要置於歐盟法語境；移用至中華民國法須另核對本國憲法與司法實務。 True https://doi.org/10.1017/S2071832200018332 paunio2009",
+      "url": "#theory?lit=paunio2009",
+      "tags": [
+        "German Law Journal",
+        "2009",
+        "法學",
+        "法治國",
+        "法律明確性",
+        "法律安定性",
+        "可預見性",
+        "明確性",
+        "合理可接受性"
+      ],
+      "searchable": "beyond predictability reflections on legal certainty and the discourse theory of law in the eu legal order paunio2009 beyond predictability reflections on legal certainty and the discourse theory of law in the eu legal order elina paunio 2009 german law journal 10 1017 s2071832200018332 journal article 法學 法治國 法律明確性 法律安定性 可預見性 明確性 合理可接受性 區分形式法律安定性與實質法律安定性 分析清楚 穩定 可理解與合理可接受性 主要置於歐盟法語境 移用至中華民國法須另核對本國憲法與司法實務 true https doi org 10 1017 s2071832200018332 paunio2009 german law journal 2009 法學 法治國 法律明確性 法律安定性 可預見性 明確性 合理可接受性",
+      "official": false,
+      "peer_reviewed": true,
+      "doi": "10.1017/S2071832200018332",
+      "year": 2009
+    },
+    {
+      "id": "literature:tsebelis1995",
+      "kind": "literature",
+      "title": "Decision Making in Political Systems: Veto Players in Presidentialism, Parliamentarism, Multicameralism and Multipartyism",
+      "body": "tsebelis1995 Decision Making in Political Systems: Veto Players in Presidentialism, Parliamentarism, Multicameralism and Multipartyism George Tsebelis 1995 British Journal of Political Science 10.1017/S0007123400007225 journal_article 政治學 制度分析 否決者 政策穩定 制度變遷 分析具否決能力的行為者數量、偏好距離與制度變更難度。 偏重正式否決結構，可能低估議程控制、行政能力與非正式權力。 True https://doi.org/10.1017/S0007123400007225 tsebelis1995",
+      "url": "#theory?lit=tsebelis1995",
+      "tags": [
+        "British Journal of Political Science",
+        "1995",
+        "政治學",
+        "制度分析",
+        "否決者",
+        "政策穩定",
+        "制度變遷"
+      ],
+      "searchable": "decision making in political systems veto players in presidentialism parliamentarism multicameralism and multipartyism tsebelis1995 decision making in political systems veto players in presidentialism parliamentarism multicameralism and multipartyism george tsebelis 1995 british journal of political science 10 1017 s0007123400007225 journal article 政治學 制度分析 否決者 政策穩定 制度變遷 分析具否決能力的行為者數量 偏好距離與制度變更難度 偏重正式否決結構 可能低估議程控制 行政能力與非正式權力 true https doi org 10 1017 s0007123400007225 tsebelis1995 british journal of political science 1995 政治學 制度分析 否決者 政策穩定 制度變遷",
+      "official": false,
+      "peer_reviewed": true,
+      "doi": "10.1017/S0007123400007225",
+      "year": 1995
+    },
+    {
+      "id": "literature:may2009npt",
+      "kind": "literature",
+      "title": "Development of a Theory of Implementation and Integration: Normalization Process Theory",
+      "body": "may2009npt Development of a Theory of Implementation and Integration: Normalization Process Theory Carl May Tracy Finch Frances Mair Linda Ballini Christopher Dowrick Martin Eccles Luciana Gask Anne MacFarlane Elizabeth Murray Tim Rapley Anne Rogers Shaun Treweek Paul Wallace Glyn Elwyn 2009 Implementation Science 10.1186/1748-5908-4-29 journal_article 實施科學 醫療政策 NPT 介入整合 實施機制 提供介入實施與整合的理論構念及關係。 實際使用仍需轉化為可觀察指標與資料蒐集設計。 True https://doi.org/10.1186/1748-5908-4-29 may2009npt",
+      "url": "#theory?lit=may2009npt",
+      "tags": [
+        "Implementation Science",
+        "2009",
+        "實施科學",
+        "醫療政策",
+        "NPT",
+        "介入整合",
+        "實施機制"
+      ],
+      "searchable": "development of a theory of implementation and integration normalization process theory may2009npt development of a theory of implementation and integration normalization process theory carl may tracy finch frances mair linda ballini christopher dowrick martin eccles luciana gask anne macfarlane elizabeth murray tim rapley anne rogers shaun treweek paul wallace glyn elwyn 2009 implementation science 10 1186 1748 5908 4 29 journal article 實施科學 醫療政策 npt 介入整合 實施機制 提供介入實施與整合的理論構念及關係 實際使用仍需轉化為可觀察指標與資料蒐集設計 true https doi org 10 1186 1748 5908 4 29 may2009npt implementation science 2009 實施科學 醫療政策 npt 介入整合 實施機制",
+      "official": false,
+      "peer_reviewed": true,
+      "doi": "10.1186/1748-5908-4-29",
+      "year": 2009
+    },
+    {
+      "id": "literature:callawaysantanna2021",
+      "kind": "literature",
+      "title": "Difference-in-Differences with Multiple Time Periods",
+      "body": "callawaysantanna2021 Difference-in-Differences with Multiple Time Periods Brantly Callaway Pedro H. C. Sant’Anna 2021 Journal of Econometrics 10.1016/j.jeconom.2020.12.001 journal_article 因果推論 政策評估 差異中的差異 多期政策 異質效果 處理分期實施政策及不同群組、時間的處置效果。 仍需條件平行趨勢、無預期效果等假設與診斷。 True https://doi.org/10.1016/j.jeconom.2020.12.001 callawaysantanna2021",
+      "url": "#theory?lit=callawaysantanna2021",
+      "tags": [
+        "Journal of Econometrics",
+        "2021",
+        "因果推論",
+        "政策評估",
+        "差異中的差異",
+        "多期政策",
+        "異質效果"
+      ],
+      "searchable": "difference in differences with multiple time periods callawaysantanna2021 difference in differences with multiple time periods brantly callaway pedro h c sant anna 2021 journal of econometrics 10 1016 j jeconom 2020 12 001 journal article 因果推論 政策評估 差異中的差異 多期政策 異質效果 處理分期實施政策及不同群組 時間的處置效果 仍需條件平行趨勢 無預期效果等假設與診斷 true https doi org 10 1016 j jeconom 2020 12 001 callawaysantanna2021 journal of econometrics 2021 因果推論 政策評估 差異中的差異 多期政策 異質效果",
+      "official": false,
+      "peer_reviewed": true,
+      "doi": "10.1016/j.jeconom.2020.12.001",
+      "year": 2021
+    },
+    {
+      "id": "literature:glasgow1999",
+      "kind": "literature",
+      "title": "Evaluating the Public Health Impact of Health Promotion Interventions: The RE-AIM Framework",
+      "body": "glasgow1999 Evaluating the Public Health Impact of Health Promotion Interventions: The RE-AIM Framework Russell E. Glasgow Thomas M. Vogt Shawn M. Boles 1999 American Journal of Public Health 10.2105/AJPH.89.9.1322 journal_article 公共衛生 實施評估 RE-AIM 可及性 實施 維持 同時評估觸及、效果、採用、實施與維持，避免只看平均療效。 各維度資料需求不同，需預先定義分母與層級。 True https://doi.org/10.2105/AJPH.89.9.1322 glasgow1999",
+      "url": "#theory?lit=glasgow1999",
+      "tags": [
+        "American Journal of Public Health",
+        "1999",
+        "公共衛生",
+        "實施評估",
+        "RE-AIM",
+        "可及性",
+        "實施",
+        "維持"
+      ],
+      "searchable": "evaluating the public health impact of health promotion interventions the re aim framework glasgow1999 evaluating the public health impact of health promotion interventions the re aim framework russell e glasgow thomas m vogt shawn m boles 1999 american journal of public health 10 2105 ajph 89 9 1322 journal article 公共衛生 實施評估 re aim 可及性 實施 維持 同時評估觸及 效果 採用 實施與維持 避免只看平均療效 各維度資料需求不同 需預先定義分母與層級 true https doi org 10 2105 ajph 89 9 1322 glasgow1999 american journal of public health 1999 公共衛生 實施評估 re aim 可及性 實施 維持",
+      "official": false,
+      "peer_reviewed": true,
+      "doi": "10.2105/AJPH.89.9.1322",
+      "year": 1999
+    },
+    {
+      "id": "literature:laver2003",
+      "kind": "literature",
+      "title": "Extracting Policy Positions from Political Texts Using Words as Data",
+      "body": "laver2003 journal_article True Extracting Policy Positions from Political Texts Using Words as Data Michael Laver Kenneth Benoit John Garry 2003 American Political Science Review 10.1017/S0003055403000698 政黨政治 文字分析 Wordscores 政黨位置 政策文本 參考文本 依明確參考文本估計政黨位置。 參考文本與政治維度設定會決定結果。",
+      "url": "#theory?lit=laver2003",
+      "tags": [
+        "American Political Science Review",
+        "2003",
+        "政黨政治",
+        "文字分析",
+        "Wordscores",
+        "政黨位置",
+        "政策文本",
+        "參考文本"
+      ],
+      "searchable": "extracting policy positions from political texts using words as data laver2003 journal article true extracting policy positions from political texts using words as data michael laver kenneth benoit john garry 2003 american political science review 10 1017 s0003055403000698 政黨政治 文字分析 wordscores 政黨位置 政策文本 參考文本 依明確參考文本估計政黨位置 參考文本與政治維度設定會決定結果 american political science review 2003 政黨政治 文字分析 wordscores 政黨位置 政策文本 參考文本",
+      "official": false,
+      "peer_reviewed": true,
+      "doi": "10.1017/S0003055403000698",
+      "year": 2003
+    },
+    {
+      "id": "literature:min2023factscore",
+      "kind": "literature",
+      "title": "FActScore: Fine-grained Atomic Evaluation of Factual Precision in Long Form Text Generation",
+      "body": "min2023factscore FActScore: Fine-grained Atomic Evaluation of Factual Precision in Long Form Text Generation Sewon Min Kalpesh Krishna Xinxi Lyu Mike Lewis Wen-tau Yih Pang Wei Koh Mohit Iyyer Luke Zettlemoyer Hannaneh Hajishirzi 2023 Proceedings of EMNLP 10.18653/v1/2023.emnlp-main.741 conference_paper 人工智慧 事實性評估 原子主張 長文生成 事實精確度 將長文拆為原子事實，再逐項評估證據支持。 評分仍受知識來源、拆解品質與自動判定器限制。 True https://doi.org/10.18653/v1/2023.emnlp-main.741 min2023factscore",
+      "url": "#theory?lit=min2023factscore",
+      "tags": [
+        "Proceedings of EMNLP",
+        "2023",
+        "人工智慧",
+        "事實性評估",
+        "原子主張",
+        "長文生成",
+        "事實精確度"
+      ],
+      "searchable": "factscore fine grained atomic evaluation of factual precision in long form text generation min2023factscore factscore fine grained atomic evaluation of factual precision in long form text generation sewon min kalpesh krishna xinxi lyu mike lewis wen tau yih pang wei koh mohit iyyer luke zettlemoyer hannaneh hajishirzi 2023 proceedings of emnlp 10 18653 v1 2023 emnlp main 741 conference paper 人工智慧 事實性評估 原子主張 長文生成 事實精確度 將長文拆為原子事實 再逐項評估證據支持 評分仍受知識來源 拆解品質與自動判定器限制 true https doi org 10 18653 v1 2023 emnlp main 741 min2023factscore proceedings of emnlp 2023 人工智慧 事實性評估 原子主張 長文生成 事實精確度",
+      "official": false,
+      "peer_reviewed": true,
+      "doi": "10.18653/v1/2023.emnlp-main.741",
+      "year": 2023
+    },
+    {
+      "id": "literature:thorne2018fever",
+      "kind": "literature",
+      "title": "FEVER: A Large-scale Dataset for Fact Extraction and VERification",
+      "body": "thorne2018fever FEVER: A Large-scale Dataset for Fact Extraction and VERification James Thorne Andreas Vlachos Christos Christodoulopoulos Arpit Mittal 2018 Proceedings of NAACL-HLT 10.18653/v1/N18-1074 conference_paper 人工智慧 事實查核 FEVER 證據檢索 自然語言推論 用可核對證據句支援、反駁或判定資訊不足。 以維基百科與封閉標註任務為主，不能直接代表法律效力判斷。 True https://doi.org/10.18653/v1/N18-1074 thorne2018fever",
+      "url": "#theory?lit=thorne2018fever",
+      "tags": [
+        "Proceedings of NAACL-HLT",
+        "2018",
+        "人工智慧",
+        "事實查核",
+        "FEVER",
+        "證據檢索",
+        "自然語言推論"
+      ],
+      "searchable": "fever a large scale dataset for fact extraction and verification thorne2018fever fever a large scale dataset for fact extraction and verification james thorne andreas vlachos christos christodoulopoulos arpit mittal 2018 proceedings of naacl hlt 10 18653 v1 n18 1074 conference paper 人工智慧 事實查核 fever 證據檢索 自然語言推論 用可核對證據句支援 反駁或判定資訊不足 以維基百科與封閉標註任務為主 不能直接代表法律效力判斷 true https doi org 10 18653 v1 n18 1074 thorne2018fever proceedings of naacl hlt 2018 人工智慧 事實查核 fever 證據檢索 自然語言推論",
+      "official": false,
+      "peer_reviewed": true,
+      "doi": "10.18653/v1/N18-1074",
+      "year": 2018
+    },
+    {
+      "id": "literature:budak2016",
+      "kind": "literature",
+      "title": "Fair and Balanced? Quantifying Media Bias through Crowdsourced Content Analysis",
+      "body": "budak2016 journal_article True Fair and Balanced? Quantifying Media Bias through Crowdsourced Content Analysis Ceren Budak Sharad Goel Justin M. Rao 2016 Public Opinion Quarterly 10.1093/poq/nfw007 https://academic.oup.com/poq/article/80/S1/250/2223443 媒體偏向 內容分析 選擇偏誤 內容偏誤 人工標註 新聞 區分報導選擇與報導內容，避免單一語氣分數代表媒體偏向。 需要事件母體、足夠樣本與標註一致性。",
+      "url": "#theory?lit=budak2016",
+      "tags": [
+        "Public Opinion Quarterly",
+        "2016",
+        "媒體偏向",
+        "內容分析",
+        "選擇偏誤",
+        "內容偏誤",
+        "人工標註",
+        "新聞"
+      ],
+      "searchable": "fair and balanced quantifying media bias through crowdsourced content analysis budak2016 journal article true fair and balanced quantifying media bias through crowdsourced content analysis ceren budak sharad goel justin m rao 2016 public opinion quarterly 10 1093 poq nfw007 https academic oup com poq article 80 s1 250 2223443 媒體偏向 內容分析 選擇偏誤 內容偏誤 人工標註 新聞 區分報導選擇與報導內容 避免單一語氣分數代表媒體偏向 需要事件母體 足夠樣本與標註一致性 public opinion quarterly 2016 媒體偏向 內容分析 選擇偏誤 內容偏誤 人工標註 新聞",
+      "official": false,
+      "peer_reviewed": true,
+      "doi": "10.1093/poq/nfw007",
+      "year": 2016
+    },
+    {
+      "id": "literature:damschroder2009",
+      "kind": "literature",
+      "title": "Fostering Implementation of Health Services Research Findings into Practice: A Consolidated Framework for Advancing Implementation Science",
+      "body": "damschroder2009 Fostering Implementation of Health Services Research Findings into Practice: A Consolidated Framework for Advancing Implementation Science Laura J. Damschroder David C. Aron Rosalind E. Keith Susan R. Kirsh Jeffery A. Alexander Julie C. Lowery 2009 Implementation Science 10.1186/1748-5908-4-50 journal_article 實施科學 醫療政策 CFIR 介入執行 組織情境 從介入特性、內外部情境、個人與過程系統診斷實施條件。 構面多，研究前應選定機制與測量，不宜事後全數套用。 True https://doi.org/10.1186/1748-5908-4-50 damschroder2009",
+      "url": "#theory?lit=damschroder2009",
+      "tags": [
+        "Implementation Science",
+        "2009",
+        "實施科學",
+        "醫療政策",
+        "CFIR",
+        "介入執行",
+        "組織情境"
+      ],
+      "searchable": "fostering implementation of health services research findings into practice a consolidated framework for advancing implementation science damschroder2009 fostering implementation of health services research findings into practice a consolidated framework for advancing implementation science laura j damschroder david c aron rosalind e keith susan r kirsh jeffery a alexander julie c lowery 2009 implementation science 10 1186 1748 5908 4 50 journal article 實施科學 醫療政策 cfir 介入執行 組織情境 從介入特性 內外部情境 個人與過程系統診斷實施條件 構面多 研究前應選定機制與測量 不宜事後全數套用 true https doi org 10 1186 1748 5908 4 50 damschroder2009 implementation science 2009 實施科學 醫療政策 cfir 介入執行 組織情境",
+      "official": false,
+      "peer_reviewed": true,
+      "doi": "10.1186/1748-5908-4-50",
+      "year": 2009
+    },
+    {
+      "id": "literature:entman1993",
+      "kind": "literature",
+      "title": "Framing: Toward Clarification of a Fractured Paradigm",
+      "body": "entman1993 journal_article True Framing: Toward Clarification of a Fractured Paradigm Robert M. Entman 1993 Journal of Communication 10.1111/j.1460-2466.1993.tb01304.x 媒體框架 政治傳播 框架 因果歸屬 媒體 政治 分析媒體如何選擇問題定義、因果、道德評價與解方。 需轉化為可重現的繁體中文標註規則。",
+      "url": "#theory?lit=entman1993",
+      "tags": [
+        "Journal of Communication",
+        "1993",
+        "媒體框架",
+        "政治傳播",
+        "框架",
+        "因果歸屬",
+        "媒體",
+        "政治"
+      ],
+      "searchable": "framing toward clarification of a fractured paradigm entman1993 journal article true framing toward clarification of a fractured paradigm robert m entman 1993 journal of communication 10 1111 j 1460 2466 1993 tb01304 x 媒體框架 政治傳播 框架 因果歸屬 媒體 政治 分析媒體如何選擇問題定義 因果 道德評價與解方 需轉化為可重現的繁體中文標註規則 journal of communication 1993 媒體框架 政治傳播 框架 因果歸屬 媒體 政治",
+      "official": false,
+      "peer_reviewed": true,
+      "doi": "10.1111/j.1460-2466.1993.tb01304.x",
+      "year": 1993
+    },
+    {
+      "id": "literature:guyatt2008grade",
+      "kind": "literature",
+      "title": "GRADE: An Emerging Consensus on Rating Quality of Evidence and Strength of Recommendations",
+      "body": "guyatt2008grade GRADE: An Emerging Consensus on Rating Quality of Evidence and Strength of Recommendations Gordon H. Guyatt Andrew D. Oxman Gunn E. Vist Regina Kunz Yngve Falck-Ytter Pablo Alonso-Coello Holger J. Schünemann 2008 BMJ 10.1136/bmj.39489.470347.AD journal_article 實證醫療 證據評估 GRADE 證據品質 建議強度 區分證據確定性與建議強度，檢查偏誤、不一致、間接性與不精確。 主要為健康照護建議，移用公共政策時須調整結果與價值取捨。 True https://doi.org/10.1136/bmj.39489.470347.AD guyatt2008grade",
+      "url": "#theory?lit=guyatt2008grade",
+      "tags": [
+        "BMJ",
+        "2008",
+        "實證醫療",
+        "證據評估",
+        "GRADE",
+        "證據品質",
+        "建議強度"
+      ],
+      "searchable": "grade an emerging consensus on rating quality of evidence and strength of recommendations guyatt2008grade grade an emerging consensus on rating quality of evidence and strength of recommendations gordon h guyatt andrew d oxman gunn e vist regina kunz yngve falck ytter pablo alonso coello holger j sch nemann 2008 bmj 10 1136 bmj 39489 470347 ad journal article 實證醫療 證據評估 grade 證據品質 建議強度 區分證據確定性與建議強度 檢查偏誤 不一致 間接性與不精確 主要為健康照護建議 移用公共政策時須調整結果與價值取捨 true https doi org 10 1136 bmj 39489 470347 ad guyatt2008grade bmj 2008 實證醫療 證據評估 grade 證據品質 建議強度",
+      "official": false,
+      "peer_reviewed": true,
+      "doi": "10.1136/bmj.39489.470347.AD",
+      "year": 2008
+    },
+    {
+      "id": "literature:gehlbach2014",
+      "kind": "literature",
+      "title": "Government Control of the Media",
+      "body": "gehlbach2014 journal_article True Government Control of the Media Scott Gehlbach Konstantin Sonin 2014 Journal of Public Economics 10.1016/j.jpubeco.2014.06.004 媒體所有權 政治經濟 政府控制 媒體 所有權 補貼 提出政府影響媒體的可能機制，作為風險假設。 理論機制不能取代個別媒體的治理與內容證據。",
+      "url": "#theory?lit=gehlbach2014",
+      "tags": [
+        "Journal of Public Economics",
+        "2014",
+        "媒體所有權",
+        "政治經濟",
+        "政府控制",
+        "媒體",
+        "所有權",
+        "補貼"
+      ],
+      "searchable": "government control of the media gehlbach2014 journal article true government control of the media scott gehlbach konstantin sonin 2014 journal of public economics 10 1016 j jpubeco 2014 06 004 媒體所有權 政治經濟 政府控制 媒體 所有權 補貼 提出政府影響媒體的可能機制 作為風險假設 理論機制不能取代個別媒體的治理與內容證據 journal of public economics 2014 媒體所有權 政治經濟 政府控制 媒體 所有權 補貼",
+      "official": false,
+      "peer_reviewed": true,
+      "doi": "10.1016/j.jpubeco.2014.06.004",
+      "year": 2014
+    },
+    {
+      "id": "literature:mayfinch2009",
+      "kind": "literature",
+      "title": "Implementing, Embedding, and Integrating Practices: An Outline of Normalization Process Theory",
+      "body": "mayfinch2009 Implementing, Embedding, and Integrating Practices: An Outline of Normalization Process Theory Carl May Tracy Finch 2009 Sociology 10.1177/0038038509103208 journal_article 實施科學 組織社會學 NPT 常態化 實務整合 分析新實務如何被理解、投入、執行與持續評估。 重點在集體行動與常態化，不直接回答介入臨床效果。 True https://doi.org/10.1177/0038038509103208 mayfinch2009",
+      "url": "#theory?lit=mayfinch2009",
+      "tags": [
+        "Sociology",
+        "2009",
+        "實施科學",
+        "組織社會學",
+        "NPT",
+        "常態化",
+        "實務整合"
+      ],
+      "searchable": "implementing embedding and integrating practices an outline of normalization process theory mayfinch2009 implementing embedding and integrating practices an outline of normalization process theory carl may tracy finch 2009 sociology 10 1177 0038038509103208 journal article 實施科學 組織社會學 npt 常態化 實務整合 分析新實務如何被理解 投入 執行與持續評估 重點在集體行動與常態化 不直接回答介入臨床效果 true https doi org 10 1177 0038038509103208 mayfinch2009 sociology 2009 實施科學 組織社會學 npt 常態化 實務整合",
+      "official": false,
+      "peer_reviewed": true,
+      "doi": "10.1177/0038038509103208",
+      "year": 2009
+    },
+    {
+      "id": "literature:cairneyjones2016",
+      "kind": "literature",
+      "title": "Kingdon’s Multiple Streams Approach: What Is the Empirical Impact of this Universal Theory?",
+      "body": "cairneyjones2016 Kingdon’s Multiple Streams Approach: What Is the Empirical Impact of this Universal Theory? Paul Cairney Michael D. Jones 2016 Policy Studies Journal 10.1111/psj.12111 journal_article 公共政策 議程設定 多元流程 政策窗口 政策企業家 分析問題流、政策流與政治流如何在窗口期匯合。 概念彈性高，研究時須預先操作化，避免事後套用。 True https://doi.org/10.1111/psj.12111 cairneyjones2016",
+      "url": "#theory?lit=cairneyjones2016",
+      "tags": [
+        "Policy Studies Journal",
+        "2016",
+        "公共政策",
+        "議程設定",
+        "多元流程",
+        "政策窗口",
+        "政策企業家"
+      ],
+      "searchable": "kingdon s multiple streams approach what is the empirical impact of this universal theory cairneyjones2016 kingdon s multiple streams approach what is the empirical impact of this universal theory paul cairney michael d jones 2016 policy studies journal 10 1111 psj 12111 journal article 公共政策 議程設定 多元流程 政策窗口 政策企業家 分析問題流 政策流與政治流如何在窗口期匯合 概念彈性高 研究時須預先操作化 避免事後套用 true https doi org 10 1111 psj 12111 cairneyjones2016 policy studies journal 2016 公共政策 議程設定 多元流程 政策窗口 政策企業家",
+      "official": false,
+      "peer_reviewed": true,
+      "doi": "10.1111/psj.12111",
+      "year": 2016
+    },
+    {
+      "id": "literature:dolowitzmarsh2000",
+      "kind": "literature",
+      "title": "Learning from Abroad: The Role of Policy Transfer in Contemporary Policy-Making",
+      "body": "dolowitzmarsh2000 Learning from Abroad: The Role of Policy Transfer in Contemporary Policy-Making David P. Dolowitz David Marsh 2000 Governance 10.1111/0952-1895.00121 journal_article 比較政策 制度移植 政策移轉 政策學習 跨國比較 分析誰移轉什麼、為何移轉、移轉程度及失敗原因。 相似制度文字不等於相同功能或執行結果。 True https://doi.org/10.1111/0952-1895.00121 dolowitzmarsh2000",
+      "url": "#theory?lit=dolowitzmarsh2000",
+      "tags": [
+        "Governance",
+        "2000",
+        "比較政策",
+        "制度移植",
+        "政策移轉",
+        "政策學習",
+        "跨國比較"
+      ],
+      "searchable": "learning from abroad the role of policy transfer in contemporary policy making dolowitzmarsh2000 learning from abroad the role of policy transfer in contemporary policy making david p dolowitz david marsh 2000 governance 10 1111 0952 1895 00121 journal article 比較政策 制度移植 政策移轉 政策學習 跨國比較 分析誰移轉什麼 為何移轉 移轉程度及失敗原因 相似制度文字不等於相同功能或執行結果 true https doi org 10 1111 0952 1895 00121 dolowitzmarsh2000 governance 2000 比較政策 制度移植 政策移轉 政策學習 跨國比較",
+      "official": false,
+      "peer_reviewed": true,
+      "doi": "10.1111/0952-1895.00121",
+      "year": 2000
+    },
+    {
+      "id": "literature:teubner1998",
+      "kind": "literature",
+      "title": "Legal Irritants: Good Faith in British Law or How Unifying Law Ends Up in New Divergences",
+      "body": "teubner1998 Legal Irritants: Good Faith in British Law or How Unifying Law Ends Up in New Divergences Gunther Teubner 1998 The Modern Law Review 10.1111/1468-2230.00125 journal_article 比較法 法律社會學 法律移植 法律文化 制度差異 提醒外國法進入不同制度後可能產生新變形，而非單純複製。 屬理論性警告，個案仍須具體分析法體系、組織與實務。 True https://doi.org/10.1111/1468-2230.00125 teubner1998",
+      "url": "#theory?lit=teubner1998",
+      "tags": [
+        "The Modern Law Review",
+        "1998",
+        "比較法",
+        "法律社會學",
+        "法律移植",
+        "法律文化",
+        "制度差異"
+      ],
+      "searchable": "legal irritants good faith in british law or how unifying law ends up in new divergences teubner1998 legal irritants good faith in british law or how unifying law ends up in new divergences gunther teubner 1998 the modern law review 10 1111 1468 2230 00125 journal article 比較法 法律社會學 法律移植 法律文化 制度差異 提醒外國法進入不同制度後可能產生新變形 而非單純複製 屬理論性警告 個案仍須具體分析法體系 組織與實務 true https doi org 10 1111 1468 2230 00125 teubner1998 the modern law review 1998 比較法 法律社會學 法律移植 法律文化 制度差異",
+      "official": false,
+      "peer_reviewed": true,
+      "doi": "10.1111/1468-2230.00125",
+      "year": 1998
+    },
+    {
+      "id": "literature:provankenis2008",
+      "kind": "literature",
+      "title": "Modes of Network Governance: Structure, Management, and Effectiveness",
+      "body": "provankenis2008 Modes of Network Governance: Structure, Management, and Effectiveness Keith G. Provan Patrick Kenis 2008 Journal of Public Administration Research and Theory 10.1093/jopart/mum015 journal_article 協力治理 組織 網絡治理 跨機關協作 治理模式 比較參與者自理、主導組織與網絡行政組織等治理模式。 治理模式適配仍取決於信任、規模、目標共識與能力。 True https://doi.org/10.1093/jopart/mum015 provankenis2008",
+      "url": "#theory?lit=provankenis2008",
+      "tags": [
+        "Journal of Public Administration Research and Theory",
+        "2008",
+        "協力治理",
+        "組織",
+        "網絡治理",
+        "跨機關協作",
+        "治理模式"
+      ],
+      "searchable": "modes of network governance structure management and effectiveness provankenis2008 modes of network governance structure management and effectiveness keith g provan patrick kenis 2008 journal of public administration research and theory 10 1093 jopart mum015 journal article 協力治理 組織 網絡治理 跨機關協作 治理模式 比較參與者自理 主導組織與網絡行政組織等治理模式 治理模式適配仍取決於信任 規模 目標共識與能力 true https doi org 10 1093 jopart mum015 provankenis2008 journal of public administration research and theory 2008 協力治理 組織 網絡治理 跨機關協作 治理模式",
+      "official": false,
+      "peer_reviewed": true,
+      "doi": "10.1093/jopart/mum015",
+      "year": 2008
+    },
+    {
+      "id": "literature:brodkin2011",
+      "kind": "literature",
+      "title": "Policy Work: Street-Level Organizations Under New Managerialism",
+      "body": "brodkin2011 Policy Work: Street-Level Organizations Under New Managerialism Evelyn Z. Brodkin 2011 Journal of Public Administration Research and Theory 10.1093/jopart/muq093 journal_article 政策執行 公共行政 街頭官僚 第一線裁量 績效管理 分析第一線組織如何在案件量、績效指標與資源限制下重塑政策。 需有組織與第一線資料，不能只由法規文字推斷實作。 True https://doi.org/10.1093/jopart/muq093 brodkin2011",
+      "url": "#theory?lit=brodkin2011",
+      "tags": [
+        "Journal of Public Administration Research and Theory",
+        "2011",
+        "政策執行",
+        "公共行政",
+        "街頭官僚",
+        "第一線裁量",
+        "績效管理"
+      ],
+      "searchable": "policy work street level organizations under new managerialism brodkin2011 policy work street level organizations under new managerialism evelyn z brodkin 2011 journal of public administration research and theory 10 1093 jopart muq093 journal article 政策執行 公共行政 街頭官僚 第一線裁量 績效管理 分析第一線組織如何在案件量 績效指標與資源限制下重塑政策 需有組織與第一線資料 不能只由法規文字推斷實作 true https doi org 10 1093 jopart muq093 brodkin2011 journal of public administration research and theory 2011 政策執行 公共行政 街頭官僚 第一線裁量 績效管理",
+      "official": false,
+      "peer_reviewed": true,
+      "doi": "10.1093/jopart/muq093",
+      "year": 2011
+    },
+    {
+      "id": "literature:alexy2018",
+      "kind": "literature",
+      "title": "Proportionality, Constitutional Law, and Sub-Constitutional Law: A Reply to Aharon Barak",
+      "body": "alexy2018 Proportionality, Constitutional Law, and Sub-Constitutional Law: A Reply to Aharon Barak Robert Alexy 2018 International Journal of Constitutional Law 10.1093/icon/moy084 journal_article 法學 憲法 比例原則 原則理論 比例原則 最佳化要求 權衡 理解原則作為最佳化要求與比例原則之間的理論連結。 高度依賴特定原則理論；其他權利理論可能不同意其前提。 True https://doi.org/10.1093/icon/moy084 alexy2018",
+      "url": "#theory?lit=alexy2018",
+      "tags": [
+        "International Journal of Constitutional Law",
+        "2018",
+        "法學",
+        "憲法",
+        "比例原則",
+        "原則理論",
+        "比例原則",
+        "最佳化要求",
+        "權衡"
+      ],
+      "searchable": "proportionality constitutional law and sub constitutional law a reply to aharon barak alexy2018 proportionality constitutional law and sub constitutional law a reply to aharon barak robert alexy 2018 international journal of constitutional law 10 1093 icon moy084 journal article 法學 憲法 比例原則 原則理論 比例原則 最佳化要求 權衡 理解原則作為最佳化要求與比例原則之間的理論連結 高度依賴特定原則理論 其他權利理論可能不同意其前提 true https doi org 10 1093 icon moy084 alexy2018 international journal of constitutional law 2018 法學 憲法 比例原則 原則理論 比例原則 最佳化要求 權衡",
+      "official": false,
+      "peer_reviewed": true,
+      "doi": "10.1093/icon/moy084",
+      "year": 2018
+    },
+    {
+      "id": "literature:moller2012",
+      "kind": "literature",
+      "title": "Proportionality: Challenging the Critics",
+      "body": "moller2012 Proportionality: Challenging the Critics Kai Möller 2012 International Journal of Constitutional Law 10.1093/icon/mos024 journal_article 法學 憲法 比例原則 比例原則 基本權 權衡 必要性 分析比例原則的正當目的、適合性、必要性與狹義比例性，以及對權衡批評的回應。 屬規範與理論論證，不能單獨決定特定案件的比例原則結論。 True https://doi.org/10.1093/icon/mos024 moller2012",
+      "url": "#theory?lit=moller2012",
+      "tags": [
+        "International Journal of Constitutional Law",
+        "2012",
+        "法學",
+        "憲法",
+        "比例原則",
+        "比例原則",
+        "基本權",
+        "權衡",
+        "必要性"
+      ],
+      "searchable": "proportionality challenging the critics moller2012 proportionality challenging the critics kai m ller 2012 international journal of constitutional law 10 1093 icon mos024 journal article 法學 憲法 比例原則 比例原則 基本權 權衡 必要性 分析比例原則的正當目的 適合性 必要性與狹義比例性 以及對權衡批評的回應 屬規範與理論論證 不能單獨決定特定案件的比例原則結論 true https doi org 10 1093 icon mos024 moller2012 international journal of constitutional law 2012 法學 憲法 比例原則 比例原則 基本權 權衡 必要性",
+      "official": false,
+      "peer_reviewed": true,
+      "doi": "10.1093/icon/mos024",
+      "year": 2012
+    },
+    {
+      "id": "literature:gao2023rarr",
+      "kind": "literature",
+      "title": "RARR: Researching and Revising What Language Models Say, Using Language Models",
+      "body": "gao2023rarr RARR: Researching and Revising What Language Models Say, Using Language Models Luyu Gao Zhuyun Dai Panupong Pasupat Anthony Chen Arun Tejasvi Chaganty Yicheng Fan Vincent Y. Zhao Ni Lao Hongrae Lee Da-Cheng Juan Kelvin Guu 2023 Proceedings of ACL 10.18653/v1/2023.acl-long.910 conference_paper 人工智慧 檢索增強生成 RARR 研究與修訂 歸因 以檢索與修訂降低生成內容的無依據陳述並改善歸因。 搜尋結果與修訂模型都可能錯誤，仍需來源白名單與人工覆核。 True https://doi.org/10.18653/v1/2023.acl-long.910 gao2023rarr",
+      "url": "#theory?lit=gao2023rarr",
+      "tags": [
+        "Proceedings of ACL",
+        "2023",
+        "人工智慧",
+        "檢索增強生成",
+        "RARR",
+        "研究與修訂",
+        "歸因"
+      ],
+      "searchable": "rarr researching and revising what language models say using language models gao2023rarr rarr researching and revising what language models say using language models luyu gao zhuyun dai panupong pasupat anthony chen arun tejasvi chaganty yicheng fan vincent y zhao ni lao hongrae lee da cheng juan kelvin guu 2023 proceedings of acl 10 18653 v1 2023 acl long 910 conference paper 人工智慧 檢索增強生成 rarr 研究與修訂 歸因 以檢索與修訂降低生成內容的無依據陳述並改善歸因 搜尋結果與修訂模型都可能錯誤 仍需來源白名單與人工覆核 true https doi org 10 18653 v1 2023 acl long 910 gao2023rarr proceedings of acl 2023 人工智慧 檢索增強生成 rarr 研究與修訂 歸因",
+      "official": false,
+      "peer_reviewed": true,
+      "doi": "10.18653/v1/2023.acl-long.910",
+      "year": 2023
+    },
+    {
+      "id": "literature:imbenswooldridge2009",
+      "kind": "literature",
+      "title": "Recent Developments in the Econometrics of Program Evaluation",
+      "body": "imbenswooldridge2009 Recent Developments in the Econometrics of Program Evaluation Guido W. Imbens Jeffrey M. Wooldridge 2009 Journal of Economic Literature 10.1257/jel.47.1.5 journal_article 因果推論 政策評估 反事實 處置效果 方案評估 建立觀察資料政策評估的處置效果、選擇與識別架構。 方法選擇不能取代識別假設與制度背景論證。 True https://doi.org/10.1257/jel.47.1.5 imbenswooldridge2009",
+      "url": "#theory?lit=imbenswooldridge2009",
+      "tags": [
+        "Journal of Economic Literature",
+        "2009",
+        "因果推論",
+        "政策評估",
+        "反事實",
+        "處置效果",
+        "方案評估"
+      ],
+      "searchable": "recent developments in the econometrics of program evaluation imbenswooldridge2009 recent developments in the econometrics of program evaluation guido w imbens jeffrey m wooldridge 2009 journal of economic literature 10 1257 jel 47 1 5 journal article 因果推論 政策評估 反事實 處置效果 方案評估 建立觀察資料政策評估的處置效果 選擇與識別架構 方法選擇不能取代識別假設與制度背景論證 true https doi org 10 1257 jel 47 1 5 imbenswooldridge2009 journal of economic literature 2009 因果推論 政策評估 反事實 處置效果 方案評估",
+      "official": false,
+      "peer_reviewed": true,
+      "doi": "10.1257/jel.47.1.5",
+      "year": 2009
+    },
+    {
+      "id": "literature:roberts1990",
+      "kind": "literature",
+      "title": "Some Characteristics of One Type of High Reliability Organization",
+      "body": "roberts1990 Some Characteristics of One Type of High Reliability Organization Karlene H. Roberts 1990 Organization Science 10.1287/orsc.1.2.160 journal_article 安全科學 組織 高可靠度組織 事故預防 複雜系統 分析高風險組織如何在複雜與緊密耦合環境維持低事故率。 不能將高風險產業經驗不加調整套用到一般行政組織。 True https://doi.org/10.1287/orsc.1.2.160 roberts1990",
+      "url": "#theory?lit=roberts1990",
+      "tags": [
+        "Organization Science",
+        "1990",
+        "安全科學",
+        "組織",
+        "高可靠度組織",
+        "事故預防",
+        "複雜系統"
+      ],
+      "searchable": "some characteristics of one type of high reliability organization roberts1990 some characteristics of one type of high reliability organization karlene h roberts 1990 organization science 10 1287 orsc 1 2 160 journal article 安全科學 組織 高可靠度組織 事故預防 複雜系統 分析高風險組織如何在複雜與緊密耦合環境維持低事故率 不能將高風險產業經驗不加調整套用到一般行政組織 true https doi org 10 1287 orsc 1 2 160 roberts1990 organization science 1990 安全科學 組織 高可靠度組織 事故預防 複雜系統",
+      "official": false,
+      "peer_reviewed": true,
+      "doi": "10.1287/orsc.1.2.160",
+      "year": 1990
+    },
+    {
+      "id": "literature:matland1995",
+      "kind": "literature",
+      "title": "Synthesizing the Implementation Literature: The Ambiguity-Conflict Model of Policy Implementation",
+      "body": "matland1995 Synthesizing the Implementation Literature: The Ambiguity-Conflict Model of Policy Implementation Richard E. Matland 1995 Journal of Public Administration Research and Theory 10.1093/oxfordjournals.jpart.a037242 journal_article 政策執行 公共行政 執行落差 模糊性 衝突 依政策模糊性與衝突程度判斷執行主要受資源、權力、地方條件或試驗影響。 二維分類是診斷起點，不取代具體機制與組織分析。 True https://doi.org/10.1093/oxfordjournals.jpart.a037242 matland1995",
+      "url": "#theory?lit=matland1995",
+      "tags": [
+        "Journal of Public Administration Research and Theory",
+        "1995",
+        "政策執行",
+        "公共行政",
+        "執行落差",
+        "模糊性",
+        "衝突"
+      ],
+      "searchable": "synthesizing the implementation literature the ambiguity conflict model of policy implementation matland1995 synthesizing the implementation literature the ambiguity conflict model of policy implementation richard e matland 1995 journal of public administration research and theory 10 1093 oxfordjournals jpart a037242 journal article 政策執行 公共行政 執行落差 模糊性 衝突 依政策模糊性與衝突程度判斷執行主要受資源 權力 地方條件或試驗影響 二維分類是診斷起點 不取代具體機制與組織分析 true https doi org 10 1093 oxfordjournals jpart a037242 matland1995 journal of public administration research and theory 1995 政策執行 公共行政 執行落差 模糊性 衝突",
+      "official": false,
+      "peer_reviewed": true,
+      "doi": "10.1093/oxfordjournals.jpart.a037242",
+      "year": 1995
+    },
+    {
+      "id": "literature:abadie2010",
+      "kind": "literature",
+      "title": "Synthetic Control Methods for Comparative Case Studies: Estimating the Effect of California’s Tobacco Control Program",
+      "body": "abadie2010 Synthetic Control Methods for Comparative Case Studies: Estimating the Effect of California’s Tobacco Control Program Alberto Abadie Alexis Diamond Jens Hainmueller 2010 Journal of the American Statistical Association 10.1198/jasa.2009.ap08746 journal_article 因果推論 比較個案 合成控制 政策評估 比較個案 以加權對照單位建立單一受處置地區的反事實趨勢。 需要足夠前期資料、合適供體池與無其他同期重大衝擊。 True https://doi.org/10.1198/jasa.2009.ap08746 abadie2010",
+      "url": "#theory?lit=abadie2010",
+      "tags": [
+        "Journal of the American Statistical Association",
+        "2010",
+        "因果推論",
+        "比較個案",
+        "合成控制",
+        "政策評估",
+        "比較個案"
+      ],
+      "searchable": "synthetic control methods for comparative case studies estimating the effect of california s tobacco control program abadie2010 synthetic control methods for comparative case studies estimating the effect of california s tobacco control program alberto abadie alexis diamond jens hainmueller 2010 journal of the american statistical association 10 1198 jasa 2009 ap08746 journal article 因果推論 比較個案 合成控制 政策評估 比較個案 以加權對照單位建立單一受處置地區的反事實趨勢 需要足夠前期資料 合適供體池與無其他同期重大衝擊 true https doi org 10 1198 jasa 2009 ap08746 abadie2010 journal of the american statistical association 2010 因果推論 比較個案 合成控制 政策評估 比較個案",
+      "official": false,
+      "peer_reviewed": true,
+      "doi": "10.1198/jasa.2009.ap08746",
+      "year": 2010
+    },
+    {
+      "id": "literature:mettlersoss2004",
+      "kind": "literature",
+      "title": "The Consequences of Public Policy for Democratic Citizenship: Bridging Policy Studies and Mass Politics",
+      "body": "mettlersoss2004 The Consequences of Public Policy for Democratic Citizenship: Bridging Policy Studies and Mass Politics Suzanne Mettler Joe Soss 2004 Perspectives on Politics 10.1017/S1537592704000623 journal_article 政策回饋 民主治理 政策回饋 公民身分 政治參與 分析政策設計與接觸經驗如何塑造公民態度與參與。 需要區分政策效果、選擇進入制度的人群與其他政治社會化因素。 True https://doi.org/10.1017/S1537592704000623 mettlersoss2004",
+      "url": "#theory?lit=mettlersoss2004",
+      "tags": [
+        "Perspectives on Politics",
+        "2004",
+        "政策回饋",
+        "民主治理",
+        "政策回饋",
+        "公民身分",
+        "政治參與"
+      ],
+      "searchable": "the consequences of public policy for democratic citizenship bridging policy studies and mass politics mettlersoss2004 the consequences of public policy for democratic citizenship bridging policy studies and mass politics suzanne mettler joe soss 2004 perspectives on politics 10 1017 s1537592704000623 journal article 政策回饋 民主治理 政策回饋 公民身分 政治參與 分析政策設計與接觸經驗如何塑造公民態度與參與 需要區分政策效果 選擇進入制度的人群與其他政治社會化因素 true https doi org 10 1017 s1537592704000623 mettlersoss2004 perspectives on politics 2004 政策回饋 民主治理 政策回饋 公民身分 政治參與",
+      "official": false,
+      "peer_reviewed": true,
+      "doi": "10.1017/S1537592704000623",
+      "year": 2004
+    },
+    {
+      "id": "literature:radaelli2004",
+      "kind": "literature",
+      "title": "The Diffusion of Regulatory Impact Analysis—Best Practice or Lesson-Drawing?",
+      "body": "radaelli2004 The Diffusion of Regulatory Impact Analysis—Best Practice or Lesson-Drawing? Claudio M. Radaelli 2004 European Journal of Political Research 10.1111/j.0304-4130.2004.00172.x journal_article 法規影響評估 政策工具 RIA 法規影響評估 政策移轉 分析法規影響評估擴散、學習與形式化採納的差異。 有RIA程序不代表實質比較替代方案或真正改變決策。 True https://doi.org/10.1111/j.0304-4130.2004.00172.x radaelli2004",
+      "url": "#theory?lit=radaelli2004",
+      "tags": [
+        "European Journal of Political Research",
+        "2004",
+        "法規影響評估",
+        "政策工具",
+        "RIA",
+        "法規影響評估",
+        "政策移轉"
+      ],
+      "searchable": "the diffusion of regulatory impact analysis best practice or lesson drawing radaelli2004 the diffusion of regulatory impact analysis best practice or lesson drawing claudio m radaelli 2004 european journal of political research 10 1111 j 0304 4130 2004 00172 x journal article 法規影響評估 政策工具 ria 法規影響評估 政策移轉 分析法規影響評估擴散 學習與形式化採納的差異 有ria程序不代表實質比較替代方案或真正改變決策 true https doi org 10 1111 j 0304 4130 2004 00172 x radaelli2004 european journal of political research 2004 法規影響評估 政策工具 ria 法規影響評估 政策移轉",
+      "official": false,
+      "peer_reviewed": true,
+      "doi": "10.1111/j.0304-4130.2004.00172.x",
+      "year": 2004
+    },
+    {
+      "id": "literature:lindblom1959",
+      "kind": "literature",
+      "title": "The Science of “Muddling Through”",
+      "body": "lindblom1959 The Science of “Muddling Through” Charles E. Lindblom 1959 Public Administration Review 10.2307/973677 journal_article 公共政策 決策理論 漸進主義 有限理性 政策決策 分析決策者為何採小幅調整、有限比較與連續試錯。 不適合將所有漸進變更合理化，尤其在結構性不正義或重大風險下。 True https://doi.org/10.2307/973677 lindblom1959",
+      "url": "#theory?lit=lindblom1959",
+      "tags": [
+        "Public Administration Review",
+        "1959",
+        "公共政策",
+        "決策理論",
+        "漸進主義",
+        "有限理性",
+        "政策決策"
+      ],
+      "searchable": "the science of muddling through lindblom1959 the science of muddling through charles e lindblom 1959 public administration review 10 2307 973677 journal article 公共政策 決策理論 漸進主義 有限理性 政策決策 分析決策者為何採小幅調整 有限比較與連續試錯 不適合將所有漸進變更合理化 尤其在結構性不正義或重大風險下 true https doi org 10 2307 973677 lindblom1959 public administration review 1959 公共政策 決策理論 漸進主義 有限理性 政策決策",
+      "official": false,
+      "peer_reviewed": true,
+      "doi": "10.2307/973677",
+      "year": 1959
+    },
+    {
+      "id": "literature:fung2006",
+      "kind": "literature",
+      "title": "Varieties of Participation in Complex Governance",
+      "body": "fung2006 Varieties of Participation in Complex Governance Archon Fung 2006 Public Administration Review 10.1111/j.1540-6210.2006.00667.x journal_article 民主治理 公共參與 參與治理 審議民主 制度設計 比較不同參與安排的代表性、溝通方式與對決策影響。 屬制度類型化工具，不能單靠類型判斷個案民主品質。 True https://doi.org/10.1111/j.1540-6210.2006.00667.x fung2006",
+      "url": "#theory?lit=fung2006",
+      "tags": [
+        "Public Administration Review",
+        "2006",
+        "民主治理",
+        "公共參與",
+        "參與治理",
+        "審議民主",
+        "制度設計"
+      ],
+      "searchable": "varieties of participation in complex governance fung2006 varieties of participation in complex governance archon fung 2006 public administration review 10 1111 j 1540 6210 2006 00667 x journal article 民主治理 公共參與 參與治理 審議民主 制度設計 比較不同參與安排的代表性 溝通方式與對決策影響 屬制度類型化工具 不能單靠類型判斷個案民主品質 true https doi org 10 1111 j 1540 6210 2006 00667 x fung2006 public administration review 2006 民主治理 公共參與 參與治理 審議民主 制度設計",
+      "official": false,
+      "peer_reviewed": true,
+      "doi": "10.1111/j.1540-6210.2006.00667.x",
+      "year": 2006
+    },
+    {
+      "id": "literature:gentzkow2010",
+      "kind": "literature",
+      "title": "What Drives Media Slant? Evidence From U.S. Daily Newspapers",
+      "body": "gentzkow2010 journal_article True What Drives Media Slant? Evidence From U.S. Daily Newspapers Matthew Gentzkow Jesse M. Shapiro 2010 Econometrica 10.3982/ECTA7195 媒體偏向 政治經濟 媒體論述 政黨語言 所有權 閱聽人 建立媒體語言與政黨語料接近度，但須多維且依議題分層。 美國兩黨單軸設計不能直接移植臺灣。",
+      "url": "#theory?lit=gentzkow2010",
+      "tags": [
+        "Econometrica",
+        "2010",
+        "媒體偏向",
+        "政治經濟",
+        "媒體論述",
+        "政黨語言",
+        "所有權",
+        "閱聽人"
+      ],
+      "searchable": "what drives media slant evidence from u s daily newspapers gentzkow2010 journal article true what drives media slant evidence from u s daily newspapers matthew gentzkow jesse m shapiro 2010 econometrica 10 3982 ecta7195 媒體偏向 政治經濟 媒體論述 政黨語言 所有權 閱聽人 建立媒體語言與政黨語料接近度 但須多維且依議題分層 美國兩黨單軸設計不能直接移植臺灣 econometrica 2010 媒體偏向 政治經濟 媒體論述 政黨語言 所有權 閱聽人",
+      "official": false,
+      "peer_reviewed": true,
+      "doi": "10.3982/ECTA7195",
+      "year": 2010
+    },
+    {
+      "id": "literature:pierson1993",
+      "kind": "literature",
+      "title": "When Effect Becomes Cause: Policy Feedback and Political Change",
+      "body": "pierson1993 When Effect Becomes Cause: Policy Feedback and Political Change Paul Pierson 1993 World Politics 10.2307/2950710 journal_article 制度變遷 公共政策 政策回饋 路徑依賴 政治變遷 分析政策如何改變資源、利益、組織與公民認知，反過來影響政治。 回饋方向與強度須用時間序列和機制資料驗證。 True https://doi.org/10.2307/2950710 pierson1993",
+      "url": "#theory?lit=pierson1993",
+      "tags": [
+        "World Politics",
+        "1993",
+        "制度變遷",
+        "公共政策",
+        "政策回饋",
+        "路徑依賴",
+        "政治變遷"
+      ],
+      "searchable": "when effect becomes cause policy feedback and political change pierson1993 when effect becomes cause policy feedback and political change paul pierson 1993 world politics 10 2307 2950710 journal article 制度變遷 公共政策 政策回饋 路徑依賴 政治變遷 分析政策如何改變資源 利益 組織與公民認知 反過來影響政治 回饋方向與強度須用時間序列和機制資料驗證 true https doi org 10 2307 2950710 pierson1993 world politics 1993 制度變遷 公共政策 政策回饋 路徑依賴 政治變遷",
+      "official": false,
+      "peer_reviewed": true,
+      "doi": "10.2307/2950710",
+      "year": 1993
+    },
+    {
+      "id": "official_source:123",
+      "kind": "official_source",
+      "title": "Auditor-General’s Office",
+      "body": "新加坡 AGO Singapore 預算、採購與審計 預算、採購與監督 公共部門審計報告 查找財務與行政控制問題 各國制度、版本與法律效力不同；跨國比較時須使用功能比較並確認文件日期與位階。",
+      "url": "https://www.ago.gov.sg/",
+      "tags": [
+        "新加坡",
+        "AGO Singapore",
+        "預算、採購與審計",
+        "核心"
+      ],
+      "searchable": "auditor general s office 新加坡 ago singapore 預算 採購與審計 預算 採購與監督 公共部門審計報告 查找財務與行政控制問題 各國制度 版本與法律效力不同 跨國比較時須使用功能比較並確認文件日期與位階 新加坡 ago singapore 預算 採購與審計 核心",
+      "agency": "AGO Singapore",
+      "country": "新加坡",
+      "country_code": "SG",
+      "category": "預算、採購與審計",
+      "level": "核心",
+      "official": true
+    },
+    {
+      "id": "official_source:93",
+      "kind": "official_source",
+      "title": "Australian Bureau of Statistics",
+      "body": "澳洲 ABS 統計與開放資料 開放資料與統計 人口、經濟與社會統計 建立政策比較基線 各國制度、版本與法律效力不同；跨國比較時須使用功能比較並確認文件日期與位階。",
+      "url": "https://www.abs.gov.au/",
+      "tags": [
+        "澳洲",
+        "ABS",
+        "統計與開放資料",
+        "核心"
+      ],
+      "searchable": "australian bureau of statistics 澳洲 abs 統計與開放資料 開放資料與統計 人口 經濟與社會統計 建立政策比較基線 各國制度 版本與法律效力不同 跨國比較時須使用功能比較並確認文件日期與位階 澳洲 abs 統計與開放資料 核心",
+      "agency": "ABS",
+      "country": "澳洲",
+      "country_code": "AU",
+      "category": "統計與開放資料",
+      "level": "核心",
+      "official": true
+    },
+    {
+      "id": "official_source:94",
+      "kind": "official_source",
+      "title": "Australian National Audit Office",
+      "body": "澳洲 ANAO 預算、採購與審計 預算、採購與監督 政府部門財務與績效審計 查找行政執行與治理問題 各國制度、版本與法律效力不同；跨國比較時須使用功能比較並確認文件日期與位階。",
+      "url": "https://www.anao.gov.au/",
+      "tags": [
+        "澳洲",
+        "ANAO",
+        "預算、採購與審計",
+        "核心"
+      ],
+      "searchable": "australian national audit office 澳洲 anao 預算 採購與審計 預算 採購與監督 政府部門財務與績效審計 查找行政執行與治理問題 各國制度 版本與法律效力不同 跨國比較時須使用功能比較並確認文件日期與位階 澳洲 anao 預算 採購與審計 核心",
+      "agency": "ANAO",
+      "country": "澳洲",
+      "country_code": "AU",
+      "category": "預算、採購與審計",
+      "level": "核心",
+      "official": true
+    },
+    {
+      "id": "official_source:119",
+      "kind": "official_source",
+      "title": "Bills Introduced",
+      "body": "新加坡 Parliament of Singapore 立法與國會 立法、議事與國會監督 國會法案全文 追蹤法案內容 各國制度、版本與法律效力不同；跨國比較時須使用功能比較並確認文件日期與位階。",
+      "url": "https://www.parliament.gov.sg/parliamentary-business/bills-introduced",
+      "tags": [
+        "新加坡",
+        "Parliament of Singapore",
+        "立法與國會",
+        "核心"
+      ],
+      "searchable": "bills introduced 新加坡 parliament of singapore 立法與國會 立法 議事與國會監督 國會法案全文 追蹤法案內容 各國制度 版本與法律效力不同 跨國比較時須使用功能比較並確認文件日期與位階 新加坡 parliament of singapore 立法與國會 核心",
+      "agency": "Parliament of Singapore",
+      "country": "新加坡",
+      "country_code": "SG",
+      "category": "立法與國會",
+      "level": "核心",
+      "official": true
+    },
+    {
+      "id": "official_source:90",
+      "kind": "official_source",
+      "title": "Bills and Legislation",
+      "body": "澳洲 Parliament of Australia 立法與國會 立法、議事與國會監督 法案、解釋備忘錄與審議進度 追蹤法案與授權立法 各國制度、版本與法律效力不同；跨國比較時須使用功能比較並確認文件日期與位階。",
+      "url": "https://www.aph.gov.au/Parliamentary_Business/Bills_Legislation",
+      "tags": [
+        "澳洲",
+        "Parliament of Australia",
+        "立法與國會",
+        "核心"
+      ],
+      "searchable": "bills and legislation 澳洲 parliament of australia 立法與國會 立法 議事與國會監督 法案 解釋備忘錄與審議進度 追蹤法案與授權立法 各國制度 版本與法律效力不同 跨國比較時須使用功能比較並確認文件日期與位階 澳洲 parliament of australia 立法與國會 核心",
+      "agency": "Parliament of Australia",
+      "country": "澳洲",
+      "country_code": "AU",
+      "category": "立法與國會",
+      "level": "核心",
+      "official": true
+    },
+    {
+      "id": "official_source:116",
+      "kind": "official_source",
+      "title": "Board of Audit and Inspection",
+      "body": "韓國 BAI 預算、採購與審計 預算、採購與監督 政府審計與監察資訊 查找課責與改善報告 各國制度、版本與法律效力不同；跨國比較時須使用功能比較並確認文件日期與位階。",
+      "url": "https://www.bai.go.kr/bai_eng/",
+      "tags": [
+        "韓國",
+        "BAI",
+        "預算、採購與審計",
+        "核心"
+      ],
+      "searchable": "board of audit and inspection 韓國 bai 預算 採購與審計 預算 採購與監督 政府審計與監察資訊 查找課責與改善報告 各國制度 版本與法律效力不同 跨國比較時須使用功能比較並確認文件日期與位階 韓國 bai 預算 採購與審計 核心",
+      "agency": "BAI",
+      "country": "韓國",
+      "country_code": "KR",
+      "category": "預算、採購與審計",
+      "level": "核心",
+      "official": true
+    },
+    {
+      "id": "official_source:109",
+      "kind": "official_source",
+      "title": "Board of Audit of Japan",
+      "body": "日本 Board of Audit of Japan 預算、採購與審計 預算、採購與監督 國家會計與行政執行檢查報告 查找財務與行政缺失 各國制度、版本與法律效力不同；跨國比較時須使用功能比較並確認文件日期與位階。",
+      "url": "https://www.jbaudit.go.jp/english/index.html",
+      "tags": [
+        "日本",
+        "Board of Audit of Japan",
+        "預算、採購與審計",
+        "核心"
+      ],
+      "searchable": "board of audit of japan 日本 board of audit of japan 預算 採購與審計 預算 採購與監督 國家會計與行政執行檢查報告 查找財務與行政缺失 各國制度 版本與法律效力不同 跨國比較時須使用功能比較並確認文件日期與位階 日本 board of audit of japan 預算 採購與審計 核心",
+      "agency": "Board of Audit of Japan",
+      "country": "日本",
+      "country_code": "JP",
+      "category": "預算、採購與審計",
+      "level": "核心",
+      "official": true
+    },
+    {
+      "id": "official_source:131",
+      "kind": "official_source",
+      "title": "CURIA Case-law",
+      "body": "歐盟 Court of Justice of the European Union 司法與救濟 司法、裁判與救濟 歐盟法院判決、意見與案件資料 核對歐盟法司法解釋 各國制度、版本與法律效力不同；跨國比較時須使用功能比較並確認文件日期與位階。",
+      "url": "https://curia.europa.eu/juris/recherche.jsf?language=en",
+      "tags": [
+        "歐盟",
+        "Court of Justice of the European Union",
+        "司法與救濟",
+        "核心"
+      ],
+      "searchable": "curia case law 歐盟 court of justice of the european union 司法與救濟 司法 裁判與救濟 歐盟法院判決 意見與案件資料 核對歐盟法司法解釋 各國制度 版本與法律效力不同 跨國比較時須使用功能比較並確認文件日期與位階 歐盟 court of justice of the european union 司法與救濟 核心",
+      "agency": "Court of Justice of the European Union",
+      "country": "歐盟",
+      "country_code": "EU",
+      "category": "司法與救濟",
+      "level": "核心",
+      "official": true
+    },
+    {
+      "id": "official_source:70",
+      "kind": "official_source",
+      "title": "Census Data",
+      "body": "美國 U.S. Census Bureau 統計與開放資料 開放資料與統計 人口、家庭、產業與地理統計 建立政策人口與社經基線 各國制度、版本與法律效力不同；跨國比較時須使用功能比較並確認文件日期與位階。",
+      "url": "https://www.census.gov/data.html",
+      "tags": [
+        "美國",
+        "U.S. Census Bureau",
+        "統計與開放資料",
+        "核心"
+      ],
+      "searchable": "census data 美國 u s census bureau 統計與開放資料 開放資料與統計 人口 家庭 產業與地理統計 建立政策人口與社經基線 各國制度 版本與法律效力不同 跨國比較時須使用功能比較並確認文件日期與位階 美國 u s census bureau 統計與開放資料 核心",
+      "agency": "U.S. Census Bureau",
+      "country": "美國",
+      "country_code": "US",
+      "category": "統計與開放資料",
+      "level": "核心",
+      "official": true
+    },
+    {
+      "id": "official_source:63",
+      "kind": "official_source",
+      "title": "Congress.gov",
+      "body": "美國 Library of Congress 法規與公報 法律、命令與公報 聯邦法案、法律、委員會活動與立法歷程 追蹤法案與國會審議 各國制度、版本與法律效力不同；跨國比較時須使用功能比較並確認文件日期與位階。",
+      "url": "https://www.congress.gov/",
+      "tags": [
+        "美國",
+        "Library of Congress",
+        "法規與公報",
+        "核心"
+      ],
+      "searchable": "congress gov 美國 library of congress 法規與公報 法律 命令與公報 聯邦法案 法律 委員會活動與立法歷程 追蹤法案與國會審議 各國制度 版本與法律效力不同 跨國比較時須使用功能比較並確認文件日期與位階 美國 library of congress 法規與公報 核心",
+      "agency": "Library of Congress",
+      "country": "美國",
+      "country_code": "US",
+      "category": "法規與公報",
+      "level": "核心",
+      "official": true
+    },
+    {
+      "id": "official_source:84",
+      "kind": "official_source",
+      "title": "Consulting with Canadians",
+      "body": "加拿大 Government of Canada 政策、研究與參與 政府政策與公眾參與 政府公眾諮詢與參與機會 追查政策形成與公眾意見 各國制度、版本與法律效力不同；跨國比較時須使用功能比較並確認文件日期與位階。",
+      "url": "https://www.canada.ca/en/government/system/consultations.html",
+      "tags": [
+        "加拿大",
+        "Government of Canada",
+        "政策、研究與參與",
+        "重要"
+      ],
+      "searchable": "consulting with canadians 加拿大 government of canada 政策 研究與參與 政府政策與公眾參與 政府公眾諮詢與參與機會 追查政策形成與公眾意見 各國制度 版本與法律效力不同 跨國比較時須使用功能比較並確認文件日期與位階 加拿大 government of canada 政策 研究與參與 重要",
+      "agency": "Government of Canada",
+      "country": "加拿大",
+      "country_code": "CA",
+      "category": "政策、研究與參與",
+      "level": "重要",
+      "official": true
+    },
+    {
+      "id": "official_source:102",
+      "kind": "official_source",
+      "title": "Courts of New Zealand Judgments",
+      "body": "紐西蘭 Courts of New Zealand 司法與救濟 司法、裁判與救濟 法院判決與裁判資訊 核對最新司法見解 各國制度、版本與法律效力不同；跨國比較時須使用功能比較並確認文件日期與位階。",
+      "url": "https://www.courtsofnz.govt.nz/judgments/",
+      "tags": [
+        "紐西蘭",
+        "Courts of New Zealand",
+        "司法與救濟",
+        "核心"
+      ],
+      "searchable": "courts of new zealand judgments 紐西蘭 courts of new zealand 司法與救濟 司法 裁判與救濟 法院判決與裁判資訊 核對最新司法見解 各國制度 版本與法律效力不同 跨國比較時須使用功能比較並確認文件日期與位階 紐西蘭 courts of new zealand 司法與救濟 核心",
+      "agency": "Courts of New Zealand",
+      "country": "紐西蘭",
+      "country_code": "NZ",
+      "category": "司法與救濟",
+      "level": "核心",
+      "official": true
+    },
+    {
+      "id": "official_source:140",
+      "kind": "official_source",
+      "title": "Crossref REST API",
+      "body": "國際組織 Crossref 學術文獻與研究 國際學術資料 DOI、題名、作者、期刊、年份、出版類型、更新與授權等學術中繼資料 依題名、作者或研究問題定位跨領域期刊論文與DOI 中繼資料由出版者登錄；相關排序與完整性不等於研究品質，摘要並非每筆都有",
+      "url": "https://api.crossref.org/",
+      "tags": [
+        "國際組織",
+        "Crossref",
+        "學術文獻與研究",
+        "核心"
+      ],
+      "searchable": "crossref rest api 國際組織 crossref 學術文獻與研究 國際學術資料 doi 題名 作者 期刊 年份 出版類型 更新與授權等學術中繼資料 依題名 作者或研究問題定位跨領域期刊論文與doi 中繼資料由出版者登錄 相關排序與完整性不等於研究品質 摘要並非每筆都有 國際組織 crossref 學術文獻與研究 核心",
+      "agency": "Crossref",
+      "country": "國際組織",
+      "country_code": "INT",
+      "category": "學術文獻與研究",
+      "level": "核心",
+      "official": true
+    },
+    {
+      "id": "official_source:67",
+      "kind": "official_source",
+      "title": "Data.gov",
+      "body": "美國 U.S. General Services Administration 統計與開放資料 開放資料與統計 聯邦政府開放資料目錄 尋找可下載資料集與 API 各國制度、版本與法律效力不同；跨國比較時須使用功能比較並確認文件日期與位階。",
+      "url": "https://data.gov/",
+      "tags": [
+        "美國",
+        "U.S. General Services Administration",
+        "統計與開放資料",
+        "核心"
+      ],
+      "searchable": "data gov 美國 u s general services administration 統計與開放資料 開放資料與統計 聯邦政府開放資料目錄 尋找可下載資料集與 api 各國制度 版本與法律效力不同 跨國比較時須使用功能比較並確認文件日期與位階 美國 u s general services administration 統計與開放資料 核心",
+      "agency": "U.S. General Services Administration",
+      "country": "美國",
+      "country_code": "US",
+      "category": "統計與開放資料",
+      "level": "核心",
+      "official": true
+    },
+    {
+      "id": "official_source:125",
+      "kind": "official_source",
+      "title": "EUR-Lex",
+      "body": "歐盟 European Union 法規與公報 法律、命令與公報 歐盟條約、法規、指令、官方公報與案例 核對歐盟法與法律文件 各國制度、版本與法律效力不同；跨國比較時須使用功能比較並確認文件日期與位階。",
+      "url": "https://eur-lex.europa.eu/",
+      "tags": [
+        "歐盟",
+        "European Union",
+        "法規與公報",
+        "核心"
+      ],
+      "searchable": "eur lex 歐盟 european union 法規與公報 法律 命令與公報 歐盟條約 法規 指令 官方公報與案例 核對歐盟法與法律文件 各國制度 版本與法律效力不同 跨國比較時須使用功能比較並確認文件日期與位階 歐盟 european union 法規與公報 核心",
+      "agency": "European Union",
+      "country": "歐盟",
+      "country_code": "EU",
+      "category": "法規與公報",
+      "level": "核心",
+      "official": true
+    },
+    {
+      "id": "official_source:141",
+      "kind": "official_source",
+      "title": "Europe PMC",
+      "body": "國際組織 Europe PMC 學術文獻與研究 國際學術資料 生命科學與健康相關期刊、摘要、引文、資助與部分開放全文 醫療、護理、公共衛生、實施科學與生命科學文獻檢索 領域集中於生命科學；是否有全文與授權依個別文獻而異",
+      "url": "https://europepmc.org/",
+      "tags": [
+        "國際組織",
+        "Europe PMC",
+        "學術文獻與研究",
+        "核心"
+      ],
+      "searchable": "europe pmc 國際組織 europe pmc 學術文獻與研究 國際學術資料 生命科學與健康相關期刊 摘要 引文 資助與部分開放全文 醫療 護理 公共衛生 實施科學與生命科學文獻檢索 領域集中於生命科學 是否有全文與授權依個別文獻而異 國際組織 europe pmc 學術文獻與研究 核心",
+      "agency": "Europe PMC",
+      "country": "國際組織",
+      "country_code": "INT",
+      "category": "學術文獻與研究",
+      "level": "核心",
+      "official": true
+    },
+    {
+      "id": "official_source:130",
+      "kind": "official_source",
+      "title": "European Court of Auditors",
+      "body": "歐盟 ECA 預算、採購與審計 預算、採購與監督 歐盟預算、績效與合規審計 查找歐盟政策執行與課責資料 各國制度、版本與法律效力不同；跨國比較時須使用功能比較並確認文件日期與位階。",
+      "url": "https://www.eca.europa.eu/en",
+      "tags": [
+        "歐盟",
+        "ECA",
+        "預算、採購與審計",
+        "核心"
+      ],
+      "searchable": "european court of auditors 歐盟 eca 預算 採購與審計 預算 採購與監督 歐盟預算 績效與合規審計 查找歐盟政策執行與課責資料 各國制度 版本與法律效力不同 跨國比較時須使用功能比較並確認文件日期與位階 歐盟 eca 預算 採購與審計 核心",
+      "agency": "ECA",
+      "country": "歐盟",
+      "country_code": "EU",
+      "category": "預算、採購與審計",
+      "level": "核心",
+      "official": true
+    },
+    {
+      "id": "official_source:129",
+      "kind": "official_source",
+      "title": "Eurostat",
+      "body": "歐盟 European Commission 統計與開放資料 開放資料與統計 歐盟與會員國統計 建立跨國比較基線 各國制度、版本與法律效力不同；跨國比較時須使用功能比較並確認文件日期與位階。",
+      "url": "https://ec.europa.eu/eurostat/",
+      "tags": [
+        "歐盟",
+        "European Commission",
+        "統計與開放資料",
+        "核心"
+      ],
+      "searchable": "eurostat 歐盟 european commission 統計與開放資料 開放資料與統計 歐盟與會員國統計 建立跨國比較基線 各國制度 版本與法律效力不同 跨國比較時須使用功能比較並確認文件日期與位階 歐盟 european commission 統計與開放資料 核心",
+      "agency": "European Commission",
+      "country": "歐盟",
+      "country_code": "EU",
+      "category": "統計與開放資料",
+      "level": "核心",
+      "official": true
+    },
+    {
+      "id": "official_source:89",
+      "kind": "official_source",
+      "title": "Federal Register of Legislation",
+      "body": "澳洲 Australian Government 法規與公報 法律、命令與公報 聯邦法律、規則與法案資料 核對法規版本與相關文件 各國制度、版本與法律效力不同；跨國比較時須使用功能比較並確認文件日期與位階。",
+      "url": "https://www.legislation.gov.au/",
+      "tags": [
+        "澳洲",
+        "Australian Government",
+        "法規與公報",
+        "核心"
+      ],
+      "searchable": "federal register of legislation 澳洲 australian government 法規與公報 法律 命令與公報 聯邦法律 規則與法案資料 核對法規版本與相關文件 各國制度 版本與法律效力不同 跨國比較時須使用功能比較並確認文件日期與位階 澳洲 australian government 法規與公報 核心",
+      "agency": "Australian Government",
+      "country": "澳洲",
+      "country_code": "AU",
+      "category": "法規與公報",
+      "level": "核心",
+      "official": true
+    },
+    {
+      "id": "official_source:80",
+      "kind": "official_source",
+      "title": "Find Case Law",
+      "body": "英國 The National Archives 司法與救濟 司法、裁判與救濟 英格蘭與威爾斯法院及法庭官方裁判 核對判決與上訴脈絡 各國制度、版本與法律效力不同；跨國比較時須使用功能比較並確認文件日期與位階。",
+      "url": "https://caselaw.nationalarchives.gov.uk/",
+      "tags": [
+        "英國",
+        "The National Archives",
+        "司法與救濟",
+        "核心"
+      ],
+      "searchable": "find case law 英國 the national archives 司法與救濟 司法 裁判與救濟 英格蘭與威爾斯法院及法庭官方裁判 核對判決與上訴脈絡 各國制度 版本與法律效力不同 跨國比較時須使用功能比較並確認文件日期與位階 英國 the national archives 司法與救濟 核心",
+      "agency": "The National Archives",
+      "country": "英國",
+      "country_code": "UK",
+      "category": "司法與救濟",
+      "level": "核心",
+      "official": true
+    },
+    {
+      "id": "official_source:8",
+      "kind": "official_source",
+      "title": "GPI政府出版品資訊網",
+      "body": "中華民國（臺灣） 文化部 政策、研究與檔案 跨院共通 政府出版品書目、電子出版品、販售與典藏資訊 查政府白皮書、年報、專書、手冊與專題出版品 部分僅有書目或購閱資訊",
+      "url": "https://gpi.culture.tw/",
+      "tags": [
+        "中華民國（臺灣）",
+        "文化部",
+        "政策、研究與檔案",
+        "核心"
+      ],
+      "searchable": "gpi政府出版品資訊網 中華民國 臺灣 文化部 政策 研究與檔案 跨院共通 政府出版品書目 電子出版品 販售與典藏資訊 查政府白皮書 年報 專書 手冊與專題出版品 部分僅有書目或購閱資訊 中華民國 臺灣 文化部 政策 研究與檔案 核心",
+      "agency": "文化部",
+      "country": "中華民國（臺灣）",
+      "country_code": "TW",
+      "category": "政策、研究與檔案",
+      "level": "核心",
+      "official": true
+    },
+    {
+      "id": "official_source:64",
+      "kind": "official_source",
+      "title": "GovInfo",
+      "body": "美國 U.S. Government Publishing Office 法規與公報 法律、命令與公報 國會文件、聯邦公報、法規彙編與政府出版品 取得正式政府文獻全文 各國制度、版本與法律效力不同；跨國比較時須使用功能比較並確認文件日期與位階。",
+      "url": "https://www.govinfo.gov/",
+      "tags": [
+        "美國",
+        "U.S. Government Publishing Office",
+        "法規與公報",
+        "核心"
+      ],
+      "searchable": "govinfo 美國 u s government publishing office 法規與公報 法律 命令與公報 國會文件 聯邦公報 法規彙編與政府出版品 取得正式政府文獻全文 各國制度 版本與法律效力不同 跨國比較時須使用功能比較並確認文件日期與位階 美國 u s government publishing office 法規與公報 核心",
+      "agency": "U.S. Government Publishing Office",
+      "country": "美國",
+      "country_code": "US",
+      "category": "法規與公報",
+      "level": "核心",
+      "official": true
+    },
+    {
+      "id": "official_source:75",
+      "kind": "official_source",
+      "title": "Government consultations",
+      "body": "英國 GOV.UK 政策、研究與參與 政府政策與公眾參與 政策與法規公眾諮詢 追查政策形成與利害關係人意見 各國制度、版本與法律效力不同；跨國比較時須使用功能比較並確認文件日期與位階。",
+      "url": "https://www.gov.uk/search/policy-papers-and-consultations",
+      "tags": [
+        "英國",
+        "GOV.UK",
+        "政策、研究與參與",
+        "核心"
+      ],
+      "searchable": "government consultations 英國 gov uk 政策 研究與參與 政府政策與公眾參與 政策與法規公眾諮詢 追查政策形成與利害關係人意見 各國制度 版本與法律效力不同 跨國比較時須使用功能比較並確認文件日期與位階 英國 gov uk 政策 研究與參與 核心",
+      "agency": "GOV.UK",
+      "country": "英國",
+      "country_code": "UK",
+      "category": "政策、研究與參與",
+      "level": "核心",
+      "official": true
+    },
+    {
+      "id": "official_source:127",
+      "kind": "official_source",
+      "title": "Have Your Say",
+      "body": "歐盟 European Commission 政策、研究與參與 政府政策與公眾參與 政策倡議、公眾諮詢、影響評估與回饋 分析政策形成與法規影響評估 各國制度、版本與法律效力不同；跨國比較時須使用功能比較並確認文件日期與位階。",
+      "url": "https://have-your-say.ec.europa.eu/index_en",
+      "tags": [
+        "歐盟",
+        "European Commission",
+        "政策、研究與參與",
+        "核心"
+      ],
+      "searchable": "have your say 歐盟 european commission 政策 研究與參與 政府政策與公眾參與 政策倡議 公眾諮詢 影響評估與回饋 分析政策形成與法規影響評估 各國制度 版本與法律效力不同 跨國比較時須使用功能比較並確認文件日期與位階 歐盟 european commission 政策 研究與參與 核心",
+      "agency": "European Commission",
+      "country": "歐盟",
+      "country_code": "EU",
+      "category": "政策、研究與參與",
+      "level": "核心",
+      "official": true
+    },
+    {
+      "id": "official_source:95",
+      "kind": "official_source",
+      "title": "High Court Judgments",
+      "body": "澳洲 High Court of Australia 司法與救濟 司法、裁判與救濟 澳洲高等法院判決 核對最高法院見解 各國制度、版本與法律效力不同；跨國比較時須使用功能比較並確認文件日期與位階。",
+      "url": "https://www.hcourt.gov.au/cases-and-judgments/judgments",
+      "tags": [
+        "澳洲",
+        "High Court of Australia",
+        "司法與救濟",
+        "核心"
+      ],
+      "searchable": "high court judgments 澳洲 high court of australia 司法與救濟 司法 裁判與救濟 澳洲高等法院判決 核對最高法院見解 各國制度 版本與法律效力不同 跨國比較時須使用功能比較並確認文件日期與位階 澳洲 high court of australia 司法與救濟 核心",
+      "agency": "High Court of Australia",
+      "country": "澳洲",
+      "country_code": "AU",
+      "category": "司法與救濟",
+      "level": "核心",
+      "official": true
+    },
+    {
+      "id": "official_source:83",
+      "kind": "official_source",
+      "title": "House of Commons Committees",
+      "body": "加拿大 Parliament of Canada 立法與國會 立法、議事與國會監督 委員會會議、證詞、報告與政府回應 查找國會調查與政策證據 各國制度、版本與法律效力不同；跨國比較時須使用功能比較並確認文件日期與位階。",
+      "url": "https://www.ourcommons.ca/Committees/en",
+      "tags": [
+        "加拿大",
+        "Parliament of Canada",
+        "立法與國會",
+        "核心"
+      ],
+      "searchable": "house of commons committees 加拿大 parliament of canada 立法與國會 立法 議事與國會監督 委員會會議 證詞 報告與政府回應 查找國會調查與政策證據 各國制度 版本與法律效力不同 跨國比較時須使用功能比較並確認文件日期與位階 加拿大 parliament of canada 立法與國會 核心",
+      "agency": "Parliament of Canada",
+      "country": "加拿大",
+      "country_code": "CA",
+      "category": "立法與國會",
+      "level": "核心",
+      "official": true
+    },
+    {
+      "id": "official_source:138",
+      "kind": "official_source",
+      "title": "ILOSTAT",
+      "body": "國際組織 International Labour Organization 統計與開放資料 開放資料與統計 勞動市場與社會保障統計 勞動及社會政策比較 各國制度、版本與法律效力不同；跨國比較時須使用功能比較並確認文件日期與位階。",
+      "url": "https://ilostat.ilo.org/data/",
+      "tags": [
+        "國際組織",
+        "International Labour Organization",
+        "統計與開放資料",
+        "核心"
+      ],
+      "searchable": "ilostat 國際組織 international labour organization 統計與開放資料 開放資料與統計 勞動市場與社會保障統計 勞動及社會政策比較 各國制度 版本與法律效力不同 跨國比較時須使用功能比較並確認文件日期與位階 國際組織 international labour organization 統計與開放資料 核心",
+      "agency": "International Labour Organization",
+      "country": "國際組織",
+      "country_code": "INT",
+      "category": "統計與開放資料",
+      "level": "核心",
+      "official": true
+    },
+    {
+      "id": "official_source:81",
+      "kind": "official_source",
+      "title": "Justice Laws Website",
+      "body": "加拿大 Department of Justice Canada 法規與公報 法律、命令與公報 聯邦法律與規則 核對現行法與修正 各國制度、版本與法律效力不同；跨國比較時須使用功能比較並確認文件日期與位階。",
+      "url": "https://laws-lois.justice.gc.ca/",
+      "tags": [
+        "加拿大",
+        "Department of Justice Canada",
+        "法規與公報",
+        "核心"
+      ],
+      "searchable": "justice laws website 加拿大 department of justice canada 法規與公報 法律 命令與公報 聯邦法律與規則 核對現行法與修正 各國制度 版本與法律效力不同 跨國比較時須使用功能比較並確認文件日期與位階 加拿大 department of justice canada 法規與公報 核心",
+      "agency": "Department of Justice Canada",
+      "country": "加拿大",
+      "country_code": "CA",
+      "category": "法規與公報",
+      "level": "核心",
+      "official": true
+    },
+    {
+      "id": "official_source:115",
+      "kind": "official_source",
+      "title": "KOSTAT",
+      "body": "韓國 Ministry of Data and Statistics 統計與開放資料 開放資料與統計 韓國官方統計 建立政策比較基線 各國制度、版本與法律效力不同；跨國比較時須使用功能比較並確認文件日期與位階。",
+      "url": "https://kostat.go.kr/anse/",
+      "tags": [
+        "韓國",
+        "Ministry of Data and Statistics",
+        "統計與開放資料",
+        "核心"
+      ],
+      "searchable": "kostat 韓國 ministry of data and statistics 統計與開放資料 開放資料與統計 韓國官方統計 建立政策比較基線 各國制度 版本與法律效力不同 跨國比較時須使用功能比較並確認文件日期與位階 韓國 ministry of data and statistics 統計與開放資料 核心",
+      "agency": "Ministry of Data and Statistics",
+      "country": "韓國",
+      "country_code": "KR",
+      "category": "統計與開放資料",
+      "level": "核心",
+      "official": true
+    },
+    {
+      "id": "official_source:82",
+      "kind": "official_source",
+      "title": "LEGISinfo",
+      "body": "加拿大 Parliament of Canada 立法與國會 立法、議事與國會監督 聯邦法案、階段、文件與表決 追蹤法案審議歷程 各國制度、版本與法律效力不同；跨國比較時須使用功能比較並確認文件日期與位階。",
+      "url": "https://www.parl.ca/legisinfo/en/overview",
+      "tags": [
+        "加拿大",
+        "Parliament of Canada",
+        "立法與國會",
+        "核心"
+      ],
+      "searchable": "legisinfo 加拿大 parliament of canada 立法與國會 立法 議事與國會監督 聯邦法案 階段 文件與表決 追蹤法案審議歷程 各國制度 版本與法律效力不同 跨國比較時須使用功能比較並確認文件日期與位階 加拿大 parliament of canada 立法與國會 核心",
+      "agency": "Parliament of Canada",
+      "country": "加拿大",
+      "country_code": "CA",
+      "category": "立法與國會",
+      "level": "核心",
+      "official": true
+    },
+    {
+      "id": "official_source:126",
+      "kind": "official_source",
+      "title": "Legislative Observatory",
+      "body": "歐盟 European Parliament 立法與國會 立法、議事與國會監督 歐盟立法程序與議案追蹤 追蹤歐盟立法歷程 各國制度、版本與法律效力不同；跨國比較時須使用功能比較並確認文件日期與位階。",
+      "url": "https://oeil.secure.europarl.europa.eu/oeil/home/home.do",
+      "tags": [
+        "歐盟",
+        "European Parliament",
+        "立法與國會",
+        "核心"
+      ],
+      "searchable": "legislative observatory 歐盟 european parliament 立法與國會 立法 議事與國會監督 歐盟立法程序與議案追蹤 追蹤歐盟立法歷程 各國制度 版本與法律效力不同 跨國比較時須使用功能比較並確認文件日期與位階 歐盟 european parliament 立法與國會 核心",
+      "agency": "European Parliament",
+      "country": "歐盟",
+      "country_code": "EU",
+      "category": "立法與國會",
+      "level": "核心",
+      "official": true
+    },
+    {
+      "id": "official_source:79",
+      "kind": "official_source",
+      "title": "National Audit Office",
+      "body": "英國 NAO 預算、採購與審計 預算、採購與監督 中央政府財務與績效審計 查找行政效能與課責資料 各國制度、版本與法律效力不同；跨國比較時須使用功能比較並確認文件日期與位階。",
+      "url": "https://www.nao.org.uk/",
+      "tags": [
+        "英國",
+        "NAO",
+        "預算、採購與審計",
+        "核心"
+      ],
+      "searchable": "national audit office 英國 nao 預算 採購與審計 預算 採購與監督 中央政府財務與績效審計 查找行政效能與課責資料 各國制度 版本與法律效力不同 跨國比較時須使用功能比較並確認文件日期與位階 英國 nao 預算 採購與審計 核心",
+      "agency": "NAO",
+      "country": "英國",
+      "country_code": "UK",
+      "category": "預算、採購與審計",
+      "level": "核心",
+      "official": true
+    },
+    {
+      "id": "official_source:96",
+      "kind": "official_source",
+      "title": "New Zealand Legislation",
+      "body": "紐西蘭 Parliamentary Counsel Office 法規與公報 法律、命令與公報 法律、法案與次級立法官方版本 核對法規與法案版本 各國制度、版本與法律效力不同；跨國比較時須使用功能比較並確認文件日期與位階。",
+      "url": "https://www.legislation.govt.nz/",
+      "tags": [
+        "紐西蘭",
+        "Parliamentary Counsel Office",
+        "法規與公報",
+        "核心"
+      ],
+      "searchable": "new zealand legislation 紐西蘭 parliamentary counsel office 法規與公報 法律 命令與公報 法律 法案與次級立法官方版本 核對法規與法案版本 各國制度 版本與法律效力不同 跨國比較時須使用功能比較並確認文件日期與位階 紐西蘭 parliamentary counsel office 法規與公報 核心",
+      "agency": "Parliamentary Counsel Office",
+      "country": "紐西蘭",
+      "country_code": "NZ",
+      "category": "法規與公報",
+      "level": "核心",
+      "official": true
+    },
+    {
+      "id": "official_source:97",
+      "kind": "official_source",
+      "title": "New Zealand Parliament Bills",
+      "body": "紐西蘭 New Zealand Parliament 立法與國會 立法、議事與國會監督 法案、階段與相關文件 追蹤立法程序 各國制度、版本與法律效力不同；跨國比較時須使用功能比較並確認文件日期與位階。",
+      "url": "https://bills.parliament.nz/",
+      "tags": [
+        "紐西蘭",
+        "New Zealand Parliament",
+        "立法與國會",
+        "核心"
+      ],
+      "searchable": "new zealand parliament bills 紐西蘭 new zealand parliament 立法與國會 立法 議事與國會監督 法案 階段與相關文件 追蹤立法程序 各國制度 版本與法律效力不同 跨國比較時須使用功能比較並確認文件日期與位階 紐西蘭 new zealand parliament 立法與國會 核心",
+      "agency": "New Zealand Parliament",
+      "country": "紐西蘭",
+      "country_code": "NZ",
+      "category": "立法與國會",
+      "level": "核心",
+      "official": true
+    },
+    {
+      "id": "official_source:132",
+      "kind": "official_source",
+      "title": "OECD Data Explorer",
+      "body": "國際組織 OECD 統計與開放資料 開放資料與統計 OECD跨國統計與指標 比較制度、經濟、社會與治理績效 各國制度、版本與法律效力不同；跨國比較時須使用功能比較並確認文件日期與位階。",
+      "url": "https://data-explorer.oecd.org/",
+      "tags": [
+        "國際組織",
+        "OECD",
+        "統計與開放資料",
+        "核心"
+      ],
+      "searchable": "oecd data explorer 國際組織 oecd 統計與開放資料 開放資料與統計 oecd跨國統計與指標 比較制度 經濟 社會與治理績效 各國制度 版本與法律效力不同 跨國比較時須使用功能比較並確認文件日期與位階 國際組織 oecd 統計與開放資料 核心",
+      "agency": "OECD",
+      "country": "國際組織",
+      "country_code": "INT",
+      "category": "統計與開放資料",
+      "level": "核心",
+      "official": true
+    },
+    {
+      "id": "official_source:133",
+      "kind": "official_source",
+      "title": "OECD iLibrary",
+      "body": "國際組織 OECD 政策、研究與檔案 研究、報告與檔案 政策報告、國別評估與比較研究 查找先進國家政策證據與制度比較 各國制度、版本與法律效力不同；跨國比較時須使用功能比較並確認文件日期與位階。",
+      "url": "https://www.oecd-ilibrary.org/",
+      "tags": [
+        "國際組織",
+        "OECD",
+        "政策、研究與檔案",
+        "核心"
+      ],
+      "searchable": "oecd ilibrary 國際組織 oecd 政策 研究與檔案 研究 報告與檔案 政策報告 國別評估與比較研究 查找先進國家政策證據與制度比較 各國制度 版本與法律效力不同 跨國比較時須使用功能比較並確認文件日期與位階 國際組織 oecd 政策 研究與檔案 核心",
+      "agency": "OECD",
+      "country": "國際組織",
+      "country_code": "INT",
+      "category": "政策、研究與檔案",
+      "level": "核心",
+      "official": true
+    },
+    {
+      "id": "official_source:78",
+      "kind": "official_source",
+      "title": "Office for National Statistics",
+      "body": "英國 ONS 統計與開放資料 開放資料與統計 人口、經濟、社會與公共服務統計 建立政策比較基線 各國制度、版本與法律效力不同；跨國比較時須使用功能比較並確認文件日期與位階。",
+      "url": "https://www.ons.gov.uk/",
+      "tags": [
+        "英國",
+        "ONS",
+        "統計與開放資料",
+        "核心"
+      ],
+      "searchable": "office for national statistics 英國 ons 統計與開放資料 開放資料與統計 人口 經濟 社會與公共服務統計 建立政策比較基線 各國制度 版本與法律效力不同 跨國比較時須使用功能比較並確認文件日期與位階 英國 ons 統計與開放資料 核心",
+      "agency": "ONS",
+      "country": "英國",
+      "country_code": "UK",
+      "category": "統計與開放資料",
+      "level": "核心",
+      "official": true
+    },
+    {
+      "id": "official_source:87",
+      "kind": "official_source",
+      "title": "Office of the Auditor General of Canada",
+      "body": "加拿大 OAG Canada 預算、採購與審計 預算、採購與監督 政府計畫、財務與績效審計 查找行政缺失與改善建議 各國制度、版本與法律效力不同；跨國比較時須使用功能比較並確認文件日期與位階。",
+      "url": "https://www.canada.ca/en/auditor-general.html",
+      "tags": [
+        "加拿大",
+        "OAG Canada",
+        "預算、採購與審計",
+        "核心"
+      ],
+      "searchable": "office of the auditor general of canada 加拿大 oag canada 預算 採購與審計 預算 採購與監督 政府計畫 財務與績效審計 查找行政缺失與改善建議 各國制度 版本與法律效力不同 跨國比較時須使用功能比較並確認文件日期與位階 加拿大 oag canada 預算 採購與審計 核心",
+      "agency": "OAG Canada",
+      "country": "加拿大",
+      "country_code": "CA",
+      "category": "預算、採購與審計",
+      "level": "核心",
+      "official": true
+    },
+    {
+      "id": "official_source:101",
+      "kind": "official_source",
+      "title": "Office of the Auditor-General",
+      "body": "紐西蘭 Controller and Auditor-General 預算、採購與審計 預算、採購與監督 公共機關審計與績效報告 查找治理與執行問題 各國制度、版本與法律效力不同；跨國比較時須使用功能比較並確認文件日期與位階。",
+      "url": "https://oag.parliament.nz/",
+      "tags": [
+        "紐西蘭",
+        "Controller and Auditor-General",
+        "預算、採購與審計",
+        "核心"
+      ],
+      "searchable": "office of the auditor general 紐西蘭 controller and auditor general 預算 採購與審計 預算 採購與監督 公共機關審計與績效報告 查找治理與執行問題 各國制度 版本與法律效力不同 跨國比較時須使用功能比較並確認文件日期與位階 紐西蘭 controller and auditor general 預算 採購與審計 核心",
+      "agency": "Controller and Auditor-General",
+      "country": "紐西蘭",
+      "country_code": "NZ",
+      "category": "預算、採購與審計",
+      "level": "核心",
+      "official": true
+    },
+    {
+      "id": "official_source:76",
+      "kind": "official_source",
+      "title": "Official documents",
+      "body": "英國 GOV.UK 政策、研究與檔案 研究、報告與檔案 白皮書、綠皮書、指令文件與年度報告 取得政府正式政策文獻 各國制度、版本與法律效力不同；跨國比較時須使用功能比較並確認文件日期與位階。",
+      "url": "https://www.gov.uk/official-documents",
+      "tags": [
+        "英國",
+        "GOV.UK",
+        "政策、研究與檔案",
+        "核心"
+      ],
+      "searchable": "official documents 英國 gov uk 政策 研究與檔案 研究 報告與檔案 白皮書 綠皮書 指令文件與年度報告 取得政府正式政策文獻 各國制度 版本與法律效力不同 跨國比較時須使用功能比較並確認文件日期與位階 英國 gov uk 政策 研究與檔案 核心",
+      "agency": "GOV.UK",
+      "country": "英國",
+      "country_code": "UK",
+      "category": "政策、研究與檔案",
+      "level": "核心",
+      "official": true
+    },
+    {
+      "id": "official_source:113",
+      "kind": "official_source",
+      "title": "Open Assembly",
+      "body": "韓國 National Assembly 立法與國會 立法、議事與國會監督 國會開放資料、會議與委員資訊 取得結構化國會資料 各國制度、版本與法律效力不同；跨國比較時須使用功能比較並確認文件日期與位階。",
+      "url": "https://open.assembly.go.kr/portal/mainPage.do",
+      "tags": [
+        "韓國",
+        "National Assembly",
+        "立法與國會",
+        "核心"
+      ],
+      "searchable": "open assembly 韓國 national assembly 立法與國會 立法 議事與國會監督 國會開放資料 會議與委員資訊 取得結構化國會資料 各國制度 版本與法律效力不同 跨國比較時須使用功能比較並確認文件日期與位階 韓國 national assembly 立法與國會 核心",
+      "agency": "National Assembly",
+      "country": "韓國",
+      "country_code": "KR",
+      "category": "立法與國會",
+      "level": "核心",
+      "official": true
+    },
+    {
+      "id": "official_source:85",
+      "kind": "official_source",
+      "title": "Open Government Portal",
+      "body": "加拿大 Government of Canada 統計與開放資料 開放資料與統計 開放資料、資訊與政府運作資料 尋找資料集與公開文件 各國制度、版本與法律效力不同；跨國比較時須使用功能比較並確認文件日期與位階。",
+      "url": "https://open.canada.ca/en",
+      "tags": [
+        "加拿大",
+        "Government of Canada",
+        "統計與開放資料",
+        "核心"
+      ],
+      "searchable": "open government portal 加拿大 government of canada 統計與開放資料 開放資料與統計 開放資料 資訊與政府運作資料 尋找資料集與公開文件 各國制度 版本與法律效力不同 跨國比較時須使用功能比較並確認文件日期與位階 加拿大 government of canada 統計與開放資料 核心",
+      "agency": "Government of Canada",
+      "country": "加拿大",
+      "country_code": "CA",
+      "category": "統計與開放資料",
+      "level": "核心",
+      "official": true
+    },
+    {
+      "id": "official_source:26",
+      "kind": "official_source",
+      "title": "PPG議案查詢",
+      "body": "中華民國（臺灣） 立法院 立法與國會 立法院 委員提案、政府提案、議案關係文書、進度與審查資料 由法案名稱、提案人、議案編號追查個案 提案內容僅代表提案版本",
+      "url": "https://ppg.ly.gov.tw/ppg/bills/search",
+      "tags": [
+        "中華民國（臺灣）",
+        "立法院",
+        "立法與國會",
+        "核心"
+      ],
+      "searchable": "ppg議案查詢 中華民國 臺灣 立法院 立法與國會 立法院 委員提案 政府提案 議案關係文書 進度與審查資料 由法案名稱 提案人 議案編號追查個案 提案內容僅代表提案版本 中華民國 臺灣 立法院 立法與國會 核心",
+      "agency": "立法院",
+      "country": "中華民國（臺灣）",
+      "country_code": "TW",
+      "category": "立法與國會",
+      "level": "核心",
+      "official": true
+    },
+    {
+      "id": "official_source:74",
+      "kind": "official_source",
+      "title": "Parliamentary Committees",
+      "body": "英國 UK Parliament 立法與國會 立法、議事與國會監督 委員會調查、證據、報告與政府回應 查找國會監督與專家證據 各國制度、版本與法律效力不同；跨國比較時須使用功能比較並確認文件日期與位階。",
+      "url": "https://committees.parliament.uk/",
+      "tags": [
+        "英國",
+        "UK Parliament",
+        "立法與國會",
+        "核心"
+      ],
+      "searchable": "parliamentary committees 英國 uk parliament 立法與國會 立法 議事與國會監督 委員會調查 證據 報告與政府回應 查找國會監督與專家證據 各國制度 版本與法律效力不同 跨國比較時須使用功能比較並確認文件日期與位階 英國 uk parliament 立法與國會 核心",
+      "agency": "UK Parliament",
+      "country": "英國",
+      "country_code": "UK",
+      "category": "立法與國會",
+      "level": "核心",
+      "official": true
+    },
+    {
+      "id": "official_source:91",
+      "kind": "official_source",
+      "title": "Parliamentary Committees",
+      "body": "澳洲 Parliament of Australia 立法與國會 立法、議事與國會監督 委員會調查、陳述、聽證與報告 查找政策利害關係人證據 各國制度、版本與法律效力不同；跨國比較時須使用功能比較並確認文件日期與位階。",
+      "url": "https://www.aph.gov.au/Parliamentary_Business/Committees",
+      "tags": [
+        "澳洲",
+        "Parliament of Australia",
+        "立法與國會",
+        "核心"
+      ],
+      "searchable": "parliamentary committees 澳洲 parliament of australia 立法與國會 立法 議事與國會監督 委員會調查 陳述 聽證與報告 查找政策利害關係人證據 各國制度 版本與法律效力不同 跨國比較時須使用功能比較並確認文件日期與位階 澳洲 parliament of australia 立法與國會 核心",
+      "agency": "Parliament of Australia",
+      "country": "澳洲",
+      "country_code": "AU",
+      "category": "立法與國會",
+      "level": "核心",
+      "official": true
+    },
+    {
+      "id": "official_source:120",
+      "kind": "official_source",
+      "title": "Parliamentary Questions",
+      "body": "新加坡 Parliament of Singapore 立法與國會 立法、議事與國會監督 國會質詢與政府答覆 分析國會監督與政策說明 各國制度、版本與法律效力不同；跨國比較時須使用功能比較並確認文件日期與位階。",
+      "url": "https://www.parliament.gov.sg/parliamentary-business/parliamentary-questions",
+      "tags": [
+        "新加坡",
+        "Parliament of Singapore",
+        "立法與國會",
+        "核心"
+      ],
+      "searchable": "parliamentary questions 新加坡 parliament of singapore 立法與國會 立法 議事與國會監督 國會質詢與政府答覆 分析國會監督與政策說明 各國制度 版本與法律效力不同 跨國比較時須使用功能比較並確認文件日期與位階 新加坡 parliament of singapore 立法與國會 核心",
+      "agency": "Parliament of Singapore",
+      "country": "新加坡",
+      "country_code": "SG",
+      "category": "立法與國會",
+      "level": "核心",
+      "official": true
+    },
+    {
+      "id": "official_source:114",
+      "kind": "official_source",
+      "title": "Public Data Portal",
+      "body": "韓國 Ministry of the Interior and Safety 統計與開放資料 開放資料與統計 韓國政府開放資料與 API 尋找資料集與機器介接 各國制度、版本與法律效力不同；跨國比較時須使用功能比較並確認文件日期與位階。",
+      "url": "https://www.data.go.kr/en/index.do",
+      "tags": [
+        "韓國",
+        "Ministry of the Interior and Safety",
+        "統計與開放資料",
+        "核心"
+      ],
+      "searchable": "public data portal 韓國 ministry of the interior and safety 統計與開放資料 開放資料與統計 韓國政府開放資料與 api 尋找資料集與機器介接 各國制度 版本與法律效力不同 跨國比較時須使用功能比較並確認文件日期與位階 韓國 ministry of the interior and safety 統計與開放資料 核心",
+      "agency": "Ministry of the Interior and Safety",
+      "country": "韓國",
+      "country_code": "KR",
+      "category": "統計與開放資料",
+      "level": "核心",
+      "official": true
+    },
+    {
+      "id": "official_source:66",
+      "kind": "official_source",
+      "title": "Regulations.gov",
+      "body": "美國 U.S. General Services Administration 政策、研究與參與 政府政策與公眾參與 行政規則草案、公眾意見與管制文件 追查規則制定與公眾參與 各國制度、版本與法律效力不同；跨國比較時須使用功能比較並確認文件日期與位階。",
+      "url": "https://www.regulations.gov/",
+      "tags": [
+        "美國",
+        "U.S. General Services Administration",
+        "政策、研究與參與",
+        "核心"
+      ],
+      "searchable": "regulations gov 美國 u s general services administration 政策 研究與參與 政府政策與公眾參與 行政規則草案 公眾意見與管制文件 追查規則制定與公眾參與 各國制度 版本與法律效力不同 跨國比較時須使用功能比較並確認文件日期與位階 美國 u s general services administration 政策 研究與參與 核心",
+      "agency": "U.S. General Services Administration",
+      "country": "美國",
+      "country_code": "US",
+      "category": "政策、研究與參與",
+      "level": "核心",
+      "official": true
+    },
+    {
+      "id": "official_source:98",
+      "kind": "official_source",
+      "title": "Select Committees",
+      "body": "紐西蘭 New Zealand Parliament 立法與國會 立法、議事與國會監督 委員會調查、公開陳述與報告 查找審議與利害關係人資料 各國制度、版本與法律效力不同；跨國比較時須使用功能比較並確認文件日期與位階。",
+      "url": "https://www.parliament.nz/en/pb/sc/",
+      "tags": [
+        "紐西蘭",
+        "New Zealand Parliament",
+        "立法與國會",
+        "核心"
+      ],
+      "searchable": "select committees 紐西蘭 new zealand parliament 立法與國會 立法 議事與國會監督 委員會調查 公開陳述與報告 查找審議與利害關係人資料 各國制度 版本與法律效力不同 跨國比較時須使用功能比較並確認文件日期與位階 紐西蘭 new zealand parliament 立法與國會 核心",
+      "agency": "New Zealand Parliament",
+      "country": "紐西蘭",
+      "country_code": "NZ",
+      "category": "立法與國會",
+      "level": "核心",
+      "official": true
+    },
+    {
+      "id": "official_source:122",
+      "kind": "official_source",
+      "title": "SingStat",
+      "body": "新加坡 Singapore Department of Statistics 統計與開放資料 開放資料與統計 人口、經濟與社會統計 建立比較基線 各國制度、版本與法律效力不同；跨國比較時須使用功能比較並確認文件日期與位階。",
+      "url": "https://www.singstat.gov.sg/",
+      "tags": [
+        "新加坡",
+        "Singapore Department of Statistics",
+        "統計與開放資料",
+        "核心"
+      ],
+      "searchable": "singstat 新加坡 singapore department of statistics 統計與開放資料 開放資料與統計 人口 經濟與社會統計 建立比較基線 各國制度 版本與法律效力不同 跨國比較時須使用功能比較並確認文件日期與位階 新加坡 singapore department of statistics 統計與開放資料 核心",
+      "agency": "Singapore Department of Statistics",
+      "country": "新加坡",
+      "country_code": "SG",
+      "category": "統計與開放資料",
+      "level": "核心",
+      "official": true
+    },
+    {
+      "id": "official_source:124",
+      "kind": "official_source",
+      "title": "Singapore Courts Judgments",
+      "body": "新加坡 Singapore Judiciary 司法與救濟 司法、裁判與救濟 新加坡法院判決 核對司法見解 各國制度、版本與法律效力不同；跨國比較時須使用功能比較並確認文件日期與位階。",
+      "url": "https://www.judiciary.gov.sg/judgments",
+      "tags": [
+        "新加坡",
+        "Singapore Judiciary",
+        "司法與救濟",
+        "核心"
+      ],
+      "searchable": "singapore courts judgments 新加坡 singapore judiciary 司法與救濟 司法 裁判與救濟 新加坡法院判決 核對司法見解 各國制度 版本與法律效力不同 跨國比較時須使用功能比較並確認文件日期與位階 新加坡 singapore judiciary 司法與救濟 核心",
+      "agency": "Singapore Judiciary",
+      "country": "新加坡",
+      "country_code": "SG",
+      "category": "司法與救濟",
+      "level": "核心",
+      "official": true
+    },
+    {
+      "id": "official_source:118",
+      "kind": "official_source",
+      "title": "Singapore Statutes Online",
+      "body": "新加坡 Attorney-General’s Chambers 法規與公報 法律、命令與公報 法律、附屬法規與法案補編 核對新加坡法規與法案 各國制度、版本與法律效力不同；跨國比較時須使用功能比較並確認文件日期與位階。",
+      "url": "https://sso.agc.gov.sg/",
+      "tags": [
+        "新加坡",
+        "Attorney-General’s Chambers",
+        "法規與公報",
+        "核心"
+      ],
+      "searchable": "singapore statutes online 新加坡 attorney general s chambers 法規與公報 法律 命令與公報 法律 附屬法規與法案補編 核對新加坡法規與法案 各國制度 版本與法律效力不同 跨國比較時須使用功能比較並確認文件日期與位階 新加坡 attorney general s chambers 法規與公報 核心",
+      "agency": "Attorney-General’s Chambers",
+      "country": "新加坡",
+      "country_code": "SG",
+      "category": "法規與公報",
+      "level": "核心",
+      "official": true
+    },
+    {
+      "id": "official_source:86",
+      "kind": "official_source",
+      "title": "Statistics Canada",
+      "body": "加拿大 Government of Canada 統計與開放資料 開放資料與統計 人口、經濟、健康與社會統計 建立跨國政策比較基線 各國制度、版本與法律效力不同；跨國比較時須使用功能比較並確認文件日期與位階。",
+      "url": "https://www.statcan.gc.ca/en/start",
+      "tags": [
+        "加拿大",
+        "Government of Canada",
+        "統計與開放資料",
+        "核心"
+      ],
+      "searchable": "statistics canada 加拿大 government of canada 統計與開放資料 開放資料與統計 人口 經濟 健康與社會統計 建立跨國政策比較基線 各國制度 版本與法律效力不同 跨國比較時須使用功能比較並確認文件日期與位階 加拿大 government of canada 統計與開放資料 核心",
+      "agency": "Government of Canada",
+      "country": "加拿大",
+      "country_code": "CA",
+      "category": "統計與開放資料",
+      "level": "核心",
+      "official": true
+    },
+    {
+      "id": "official_source:100",
+      "kind": "official_source",
+      "title": "Stats NZ",
+      "body": "紐西蘭 Statistics New Zealand 統計與開放資料 開放資料與統計 人口、經濟、社會與環境統計 建立政策比較基線 各國制度、版本與法律效力不同；跨國比較時須使用功能比較並確認文件日期與位階。",
+      "url": "https://www.stats.govt.nz/",
+      "tags": [
+        "紐西蘭",
+        "Statistics New Zealand",
+        "統計與開放資料",
+        "核心"
+      ],
+      "searchable": "stats nz 紐西蘭 statistics new zealand 統計與開放資料 開放資料與統計 人口 經濟 社會與環境統計 建立政策比較基線 各國制度 版本與法律效力不同 跨國比較時須使用功能比較並確認文件日期與位階 紐西蘭 statistics new zealand 統計與開放資料 核心",
+      "agency": "Statistics New Zealand",
+      "country": "紐西蘭",
+      "country_code": "NZ",
+      "category": "統計與開放資料",
+      "level": "核心",
+      "official": true
+    },
+    {
+      "id": "official_source:117",
+      "kind": "official_source",
+      "title": "Supreme Court Decisions",
+      "body": "韓國 Supreme Court of Korea 司法與救濟 司法、裁判與救濟 韓國最高法院判決資訊 核對司法見解 各國制度、版本與法律效力不同；跨國比較時須使用功能比較並確認文件日期與位階。",
+      "url": "https://eng.scourt.go.kr/eng/supreme/decisions/NewDecisionsList.work?mode=6",
+      "tags": [
+        "韓國",
+        "Supreme Court of Korea",
+        "司法與救濟",
+        "核心"
+      ],
+      "searchable": "supreme court decisions 韓國 supreme court of korea 司法與救濟 司法 裁判與救濟 韓國最高法院判決資訊 核對司法見解 各國制度 版本與法律效力不同 跨國比較時須使用功能比較並確認文件日期與位階 韓國 supreme court of korea 司法與救濟 核心",
+      "agency": "Supreme Court of Korea",
+      "country": "韓國",
+      "country_code": "KR",
+      "category": "司法與救濟",
+      "level": "核心",
+      "official": true
+    },
+    {
+      "id": "official_source:71",
+      "kind": "official_source",
+      "title": "Supreme Court Opinions",
+      "body": "美國 Supreme Court of the United States 司法與救濟 司法、裁判與救濟 美國最高法院判決與意見書 核對最高法院最新判決 各國制度、版本與法律效力不同；跨國比較時須使用功能比較並確認文件日期與位階。",
+      "url": "https://www.supremecourt.gov/opinions/slipopinion/",
+      "tags": [
+        "美國",
+        "Supreme Court of the United States",
+        "司法與救濟",
+        "核心"
+      ],
+      "searchable": "supreme court opinions 美國 supreme court of the united states 司法與救濟 司法 裁判與救濟 美國最高法院判決與意見書 核對最高法院最新判決 各國制度 版本與法律效力不同 跨國比較時須使用功能比較並確認文件日期與位階 美國 supreme court of the united states 司法與救濟 核心",
+      "agency": "Supreme Court of the United States",
+      "country": "美國",
+      "country_code": "US",
+      "category": "司法與救濟",
+      "level": "核心",
+      "official": true
+    },
+    {
+      "id": "official_source:88",
+      "kind": "official_source",
+      "title": "Supreme Court of Canada Decisions",
+      "body": "加拿大 Supreme Court of Canada 司法與救濟 司法、裁判與救濟 加拿大最高法院判決 核對最高法院法律見解 各國制度、版本與法律效力不同；跨國比較時須使用功能比較並確認文件日期與位階。",
+      "url": "https://decisions.scc-csc.ca/scc-csc/en/nav.do",
+      "tags": [
+        "加拿大",
+        "Supreme Court of Canada",
+        "司法與救濟",
+        "核心"
+      ],
+      "searchable": "supreme court of canada decisions 加拿大 supreme court of canada 司法與救濟 司法 裁判與救濟 加拿大最高法院判決 核對最高法院法律見解 各國制度 版本與法律效力不同 跨國比較時須使用功能比較並確認文件日期與位階 加拿大 supreme court of canada 司法與救濟 核心",
+      "agency": "Supreme Court of Canada",
+      "country": "加拿大",
+      "country_code": "CA",
+      "category": "司法與救濟",
+      "level": "核心",
+      "official": true
+    },
+    {
+      "id": "official_source:68",
+      "kind": "official_source",
+      "title": "U.S. Government Accountability Office",
+      "body": "美國 GAO 預算、採購與審計 預算、採購與監督 政府績效、稽核與國會調查報告 查找政府課責與制度缺失證據 各國制度、版本與法律效力不同；跨國比較時須使用功能比較並確認文件日期與位階。",
+      "url": "https://www.gao.gov/",
+      "tags": [
+        "美國",
+        "GAO",
+        "預算、採購與審計",
+        "核心"
+      ],
+      "searchable": "u s government accountability office 美國 gao 預算 採購與審計 預算 採購與監督 政府績效 稽核與國會調查報告 查找政府課責與制度缺失證據 各國制度 版本與法律效力不同 跨國比較時須使用功能比較並確認文件日期與位階 美國 gao 預算 採購與審計 核心",
+      "agency": "GAO",
+      "country": "美國",
+      "country_code": "US",
+      "category": "預算、採購與審計",
+      "level": "核心",
+      "official": true
+    },
+    {
+      "id": "official_source:73",
+      "kind": "official_source",
+      "title": "UK Parliament Bills",
+      "body": "英國 UK Parliament 立法與國會 立法、議事與國會監督 法案全文、階段與修正資料 追蹤法案審議進程 各國制度、版本與法律效力不同；跨國比較時須使用功能比較並確認文件日期與位階。",
+      "url": "https://bills.parliament.uk/",
+      "tags": [
+        "英國",
+        "UK Parliament",
+        "立法與國會",
+        "核心"
+      ],
+      "searchable": "uk parliament bills 英國 uk parliament 立法與國會 立法 議事與國會監督 法案全文 階段與修正資料 追蹤法案審議進程 各國制度 版本與法律效力不同 跨國比較時須使用功能比較並確認文件日期與位階 英國 uk parliament 立法與國會 核心",
+      "agency": "UK Parliament",
+      "country": "英國",
+      "country_code": "UK",
+      "category": "立法與國會",
+      "level": "核心",
+      "official": true
+    },
+    {
+      "id": "official_source:136",
+      "kind": "official_source",
+      "title": "UN Data",
+      "body": "國際組織 United Nations 統計與開放資料 開放資料與統計 聯合國跨國統計資料 跨國指標比較 各國制度、版本與法律效力不同；跨國比較時須使用功能比較並確認文件日期與位階。",
+      "url": "https://data.un.org/",
+      "tags": [
+        "國際組織",
+        "United Nations",
+        "統計與開放資料",
+        "重要"
+      ],
+      "searchable": "un data 國際組織 united nations 統計與開放資料 開放資料與統計 聯合國跨國統計資料 跨國指標比較 各國制度 版本與法律效力不同 跨國比較時須使用功能比較並確認文件日期與位階 國際組織 united nations 統計與開放資料 重要",
+      "agency": "United Nations",
+      "country": "國際組織",
+      "country_code": "INT",
+      "category": "統計與開放資料",
+      "level": "重要",
+      "official": true
+    },
+    {
+      "id": "official_source:139",
+      "kind": "official_source",
+      "title": "UN Treaty Collection",
+      "body": "國際組織 United Nations 法規與公報 法律、命令與公報 多邊條約、簽署與批准狀態 核對國際法義務與締約狀態 各國制度、版本與法律效力不同；跨國比較時須使用功能比較並確認文件日期與位階。",
+      "url": "https://treaties.un.org/",
+      "tags": [
+        "國際組織",
+        "United Nations",
+        "法規與公報",
+        "核心"
+      ],
+      "searchable": "un treaty collection 國際組織 united nations 法規與公報 法律 命令與公報 多邊條約 簽署與批准狀態 核對國際法義務與締約狀態 各國制度 版本與法律效力不同 跨國比較時須使用功能比較並確認文件日期與位階 國際組織 united nations 法規與公報 核心",
+      "agency": "United Nations",
+      "country": "國際組織",
+      "country_code": "INT",
+      "category": "法規與公報",
+      "level": "核心",
+      "official": true
+    },
+    {
+      "id": "official_source:69",
+      "kind": "official_source",
+      "title": "USAspending.gov",
+      "body": "美國 U.S. Department of the Treasury 預算、採購與審計 預算、採購與監督 聯邦支出、獎助與契約資料 追蹤政府資金流向 各國制度、版本與法律效力不同；跨國比較時須使用功能比較並確認文件日期與位階。",
+      "url": "https://www.usaspending.gov/",
+      "tags": [
+        "美國",
+        "U.S. Department of the Treasury",
+        "預算、採購與審計",
+        "重要"
+      ],
+      "searchable": "usaspending gov 美國 u s department of the treasury 預算 採購與審計 預算 採購與監督 聯邦支出 獎助與契約資料 追蹤政府資金流向 各國制度 版本與法律效力不同 跨國比較時須使用功能比較並確認文件日期與位階 美國 u s department of the treasury 預算 採購與審計 重要",
+      "agency": "U.S. Department of the Treasury",
+      "country": "美國",
+      "country_code": "US",
+      "category": "預算、採購與審計",
+      "level": "重要",
+      "official": true
+    },
+    {
+      "id": "official_source:137",
+      "kind": "official_source",
+      "title": "WHO Global Health Observatory",
+      "body": "國際組織 World Health Organization 統計與開放資料 開放資料與統計 全球健康指標與政策資料 公共衛生與醫療政策比較 各國制度、版本與法律效力不同；跨國比較時須使用功能比較並確認文件日期與位階。",
+      "url": "https://www.who.int/data/gho",
+      "tags": [
+        "國際組織",
+        "World Health Organization",
+        "統計與開放資料",
+        "核心"
+      ],
+      "searchable": "who global health observatory 國際組織 world health organization 統計與開放資料 開放資料與統計 全球健康指標與政策資料 公共衛生與醫療政策比較 各國制度 版本與法律效力不同 跨國比較時須使用功能比較並確認文件日期與位階 國際組織 world health organization 統計與開放資料 核心",
+      "agency": "World Health Organization",
+      "country": "國際組織",
+      "country_code": "INT",
+      "category": "統計與開放資料",
+      "level": "核心",
+      "official": true
+    },
+    {
+      "id": "official_source:134",
+      "kind": "official_source",
+      "title": "World Bank Data",
+      "body": "國際組織 World Bank 統計與開放資料 開放資料與統計 全球發展指標與國別資料 建立跨國量化比較 各國制度、版本與法律效力不同；跨國比較時須使用功能比較並確認文件日期與位階。",
+      "url": "https://data.worldbank.org/",
+      "tags": [
+        "國際組織",
+        "World Bank",
+        "統計與開放資料",
+        "核心"
+      ],
+      "searchable": "world bank data 國際組織 world bank 統計與開放資料 開放資料與統計 全球發展指標與國別資料 建立跨國量化比較 各國制度 版本與法律效力不同 跨國比較時須使用功能比較並確認文件日期與位階 國際組織 world bank 統計與開放資料 核心",
+      "agency": "World Bank",
+      "country": "國際組織",
+      "country_code": "INT",
+      "category": "統計與開放資料",
+      "level": "核心",
+      "official": true
+    },
+    {
+      "id": "official_source:135",
+      "kind": "official_source",
+      "title": "World Bank Documents & Reports",
+      "body": "國際組織 World Bank 政策、研究與檔案 研究、報告與檔案 政策研究、專案與國別報告 查找政策改革與執行證據 各國制度、版本與法律效力不同；跨國比較時須使用功能比較並確認文件日期與位階。",
+      "url": "https://documents.worldbank.org/",
+      "tags": [
+        "國際組織",
+        "World Bank",
+        "政策、研究與檔案",
+        "重要"
+      ],
+      "searchable": "world bank documents reports 國際組織 world bank 政策 研究與檔案 研究 報告與檔案 政策研究 專案與國別報告 查找政策改革與執行證據 各國制度 版本與法律效力不同 跨國比較時須使用功能比較並確認文件日期與位階 國際組織 world bank 政策 研究與檔案 重要",
+      "agency": "World Bank",
+      "country": "國際組織",
+      "country_code": "INT",
+      "category": "政策、研究與檔案",
+      "level": "重要",
+      "official": true
+    },
+    {
+      "id": "official_source:128",
+      "kind": "official_source",
+      "title": "data.europa.eu",
+      "body": "歐盟 European Union 統計與開放資料 開放資料與統計 歐盟與會員國開放資料目錄 尋找跨國可比較資料 各國制度、版本與法律效力不同；跨國比較時須使用功能比較並確認文件日期與位階。",
+      "url": "https://data.europa.eu/en",
+      "tags": [
+        "歐盟",
+        "European Union",
+        "統計與開放資料",
+        "核心"
+      ],
+      "searchable": "data europa eu 歐盟 european union 統計與開放資料 開放資料與統計 歐盟與會員國開放資料目錄 尋找跨國可比較資料 各國制度 版本與法律效力不同 跨國比較時須使用功能比較並確認文件日期與位階 歐盟 european union 統計與開放資料 核心",
+      "agency": "European Union",
+      "country": "歐盟",
+      "country_code": "EU",
+      "category": "統計與開放資料",
+      "level": "核心",
+      "official": true
+    },
+    {
+      "id": "official_source:92",
+      "kind": "official_source",
+      "title": "data.gov.au",
+      "body": "澳洲 Australian Government 統計與開放資料 開放資料與統計 澳洲政府開放資料 尋找資料集與 API 各國制度、版本與法律效力不同；跨國比較時須使用功能比較並確認文件日期與位階。",
+      "url": "https://www.data.gov.au/",
+      "tags": [
+        "澳洲",
+        "Australian Government",
+        "統計與開放資料",
+        "核心"
+      ],
+      "searchable": "data gov au 澳洲 australian government 統計與開放資料 開放資料與統計 澳洲政府開放資料 尋找資料集與 api 各國制度 版本與法律效力不同 跨國比較時須使用功能比較並確認文件日期與位階 澳洲 australian government 統計與開放資料 核心",
+      "agency": "Australian Government",
+      "country": "澳洲",
+      "country_code": "AU",
+      "category": "統計與開放資料",
+      "level": "核心",
+      "official": true
+    },
+    {
+      "id": "official_source:121",
+      "kind": "official_source",
+      "title": "data.gov.sg",
+      "body": "新加坡 Government of Singapore 統計與開放資料 開放資料與統計 政府開放資料與 API 尋找新加坡資料集 各國制度、版本與法律效力不同；跨國比較時須使用功能比較並確認文件日期與位階。",
+      "url": "https://data.gov.sg/",
+      "tags": [
+        "新加坡",
+        "Government of Singapore",
+        "統計與開放資料",
+        "核心"
+      ],
+      "searchable": "data gov sg 新加坡 government of singapore 統計與開放資料 開放資料與統計 政府開放資料與 api 尋找新加坡資料集 各國制度 版本與法律效力不同 跨國比較時須使用功能比較並確認文件日期與位階 新加坡 government of singapore 統計與開放資料 核心",
+      "agency": "Government of Singapore",
+      "country": "新加坡",
+      "country_code": "SG",
+      "category": "統計與開放資料",
+      "level": "核心",
+      "official": true
+    },
+    {
+      "id": "official_source:77",
+      "kind": "official_source",
+      "title": "data.gov.uk",
+      "body": "英國 Government Digital Service 統計與開放資料 開放資料與統計 英國政府開放資料目錄 尋找資料集與 API 各國制度、版本與法律效力不同；跨國比較時須使用功能比較並確認文件日期與位階。",
+      "url": "https://www.data.gov.uk/",
+      "tags": [
+        "英國",
+        "Government Digital Service",
+        "統計與開放資料",
+        "核心"
+      ],
+      "searchable": "data gov uk 英國 government digital service 統計與開放資料 開放資料與統計 英國政府開放資料目錄 尋找資料集與 api 各國制度 版本與法律效力不同 跨國比較時須使用功能比較並確認文件日期與位階 英國 government digital service 統計與開放資料 核心",
+      "agency": "Government Digital Service",
+      "country": "英國",
+      "country_code": "UK",
+      "category": "統計與開放資料",
+      "level": "核心",
+      "official": true
+    },
+    {
+      "id": "official_source:99",
+      "kind": "official_source",
+      "title": "data.govt.nz",
+      "body": "紐西蘭 New Zealand Government 統計與開放資料 開放資料與統計 政府開放資料目錄 尋找資料集與資料服務 各國制度、版本與法律效力不同；跨國比較時須使用功能比較並確認文件日期與位階。",
+      "url": "https://www.data.govt.nz/",
+      "tags": [
+        "紐西蘭",
+        "New Zealand Government",
+        "統計與開放資料",
+        "核心"
+      ],
+      "searchable": "data govt nz 紐西蘭 new zealand government 統計與開放資料 開放資料與統計 政府開放資料目錄 尋找資料集與資料服務 各國制度 版本與法律效力不同 跨國比較時須使用功能比較並確認文件日期與位階 紐西蘭 new zealand government 統計與開放資料 核心",
+      "agency": "New Zealand Government",
+      "country": "紐西蘭",
+      "country_code": "NZ",
+      "category": "統計與開放資料",
+      "level": "核心",
+      "official": true
+    },
+    {
+      "id": "official_source:107",
+      "kind": "official_source",
+      "title": "e-Gov Data Portal",
+      "body": "日本 Digital Agency 統計與開放資料 開放資料與統計 中央行政機關開放資料 尋找日本政府資料集 各國制度、版本與法律效力不同；跨國比較時須使用功能比較並確認文件日期與位階。",
+      "url": "https://data.e-gov.go.jp/info/en",
+      "tags": [
+        "日本",
+        "Digital Agency",
+        "統計與開放資料",
+        "核心"
+      ],
+      "searchable": "e gov data portal 日本 digital agency 統計與開放資料 開放資料與統計 中央行政機關開放資料 尋找日本政府資料集 各國制度 版本與法律效力不同 跨國比較時須使用功能比較並確認文件日期與位階 日本 digital agency 統計與開放資料 核心",
+      "agency": "Digital Agency",
+      "country": "日本",
+      "country_code": "JP",
+      "category": "統計與開放資料",
+      "level": "核心",
+      "official": true
+    },
+    {
+      "id": "official_source:106",
+      "kind": "official_source",
+      "title": "e-Gov パブリック・コメント",
+      "body": "日本 Digital Agency 政策、研究與參與 政府政策與公眾參與 行政命令與政策草案之公眾意見程序 追查行政規則形成與意見回應 各國制度、版本與法律效力不同；跨國比較時須使用功能比較並確認文件日期與位階。",
+      "url": "https://public-comment.e-gov.go.jp/servlet/Public",
+      "tags": [
+        "日本",
+        "Digital Agency",
+        "政策、研究與參與",
+        "核心"
+      ],
+      "searchable": "e gov 日本 digital agency 政策 研究與參與 政府政策與公眾參與 行政命令與政策草案之公眾意見程序 追查行政規則形成與意見回應 各國制度 版本與法律效力不同 跨國比較時須使用功能比較並確認文件日期與位階 日本 digital agency 政策 研究與參與 核心",
+      "agency": "Digital Agency",
+      "country": "日本",
+      "country_code": "JP",
+      "category": "政策、研究與參與",
+      "level": "核心",
+      "official": true
+    },
+    {
+      "id": "official_source:103",
+      "kind": "official_source",
+      "title": "e-Gov 法令検索",
+      "body": "日本 Digital Agency 法規與公報 法律、命令與公報 日本現行法令全文 核對日本法規文字 各國制度、版本與法律效力不同；跨國比較時須使用功能比較並確認文件日期與位階。",
+      "url": "https://laws.e-gov.go.jp/",
+      "tags": [
+        "日本",
+        "Digital Agency",
+        "法規與公報",
+        "核心"
+      ],
+      "searchable": "e gov 法令検索 日本 digital agency 法規與公報 法律 命令與公報 日本現行法令全文 核對日本法規文字 各國制度 版本與法律效力不同 跨國比較時須使用功能比較並確認文件日期與位階 日本 digital agency 法規與公報 核心",
+      "agency": "Digital Agency",
+      "country": "日本",
+      "country_code": "JP",
+      "category": "法規與公報",
+      "level": "核心",
+      "official": true
+    },
+    {
+      "id": "official_source:108",
+      "kind": "official_source",
+      "title": "e-Stat",
+      "body": "日本 Statistics Bureau of Japan 統計與開放資料 開放資料與統計 日本官方統計入口 建立跨國比較基線 各國制度、版本與法律效力不同；跨國比較時須使用功能比較並確認文件日期與位階。",
+      "url": "https://www.e-stat.go.jp/en",
+      "tags": [
+        "日本",
+        "Statistics Bureau of Japan",
+        "統計與開放資料",
+        "核心"
+      ],
+      "searchable": "e stat 日本 statistics bureau of japan 統計與開放資料 開放資料與統計 日本官方統計入口 建立跨國比較基線 各國制度 版本與法律效力不同 跨國比較時須使用功能比較並確認文件日期與位階 日本 statistics bureau of japan 統計與開放資料 核心",
+      "agency": "Statistics Bureau of Japan",
+      "country": "日本",
+      "country_code": "JP",
+      "category": "統計與開放資料",
+      "level": "核心",
+      "official": true
+    },
+    {
+      "id": "official_source:65",
+      "kind": "official_source",
+      "title": "eCFR",
+      "body": "美國 Office of the Federal Register 法規與公報 法律、命令與公報 現行聯邦行政法規彙編 核對聯邦行政規則現行文字 各國制度、版本與法律效力不同；跨國比較時須使用功能比較並確認文件日期與位階。",
+      "url": "https://www.ecfr.gov/",
+      "tags": [
+        "美國",
+        "Office of the Federal Register",
+        "法規與公報",
+        "核心"
+      ],
+      "searchable": "ecfr 美國 office of the federal register 法規與公報 法律 命令與公報 現行聯邦行政法規彙編 核對聯邦行政規則現行文字 各國制度 版本與法律效力不同 跨國比較時須使用功能比較並確認文件日期與位階 美國 office of the federal register 法規與公報 核心",
+      "agency": "Office of the Federal Register",
+      "country": "美國",
+      "country_code": "US",
+      "category": "法規與公報",
+      "level": "核心",
+      "official": true
+    },
+    {
+      "id": "official_source:72",
+      "kind": "official_source",
+      "title": "legislation.gov.uk",
+      "body": "英國 The National Archives 法規與公報 法律、命令與公報 英國成文法與次級立法 核對法律版本與沿革 各國制度、版本與法律效力不同；跨國比較時須使用功能比較並確認文件日期與位階。",
+      "url": "https://www.legislation.gov.uk/",
+      "tags": [
+        "英國",
+        "The National Archives",
+        "法規與公報",
+        "核心"
+      ],
+      "searchable": "legislation gov uk 英國 the national archives 法規與公報 法律 命令與公報 英國成文法與次級立法 核對法律版本與沿革 各國制度 版本與法律效力不同 跨國比較時須使用功能比較並確認文件日期與位階 英國 the national archives 法規與公報 核心",
+      "agency": "The National Archives",
+      "country": "英國",
+      "country_code": "UK",
+      "category": "法規與公報",
+      "level": "核心",
+      "official": true
+    },
+    {
+      "id": "official_source:21",
+      "kind": "official_source",
+      "title": "不動產交易實價查詢服務網",
+      "body": "中華民國（臺灣） 內政部 政策、研究與參與 跨院共通 實價登錄交易、租賃及預售屋資訊 土地住宅政策、區域價格與市場研究 個案位置可能去識別化；非鑑價結論",
+      "url": "https://lvr.land.moi.gov.tw/",
+      "tags": [
+        "中華民國（臺灣）",
+        "內政部",
+        "政策、研究與參與",
+        "重要"
+      ],
+      "searchable": "不動產交易實價查詢服務網 中華民國 臺灣 內政部 政策 研究與參與 跨院共通 實價登錄交易 租賃及預售屋資訊 土地住宅政策 區域價格與市場研究 個案位置可能去識別化 非鑑價結論 中華民國 臺灣 內政部 政策 研究與參與 重要",
+      "agency": "內政部",
+      "country": "中華民國（臺灣）",
+      "country_code": "TW",
+      "category": "政策、研究與參與",
+      "level": "重要",
+      "official": true
+    },
+    {
+      "id": "official_source:11",
+      "kind": "official_source",
+      "title": "中央政府總預算查詢服務",
+      "body": "中華民國（臺灣） 行政院主計總處 預算、採購與審計 跨院共通 中央政府總預算案、法定預算及相關表件 查政策財源、機關歲出、計畫經費與預算科目 須區分預算案、法定預算、追加／特別預算",
+      "url": "https://dq.dgbas.gov.tw/SBA_BS/",
+      "tags": [
+        "中華民國（臺灣）",
+        "行政院主計總處",
+        "預算、採購與審計",
+        "核心"
+      ],
+      "searchable": "中央政府總預算查詢服務 中華民國 臺灣 行政院主計總處 預算 採購與審計 跨院共通 中央政府總預算案 法定預算及相關表件 查政策財源 機關歲出 計畫經費與預算科目 須區分預算案 法定預算 追加 特別預算 中華民國 臺灣 行政院主計總處 預算 採購與審計 核心",
+      "agency": "行政院主計總處",
+      "country": "中華民國（臺灣）",
+      "country_code": "TW",
+      "category": "預算、採購與審計",
+      "level": "核心",
+      "official": true
+    },
+    {
+      "id": "official_source:17",
+      "kind": "official_source",
+      "title": "中華民國條約協定資料庫",
+      "body": "中華民國（臺灣） 外交部 法規與公報 跨院共通 我國締結之條約、協定與相關文本 查國際法義務、締約日期、生效與文本 須區分簽署、生效、終止及國內法化狀態",
+      "url": "https://no06.mofa.gov.tw/mofatreatys/",
+      "tags": [
+        "中華民國（臺灣）",
+        "外交部",
+        "法規與公報",
+        "核心"
+      ],
+      "searchable": "中華民國條約協定資料庫 中華民國 臺灣 外交部 法規與公報 跨院共通 我國締結之條約 協定與相關文本 查國際法義務 締約日期 生效與文本 須區分簽署 生效 終止及國內法化狀態 中華民國 臺灣 外交部 法規與公報 核心",
+      "agency": "外交部",
+      "country": "中華民國（臺灣）",
+      "country_code": "TW",
+      "category": "法規與公報",
+      "level": "核心",
+      "official": true
+    },
+    {
+      "id": "official_source:10",
+      "kind": "official_source",
+      "title": "中華民國統計資訊網",
+      "body": "中華民國（臺灣） 行政院主計總處 統計與開放資料 跨院共通 官方統計、統計年報、資料庫與統計指標 估計問題規模、政策母數、趨勢與跨年度變化 須核對統計定義、基準、修訂與可比性",
+      "url": "https://www.stat.gov.tw/",
+      "tags": [
+        "中華民國（臺灣）",
+        "行政院主計總處",
+        "統計與開放資料",
+        "核心"
+      ],
+      "searchable": "中華民國統計資訊網 中華民國 臺灣 行政院主計總處 統計與開放資料 跨院共通 官方統計 統計年報 資料庫與統計指標 估計問題規模 政策母數 趨勢與跨年度變化 須核對統計定義 基準 修訂與可比性 中華民國 臺灣 行政院主計總處 統計與開放資料 核心",
+      "agency": "行政院主計總處",
+      "country": "中華民國（臺灣）",
+      "country_code": "TW",
+      "category": "統計與開放資料",
+      "level": "核心",
+      "official": true
+    },
+    {
+      "id": "official_source:49",
+      "kind": "official_source",
+      "title": "保障事件決定書查詢",
+      "body": "中華民國（臺灣） 公務人員保障暨培訓委員會 司法與救濟 考試院 復審、再審議與公務人員保障事件決定書 查公務人員身分、懲處、考績與權益救濟見解 個案決定效力與行政法院裁判須分開",
+      "url": "https://web13.csptc.gov.tw/",
+      "tags": [
+        "中華民國（臺灣）",
+        "公務人員保障暨培訓委員會",
+        "司法與救濟",
+        "核心"
+      ],
+      "searchable": "保障事件決定書查詢 中華民國 臺灣 公務人員保障暨培訓委員會 司法與救濟 考試院 復審 再審議與公務人員保障事件決定書 查公務人員身分 懲處 考績與權益救濟見解 個案決定效力與行政法院裁判須分開 中華民國 臺灣 公務人員保障暨培訓委員會 司法與救濟 核心",
+      "agency": "公務人員保障暨培訓委員會",
+      "country": "中華民國（臺灣）",
+      "country_code": "TW",
+      "category": "司法與救濟",
+      "level": "核心",
+      "official": true
+    },
+    {
+      "id": "official_source:51",
+      "kind": "official_source",
+      "title": "全國公務人力統計資料平台",
+      "body": "中華民國（臺灣） 銓敘部 統計與開放資料 考試院 公務人員人力、職務與人事統計開放資料 分析政府人力結構、性別、年齡與職等 須檢查資料更新與統計範圍",
+      "url": "https://opendata.mocs.gov.tw/webMain.aspx?k=defjsp2&mode=4",
+      "tags": [
+        "中華民國（臺灣）",
+        "銓敘部",
+        "統計與開放資料",
+        "重要"
+      ],
+      "searchable": "全國公務人力統計資料平台 中華民國 臺灣 銓敘部 統計與開放資料 考試院 公務人員人力 職務與人事統計開放資料 分析政府人力結構 性別 年齡與職等 須檢查資料更新與統計範圍 中華民國 臺灣 銓敘部 統計與開放資料 重要",
+      "agency": "銓敘部",
+      "country": "中華民國（臺灣）",
+      "country_code": "TW",
+      "category": "統計與開放資料",
+      "level": "重要",
+      "official": true
+    },
+    {
+      "id": "official_source:22",
+      "kind": "official_source",
+      "title": "全國地政電子謄本系統",
+      "body": "中華民國（臺灣） 內政部 政策、研究與參與 跨院共通 土地、建物登記謄本及相關地政文件申領 查權利登記、標示部及他項權利等 多數謄本申領需身分驗證及付費",
+      "url": "https://epaper.land.moi.gov.tw/Home/SNPEOOItem",
+      "tags": [
+        "中華民國（臺灣）",
+        "內政部",
+        "政策、研究與參與",
+        "重要"
+      ],
+      "searchable": "全國地政電子謄本系統 中華民國 臺灣 內政部 政策 研究與參與 跨院共通 土地 建物登記謄本及相關地政文件申領 查權利登記 標示部及他項權利等 多數謄本申領需身分驗證及付費 中華民國 臺灣 內政部 政策 研究與參與 重要",
+      "agency": "內政部",
+      "country": "中華民國（臺灣）",
+      "country_code": "TW",
+      "category": "政策、研究與參與",
+      "level": "重要",
+      "official": true
+    },
+    {
+      "id": "official_source:0",
+      "kind": "official_source",
+      "title": "全國法規資料庫",
+      "body": "中華民國（臺灣） 法務部 法規與公報 跨院共通 中央法規、命令、法規沿革、司法解釋、條約協定及跨機關法規查詢 確認現行法、修法沿革、施行日期與法源文字 整編後法規全文；引用時仍須核對公布／施行日期",
+      "url": "https://law.moj.gov.tw/",
+      "tags": [
+        "中華民國（臺灣）",
+        "法務部",
+        "法規與公報",
+        "核心"
+      ],
+      "searchable": "全國法規資料庫 中華民國 臺灣 法務部 法規與公報 跨院共通 中央法規 命令 法規沿革 司法解釋 條約協定及跨機關法規查詢 確認現行法 修法沿革 施行日期與法源文字 整編後法規全文 引用時仍須核對公布 施行日期 中華民國 臺灣 法務部 法規與公報 核心",
+      "agency": "法務部",
+      "country": "中華民國（臺灣）",
+      "country_code": "TW",
+      "category": "法規與公報",
+      "level": "核心",
+      "official": true
+    },
+    {
+      "id": "official_source:13",
+      "kind": "official_source",
+      "title": "公共工程標案管理系統",
+      "body": "中華民國（臺灣） 行政院公共工程委員會 預算、採購與審計 跨院共通 公共工程標案進度、品質與管理資訊 追查重大公共工程之執行進度與管理狀態 部分功能或資料可能需要權限",
+      "url": "https://pcic.pcc.gov.tw/pwc-web/service/bidHome",
+      "tags": [
+        "中華民國（臺灣）",
+        "行政院公共工程委員會",
+        "預算、採購與審計",
+        "重要"
+      ],
+      "searchable": "公共工程標案管理系統 中華民國 臺灣 行政院公共工程委員會 預算 採購與審計 跨院共通 公共工程標案進度 品質與管理資訊 追查重大公共工程之執行進度與管理狀態 部分功能或資料可能需要權限 中華民國 臺灣 行政院公共工程委員會 預算 採購與審計 重要",
+      "agency": "行政院公共工程委員會",
+      "country": "中華民國（臺灣）",
+      "country_code": "TW",
+      "category": "預算、採購與審計",
+      "level": "重要",
+      "official": true
+    },
+    {
+      "id": "official_source:14",
+      "kind": "official_source",
+      "title": "公共政策網路參與平臺",
+      "body": "中華民國（臺灣） 國家發展委員會 政策、研究與參與 跨院共通 提點子、眾開講、來監督、找首長等政策參與內容 查政策倡議、法規預告意見及政府回應 民眾意見與政策採納結果應分開判讀",
+      "url": "https://join.gov.tw/",
+      "tags": [
+        "中華民國（臺灣）",
+        "國家發展委員會",
+        "政策、研究與參與",
+        "核心"
+      ],
+      "searchable": "公共政策網路參與平臺 中華民國 臺灣 國家發展委員會 政策 研究與參與 跨院共通 提點子 眾開講 來監督 找首長等政策參與內容 查政策倡議 法規預告意見及政府回應 民眾意見與政策採納結果應分開判讀 中華民國 臺灣 國家發展委員會 政策 研究與參與 核心",
+      "agency": "國家發展委員會",
+      "country": "中華民國（臺灣）",
+      "country_code": "TW",
+      "category": "政策、研究與參與",
+      "level": "核心",
+      "official": true
+    },
+    {
+      "id": "official_source:7",
+      "kind": "official_source",
+      "title": "公務出國報告資訊網",
+      "body": "中華民國（臺灣） 國家發展委員會 政策、研究與檔案 跨院共通 中央機關公務出國考察、訪問、研習及會議報告 追查制度引進、比較法、政策考察與國際經驗 需辨識考察意見與正式政策決定之差異",
+      "url": "https://report.ndc.gov.tw/",
+      "tags": [
+        "中華民國（臺灣）",
+        "國家發展委員會",
+        "政策、研究與檔案",
+        "重要"
+      ],
+      "searchable": "公務出國報告資訊網 中華民國 臺灣 國家發展委員會 政策 研究與檔案 跨院共通 中央機關公務出國考察 訪問 研習及會議報告 追查制度引進 比較法 政策考察與國際經驗 需辨識考察意見與正式政策決定之差異 中華民國 臺灣 國家發展委員會 政策 研究與檔案 重要",
+      "agency": "國家發展委員會",
+      "country": "中華民國（臺灣）",
+      "country_code": "TW",
+      "category": "政策、研究與檔案",
+      "level": "重要",
+      "official": true
+    },
+    {
+      "id": "official_source:61",
+      "kind": "official_source",
+      "title": "公職人員財產申報／廉政專刊",
+      "body": "中華民國（臺灣） 監察院 預算、採購與審計 監察院 依法公開之公職人員財產申報資料與廉政專刊 查財產申報公開內容與歷期專刊 僅能依公開範圍使用，不宜推論未揭露事項",
+      "url": "https://sunshine.cy.gov.tw/",
+      "tags": [
+        "中華民國（臺灣）",
+        "監察院",
+        "預算、採購與審計",
+        "核心"
+      ],
+      "searchable": "公職人員財產申報 廉政專刊 中華民國 臺灣 監察院 預算 採購與審計 監察院 依法公開之公職人員財產申報資料與廉政專刊 查財產申報公開內容與歷期專刊 僅能依公開範圍使用 不宜推論未揭露事項 中華民國 臺灣 監察院 預算 採購與審計 核心",
+      "agency": "監察院",
+      "country": "中華民國（臺灣）",
+      "country_code": "TW",
+      "category": "預算、採購與審計",
+      "level": "核心",
+      "official": true
+    },
+    {
+      "id": "official_source:42",
+      "kind": "official_source",
+      "title": "司法公告查詢",
+      "body": "中華民國（臺灣） 司法院 司法與救濟 司法院 法人、夫妻財產、法拍、公示送達、破產、家事等公告 查具有程序效力或公示功能的司法公告 公告類型多，應選擇正確子系統",
+      "url": "https://www.judicial.gov.tw/tw/np-135-1.html",
+      "tags": [
+        "中華民國（臺灣）",
+        "司法院",
+        "司法與救濟",
+        "重要"
+      ],
+      "searchable": "司法公告查詢 中華民國 臺灣 司法院 司法與救濟 司法院 法人 夫妻財產 法拍 公示送達 破產 家事等公告 查具有程序效力或公示功能的司法公告 公告類型多 應選擇正確子系統 中華民國 臺灣 司法院 司法與救濟 重要",
+      "agency": "司法院",
+      "country": "中華民國（臺灣）",
+      "country_code": "TW",
+      "category": "司法與救濟",
+      "level": "重要",
+      "official": true
+    },
+    {
+      "id": "official_source:44",
+      "kind": "official_source",
+      "title": "司法改革進度追蹤資訊平台",
+      "body": "中華民國（臺灣） 司法院 司法與救濟 司法院 司法改革國是會議決議、分工與執行進度 追查司法政策承諾及落實情形 屬政策執行追蹤，非裁判資料庫",
+      "url": "https://judicialreform.gov.tw/",
+      "tags": [
+        "中華民國（臺灣）",
+        "司法院",
+        "司法與救濟",
+        "重要"
+      ],
+      "searchable": "司法改革進度追蹤資訊平台 中華民國 臺灣 司法院 司法與救濟 司法院 司法改革國是會議決議 分工與執行進度 追查司法政策承諾及落實情形 屬政策執行追蹤 非裁判資料庫 中華民國 臺灣 司法院 司法與救濟 重要",
+      "agency": "司法院",
+      "country": "中華民國（臺灣）",
+      "country_code": "TW",
+      "category": "司法與救濟",
+      "level": "重要",
+      "official": true
+    },
+    {
+      "id": "official_source:38",
+      "kind": "official_source",
+      "title": "司法智識庫",
+      "body": "中華民國（臺灣） 司法院 司法與救濟 司法院 裁判要旨、實務資料與主題式司法知識 快速定位實務爭點與相關裁判 摘要不應取代完整裁判書",
+      "url": "https://fjudkm.judicial.gov.tw/",
+      "tags": [
+        "中華民國（臺灣）",
+        "司法院",
+        "司法與救濟",
+        "重要"
+      ],
+      "searchable": "司法智識庫 中華民國 臺灣 司法院 司法與救濟 司法院 裁判要旨 實務資料與主題式司法知識 快速定位實務爭點與相關裁判 摘要不應取代完整裁判書 中華民國 臺灣 司法院 司法與救濟 重要",
+      "agency": "司法院",
+      "country": "中華民國（臺灣）",
+      "country_code": "TW",
+      "category": "司法與救濟",
+      "level": "重要",
+      "official": true
+    },
+    {
+      "id": "official_source:40",
+      "kind": "official_source",
+      "title": "司法統計",
+      "body": "中華民國（臺灣） 司法院 司法與救濟 司法院 法院案件、終結、延滯、裁判及司法行政統計 分析案件量、處理時間、制度績效與趨勢 統計口徑可能隨年度及制度調整",
+      "url": "https://www.judicial.gov.tw/tw/np-1249-1.html",
+      "tags": [
+        "中華民國（臺灣）",
+        "司法院",
+        "司法與救濟",
+        "重要"
+      ],
+      "searchable": "司法統計 中華民國 臺灣 司法院 司法與救濟 司法院 法院案件 終結 延滯 裁判及司法行政統計 分析案件量 處理時間 制度績效與趨勢 統計口徑可能隨年度及制度調整 中華民國 臺灣 司法院 司法與救濟 重要",
+      "agency": "司法院",
+      "country": "中華民國（臺灣）",
+      "country_code": "TW",
+      "category": "司法與救濟",
+      "level": "重要",
+      "official": true
+    },
+    {
+      "id": "official_source:41",
+      "kind": "official_source",
+      "title": "司法院公報",
+      "body": "中華民國（臺灣） 司法院 法規與公報 司法院 憲法裁判、法規、令函、公告、裁判、會議錄及附錄 查司法機關正式公報與歷史文件 公報節本或摘要須再核對完整裁判",
+      "url": "https://www.judicial.gov.tw/tw/lp-1406-1.html",
+      "tags": [
+        "中華民國（臺灣）",
+        "司法院",
+        "法規與公報",
+        "核心"
+      ],
+      "searchable": "司法院公報 中華民國 臺灣 司法院 法規與公報 司法院 憲法裁判 法規 令函 公告 裁判 會議錄及附錄 查司法機關正式公報與歷史文件 公報節本或摘要須再核對完整裁判 中華民國 臺灣 司法院 法規與公報 核心",
+      "agency": "司法院",
+      "country": "中華民國（臺灣）",
+      "country_code": "TW",
+      "category": "法規與公報",
+      "level": "核心",
+      "official": true
+    },
+    {
+      "id": "official_source:39",
+      "kind": "official_source",
+      "title": "司法院資料開放平臺",
+      "body": "中華民國（臺灣） 司法院 司法與救濟 司法院 司法統計、裁判及司法行政相關開放資料 量化司法研究、資料下載與API利用 應核對資料去識別化、欄位與更新週期",
+      "url": "https://opendata.judicial.gov.tw/",
+      "tags": [
+        "中華民國（臺灣）",
+        "司法院",
+        "司法與救濟",
+        "核心"
+      ],
+      "searchable": "司法院資料開放平臺 中華民國 臺灣 司法院 司法與救濟 司法院 司法統計 裁判及司法行政相關開放資料 量化司法研究 資料下載與api利用 應核對資料去識別化 欄位與更新週期 中華民國 臺灣 司法院 司法與救濟 核心",
+      "agency": "司法院",
+      "country": "中華民國（臺灣）",
+      "country_code": "TW",
+      "category": "司法與救濟",
+      "level": "核心",
+      "official": true
+    },
+    {
+      "id": "official_source:59",
+      "kind": "official_source",
+      "title": "國家人權委員會網站",
+      "body": "中華民國（臺灣） 國家人權委員會 監察、人權與問責 監察院 國際人權公約獨立評估、專案報告與人權政策文件 查兩公約、CRPD、CEDAW等國家人權監督資料 應區分政府國家報告、委員會獨立評估與國際審查意見",
+      "url": "https://nhrc.cy.gov.tw/",
+      "tags": [
+        "中華民國（臺灣）",
+        "國家人權委員會",
+        "監察、人權與問責",
+        "核心"
+      ],
+      "searchable": "國家人權委員會網站 中華民國 臺灣 國家人權委員會 監察 人權與問責 監察院 國際人權公約獨立評估 專案報告與人權政策文件 查兩公約 crpd cedaw等國家人權監督資料 應區分政府國家報告 委員會獨立評估與國際審查意見 中華民國 臺灣 國家人權委員會 監察 人權與問責 核心",
+      "agency": "國家人權委員會",
+      "country": "中華民國（臺灣）",
+      "country_code": "TW",
+      "category": "監察、人權與問責",
+      "level": "核心",
+      "official": true
+    },
+    {
+      "id": "official_source:4",
+      "kind": "official_source",
+      "title": "國家檔案資訊網 A+",
+      "body": "中華民國（臺灣） 國家發展委員會檔案管理局 政策、研究與檔案 跨院共通 國家檔案目錄、數位影像與申請應用資訊 追查已移轉為國家檔案的政策、機關與歷史原件 部分可線上閱覽；部分須申請",
+      "url": "https://aa.archives.gov.tw/",
+      "tags": [
+        "中華民國（臺灣）",
+        "國家發展委員會檔案管理局",
+        "政策、研究與檔案",
+        "核心"
+      ],
+      "searchable": "國家檔案資訊網 a 中華民國 臺灣 國家發展委員會檔案管理局 政策 研究與檔案 跨院共通 國家檔案目錄 數位影像與申請應用資訊 追查已移轉為國家檔案的政策 機關與歷史原件 部分可線上閱覽 部分須申請 中華民國 臺灣 國家發展委員會檔案管理局 政策 研究與檔案 核心",
+      "agency": "國家發展委員會檔案管理局",
+      "country": "中華民國（臺灣）",
+      "country_code": "TW",
+      "category": "政策、研究與檔案",
+      "level": "核心",
+      "official": true
+    },
+    {
+      "id": "official_source:111",
+      "kind": "official_source",
+      "title": "國家法令情報中心",
+      "body": "韓國 Ministry of Government Legislation 法規與公報 法律、命令與公報 法律、行政規則與判例等法令資訊 核對韓國法規與法令解釋 各國制度、版本與法律效力不同；跨國比較時須使用功能比較並確認文件日期與位階。",
+      "url": "https://www.law.go.kr/",
+      "tags": [
+        "韓國",
+        "Ministry of Government Legislation",
+        "法規與公報",
+        "核心"
+      ],
+      "searchable": "國家法令情報中心 韓國 ministry of government legislation 法規與公報 法律 命令與公報 法律 行政規則與判例等法令資訊 核對韓國法規與法令解釋 各國制度 版本與法律效力不同 跨國比較時須使用功能比較並確認文件日期與位階 韓國 ministry of government legislation 法規與公報 核心",
+      "agency": "Ministry of Government Legislation",
+      "country": "韓國",
+      "country_code": "KR",
+      "category": "法規與公報",
+      "level": "核心",
+      "official": true
+    },
+    {
+      "id": "official_source:28",
+      "kind": "official_source",
+      "title": "國會圖書館",
+      "body": "中華民國（臺灣） 立法院國會圖書館 立法與國會 立法院 國會議事、法律、研究報告、外國法與議會資訊 跨資料庫查詢國會研究與比較法資料 不同子資料庫的收錄年代與全文權限不同",
+      "url": "https://npl.ly.gov.tw/",
+      "tags": [
+        "中華民國（臺灣）",
+        "立法院國會圖書館",
+        "立法與國會",
+        "核心"
+      ],
+      "searchable": "國會圖書館 中華民國 臺灣 立法院國會圖書館 立法與國會 立法院 國會議事 法律 研究報告 外國法與議會資訊 跨資料庫查詢國會研究與比較法資料 不同子資料庫的收錄年代與全文權限不同 中華民國 臺灣 立法院國會圖書館 立法與國會 核心",
+      "agency": "立法院國會圖書館",
+      "country": "中華民國（臺灣）",
+      "country_code": "TW",
+      "category": "立法與國會",
+      "level": "核心",
+      "official": true
+    },
+    {
+      "id": "official_source:112",
+      "kind": "official_source",
+      "title": "國會議案資訊系統",
+      "body": "韓國 National Assembly 立法與國會 立法、議事與國會監督 法案、審議與處理進度 追蹤韓國立法過程 各國制度、版本與法律效力不同；跨國比較時須使用功能比較並確認文件日期與位階。",
+      "url": "https://likms.assembly.go.kr/bill/main.do",
+      "tags": [
+        "韓國",
+        "National Assembly",
+        "立法與國會",
+        "核心"
+      ],
+      "searchable": "國會議案資訊系統 韓國 national assembly 立法與國會 立法 議事與國會監督 法案 審議與處理進度 追蹤韓國立法過程 各國制度 版本與法律效力不同 跨國比較時須使用功能比較並確認文件日期與位階 韓國 national assembly 立法與國會 核心",
+      "agency": "National Assembly",
+      "country": "韓國",
+      "country_code": "KR",
+      "category": "立法與國會",
+      "level": "核心",
+      "official": true
+    },
+    {
+      "id": "official_source:57",
+      "kind": "official_source",
+      "title": "審計報告",
+      "body": "中華民國（臺灣） 審計部 預算、採購與審計 監察院 專案審計、財務與績效審計報告 查政策執行成效與財務管理問題 審計意見不當然等於違法責任成立",
+      "url": "https://www.audit.gov.tw/p/412-1000-90.php",
+      "tags": [
+        "中華民國（臺灣）",
+        "審計部",
+        "預算、採購與審計",
+        "核心"
+      ],
+      "searchable": "審計報告 中華民國 臺灣 審計部 預算 採購與審計 監察院 專案審計 財務與績效審計報告 查政策執行成效與財務管理問題 審計意見不當然等於違法責任成立 中華民國 臺灣 審計部 預算 採購與審計 核心",
+      "agency": "審計部",
+      "country": "中華民國（臺灣）",
+      "country_code": "TW",
+      "category": "預算、採購與審計",
+      "level": "核心",
+      "official": true
+    },
+    {
+      "id": "official_source:37",
+      "kind": "official_source",
+      "title": "憲法法庭網站",
+      "body": "中華民國（臺灣） 憲法法庭 司法與救濟 司法院 憲法判決、裁定、聲請案件與言詞辯論資料 查違憲審查、基本權與權力分立見解 應閱讀主文、理由、效力及個別意見書",
+      "url": "https://cons.judicial.gov.tw/",
+      "tags": [
+        "中華民國（臺灣）",
+        "憲法法庭",
+        "司法與救濟",
+        "核心"
+      ],
+      "searchable": "憲法法庭網站 中華民國 臺灣 憲法法庭 司法與救濟 司法院 憲法判決 裁定 聲請案件與言詞辯論資料 查違憲審查 基本權與權力分立見解 應閱讀主文 理由 效力及個別意見書 中華民國 臺灣 憲法法庭 司法與救濟 核心",
+      "agency": "憲法法庭",
+      "country": "中華民國（臺灣）",
+      "country_code": "TW",
+      "category": "司法與救濟",
+      "level": "核心",
+      "official": true
+    },
+    {
+      "id": "official_source:2",
+      "kind": "official_source",
+      "title": "政府公報資訊網",
+      "body": "中華民國（臺灣） 國家圖書館 法規與公報 跨院共通 中央與地方政府歷史公報，涵蓋總統府及五院等 追查舊法令、歷史政策與早期政府文件 歷史影像／全文依年代而異",
+      "url": "https://gaz.ncl.edu.tw/",
+      "tags": [
+        "中華民國（臺灣）",
+        "國家圖書館",
+        "法規與公報",
+        "核心"
+      ],
+      "searchable": "政府公報資訊網 中華民國 臺灣 國家圖書館 法規與公報 跨院共通 中央與地方政府歷史公報 涵蓋總統府及五院等 追查舊法令 歷史政策與早期政府文件 歷史影像 全文依年代而異 中華民國 臺灣 國家圖書館 法規與公報 核心",
+      "agency": "國家圖書館",
+      "country": "中華民國（臺灣）",
+      "country_code": "TW",
+      "category": "法規與公報",
+      "level": "核心",
+      "official": true
+    },
+    {
+      "id": "official_source:6",
+      "kind": "official_source",
+      "title": "政府研究資訊系統 GRB",
+      "body": "中華民國（臺灣） 國家科學及技術委員會／國發會系統 政策、研究與檔案 跨院共通 政府委託研究計畫、研究摘要及依法公開之成果報告 查政策研究依據、技術報告與政府委託研究 部分成果受公開期限、機密或著作權限制",
+      "url": "https://www.grb.gov.tw/",
+      "tags": [
+        "中華民國（臺灣）",
+        "國家科學及技術委員會／國發會系統",
+        "政策、研究與檔案",
+        "核心"
+      ],
+      "searchable": "政府研究資訊系統 grb 中華民國 臺灣 國家科學及技術委員會 國發會系統 政策 研究與檔案 跨院共通 政府委託研究計畫 研究摘要及依法公開之成果報告 查政策研究依據 技術報告與政府委託研究 部分成果受公開期限 機密或著作權限制 中華民國 臺灣 國家科學及技術委員會 國發會系統 政策 研究與檔案 核心",
+      "agency": "國家科學及技術委員會／國發會系統",
+      "country": "中華民國（臺灣）",
+      "country_code": "TW",
+      "category": "政策、研究與檔案",
+      "level": "核心",
+      "official": true
+    },
+    {
+      "id": "official_source:9",
+      "kind": "official_source",
+      "title": "政府計畫資料庫",
+      "body": "中華民國（臺灣） 國家發展委員會 政策、研究與檔案 跨院共通 政府中長程及個案計畫之基本資訊 理解政策目標、期程、主辦機關及計畫配置 公開範圍依系統與計畫性質而定",
+      "url": "https://gdb.ndc.gov.tw/",
+      "tags": [
+        "中華民國（臺灣）",
+        "國家發展委員會",
+        "政策、研究與檔案",
+        "重要"
+      ],
+      "searchable": "政府計畫資料庫 中華民國 臺灣 國家發展委員會 政策 研究與檔案 跨院共通 政府中長程及個案計畫之基本資訊 理解政策目標 期程 主辦機關及計畫配置 公開範圍依系統與計畫性質而定 中華民國 臺灣 國家發展委員會 政策 研究與檔案 重要",
+      "agency": "國家發展委員會",
+      "country": "中華民國（臺灣）",
+      "country_code": "TW",
+      "category": "政策、研究與檔案",
+      "level": "重要",
+      "official": true
+    },
+    {
+      "id": "official_source:3",
+      "kind": "official_source",
+      "title": "政府資料開放平臺",
+      "body": "中華民國（臺灣） 國家發展委員會 統計與開放資料 跨院共通 中央及地方機關開放資料集、API、CSV、JSON等 取得可再利用的原始資料與資料字典 應檢查授權、欄位定義、更新頻率及缺漏",
+      "url": "https://data.gov.tw/",
+      "tags": [
+        "中華民國（臺灣）",
+        "國家發展委員會",
+        "統計與開放資料",
+        "核心"
+      ],
+      "searchable": "政府資料開放平臺 中華民國 臺灣 國家發展委員會 統計與開放資料 跨院共通 中央及地方機關開放資料集 api csv json等 取得可再利用的原始資料與資料字典 應檢查授權 欄位定義 更新頻率及缺漏 中華民國 臺灣 國家發展委員會 統計與開放資料 核心",
+      "agency": "國家發展委員會",
+      "country": "中華民國（臺灣）",
+      "country_code": "TW",
+      "category": "統計與開放資料",
+      "level": "核心",
+      "official": true
+    },
+    {
+      "id": "official_source:12",
+      "kind": "official_source",
+      "title": "政府電子採購網",
+      "body": "中華民國（臺灣） 行政院公共工程委員會 預算、採購與審計 跨院共通 招標、決標、契約變更、採購公告與廠商資訊 追查政策執行的採購方式、得標者、金額與期程 公告資訊不必然等於完整契約或實際履約成果",
+      "url": "https://web.pcc.gov.tw/",
+      "tags": [
+        "中華民國（臺灣）",
+        "行政院公共工程委員會",
+        "預算、採購與審計",
+        "核心"
+      ],
+      "searchable": "政府電子採購網 中華民國 臺灣 行政院公共工程委員會 預算 採購與審計 跨院共通 招標 決標 契約變更 採購公告與廠商資訊 追查政策執行的採購方式 得標者 金額與期程 公告資訊不必然等於完整契約或實際履約成果 中華民國 臺灣 行政院公共工程委員會 預算 採購與審計 核心",
+      "agency": "行政院公共工程委員會",
+      "country": "中華民國（臺灣）",
+      "country_code": "TW",
+      "category": "預算、採購與審計",
+      "level": "核心",
+      "official": true
+    },
+    {
+      "id": "official_source:60",
+      "kind": "official_source",
+      "title": "政治獻金公開查閱平臺",
+      "body": "中華民國（臺灣） 監察院 預算、採購與審計 監察院 政黨、候選人政治獻金收支與會計報告 研究政治資金、捐贈與選舉財務 公開資料範圍受法規與個資處理限制",
+      "url": "https://ardata.cy.gov.tw/home",
+      "tags": [
+        "中華民國（臺灣）",
+        "監察院",
+        "預算、採購與審計",
+        "核心"
+      ],
+      "searchable": "政治獻金公開查閱平臺 中華民國 臺灣 監察院 預算 採購與審計 監察院 政黨 候選人政治獻金收支與會計報告 研究政治資金 捐贈與選舉財務 公開資料範圍受法規與個資處理限制 中華民國 臺灣 監察院 預算 採購與審計 核心",
+      "agency": "監察院",
+      "country": "中華民國（臺灣）",
+      "country_code": "TW",
+      "category": "預算、採購與審計",
+      "level": "核心",
+      "official": true
+    },
+    {
+      "id": "official_source:58",
+      "kind": "official_source",
+      "title": "數位審計資料檔案區塊鏈服務平臺",
+      "body": "中華民國（臺灣） 審計部 預算、採購與審計 監察院 審定數、審計資料驗證及查詢服務 驗證特定審計資料或審定資訊 屬專門查驗工具，使用範圍較窄",
+      "url": "https://naobcqry.audit.gov.tw/",
+      "tags": [
+        "中華民國（臺灣）",
+        "審計部",
+        "預算、採購與審計",
+        "專門"
+      ],
+      "searchable": "數位審計資料檔案區塊鏈服務平臺 中華民國 臺灣 審計部 預算 採購與審計 監察院 審定數 審計資料驗證及查詢服務 驗證特定審計資料或審定資訊 屬專門查驗工具 使用範圍較窄 中華民國 臺灣 審計部 預算 採購與審計 專門",
+      "agency": "審計部",
+      "country": "中華民國（臺灣）",
+      "country_code": "TW",
+      "category": "預算、採購與審計",
+      "level": "專門",
+      "official": true
+    },
+    {
+      "id": "official_source:104",
+      "kind": "official_source",
+      "title": "日本法令索引",
+      "body": "日本 National Diet Library 立法與國會 立法、議事與國會監督 法令沿革、法案與國會審議資料索引 追查法律形成與修法歷史 各國制度、版本與法律效力不同；跨國比較時須使用功能比較並確認文件日期與位階。",
+      "url": "https://hourei.ndl.go.jp/",
+      "tags": [
+        "日本",
+        "National Diet Library",
+        "立法與國會",
+        "核心"
+      ],
+      "searchable": "日本法令索引 日本 national diet library 立法與國會 立法 議事與國會監督 法令沿革 法案與國會審議資料索引 追查法律形成與修法歷史 各國制度 版本與法律效力不同 跨國比較時須使用功能比較並確認文件日期與位階 日本 national diet library 立法與國會 核心",
+      "agency": "National Diet Library",
+      "country": "日本",
+      "country_code": "JP",
+      "category": "立法與國會",
+      "level": "核心",
+      "official": true
+    },
+    {
+      "id": "official_source:43",
+      "kind": "official_source",
+      "title": "案件進度查詢",
+      "body": "中華民國（臺灣） 司法院 司法與救濟 司法院 法院案件繫屬與進度資訊 供當事人或利害關係人掌握案件程序 通常需案號與身分資訊；不是裁判全文庫",
+      "url": "https://cpor.judicial.gov.tw/",
+      "tags": [
+        "中華民國（臺灣）",
+        "司法院",
+        "司法與救濟",
+        "專門"
+      ],
+      "searchable": "案件進度查詢 中華民國 臺灣 司法院 司法與救濟 司法院 法院案件繫屬與進度資訊 供當事人或利害關係人掌握案件程序 通常需案號與身分資訊 不是裁判全文庫 中華民國 臺灣 司法院 司法與救濟 專門",
+      "agency": "司法院",
+      "country": "中華民國（臺灣）",
+      "country_code": "TW",
+      "category": "司法與救濟",
+      "level": "專門",
+      "official": true
+    },
+    {
+      "id": "official_source:5",
+      "kind": "official_source",
+      "title": "機關檔案目錄查詢網 NEAR",
+      "body": "中華民國（臺灣） 國家發展委員會檔案管理局 政策、研究與檔案 跨院共通 各政府機關、行政法人及受託行使公權力團體之檔案目錄 確認文件是否存在、保管機關與檔號 以目錄為主，通常不是全文資料庫",
+      "url": "https://near.archives.gov.tw/",
+      "tags": [
+        "中華民國（臺灣）",
+        "國家發展委員會檔案管理局",
+        "政策、研究與檔案",
+        "核心"
+      ],
+      "searchable": "機關檔案目錄查詢網 near 中華民國 臺灣 國家發展委員會檔案管理局 政策 研究與檔案 跨院共通 各政府機關 行政法人及受託行使公權力團體之檔案目錄 確認文件是否存在 保管機關與檔號 以目錄為主 通常不是全文資料庫 中華民國 臺灣 國家發展委員會檔案管理局 政策 研究與檔案 核心",
+      "agency": "國家發展委員會檔案管理局",
+      "country": "中華民國（臺灣）",
+      "country_code": "TW",
+      "category": "政策、研究與檔案",
+      "level": "核心",
+      "official": true
+    },
+    {
+      "id": "official_source:31",
+      "kind": "official_source",
+      "title": "法制局研究成果",
+      "body": "中華民國（臺灣） 立法院法制局 立法與國會 立法院 法案評估、法制研析、專題研究與外國法資料 取得立法技術、法制問題與比較法分析 研究意見不等同院會決議或法律解釋",
+      "url": "https://www.ly.gov.tw/Pages/SearchList.aspx?nodeid=6585",
+      "tags": [
+        "中華民國（臺灣）",
+        "立法院法制局",
+        "立法與國會",
+        "重要"
+      ],
+      "searchable": "法制局研究成果 中華民國 臺灣 立法院法制局 立法與國會 立法院 法案評估 法制研析 專題研究與外國法資料 取得立法技術 法制問題與比較法分析 研究意見不等同院會決議或法律解釋 中華民國 臺灣 立法院法制局 立法與國會 重要",
+      "agency": "立法院法制局",
+      "country": "中華民國（臺灣）",
+      "country_code": "TW",
+      "category": "立法與國會",
+      "level": "重要",
+      "official": true
+    },
+    {
+      "id": "official_source:18",
+      "kind": "official_source",
+      "title": "法務部主管法規查詢系統",
+      "body": "中華民國（臺灣） 法務部 法規與公報 跨院共通 法務部主管法規、行政函釋與法規動態 查行政解釋、主管機關函釋及法規適用見解 函釋效力不同於法律與法院裁判",
+      "url": "https://mojlaw.moj.gov.tw/",
+      "tags": [
+        "中華民國（臺灣）",
+        "法務部",
+        "法規與公報",
+        "重要"
+      ],
+      "searchable": "法務部主管法規查詢系統 中華民國 臺灣 法務部 法規與公報 跨院共通 法務部主管法規 行政函釋與法規動態 查行政解釋 主管機關函釋及法規適用見解 函釋效力不同於法律與法院裁判 中華民國 臺灣 法務部 法規與公報 重要",
+      "agency": "法務部",
+      "country": "中華民國（臺灣）",
+      "country_code": "TW",
+      "category": "法規與公報",
+      "level": "重要",
+      "official": true
+    },
+    {
+      "id": "official_source:35",
+      "kind": "official_source",
+      "title": "法學資料檢索系統",
+      "body": "中華民國（臺灣） 司法院 司法與救濟 司法院 裁判、判例／決議、司法解釋、法規與法學資料 法律實務研究與關鍵字整合檢索 需辨識資料類型、法院層級與裁判效力",
+      "url": "https://lawsearch.judicial.gov.tw/",
+      "tags": [
+        "中華民國（臺灣）",
+        "司法院",
+        "司法與救濟",
+        "核心"
+      ],
+      "searchable": "法學資料檢索系統 中華民國 臺灣 司法院 司法與救濟 司法院 裁判 判例 決議 司法解釋 法規與法學資料 法律實務研究與關鍵字整合檢索 需辨識資料類型 法院層級與裁判效力 中華民國 臺灣 司法院 司法與救濟 核心",
+      "agency": "司法院",
+      "country": "中華民國（臺灣）",
+      "country_code": "TW",
+      "category": "司法與救濟",
+      "level": "核心",
+      "official": true
+    },
+    {
+      "id": "official_source:20",
+      "kind": "official_source",
+      "title": "環評書件查詢系統",
+      "body": "中華民國（臺灣） 環境部 政策、研究與參與 跨院共通 環境影響說明書、評估書、審查資料及會議文件 查重大開發案的環境評估、承諾與審查歷程 書件版本與審查結論須依程序階段判讀",
+      "url": "https://eiadoc.moenv.gov.tw/eiaweb/main.aspx",
+      "tags": [
+        "中華民國（臺灣）",
+        "環境部",
+        "政策、研究與參與",
+        "重要"
+      ],
+      "searchable": "環評書件查詢系統 中華民國 臺灣 環境部 政策 研究與參與 跨院共通 環境影響說明書 評估書 審查資料及會議文件 查重大開發案的環境評估 承諾與審查歷程 書件版本與審查結論須依程序階段判讀 中華民國 臺灣 環境部 政策 研究與參與 重要",
+      "agency": "環境部",
+      "country": "中華民國（臺灣）",
+      "country_code": "TW",
+      "category": "政策、研究與參與",
+      "level": "重要",
+      "official": true
+    },
+    {
+      "id": "official_source:53",
+      "kind": "official_source",
+      "title": "監察成果查詢",
+      "body": "中華民國（臺灣） 監察院 監察、人權與問責 監察院 調查報告、糾正、彈劾、糾舉及其他監察成果 查行政失靈、制度缺失與監督結論 監察結論不等同刑事、民事或行政法院責任判定",
+      "url": "https://www.cy.gov.tw/cl.aspx?n=132",
+      "tags": [
+        "中華民國（臺灣）",
+        "監察院",
+        "監察、人權與問責",
+        "核心"
+      ],
+      "searchable": "監察成果查詢 中華民國 臺灣 監察院 監察 人權與問責 監察院 調查報告 糾正 彈劾 糾舉及其他監察成果 查行政失靈 制度缺失與監督結論 監察結論不等同刑事 民事或行政法院責任判定 中華民國 臺灣 監察院 監察 人權與問責 核心",
+      "agency": "監察院",
+      "country": "中華民國（臺灣）",
+      "country_code": "TW",
+      "category": "監察、人權與問責",
+      "level": "核心",
+      "official": true
+    },
+    {
+      "id": "official_source:55",
+      "kind": "official_source",
+      "title": "監察院公報",
+      "body": "中華民國（臺灣） 監察院 法規與公報 監察院 監察院正式公報及監察案件刊載 查正式監察文書與歷史紀錄 較早期公報可再由政府公報資訊網追查",
+      "url": "https://www.cy.gov.tw/News.aspx?n=160&sms=8916",
+      "tags": [
+        "中華民國（臺灣）",
+        "監察院",
+        "法規與公報",
+        "重要"
+      ],
+      "searchable": "監察院公報 中華民國 臺灣 監察院 法規與公報 監察院 監察院正式公報及監察案件刊載 查正式監察文書與歷史紀錄 較早期公報可再由政府公報資訊網追查 中華民國 臺灣 監察院 法規與公報 重要",
+      "agency": "監察院",
+      "country": "中華民國（臺灣）",
+      "country_code": "TW",
+      "category": "法規與公報",
+      "level": "重要",
+      "official": true
+    },
+    {
+      "id": "official_source:54",
+      "kind": "official_source",
+      "title": "監察院調查報告／案文查詢",
+      "body": "中華民國（臺灣） 監察院 監察、人權與問責 監察院 調查報告、糾正案文及相關附件 深入閱讀個案事實、機關說明與制度建議 注意公開版可能去識別或刪節",
+      "url": "https://www.cy.gov.tw/CyBsBox.aspx?CSN=4",
+      "tags": [
+        "中華民國（臺灣）",
+        "監察院",
+        "監察、人權與問責",
+        "核心"
+      ],
+      "searchable": "監察院調查報告 案文查詢 中華民國 臺灣 監察院 監察 人權與問責 監察院 調查報告 糾正案文及相關附件 深入閱讀個案事實 機關說明與制度建議 注意公開版可能去識別或刪節 中華民國 臺灣 監察院 監察 人權與問責 核心",
+      "agency": "監察院",
+      "country": "中華民國（臺灣）",
+      "country_code": "TW",
+      "category": "監察、人權與問責",
+      "level": "核心",
+      "official": true
+    },
+    {
+      "id": "official_source:34",
+      "kind": "official_source",
+      "title": "立法院出版品／公報查詢",
+      "body": "中華民國（臺灣） 立法院 法規與公報 立法院 立法院公報、議事資料與出版品 查正式刊載之院會、委員會及協商內容 公報常是重建立法理由的重要原始資料",
+      "url": "https://ppg.ly.gov.tw/ppg/publications?queryType=1",
+      "tags": [
+        "中華民國（臺灣）",
+        "立法院",
+        "法規與公報",
+        "核心"
+      ],
+      "searchable": "立法院出版品 公報查詢 中華民國 臺灣 立法院 法規與公報 立法院 立法院公報 議事資料與出版品 查正式刊載之院會 委員會及協商內容 公報常是重建立法理由的重要原始資料 中華民國 臺灣 立法院 法規與公報 核心",
+      "agency": "立法院",
+      "country": "中華民國（臺灣）",
+      "country_code": "TW",
+      "category": "法規與公報",
+      "level": "核心",
+      "official": true
+    },
+    {
+      "id": "official_source:27",
+      "kind": "official_source",
+      "title": "立法院法律系統",
+      "body": "中華民國（臺灣） 立法院國會圖書館 立法與國會 立法院 法律制定與修正沿革、立法理由、審議紀錄及相關文件 查法律形成史與各次修法脈絡 宜與PPG、公報及總統府公布文本相互驗證",
+      "url": "https://npl.ly.gov.tw/do/www/lawRecord",
+      "tags": [
+        "中華民國（臺灣）",
+        "立法院國會圖書館",
+        "立法與國會",
+        "核心"
+      ],
+      "searchable": "立法院法律系統 中華民國 臺灣 立法院國會圖書館 立法與國會 立法院 法律制定與修正沿革 立法理由 審議紀錄及相關文件 查法律形成史與各次修法脈絡 宜與ppg 公報及總統府公布文本相互驗證 中華民國 臺灣 立法院國會圖書館 立法與國會 核心",
+      "agency": "立法院國會圖書館",
+      "country": "中華民國（臺灣）",
+      "country_code": "TW",
+      "category": "立法與國會",
+      "level": "核心",
+      "official": true
+    },
+    {
+      "id": "official_source:33",
+      "kind": "official_source",
+      "title": "立法院議事錄",
+      "body": "中華民國（臺灣） 立法院 立法與國會 立法院 院會正式議事錄及決議紀錄 確認院會處理順序、表決與正式決議 與逐字公報、影音的功能不同",
+      "url": "https://www.ly.gov.tw/Pages/List.aspx?nodeid=466",
+      "tags": [
+        "中華民國（臺灣）",
+        "立法院",
+        "立法與國會",
+        "重要"
+      ],
+      "searchable": "立法院議事錄 中華民國 臺灣 立法院 立法與國會 立法院 院會正式議事錄及決議紀錄 確認院會處理順序 表決與正式決議 與逐字公報 影音的功能不同 中華民國 臺灣 立法院 立法與國會 重要",
+      "agency": "立法院",
+      "country": "中華民國（臺灣）",
+      "country_code": "TW",
+      "category": "立法與國會",
+      "level": "重要",
+      "official": true
+    },
+    {
+      "id": "official_source:29",
+      "kind": "official_source",
+      "title": "立法院開放資料服務平臺",
+      "body": "中華民國（臺灣） 立法院 立法與國會 立法院 議案、委員、會議、表決及其他結構化資料／API 大量下載、程式分析、建立議事資料集 需閱讀欄位說明與API更新規則",
+      "url": "https://data.ly.gov.tw/",
+      "tags": [
+        "中華民國（臺灣）",
+        "立法院",
+        "立法與國會",
+        "核心"
+      ],
+      "searchable": "立法院開放資料服務平臺 中華民國 臺灣 立法院 立法與國會 立法院 議案 委員 會議 表決及其他結構化資料 api 大量下載 程式分析 建立議事資料集 需閱讀欄位說明與api更新規則 中華民國 臺灣 立法院 立法與國會 核心",
+      "agency": "立法院",
+      "country": "中華民國（臺灣）",
+      "country_code": "TW",
+      "category": "立法與國會",
+      "level": "核心",
+      "official": true
+    },
+    {
+      "id": "official_source:56",
+      "kind": "official_source",
+      "title": "總決算審核報告查詢平臺",
+      "body": "中華民國（臺灣） 審計部 預算、採購與審計 監察院 中央與地方政府總決算審核報告 查預算執行、財務缺失、績效與審核意見 須區分預算、決算、審核與後續改善",
+      "url": "https://auditreport.audit.gov.tw/",
+      "tags": [
+        "中華民國（臺灣）",
+        "審計部",
+        "預算、採購與審計",
+        "核心"
+      ],
+      "searchable": "總決算審核報告查詢平臺 中華民國 臺灣 審計部 預算 採購與審計 監察院 中央與地方政府總決算審核報告 查預算執行 財務缺失 績效與審核意見 須區分預算 決算 審核與後續改善 中華民國 臺灣 審計部 預算 採購與審計 核心",
+      "agency": "審計部",
+      "country": "中華民國（臺灣）",
+      "country_code": "TW",
+      "category": "預算、採購與審計",
+      "level": "核心",
+      "official": true
+    },
+    {
+      "id": "official_source:15",
+      "kind": "official_source",
+      "title": "總統府公報",
+      "body": "中華民國（臺灣） 總統府 法規與公報 跨院共通 總統令、法律公布、任免、條約與其他正式公報事項 確認法律公布日、總統令及國家正式文書 法律公布後仍須另查施行日及後續修正",
+      "url": "https://www.president.gov.tw/Page/129",
+      "tags": [
+        "中華民國（臺灣）",
+        "總統府",
+        "法規與公報",
+        "核心"
+      ],
+      "searchable": "總統府公報 中華民國 臺灣 總統府 法規與公報 跨院共通 總統令 法律公布 任免 條約與其他正式公報事項 確認法律公布日 總統令及國家正式文書 法律公布後仍須另查施行日及後續修正 中華民國 臺灣 總統府 法規與公報 核心",
+      "agency": "總統府",
+      "country": "中華民國（臺灣）",
+      "country_code": "TW",
+      "category": "法規與公報",
+      "level": "核心",
+      "official": true
+    },
+    {
+      "id": "official_source:47",
+      "kind": "official_source",
+      "title": "考畢試題查詢平臺",
+      "body": "中華民國（臺灣） 考選部 政策、研究與參與 考試院 歷屆國家考試試題與測驗題答案 研究國家考試內容、命題與專業能力要求 答案更正及爭議處理應查最新公告",
+      "url": "https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx",
+      "tags": [
+        "中華民國（臺灣）",
+        "考選部",
+        "政策、研究與參與",
+        "核心"
+      ],
+      "searchable": "考畢試題查詢平臺 中華民國 臺灣 考選部 政策 研究與參與 考試院 歷屆國家考試試題與測驗題答案 研究國家考試內容 命題與專業能力要求 答案更正及爭議處理應查最新公告 中華民國 臺灣 考選部 政策 研究與參與 核心",
+      "agency": "考選部",
+      "country": "中華民國（臺灣）",
+      "country_code": "TW",
+      "category": "政策、研究與參與",
+      "level": "核心",
+      "official": true
+    },
+    {
+      "id": "official_source:45",
+      "kind": "official_source",
+      "title": "考試院公報資訊網",
+      "body": "中華民國（臺灣） 考試院 法規與公報 考試院 考試院及所屬機關法規、會議、命令與公告 查考銓保訓制度的正式公報文件 公報與現行法規整編應交叉查核",
+      "url": "https://gazette.exam.gov.tw/",
+      "tags": [
+        "中華民國（臺灣）",
+        "考試院",
+        "法規與公報",
+        "核心"
+      ],
+      "searchable": "考試院公報資訊網 中華民國 臺灣 考試院 法規與公報 考試院 考試院及所屬機關法規 會議 命令與公告 查考銓保訓制度的正式公報文件 公報與現行法規整編應交叉查核 中華民國 臺灣 考試院 法規與公報 核心",
+      "agency": "考試院",
+      "country": "中華民國（臺灣）",
+      "country_code": "TW",
+      "category": "法規與公報",
+      "level": "核心",
+      "official": true
+    },
+    {
+      "id": "official_source:46",
+      "kind": "official_source",
+      "title": "考試院統計資料查詢網",
+      "body": "中華民國（臺灣） 考試院 統計與開放資料 考試院 考試、銓敘、保訓等統計資訊 分析國家考試與文官制度趨勢 注意不同所屬機關的統計定義",
+      "url": "https://www.exam.gov.tw/stats/default.aspx",
+      "tags": [
+        "中華民國（臺灣）",
+        "考試院",
+        "統計與開放資料",
+        "重要"
+      ],
+      "searchable": "考試院統計資料查詢網 中華民國 臺灣 考試院 統計與開放資料 考試院 考試 銓敘 保訓等統計資訊 分析國家考試與文官制度趨勢 注意不同所屬機關的統計定義 中華民國 臺灣 考試院 統計與開放資料 重要",
+      "agency": "考試院",
+      "country": "中華民國（臺灣）",
+      "country_code": "TW",
+      "category": "統計與開放資料",
+      "level": "重要",
+      "official": true
+    },
+    {
+      "id": "official_source:48",
+      "kind": "official_source",
+      "title": "考選統計",
+      "body": "中華民國（臺灣） 考選部 統計與開放資料 考試院 各種考試統計、年報與專題分析 查報考、到考、錄取與類科變化 跨年度比較須注意考制及類科調整",
+      "url": "https://wwwc.moex.gov.tw/main/examreport/wfrmexamstatistics.aspx?menu_id=158",
+      "tags": [
+        "中華民國（臺灣）",
+        "考選部",
+        "統計與開放資料",
+        "重要"
+      ],
+      "searchable": "考選統計 中華民國 臺灣 考選部 統計與開放資料 考試院 各種考試統計 年報與專題分析 查報考 到考 錄取與類科變化 跨年度比較須注意考制及類科調整 中華民國 臺灣 考選部 統計與開放資料 重要",
+      "agency": "考選部",
+      "country": "中華民國（臺灣）",
+      "country_code": "TW",
+      "category": "統計與開放資料",
+      "level": "重要",
+      "official": true
+    },
+    {
+      "id": "official_source:105",
+      "kind": "official_source",
+      "title": "衆議院 議案情報",
+      "body": "日本 House of Representatives 立法與國會 立法、議事與國會監督 國會法案與審議資料 追蹤法案進度 各國制度、版本與法律效力不同；跨國比較時須使用功能比較並確認文件日期與位階。",
+      "url": "https://www.shugiin.go.jp/internet/itdb_gian.nsf/html/gian/menu.htm",
+      "tags": [
+        "日本",
+        "House of Representatives",
+        "立法與國會",
+        "核心"
+      ],
+      "searchable": "衆議院 議案情報 日本 house of representatives 立法與國會 立法 議事與國會監督 國會法案與審議資料 追蹤法案進度 各國制度 版本與法律效力不同 跨國比較時須使用功能比較並確認文件日期與位階 日本 house of representatives 立法與國會 核心",
+      "agency": "House of Representatives",
+      "country": "日本",
+      "country_code": "JP",
+      "category": "立法與國會",
+      "level": "核心",
+      "official": true
+    },
+    {
+      "id": "official_source:1",
+      "kind": "official_source",
+      "title": "行政院公報資訊網",
+      "body": "中華民國（臺灣） 行政院 法規與公報 跨院共通 法規命令、行政規則、公告、處分及各機關公報事項 查核法規發布、預告、公告與行政機關正式刊登內容 公報原始文本；不等同現行整編法規",
+      "url": "https://gazette.nat.gov.tw/",
+      "tags": [
+        "中華民國（臺灣）",
+        "行政院",
+        "法規與公報",
+        "核心"
+      ],
+      "searchable": "行政院公報資訊網 中華民國 臺灣 行政院 法規與公報 跨院共通 法規命令 行政規則 公告 處分及各機關公報事項 查核法規發布 預告 公告與行政機關正式刊登內容 公報原始文本 不等同現行整編法規 中華民國 臺灣 行政院 法規與公報 核心",
+      "agency": "行政院",
+      "country": "中華民國（臺灣）",
+      "country_code": "TW",
+      "category": "法規與公報",
+      "level": "核心",
+      "official": true
+    },
+    {
+      "id": "official_source:19",
+      "kind": "official_source",
+      "title": "行政院訴願決定查詢",
+      "body": "中華民國（臺灣） 行政院 法規與公報 跨院共通 行政院訴願決定書與相關查詢 查中央行政爭議、處分理由與救濟見解 訴願決定通常針對個案；注意是否續行行政訴訟",
+      "url": "https://appeal.ey.gov.tw/",
+      "tags": [
+        "中華民國（臺灣）",
+        "行政院",
+        "法規與公報",
+        "核心"
+      ],
+      "searchable": "行政院訴願決定查詢 中華民國 臺灣 行政院 法規與公報 跨院共通 行政院訴願決定書與相關查詢 查中央行政爭議 處分理由與救濟見解 訴願決定通常針對個案 注意是否續行行政訴訟 中華民國 臺灣 行政院 法規與公報 核心",
+      "agency": "行政院",
+      "country": "中華民國（臺灣）",
+      "country_code": "TW",
+      "category": "法規與公報",
+      "level": "核心",
+      "official": true
+    },
+    {
+      "id": "official_source:24",
+      "kind": "official_source",
+      "title": "行政院院會決議",
+      "body": "中華民國（臺灣） 行政院 政策、研究與參與 行政院 行政院會議決議、報告與政策說明 確認行政部門正式政策立場與院會結論 決議可能仍待立法、預算或命令落實",
+      "url": "https://www.ey.gov.tw/Page/AE4885326ADF43DD",
+      "tags": [
+        "中華民國（臺灣）",
+        "行政院",
+        "政策、研究與參與",
+        "核心"
+      ],
+      "searchable": "行政院院會決議 中華民國 臺灣 行政院 政策 研究與參與 行政院 行政院會議決議 報告與政策說明 確認行政部門正式政策立場與院會結論 決議可能仍待立法 預算或命令落實 中華民國 臺灣 行政院 政策 研究與參與 核心",
+      "agency": "行政院",
+      "country": "中華民國（臺灣）",
+      "country_code": "TW",
+      "category": "政策、研究與參與",
+      "level": "核心",
+      "official": true
+    },
+    {
+      "id": "official_source:23",
+      "kind": "official_source",
+      "title": "行政院院會議案",
+      "body": "中華民國（臺灣） 行政院 立法與國會 行政院 院會討論之法律案、政策案與報告案資料 追查行政院版草案與送立法院前的政策決定 院會議案不等同立法院最終通過版本",
+      "url": "https://www.ey.gov.tw/Page/B572E2F7D8DF5CE1",
+      "tags": [
+        "中華民國（臺灣）",
+        "行政院",
+        "立法與國會",
+        "核心"
+      ],
+      "searchable": "行政院院會議案 中華民國 臺灣 行政院 立法與國會 行政院 院會討論之法律案 政策案與報告案資料 追查行政院版草案與送立法院前的政策決定 院會議案不等同立法院最終通過版本 中華民國 臺灣 行政院 立法與國會 核心",
+      "agency": "行政院",
+      "country": "中華民國（臺灣）",
+      "country_code": "TW",
+      "category": "立法與國會",
+      "level": "核心",
+      "official": true
+    },
+    {
+      "id": "official_source:110",
+      "kind": "official_source",
+      "title": "裁判例検索",
+      "body": "日本 Courts in Japan 司法與救濟 司法、裁判與救濟 日本法院裁判例 核對司法實務 各國制度、版本與法律效力不同；跨國比較時須使用功能比較並確認文件日期與位階。",
+      "url": "https://www.courts.go.jp/app/hanrei_jp/search1",
+      "tags": [
+        "日本",
+        "Courts in Japan",
+        "司法與救濟",
+        "核心"
+      ],
+      "searchable": "裁判例検索 日本 courts in japan 司法與救濟 司法 裁判與救濟 日本法院裁判例 核對司法實務 各國制度 版本與法律效力不同 跨國比較時須使用功能比較並確認文件日期與位階 日本 courts in japan 司法與救濟 核心",
+      "agency": "Courts in Japan",
+      "country": "日本",
+      "country_code": "JP",
+      "category": "司法與救濟",
+      "level": "核心",
+      "official": true
+    },
+    {
+      "id": "official_source:36",
+      "kind": "official_source",
+      "title": "裁判書查詢",
+      "body": "中華民國（臺灣） 司法院 司法與救濟 司法院 各級法院公開裁判書 查個案裁判理由、法律見解及實務趨勢 注意裁判是否確定、是否經上級審變更",
+      "url": "https://judgment.judicial.gov.tw/",
+      "tags": [
+        "中華民國（臺灣）",
+        "司法院",
+        "司法與救濟",
+        "核心"
+      ],
+      "searchable": "裁判書查詢 中華民國 臺灣 司法院 司法與救濟 司法院 各級法院公開裁判書 查個案裁判理由 法律見解及實務趨勢 注意裁判是否確定 是否經上級審變更 中華民國 臺灣 司法院 司法與救濟 核心",
+      "agency": "司法院",
+      "country": "中華民國（臺灣）",
+      "country_code": "TW",
+      "category": "司法與救濟",
+      "level": "核心",
+      "official": true
+    },
+    {
+      "id": "official_source:62",
+      "kind": "official_source",
+      "title": "補助交易身分關係公開及查詢平臺",
+      "body": "中華民國（臺灣） 監察院 預算、採購與審計 監察院 公職人員或關係人與機關間補助、交易身分關係公開 查利益衝突迴避法下的公開揭露 應依案件、身分與法定揭露範圍判讀",
+      "url": "https://cfcmweb.cy.gov.tw/cfcm_w/index.aspx",
+      "tags": [
+        "中華民國（臺灣）",
+        "監察院",
+        "預算、採購與審計",
+        "重要"
+      ],
+      "searchable": "補助交易身分關係公開及查詢平臺 中華民國 臺灣 監察院 預算 採購與審計 監察院 公職人員或關係人與機關間補助 交易身分關係公開 查利益衝突迴避法下的公開揭露 應依案件 身分與法定揭露範圍判讀 中華民國 臺灣 監察院 預算 採購與審計 重要",
+      "agency": "監察院",
+      "country": "中華民國（臺灣）",
+      "country_code": "TW",
+      "category": "預算、採購與審計",
+      "level": "重要",
+      "official": true
+    },
+    {
+      "id": "official_source:25",
+      "kind": "official_source",
+      "title": "議事暨公報資訊網 PPG",
+      "body": "中華民國（臺灣） 立法院 法規與公報 立法院 議案、議事日程、議事錄、公報、質詢、黨團協商及會議文件 重建立法案完整審議歷程 核心國會資料入口；同案應沿時間軸交叉查核",
+      "url": "https://ppg.ly.gov.tw/ppg/",
+      "tags": [
+        "中華民國（臺灣）",
+        "立法院",
+        "法規與公報",
+        "核心"
+      ],
+      "searchable": "議事暨公報資訊網 ppg 中華民國 臺灣 立法院 法規與公報 立法院 議案 議事日程 議事錄 公報 質詢 黨團協商及會議文件 重建立法案完整審議歷程 核心國會資料入口 同案應沿時間軸交叉查核 中華民國 臺灣 立法院 法規與公報 核心",
+      "agency": "立法院",
+      "country": "中華民國（臺灣）",
+      "country_code": "TW",
+      "category": "法規與公報",
+      "level": "核心",
+      "official": true
+    },
+    {
+      "id": "official_source:30",
+      "kind": "official_source",
+      "title": "議事轉播 IVOD",
+      "body": "中華民國（臺灣） 立法院 立法與國會 立法院 院會與委員會影音、發言片段及會議查詢 核對委員發言、詢答脈絡與會議實況 影音內容須與正式議事錄、公報區分",
+      "url": "https://ivod.ly.gov.tw/",
+      "tags": [
+        "中華民國（臺灣）",
+        "立法院",
+        "立法與國會",
+        "核心"
+      ],
+      "searchable": "議事轉播 ivod 中華民國 臺灣 立法院 立法與國會 立法院 院會與委員會影音 發言片段及會議查詢 核對委員發言 詢答脈絡與會議實況 影音內容須與正式議事錄 公報區分 中華民國 臺灣 立法院 立法與國會 核心",
+      "agency": "立法院",
+      "country": "中華民國（臺灣）",
+      "country_code": "TW",
+      "category": "立法與國會",
+      "level": "核心",
+      "official": true
+    },
+    {
+      "id": "official_source:16",
+      "kind": "official_source",
+      "title": "選舉資料庫",
+      "body": "中華民國（臺灣） 中央選舉委員會 統計與開放資料 跨院共通 歷屆選舉、候選人、得票、投票率及選區資料 研究選舉結果、代表性與政治支持結構 應注意選區調整及選制變動",
+      "url": "http://db.cec.gov.tw/",
+      "tags": [
+        "中華民國（臺灣）",
+        "中央選舉委員會",
+        "統計與開放資料",
+        "核心"
+      ],
+      "searchable": "選舉資料庫 中華民國 臺灣 中央選舉委員會 統計與開放資料 跨院共通 歷屆選舉 候選人 得票 投票率及選區資料 研究選舉結果 代表性與政治支持結構 應注意選區調整及選制變動 中華民國 臺灣 中央選舉委員會 統計與開放資料 核心",
+      "agency": "中央選舉委員會",
+      "country": "中華民國（臺灣）",
+      "country_code": "TW",
+      "category": "統計與開放資料",
+      "level": "核心",
+      "official": true
+    },
+    {
+      "id": "official_source:50",
+      "kind": "official_source",
+      "title": "銓敘部人事法規／解釋函令",
+      "body": "中華民國（臺灣） 銓敘部 法規與公報 考試院 任用、考績、退撫、俸給等人事法規與函釋 查文官制度規範及主管機關解釋 函釋與法規層級及法院見解應區分",
+      "url": "https://www.mocs.gov.tw/",
+      "tags": [
+        "中華民國（臺灣）",
+        "銓敘部",
+        "法規與公報",
+        "核心"
+      ],
+      "searchable": "銓敘部人事法規 解釋函令 中華民國 臺灣 銓敘部 法規與公報 考試院 任用 考績 退撫 俸給等人事法規與函釋 查文官制度規範及主管機關解釋 函釋與法規層級及法院見解應區分 中華民國 臺灣 銓敘部 法規與公報 核心",
+      "agency": "銓敘部",
+      "country": "中華民國（臺灣）",
+      "country_code": "TW",
+      "category": "法規與公報",
+      "level": "核心",
+      "official": true
+    },
+    {
+      "id": "official_source:52",
+      "kind": "official_source",
+      "title": "銓敘部訴願決定書",
+      "body": "中華民國（臺灣） 銓敘部 法規與公報 考試院 銓敘部訴願決定與行政救濟資料 查人事行政處分之訴願理由與處理 後續如提行政訴訟，應再查裁判",
+      "url": "https://www.mocs.gov.tw/pages/list.aspx?Index=0&Node=1370&Type=1",
+      "tags": [
+        "中華民國（臺灣）",
+        "銓敘部",
+        "法規與公報",
+        "專門"
+      ],
+      "searchable": "銓敘部訴願決定書 中華民國 臺灣 銓敘部 法規與公報 考試院 銓敘部訴願決定與行政救濟資料 查人事行政處分之訴願理由與處理 後續如提行政訴訟 應再查裁判 中華民國 臺灣 銓敘部 法規與公報 專門",
+      "agency": "銓敘部",
+      "country": "中華民國（臺灣）",
+      "country_code": "TW",
+      "category": "法規與公報",
+      "level": "專門",
+      "official": true
+    },
+    {
+      "id": "official_source:32",
+      "kind": "official_source",
+      "title": "預算中心研究成果",
+      "body": "中華民國（臺灣） 立法院預算中心 立法與國會 立法院 中央預算評估、決算與政策財務分析 查法案或政策的財政影響、預算執行與績效 屬國會幕僚研究，宜與主計、審計資料對照",
+      "url": "https://www.ly.gov.tw/Pages/SearchList.aspx?nodeid=6594",
+      "tags": [
+        "中華民國（臺灣）",
+        "立法院預算中心",
+        "立法與國會",
+        "核心"
+      ],
+      "searchable": "預算中心研究成果 中華民國 臺灣 立法院預算中心 立法與國會 立法院 中央預算評估 決算與政策財務分析 查法案或政策的財政影響 預算執行與績效 屬國會幕僚研究 宜與主計 審計資料對照 中華民國 臺灣 立法院預算中心 立法與國會 核心",
+      "agency": "立法院預算中心",
+      "country": "中華民國（臺灣）",
+      "country_code": "TW",
+      "category": "立法與國會",
+      "level": "核心",
+      "official": true
+    },
+    {
+      "id": "research_method:content",
+      "kind": "research_method",
+      "title": "內容分析與主張—證據矩陣",
+      "body": "content 內容分析與主張—證據矩陣 政黨 立場 發言 新聞稿 主張 一致性 矛盾 論述 質詢 承諾 適合系統比較不同主體、日期、文件層級與條件下的主張。 固定比較命題與分析單位 標記主體、日期、文件層級與條件 逐項連結原文證據 區分目標變更、手段調整、妥協與實質衝突 新聞標題、個別人士發言與政黨正式立場不可混用。 bovens2007 guo2022factcheck min2023factscore 固定比較命題與分析單位 標記主體、日期、文件層級與條件 逐項連結原文證據 區分目標變更、手段調整、妥協與實質衝突 ",
+      "url": "#compare",
+      "tags": [
+        "政黨",
+        "立場",
+        "發言",
+        "新聞稿",
+        "主張",
+        "一致性",
+        "矛盾",
+        "論述",
+        "質詢",
+        "承諾"
+      ],
+      "searchable": "內容分析與主張 證據矩陣 content 內容分析與主張 證據矩陣 政黨 立場 發言 新聞稿 主張 一致性 矛盾 論述 質詢 承諾 適合系統比較不同主體 日期 文件層級與條件下的主張 固定比較命題與分析單位 標記主體 日期 文件層級與條件 逐項連結原文證據 區分目標變更 手段調整 妥協與實質衝突 新聞標題 個別人士發言與政黨正式立場不可混用 bovens2007 guo2022factcheck min2023factscore 固定比較命題與分析單位 標記主體 日期 文件層級與條件 逐項連結原文證據 區分目標變更 手段調整 妥協與實質衝突 政黨 立場 發言 新聞稿 主張 一致性 矛盾 論述 質詢 承諾",
+      "official": false
+    },
+    {
+      "id": "research_method:comparative",
+      "kind": "research_method",
+      "title": "功能比較法與制度比較",
+      "body": "comparative 功能比較法與制度比較 比較 跨國 國際 日本 美國 英國 歐盟 他國 外國法 哪個國家 適合比較不同法域如何處理相同功能問題，並辨識制度背景與可移植限制。 界定共同功能問題 以可比性而非名氣選國 使用相同問題清單比較權限、工具、程序、財源、執行與救濟 分析憲政、行政與文化差異 外國制度不能直接移植，也不能只比對條文字面。 dolowitzmarsh2000 teubner1998 界定共同功能問題 以可比性而非名氣選國 使用相同問題清單比較權限、工具、程序、財源、執行與救濟 分析憲政、行政與文化差異 ",
+      "url": "#compare",
+      "tags": [
+        "比較",
+        "跨國",
+        "國際",
+        "日本",
+        "美國",
+        "英國",
+        "歐盟",
+        "他國",
+        "外國法",
+        "哪個國家"
+      ],
+      "searchable": "功能比較法與制度比較 comparative 功能比較法與制度比較 比較 跨國 國際 日本 美國 英國 歐盟 他國 外國法 哪個國家 適合比較不同法域如何處理相同功能問題 並辨識制度背景與可移植限制 界定共同功能問題 以可比性而非名氣選國 使用相同問題清單比較權限 工具 程序 財源 執行與救濟 分析憲政 行政與文化差異 外國制度不能直接移植 也不能只比對條文字面 dolowitzmarsh2000 teubner1998 界定共同功能問題 以可比性而非名氣選國 使用相同問題清單比較權限 工具 程序 財源 執行與救濟 分析憲政 行政與文化差異 比較 跨國 國際 日本 美國 英國 歐盟 他國 外國法 哪個國家",
+      "official": false
+    },
+    {
+      "id": "research_method:causal",
+      "kind": "research_method",
+      "title": "因果推論與政策效果評估",
+      "body": "causal 因果推論與政策效果評估 有效 成效 影響 導致 造成 效果 改革後 政策前後 介入 改善 適合判斷政策或法律改變是否造成可觀察結果，而非只描述同時發生的趨勢。 定義處置、結果與時間窗 尋找對照組或政策斷點 依條件選擇差異中的差異、中斷時間序列、迴歸不連續或合成控制 檢查平行趨勢、安慰劑與替代解釋 沒有可信識別策略時只能報告關聯，不能宣稱因果。 imbenswooldridge2009 callawaysantanna2021 abadie2010 定義處置、結果與時間窗 尋找對照組或政策斷點 依條件選擇差異中的差異、中斷時間序列、迴歸不連續或合成控制 檢查平行趨勢、安慰劑與替代解釋 ",
+      "url": "#compare",
+      "tags": [
+        "有效",
+        "成效",
+        "影響",
+        "導致",
+        "造成",
+        "效果",
+        "改革後",
+        "政策前後",
+        "介入",
+        "改善"
+      ],
+      "searchable": "因果推論與政策效果評估 causal 因果推論與政策效果評估 有效 成效 影響 導致 造成 效果 改革後 政策前後 介入 改善 適合判斷政策或法律改變是否造成可觀察結果 而非只描述同時發生的趨勢 定義處置 結果與時間窗 尋找對照組或政策斷點 依條件選擇差異中的差異 中斷時間序列 迴歸不連續或合成控制 檢查平行趨勢 安慰劑與替代解釋 沒有可信識別策略時只能報告關聯 不能宣稱因果 imbenswooldridge2009 callawaysantanna2021 abadie2010 定義處置 結果與時間窗 尋找對照組或政策斷點 依條件選擇差異中的差異 中斷時間序列 迴歸不連續或合成控制 檢查平行趨勢 安慰劑與替代解釋 有效 成效 影響 導致 造成 效果 改革後 政策前後 介入 改善",
+      "official": false
+    },
+    {
+      "id": "research_method:implementation",
+      "kind": "research_method",
+      "title": "政策執行研究與過程追蹤",
+      "body": "implementation 政策執行研究與過程追蹤 執行 流程 第一線 落差 協作 通報 SOP 機關 責任 期限 行政能力 適合解釋正式規範如何在組織、預算、資訊系統與第一線裁量中被轉譯。 繪製法律與政策事件鏈 蒐集標準作業程序、紀錄與行政資料 訪談關鍵角色並以文件交叉驗證 使用過程追蹤檢驗失敗機制與責任移交 單一訪談或單一事件不能代表整體制度。 matland1995 brodkin2011 damschroder2009 mayfinch2009 繪製法律與政策事件鏈 蒐集標準作業程序、紀錄與行政資料 訪談關鍵角色並以文件交叉驗證 使用過程追蹤檢驗失敗機制與責任移交 ",
+      "url": "#compare",
+      "tags": [
+        "執行",
+        "流程",
+        "第一線",
+        "落差",
+        "協作",
+        "通報",
+        "SOP",
+        "機關",
+        "責任",
+        "期限",
+        "行政能力"
+      ],
+      "searchable": "政策執行研究與過程追蹤 implementation 政策執行研究與過程追蹤 執行 流程 第一線 落差 協作 通報 sop 機關 責任 期限 行政能力 適合解釋正式規範如何在組織 預算 資訊系統與第一線裁量中被轉譯 繪製法律與政策事件鏈 蒐集標準作業程序 紀錄與行政資料 訪談關鍵角色並以文件交叉驗證 使用過程追蹤檢驗失敗機制與責任移交 單一訪談或單一事件不能代表整體制度 matland1995 brodkin2011 damschroder2009 mayfinch2009 繪製法律與政策事件鏈 蒐集標準作業程序 紀錄與行政資料 訪談關鍵角色並以文件交叉驗證 使用過程追蹤檢驗失敗機制與責任移交 執行 流程 第一線 落差 協作 通報 sop 機關 責任 期限 行政能力",
+      "official": false
+    },
+    {
+      "id": "research_method:doctrinal",
+      "kind": "research_method",
+      "title": "法釋義學與立法沿革分析",
+      "body": "doctrinal 法釋義學與立法沿革分析 法條 法律 條例 違法 合法 解釋 裁判 判決 憲法 權利 義務 裁罰 救濟 適合確認法源位階、行為時法、構成要件、法律效果、裁判見解與修法沿革。 辨識法域與爭點 核對現行法、沿革與施行日期 區分條文、函釋、裁判與學說效力 檢查程序、救濟與相關法規 不能用政策好壞取代法律要件，也不能把提案版本當成現行法。 teubner1998 radaelli2004 辨識法域與爭點 核對現行法、沿革與施行日期 區分條文、函釋、裁判與學說效力 檢查程序、救濟與相關法規 ",
+      "url": "#compare",
+      "tags": [
+        "法條",
+        "法律",
+        "條例",
+        "違法",
+        "合法",
+        "解釋",
+        "裁判",
+        "判決",
+        "憲法",
+        "權利",
+        "義務",
+        "裁罰",
+        "救濟"
+      ],
+      "searchable": "法釋義學與立法沿革分析 doctrinal 法釋義學與立法沿革分析 法條 法律 條例 違法 合法 解釋 裁判 判決 憲法 權利 義務 裁罰 救濟 適合確認法源位階 行為時法 構成要件 法律效果 裁判見解與修法沿革 辨識法域與爭點 核對現行法 沿革與施行日期 區分條文 函釋 裁判與學說效力 檢查程序 救濟與相關法規 不能用政策好壞取代法律要件 也不能把提案版本當成現行法 teubner1998 radaelli2004 辨識法域與爭點 核對現行法 沿革與施行日期 區分條文 函釋 裁判與學說效力 檢查程序 救濟與相關法規 法條 法律 條例 違法 合法 解釋 裁判 判決 憲法 權利 義務 裁罰 救濟",
+      "official": false
+    },
+    {
+      "id": "research_method:mixed",
+      "kind": "research_method",
+      "title": "混合方法與探索性研究設計",
+      "body": "mixed 混合方法與探索性研究設計 為什麼 怎麼辦 改革 制度 政策 原因 問題 適合問題尚未充分界定，需先結合文件、統計、訪談與比較資料建立可檢驗假設。 先界定問題與概念 以官方資料描述規模與趨勢 用文件或訪談探索機制 再選擇可驗證的法律、因果或比較設計 混合方法不是把所有方法都做一遍，應以研究問題決定最小充分設計。 guyatt2008grade damschroder2009 先界定問題與概念 以官方資料描述規模與趨勢 用文件或訪談探索機制 再選擇可驗證的法律、因果或比較設計 ",
+      "url": "#compare",
+      "tags": [
+        "為什麼",
+        "怎麼辦",
+        "改革",
+        "制度",
+        "政策",
+        "原因",
+        "問題"
+      ],
+      "searchable": "混合方法與探索性研究設計 mixed 混合方法與探索性研究設計 為什麼 怎麼辦 改革 制度 政策 原因 問題 適合問題尚未充分界定 需先結合文件 統計 訪談與比較資料建立可檢驗假設 先界定問題與概念 以官方資料描述規模與趨勢 用文件或訪談探索機制 再選擇可驗證的法律 因果或比較設計 混合方法不是把所有方法都做一遍 應以研究問題決定最小充分設計 guyatt2008grade damschroder2009 先界定問題與概念 以官方資料描述規模與趨勢 用文件或訪談探索機制 再選擇可驗證的法律 因果或比較設計 為什麼 怎麼辦 改革 制度 政策 原因 問題",
+      "official": false
+    },
+    {
+      "id": "research_method:survey",
+      "kind": "research_method",
+      "title": "調查研究與民意測量",
+      "body": "survey 調查研究與民意測量 民意 滿意度 支持度 態度 問卷 使用者 感受 認知 適合估計群體態度、需求、經驗與政策接受度。 定義母體與抽樣架構 設計中立題目與測量尺度 處理無回應與加權 公開題目、樣本、加權與不確定性 網路自填樣本與便利抽樣通常不能直接代表全體人口。 fung2006 arnstein1969 定義母體與抽樣架構 設計中立題目與測量尺度 處理無回應與加權 公開題目、樣本、加權與不確定性 ",
+      "url": "#compare",
+      "tags": [
+        "民意",
+        "滿意度",
+        "支持度",
+        "態度",
+        "問卷",
+        "使用者",
+        "感受",
+        "認知"
+      ],
+      "searchable": "調查研究與民意測量 survey 調查研究與民意測量 民意 滿意度 支持度 態度 問卷 使用者 感受 認知 適合估計群體態度 需求 經驗與政策接受度 定義母體與抽樣架構 設計中立題目與測量尺度 處理無回應與加權 公開題目 樣本 加權與不確定性 網路自填樣本與便利抽樣通常不能直接代表全體人口 fung2006 arnstein1969 定義母體與抽樣架構 設計中立題目與測量尺度 處理無回應與加權 公開題目 樣本 加權與不確定性 民意 滿意度 支持度 態度 問卷 使用者 感受 認知",
+      "official": false
+    },
+    {
+      "id": "research_method:budget",
+      "kind": "research_method",
+      "title": "預算、成本效果與分配影響分析",
+      "body": "budget 預算、成本效果與分配影響分析 預算 成本 財政 經費 補助 稅 價格 支出 決算 採購 適合檢查資源投入、機會成本、執行率、單位成本與不同群體的分配效果。 區分預算案、法定預算與決算 建立投入、產出與結果指標 比較成本效果及替代方案 檢查中央地方與群體分配影響 預算增加不等於成效提升，執行率高也不等於政策有效。 radaelli2004 imbenswooldridge2009 區分預算案、法定預算與決算 建立投入、產出與結果指標 比較成本效果及替代方案 檢查中央地方與群體分配影響 ",
+      "url": "#compare",
+      "tags": [
+        "預算",
+        "成本",
+        "財政",
+        "經費",
+        "補助",
+        "稅",
+        "價格",
+        "支出",
+        "決算",
+        "採購"
+      ],
+      "searchable": "預算 成本效果與分配影響分析 budget 預算 成本效果與分配影響分析 預算 成本 財政 經費 補助 稅 價格 支出 決算 採購 適合檢查資源投入 機會成本 執行率 單位成本與不同群體的分配效果 區分預算案 法定預算與決算 建立投入 產出與結果指標 比較成本效果及替代方案 檢查中央地方與群體分配影響 預算增加不等於成效提升 執行率高也不等於政策有效 radaelli2004 imbenswooldridge2009 區分預算案 法定預算與決算 建立投入 產出與結果指標 比較成本效果及替代方案 檢查中央地方與群體分配影響 預算 成本 財政 經費 補助 稅 價格 支出 決算 採購",
+      "official": false
+    },
+    {
+      "id": "research_method:safety",
+      "kind": "research_method",
+      "title": "風險治理、人因工程與安全科學",
+      "body": "safety 風險治理、人因工程與安全科學 事故 安全 風險 失誤 通報 災害 醫療 交通 高風險 閉環 適合分析高風險系統中的弱訊號、責任移交、失效模式與防錯設計。 建立事件與風險鏈 進行失效模式與障礙分析 檢查資訊、人員、設備與組織介面 設計升級、回饋與閉環機制 不能只歸責個人，須同時檢查制度與環境條件。 roberts1990 leveson2004 建立事件與風險鏈 進行失效模式與障礙分析 檢查資訊、人員、設備與組織介面 設計升級、回饋與閉環機制 ",
+      "url": "#compare",
+      "tags": [
+        "事故",
+        "安全",
+        "風險",
+        "失誤",
+        "通報",
+        "災害",
+        "醫療",
+        "交通",
+        "高風險",
+        "閉環"
+      ],
+      "searchable": "風險治理 人因工程與安全科學 safety 風險治理 人因工程與安全科學 事故 安全 風險 失誤 通報 災害 醫療 交通 高風險 閉環 適合分析高風險系統中的弱訊號 責任移交 失效模式與防錯設計 建立事件與風險鏈 進行失效模式與障礙分析 檢查資訊 人員 設備與組織介面 設計升級 回饋與閉環機制 不能只歸責個人 須同時檢查制度與環境條件 roberts1990 leveson2004 建立事件與風險鏈 進行失效模式與障礙分析 檢查資訊 人員 設備與組織介面 設計升級 回饋與閉環機制 事故 安全 風險 失誤 通報 災害 醫療 交通 高風險 閉環",
+      "official": false
+    },
+    {
+      "id": "theory:reaim",
+      "kind": "theory",
+      "title": "RE-AIM公共衛生影響架構",
+      "body": "reaim 公共衛生 RE-AIM公共衛生影響架構 介入價值應同時評估觸及、效果、採用、實施與維持，而非只看受控條件下療效。 代表性與觸及 個人效果 場域採用 執行一致性與成本 長期維持 誰未被觸及？ 哪些場域願意採用？ 執行差異與成本？ 效果能否維持？ 健康促進、數位健康、照護服務與社區介入。 各層級分母與追蹤期須清楚，不能只選有利維度。 RE-AIM 公共衛生 觸及 採用 維持 causal survey implementation glasgow1999",
+      "url": "#theory?theory=reaim",
+      "tags": [
+        "公共衛生",
+        "RE-AIM",
+        "公共衛生",
+        "觸及",
+        "採用",
+        "維持"
+      ],
+      "searchable": "re aim公共衛生影響架構 reaim 公共衛生 re aim公共衛生影響架構 介入價值應同時評估觸及 效果 採用 實施與維持 而非只看受控條件下療效 代表性與觸及 個人效果 場域採用 執行一致性與成本 長期維持 誰未被觸及 哪些場域願意採用 執行差異與成本 效果能否維持 健康促進 數位健康 照護服務與社區介入 各層級分母與追蹤期須清楚 不能只選有利維度 re aim 公共衛生 觸及 採用 維持 causal survey implementation glasgow1999 公共衛生 re aim 公共衛生 觸及 採用 維持",
+      "category": "公共衛生",
+      "official": false,
+      "peer_reviewed": true
+    },
+    {
+      "id": "theory:stamp",
+      "kind": "theory",
+      "title": "STAMP系統安全模型",
+      "body": "stamp 安全科學 STAMP系統安全模型 事故源於整體控制結構與安全約束失效，不只來自單一元件故障或個人錯誤。 控制器與受控過程 安全約束 回饋缺失 不安全控制行動 系統邊界與安全約束？ 誰發出何種控制？ 回饋是否延遲或缺失？ 組織變更如何改變風險？ 複雜技術—組織系統與跨單位事故。 建模成本高，需避免把所有因素無限納入。 STAMP 系統事故 控制 安全約束 safety implementation leveson2004",
+      "url": "#theory?theory=stamp",
+      "tags": [
+        "安全科學",
+        "STAMP",
+        "系統事故",
+        "控制",
+        "安全約束"
+      ],
+      "searchable": "stamp系統安全模型 stamp 安全科學 stamp系統安全模型 事故源於整體控制結構與安全約束失效 不只來自單一元件故障或個人錯誤 控制器與受控過程 安全約束 回饋缺失 不安全控制行動 系統邊界與安全約束 誰發出何種控制 回饋是否延遲或缺失 組織變更如何改變風險 複雜技術 組織系統與跨單位事故 建模成本高 需避免把所有因素無限納入 stamp 系統事故 控制 安全約束 safety implementation leveson2004 安全科學 stamp 系統事故 控制 安全約束",
+      "category": "安全科學",
+      "official": false,
+      "peer_reviewed": true
+    },
+    {
+      "id": "theory:advocacy_coalition",
+      "kind": "theory",
+      "title": "倡議聯盟架構",
+      "body": "advocacy_coalition 公共政策 倡議聯盟架構 政策次系統中的行為者依核心信念形成長期聯盟，透過資源、學習與外部衝擊競爭。 信念階層 聯盟資源 政策導向學習 外部衝擊與協商 哪些行為者共享核心信念？ 聯盟掌握哪些資源？ 證據是否改變次要信念？ 外部事件如何改變權力？ 長期爭議政策、環境、能源、醫療與社會福利改革。 需多年資料；不適合只看單次新聞或單一表決。 聯盟 倡議 信念 政策學習 長期爭議 content comparative sabatier1988",
+      "url": "#theory?theory=advocacy_coalition",
+      "tags": [
+        "公共政策",
+        "聯盟",
+        "倡議",
+        "信念",
+        "政策學習",
+        "長期爭議"
+      ],
+      "searchable": "倡議聯盟架構 advocacy coalition 公共政策 倡議聯盟架構 政策次系統中的行為者依核心信念形成長期聯盟 透過資源 學習與外部衝擊競爭 信念階層 聯盟資源 政策導向學習 外部衝擊與協商 哪些行為者共享核心信念 聯盟掌握哪些資源 證據是否改變次要信念 外部事件如何改變權力 長期爭議政策 環境 能源 醫療與社會福利改革 需多年資料 不適合只看單次新聞或單一表決 聯盟 倡議 信念 政策學習 長期爭議 content comparative sabatier1988 公共政策 聯盟 倡議 信念 政策學習 長期爭議",
+      "category": "公共政策",
+      "official": false,
+      "peer_reviewed": true
+    },
+    {
+      "id": "theory:public_media_independence",
+      "kind": "theory",
+      "title": "公共媒體獨立與結構性依賴",
+      "body": "public_media_independence 公共媒體獨立與結構性依賴 政治傳播與媒體 公共資金或政府任命可能造成依賴風險，但獨立法制、任期、跨黨審查與編採防火牆可降低干預。 預算依賴 任命控制 所有權控制 法律與組織防火牆 誰任命董事？ 財源是否穩定？ 是否有同黨比例限制與編採自主？ 分析公共服務媒體、法定通訊社或官股媒體。 所有權與資金只能形成風險假設，仍需內容與治理證據。 legal_doctrinal content_analysis mixed gehlbach2014",
+      "url": "#theory?theory=public_media_independence",
+      "tags": [
+        "政治傳播與媒體"
+      ],
+      "searchable": "公共媒體獨立與結構性依賴 public media independence 公共媒體獨立與結構性依賴 政治傳播與媒體 公共資金或政府任命可能造成依賴風險 但獨立法制 任期 跨黨審查與編採防火牆可降低干預 預算依賴 任命控制 所有權控制 法律與組織防火牆 誰任命董事 財源是否穩定 是否有同黨比例限制與編採自主 分析公共服務媒體 法定通訊社或官股媒體 所有權與資金只能形成風險假設 仍需內容與治理證據 legal doctrinal content analysis mixed gehlbach2014 政治傳播與媒體",
+      "category": "政治傳播與媒體",
+      "official": false,
+      "peer_reviewed": true
+    },
+    {
+      "id": "theory:accountability",
+      "kind": "theory",
+      "title": "公共課責與責任政治",
+      "body": "accountability 民主治理 公共課責與責任政治 公共權力行使須能被要求說明、接受判斷並承擔改正或制裁後果。 權限與責任對應 資訊揭露與說明義務 獨立或政治性論壇判斷 改正、制裁與學習回饋 誰有決策權與資源？ 誰必須向誰說明？ 判斷標準與後果為何？ 是否只有形式報告而無法追責？ 分析跨機關責任、監督、質詢、稽核、申訴與制度失敗。 課責過密也可能造成防禦行政、責任卸載與資訊隱藏。 責任 課責 問責 監督 質詢 誰負責 content implementation doctrinal bovens2007 mettlersoss2004",
+      "url": "#theory?theory=accountability",
+      "tags": [
+        "民主治理",
+        "責任",
+        "課責",
+        "問責",
+        "監督",
+        "質詢",
+        "誰負責"
+      ],
+      "searchable": "公共課責與責任政治 accountability 民主治理 公共課責與責任政治 公共權力行使須能被要求說明 接受判斷並承擔改正或制裁後果 權限與責任對應 資訊揭露與說明義務 獨立或政治性論壇判斷 改正 制裁與學習回饋 誰有決策權與資源 誰必須向誰說明 判斷標準與後果為何 是否只有形式報告而無法追責 分析跨機關責任 監督 質詢 稽核 申訴與制度失敗 課責過密也可能造成防禦行政 責任卸載與資訊隱藏 責任 課責 問責 監督 質詢 誰負責 content implementation doctrinal bovens2007 mettlersoss2004 民主治理 責任 課責 問責 監督 質詢 誰負責",
+      "category": "民主治理",
+      "official": false,
+      "peer_reviewed": true
+    },
+    {
+      "id": "theory:claim_evidence",
+      "kind": "theory",
+      "title": "原子主張—證據查核",
+      "body": "claim_evidence 人工智慧查證 原子主張—證據查核 長文應先拆成可獨立驗證的原子主張，再逐項連結支持、反駁或資訊不足的證據。 主張拆分 證據檢索 自然語言推論 逐項歸因與修訂 一句話包含幾個可驗證主張？ 每項主張引用哪個來源範圍？ 來源能直接支持還是只部分支持？ 無證據是否被誤判為錯誤？ AI摘要、政策說明、政黨主張與長篇查證。 自動拆解、檢索與判定本身也會錯，不能取代人工查核與法源判斷。 查證 AI 原子主張 引文 證據矩陣 content mixed guo2022factcheck thorne2018fever min2023factscore gao2023rarr",
+      "url": "#theory?theory=claim_evidence",
+      "tags": [
+        "人工智慧查證",
+        "查證",
+        "AI",
+        "原子主張",
+        "引文",
+        "證據矩陣"
+      ],
+      "searchable": "原子主張 證據查核 claim evidence 人工智慧查證 原子主張 證據查核 長文應先拆成可獨立驗證的原子主張 再逐項連結支持 反駁或資訊不足的證據 主張拆分 證據檢索 自然語言推論 逐項歸因與修訂 一句話包含幾個可驗證主張 每項主張引用哪個來源範圍 來源能直接支持還是只部分支持 無證據是否被誤判為錯誤 ai摘要 政策說明 政黨主張與長篇查證 自動拆解 檢索與判定本身也會錯 不能取代人工查核與法源判斷 查證 ai 原子主張 引文 證據矩陣 content mixed guo2022factcheck thorne2018fever min2023factscore gao2023rarr 人工智慧查證 查證 ai 原子主張 引文 證據矩陣",
+      "category": "人工智慧查證",
+      "official": false,
+      "peer_reviewed": true
+    },
+    {
+      "id": "theory:participatory_governance",
+      "kind": "theory",
+      "title": "參與治理與審議民主",
+      "body": "participatory_governance 民主治理 參與治理與審議民主 參與品質取決於誰能參加、如何交換理由、以及參與結果能否影響權力與決策。 參與者選擇 資訊與審議模式 政策權威連結 代表性與不平等校正 受影響群體是否進場？ 正反資訊是否對稱？ 意見如何回應？ 參與是否真正改變決策？ 公聽會、聽證、政策諮詢、公民參與與協作治理。 參與本身不保證公平、專業品質或可執行性。 參與 公聽會 聽證 審議 公民 content survey comparative fung2006 arnstein1969",
+      "url": "#theory?theory=participatory_governance",
+      "tags": [
+        "民主治理",
+        "參與",
+        "公聽會",
+        "聽證",
+        "審議",
+        "公民"
+      ],
+      "searchable": "參與治理與審議民主 participatory governance 民主治理 參與治理與審議民主 參與品質取決於誰能參加 如何交換理由 以及參與結果能否影響權力與決策 參與者選擇 資訊與審議模式 政策權威連結 代表性與不平等校正 受影響群體是否進場 正反資訊是否對稱 意見如何回應 參與是否真正改變決策 公聽會 聽證 政策諮詢 公民參與與協作治理 參與本身不保證公平 專業品質或可執行性 參與 公聽會 聽證 審議 公民 content survey comparative fung2006 arnstein1969 民主治理 參與 公聽會 聽證 審議 公民",
+      "category": "民主治理",
+      "official": false,
+      "peer_reviewed": true
+    },
+    {
+      "id": "theory:causal_inference",
+      "kind": "theory",
+      "title": "反事實因果推論",
+      "body": "causal_inference 實證研究 反事實因果推論 政策效果是實際結果與同一單位未受政策時的反事實差異，需可信識別策略而非單純前後比較。 處置與潛在結果 對照組 自然或準實驗 識別假設與穩健性檢查 反事實由誰提供？ 處置前趨勢可比嗎？ 有無同期衝擊？ 效果是否異質？ 評估修法、補助、價格、公共衛生與地方政策效果。 統計方法不能補救錯誤的政策時間、結果定義與制度理解。 有效 造成 影響 因果 差異中的差異 合成控制 causal imbenswooldridge2009 callawaysantanna2021 abadie2010",
+      "url": "#theory?theory=causal_inference",
+      "tags": [
+        "實證研究",
+        "有效",
+        "造成",
+        "影響",
+        "因果",
+        "差異中的差異",
+        "合成控制"
+      ],
+      "searchable": "反事實因果推論 causal inference 實證研究 反事實因果推論 政策效果是實際結果與同一單位未受政策時的反事實差異 需可信識別策略而非單純前後比較 處置與潛在結果 對照組 自然或準實驗 識別假設與穩健性檢查 反事實由誰提供 處置前趨勢可比嗎 有無同期衝擊 效果是否異質 評估修法 補助 價格 公共衛生與地方政策效果 統計方法不能補救錯誤的政策時間 結果定義與制度理解 有效 造成 影響 因果 差異中的差異 合成控制 causal imbenswooldridge2009 callawaysantanna2021 abadie2010 實證研究 有效 造成 影響 因果 差異中的差異 合成控制",
+      "category": "實證研究",
+      "official": false,
+      "peer_reviewed": true
+    },
+    {
+      "id": "theory:veto_players",
+      "kind": "theory",
+      "title": "否決者理論",
+      "body": "veto_players 政治制度 否決者理論 具否決能力者越多、偏好距離越大，政策現狀通常越穩定、重大變更越困難。 制度性否決點 黨派否決者 偏好距離 議程設定 哪些同意是必要條件？ 是否存在實質而非名義否決者？ 議程控制者能排除哪些選項？ 比較法案通過難度、聯合政府、兩院制與多層級治理。 不能忽略行政執行、非正式權力與策略互動。 否決 卡關 席次 協商 制度穩定 content comparative tsebelis1995",
+      "url": "#theory?theory=veto_players",
+      "tags": [
+        "政治制度",
+        "否決",
+        "卡關",
+        "席次",
+        "協商",
+        "制度穩定"
+      ],
+      "searchable": "否決者理論 veto players 政治制度 否決者理論 具否決能力者越多 偏好距離越大 政策現狀通常越穩定 重大變更越困難 制度性否決點 黨派否決者 偏好距離 議程設定 哪些同意是必要條件 是否存在實質而非名義否決者 議程控制者能排除哪些選項 比較法案通過難度 聯合政府 兩院制與多層級治理 不能忽略行政執行 非正式權力與策略互動 否決 卡關 席次 協商 制度穩定 content comparative tsebelis1995 政治制度 否決 卡關 席次 協商 制度穩定",
+      "category": "政治制度",
+      "official": false,
+      "peer_reviewed": true
+    },
+    {
+      "id": "theory:multiple_streams",
+      "kind": "theory",
+      "title": "多元流程架構",
+      "body": "multiple_streams 公共政策 多元流程架構 議題進入決策通常需問題、可行政策方案與政治條件在政策窗口中匯合。 問題指標與焦點事件 政策社群方案淘汰 政治氣候與權力變化 政策企業家耦合 問題如何被定義？ 方案在事件前是否已存在？ 窗口由何事件開啟？ 誰推動耦合？ 議程設定、危機後修法與政策突然加速。 須避免事後把任何成功政策都說成三流匯合。 議程 政策窗口 焦點事件 為何此時 content implementation cairneyjones2016",
+      "url": "#theory?theory=multiple_streams",
+      "tags": [
+        "公共政策",
+        "議程",
+        "政策窗口",
+        "焦點事件",
+        "為何此時"
+      ],
+      "searchable": "多元流程架構 multiple streams 公共政策 多元流程架構 議題進入決策通常需問題 可行政策方案與政治條件在政策窗口中匯合 問題指標與焦點事件 政策社群方案淘汰 政治氣候與權力變化 政策企業家耦合 問題如何被定義 方案在事件前是否已存在 窗口由何事件開啟 誰推動耦合 議程設定 危機後修法與政策突然加速 須避免事後把任何成功政策都說成三流匯合 議程 政策窗口 焦點事件 為何此時 content implementation cairneyjones2016 公共政策 議程 政策窗口 焦點事件 為何此時",
+      "category": "公共政策",
+      "official": false,
+      "peer_reviewed": true
+    },
+    {
+      "id": "theory:media_framing",
+      "kind": "theory",
+      "title": "媒體框架分析",
+      "body": "media_framing 媒體框架分析 政治傳播與媒體 新聞可透過問題定義、因果歸屬、道德評價及解決方案選擇，使特定理解較為突出。 選擇或排除特定事實 強調特定責任主體 使用不同道德與風險語彙 文章把問題定義成什麼？ 責任歸給誰？ 哪些替代解釋被忽略？ 比較同一事件在不同媒體或不同時期的報導。 不能只看正負情緒；需人工驗證框架類別與語境。 content_analysis mixed entman1993 hamborg2019 budak2016",
+      "url": "#theory?theory=media_framing",
+      "tags": [
+        "政治傳播與媒體"
+      ],
+      "searchable": "媒體框架分析 media framing 媒體框架分析 政治傳播與媒體 新聞可透過問題定義 因果歸屬 道德評價及解決方案選擇 使特定理解較為突出 選擇或排除特定事實 強調特定責任主體 使用不同道德與風險語彙 文章把問題定義成什麼 責任歸給誰 哪些替代解釋被忽略 比較同一事件在不同媒體或不同時期的報導 不能只看正負情緒 需人工驗證框架類別與語境 content analysis mixed entman1993 hamborg2019 budak2016 政治傳播與媒體",
+      "category": "政治傳播與媒體",
+      "official": false,
+      "peer_reviewed": true
+    },
+    {
+      "id": "theory:media_slant",
+      "kind": "theory",
+      "title": "媒體論述接近度與選擇偏誤",
+      "body": "media_slant 媒體論述接近度與選擇偏誤 政治傳播與媒體 媒體偏向可能出現在報導量、議題選擇、來源選擇與語言接近特定政黨等不同層次。 報導選擇 來源不平衡 語言接近政黨 閱聽人需求 同一事件是否被等量報導？ 媒體使用誰的語彙？ 是否提供回應權？ 建立媒體長期、跨議題與跨黨比較。 單篇文章不能推論媒體整體立場；語言接近不等於支持。 content_analysis causal gentzkow2010 budak2016 hamborg2019",
+      "url": "#theory?theory=media_slant",
+      "tags": [
+        "政治傳播與媒體"
+      ],
+      "searchable": "媒體論述接近度與選擇偏誤 media slant 媒體論述接近度與選擇偏誤 政治傳播與媒體 媒體偏向可能出現在報導量 議題選擇 來源選擇與語言接近特定政黨等不同層次 報導選擇 來源不平衡 語言接近政黨 閱聽人需求 同一事件是否被等量報導 媒體使用誰的語彙 是否提供回應權 建立媒體長期 跨議題與跨黨比較 單篇文章不能推論媒體整體立場 語言接近不等於支持 content analysis causal gentzkow2010 budak2016 hamborg2019 政治傳播與媒體",
+      "category": "政治傳播與媒體",
+      "official": false,
+      "peer_reviewed": true
+    },
+    {
+      "id": "theory:npt",
+      "kind": "theory",
+      "title": "常態化歷程理論（NPT）",
+      "body": "npt 實施科學 常態化歷程理論（NPT） 新實務要常態化，參與者須共同理解、投入、執行並評估其工作。 連貫性 認知參與 集體行動 反思監測 大家是否理解新實務目的？ 誰願意投入？ 工作如何重新分配？ 如何評估與調整？ 數位醫療、臨床流程、跨專業照護與服務創新。 主要解釋工作如何被嵌入，不直接證明介入有效。 NPT 常態化 流程整合 導入 implementation mixed mayfinch2009 may2009npt",
+      "url": "#theory?theory=npt",
+      "tags": [
+        "實施科學",
+        "NPT",
+        "常態化",
+        "流程整合",
+        "導入"
+      ],
+      "searchable": "常態化歷程理論 npt npt 實施科學 常態化歷程理論 npt 新實務要常態化 參與者須共同理解 投入 執行並評估其工作 連貫性 認知參與 集體行動 反思監測 大家是否理解新實務目的 誰願意投入 工作如何重新分配 如何評估與調整 數位醫療 臨床流程 跨專業照護與服務創新 主要解釋工作如何被嵌入 不直接證明介入有效 npt 常態化 流程整合 導入 implementation mixed mayfinch2009 may2009npt 實施科學 npt 常態化 流程整合 導入",
+      "category": "實施科學",
+      "official": false,
+      "peer_reviewed": true
+    },
+    {
+      "id": "theory:policy_feedback",
+      "kind": "theory",
+      "title": "政策回饋與路徑依賴",
+      "body": "policy_feedback 制度變遷 政策回饋與路徑依賴 既有政策會創造資源、利益、組織與認知效果，反過來影響後續政治與制度變遷。 資源效果 解釋效果 組織投資 轉換成本與遞增報酬 政策創造了哪些受益者與執行組織？ 民眾如何理解政府與自身身分？ 改制成本與既得利益為何？ 長期制度、福利國家、稅制、保險與基礎設施。 路徑依賴不是「不能改」，須提出具體鎖定機制與轉折條件。 路徑依賴 鎖定 政策回饋 既得利益 content budget comparative pierson1993 mettlersoss2004",
+      "url": "#theory?theory=policy_feedback",
+      "tags": [
+        "制度變遷",
+        "路徑依賴",
+        "鎖定",
+        "政策回饋",
+        "既得利益"
+      ],
+      "searchable": "政策回饋與路徑依賴 policy feedback 制度變遷 政策回饋與路徑依賴 既有政策會創造資源 利益 組織與認知效果 反過來影響後續政治與制度變遷 資源效果 解釋效果 組織投資 轉換成本與遞增報酬 政策創造了哪些受益者與執行組織 民眾如何理解政府與自身身分 改制成本與既得利益為何 長期制度 福利國家 稅制 保險與基礎設施 路徑依賴不是 不能改 須提出具體鎖定機制與轉折條件 路徑依賴 鎖定 政策回饋 既得利益 content budget comparative pierson1993 mettlersoss2004 制度變遷 路徑依賴 鎖定 政策回饋 既得利益",
+      "category": "制度變遷",
+      "official": false,
+      "peer_reviewed": true
+    },
+    {
+      "id": "theory:policy_transfer",
+      "kind": "theory",
+      "title": "政策移轉與法律刺激",
+      "body": "policy_transfer 比較政策 政策移轉與法律刺激 跨國借鏡會受移轉動機、內容、制度脈絡與執行能力影響，常產生變形而非複製。 自願學習或外部壓力 制度選擇與翻譯 法律文化互動 不完全移轉 為何選這個國家？ 移轉的是目標、工具還是制度？ 哪些背景條件不可比？ 失敗來自資訊、設計或執行？ 外國法、國際指標、最佳實務與制度移植。 不得用「先進國家」作為充分選國理由。 跨國 外國法 移植 借鏡 最佳實務 comparative doctrinal dolowitzmarsh2000 teubner1998",
+      "url": "#theory?theory=policy_transfer",
+      "tags": [
+        "比較政策",
+        "跨國",
+        "外國法",
+        "移植",
+        "借鏡",
+        "最佳實務"
+      ],
+      "searchable": "政策移轉與法律刺激 policy transfer 比較政策 政策移轉與法律刺激 跨國借鏡會受移轉動機 內容 制度脈絡與執行能力影響 常產生變形而非複製 自願學習或外部壓力 制度選擇與翻譯 法律文化互動 不完全移轉 為何選這個國家 移轉的是目標 工具還是制度 哪些背景條件不可比 失敗來自資訊 設計或執行 外國法 國際指標 最佳實務與制度移植 不得用 先進國家 作為充分選國理由 跨國 外國法 移植 借鏡 最佳實務 comparative doctrinal dolowitzmarsh2000 teubner1998 比較政策 跨國 外國法 移植 借鏡 最佳實務",
+      "category": "比較政策",
+      "official": false,
+      "peer_reviewed": true
+    },
+    {
+      "id": "theory:party_text_scaling",
+      "kind": "theory",
+      "title": "政黨文本位置與跨期變動",
+      "body": "party_text_scaling 政黨文本位置與跨期變動 政黨政治與文字分析 政黨立場可由同類型政治文本估計，但須預先界定維度、文類與外部錨點。 參考文本計分 詞頻尺度 跨期位置估計 比較的是黨綱、新聞稿還是社群貼文？ 維度由誰定義？ 是否有外部驗證？ 分析政黨意識形態、政策主張與長期變動。 臺灣至少需分開國家認同、經濟社會、治理與兩岸外交等軸線。 content_analysis mixed laver2003 slapin2008",
+      "url": "#theory?theory=party_text_scaling",
+      "tags": [
+        "政黨政治與文字分析"
+      ],
+      "searchable": "政黨文本位置與跨期變動 party text scaling 政黨文本位置與跨期變動 政黨政治與文字分析 政黨立場可由同類型政治文本估計 但須預先界定維度 文類與外部錨點 參考文本計分 詞頻尺度 跨期位置估計 比較的是黨綱 新聞稿還是社群貼文 維度由誰定義 是否有外部驗證 分析政黨意識形態 政策主張與長期變動 臺灣至少需分開國家認同 經濟社會 治理與兩岸外交等軸線 content analysis mixed laver2003 slapin2008 政黨政治與文字分析",
+      "category": "政黨政治與文字分析",
+      "official": false,
+      "peer_reviewed": true
+    },
+    {
+      "id": "theory:cfir",
+      "kind": "theory",
+      "title": "整合性實施研究架構（CFIR）",
+      "body": "cfir 實施科學 整合性實施研究架構（CFIR） 介入實施受介入特性、外部情境、內部情境、個人與實施過程共同影響。 介入可調整性與複雜度 組織氣候與資源 外部政策與需求 執行者認知 規劃與反思 介入可否調整？ 組織有無時間、人力與領導支持？ 外部誘因與需求？ 過程如何監測與修正？ 醫療、公共衛生、社福與組織導入新服務。 構面多且可能清單化，需事前選擇關鍵機制。 CFIR 實施 導入 組織情境 implementation mixed damschroder2009",
+      "url": "#theory?theory=cfir",
+      "tags": [
+        "實施科學",
+        "CFIR",
+        "實施",
+        "導入",
+        "組織情境"
+      ],
+      "searchable": "整合性實施研究架構 cfir cfir 實施科學 整合性實施研究架構 cfir 介入實施受介入特性 外部情境 內部情境 個人與實施過程共同影響 介入可調整性與複雜度 組織氣候與資源 外部政策與需求 執行者認知 規劃與反思 介入可否調整 組織有無時間 人力與領導支持 外部誘因與需求 過程如何監測與修正 醫療 公共衛生 社福與組織導入新服務 構面多且可能清單化 需事前選擇關鍵機制 cfir 實施 導入 組織情境 implementation mixed damschroder2009 實施科學 cfir 實施 導入 組織情境",
+      "category": "實施科學",
+      "official": false,
+      "peer_reviewed": true
+    },
+    {
+      "id": "theory:incrementalism",
+      "kind": "theory",
+      "title": "有限理性與漸進主義",
+      "body": "incrementalism 公共政策 有限理性與漸進主義 決策者在資訊、時間與認知受限下，常以小幅調整和局部比較取代全面最適化。 有限搜尋 可接受而非最適方案 連續試錯 政治可行性約束 是否只比較少數近似方案？ 增量調整是否迴避結構問題？ 是否有回饋與停止規則？ 解釋預算增減、既有制度小修與危機外的常態決策。 不能以現實限制合理化不處理重大權利侵害或系統性風險。 漸進 小幅修正 有限理性 妥協 content budget implementation lindblom1959",
+      "url": "#theory?theory=incrementalism",
+      "tags": [
+        "公共政策",
+        "漸進",
+        "小幅修正",
+        "有限理性",
+        "妥協"
+      ],
+      "searchable": "有限理性與漸進主義 incrementalism 公共政策 有限理性與漸進主義 決策者在資訊 時間與認知受限下 常以小幅調整和局部比較取代全面最適化 有限搜尋 可接受而非最適方案 連續試錯 政治可行性約束 是否只比較少數近似方案 增量調整是否迴避結構問題 是否有回饋與停止規則 解釋預算增減 既有制度小修與危機外的常態決策 不能以現實限制合理化不處理重大權利侵害或系統性風險 漸進 小幅修正 有限理性 妥協 content budget implementation lindblom1959 公共政策 漸進 小幅修正 有限理性 妥協",
+      "category": "公共政策",
+      "official": false,
+      "peer_reviewed": true
+    },
+    {
+      "id": "theory:implementation_ambiguity_conflict",
+      "kind": "theory",
+      "title": "模糊—衝突執行模型",
+      "body": "implementation_ambiguity_conflict 政策執行 模糊—衝突執行模型 政策模糊性與衝突程度共同決定執行主要由行政資源、地方情境、權力競爭或試驗學習支配。 目標與手段模糊 利益衝突 資源控制 地方參與者與情境 目標可否操作化？ 手段是否明確？ 誰反對以及掌握何種資源？ 地方差異是否主導結果？ 分析中央政策、地方執行與法規授權後的差異。 分類不能取代具體因果機制與第一線資料。 執行落差 模糊 衝突 中央地方 implementation comparative matland1995",
+      "url": "#theory?theory=implementation_ambiguity_conflict",
+      "tags": [
+        "政策執行",
+        "執行落差",
+        "模糊",
+        "衝突",
+        "中央地方"
+      ],
+      "searchable": "模糊 衝突執行模型 implementation ambiguity conflict 政策執行 模糊 衝突執行模型 政策模糊性與衝突程度共同決定執行主要由行政資源 地方情境 權力競爭或試驗學習支配 目標與手段模糊 利益衝突 資源控制 地方參與者與情境 目標可否操作化 手段是否明確 誰反對以及掌握何種資源 地方差異是否主導結果 分析中央政策 地方執行與法規授權後的差異 分類不能取代具體因果機制與第一線資料 執行落差 模糊 衝突 中央地方 implementation comparative matland1995 政策執行 執行落差 模糊 衝突 中央地方",
+      "category": "政策執行",
+      "official": false,
+      "peer_reviewed": true
+    },
+    {
+      "id": "theory:proportionality",
+      "kind": "theory",
+      "title": "比例原則與權利限制正當化",
+      "body": "proportionality 法學與憲法 比例原則與權利限制正當化 國家限制權利時，須逐步檢查目的正當性、手段適合性、必要性與利益衡量；各階段不能被單一成本效益結論取代。 排除不正當目的 檢查手段與目的的合理關聯 比較同等有效而侵害較小的替代手段 要求對權利負擔與公共利益作可爭辯的說理 限制所追求的目的是否正當且具體？ 手段是否確實有助於目的，而非僅有象徵效果？ 是否存在同等有效且侵害較小的替代方案？ 權利負擔與預期公共利益的證據確定性為何？ 立法者、行政機關與法院各自應作何種程度的審查？ 涉及基本權限制、行政管制、裁罰、監控、資料治理或比較法上的權利衡量。 比例原則提供說理結構，不會自動產生唯一答案；權重、經驗前提與審查密度仍可能有爭議。 比例原則 適合性 必要性 狹義比例性 基本權 權衡 侵害最小 doctrinal comparative causal moller2012 alexy2018 peters2021",
+      "url": "#theory?theory=proportionality",
+      "tags": [
+        "法學與憲法",
+        "比例原則",
+        "適合性",
+        "必要性",
+        "狹義比例性",
+        "基本權",
+        "權衡",
+        "侵害最小"
+      ],
+      "searchable": "比例原則與權利限制正當化 proportionality 法學與憲法 比例原則與權利限制正當化 國家限制權利時 須逐步檢查目的正當性 手段適合性 必要性與利益衡量 各階段不能被單一成本效益結論取代 排除不正當目的 檢查手段與目的的合理關聯 比較同等有效而侵害較小的替代手段 要求對權利負擔與公共利益作可爭辯的說理 限制所追求的目的是否正當且具體 手段是否確實有助於目的 而非僅有象徵效果 是否存在同等有效且侵害較小的替代方案 權利負擔與預期公共利益的證據確定性為何 立法者 行政機關與法院各自應作何種程度的審查 涉及基本權限制 行政管制 裁罰 監控 資料治理或比較法上的權利衡量 比例原則提供說理結構 不會自動產生唯一答案 權重 經驗前提與審查密度仍可能有爭議 比例原則 適合性 必要性 狹義比例性 基本權 權衡 侵害最小 doctrinal comparative causal moller2012 alexy2018 peters2021 法學與憲法 比例原則 適合性 必要性 狹義比例性 基本權 權衡 侵害最小",
+      "category": "法學與憲法",
+      "official": false,
+      "peer_reviewed": true
+    },
+    {
+      "id": "theory:legal_certainty",
+      "kind": "theory",
+      "title": "法律安定性、明確性與可預見性",
+      "body": "legal_certainty 法學與法治國 法律安定性、明確性與可預見性 法規與裁判須具有足夠清楚、穩定、可理解及可預見性，使受規範者能合理安排其行為；但法律安定性也需與個案正義及制度調適能力平衡。 清楚界定構成要件與法律效果 維持規範穩定與版本可追溯 提供程序保障與一致解釋 透過說理提高決定的合理可接受性 受規範者能否理解誰在何種情況下負何種義務？ 裁量範圍、例外與授權是否可預見？ 新舊法、施行日期及過渡規定是否清楚？ 相似案件是否受到一致處理？ 追求彈性是否已犧牲最低限度的可預見性？ 分析法律明確性、授權明確性、行政裁量、法規變動、信賴保護及跨層級規範衝突。 文字更詳細不必然更明確；過度僵化可能降低制度回應新風險與個案差異的能力。 法律安定性 法律明確性 可預見性 法治國 信賴保護 授權明確性 不溯及既往 doctrinal comparative content paunio2009",
+      "url": "#theory?theory=legal_certainty",
+      "tags": [
+        "法學與法治國",
+        "法律安定性",
+        "法律明確性",
+        "可預見性",
+        "法治國",
+        "信賴保護",
+        "授權明確性",
+        "不溯及既往"
+      ],
+      "searchable": "法律安定性 明確性與可預見性 legal certainty 法學與法治國 法律安定性 明確性與可預見性 法規與裁判須具有足夠清楚 穩定 可理解及可預見性 使受規範者能合理安排其行為 但法律安定性也需與個案正義及制度調適能力平衡 清楚界定構成要件與法律效果 維持規範穩定與版本可追溯 提供程序保障與一致解釋 透過說理提高決定的合理可接受性 受規範者能否理解誰在何種情況下負何種義務 裁量範圍 例外與授權是否可預見 新舊法 施行日期及過渡規定是否清楚 相似案件是否受到一致處理 追求彈性是否已犧牲最低限度的可預見性 分析法律明確性 授權明確性 行政裁量 法規變動 信賴保護及跨層級規範衝突 文字更詳細不必然更明確 過度僵化可能降低制度回應新風險與個案差異的能力 法律安定性 法律明確性 可預見性 法治國 信賴保護 授權明確性 不溯及既往 doctrinal comparative content paunio2009 法學與法治國 法律安定性 法律明確性 可預見性 法治國 信賴保護 授權明確性 不溯及既往",
+      "category": "法學與法治國",
+      "official": false,
+      "peer_reviewed": true
+    },
+    {
+      "id": "theory:ria",
+      "kind": "theory",
+      "title": "法規影響評估",
+      "body": "ria 立法與管制 法規影響評估 管制決策應明確定義問題，比較不作為與多種工具的成本、效益、風險、分配及執行影響。 問題界定 替代方案比較 影響量化或質化 諮詢與事後評估 是否先決定修法才補理由？ 是否比較非立法方案？ 成本由誰承擔？ 如何設計日後評估？ 新管制、裁罰、許可、補助、稅費與高成本制度改革。 可能淪為形式文件；量化結果受假設與資料品質限制。 法規影響 成本效益 替代方案 修法理由 budget causal survey doctrinal radaelli2004",
+      "url": "#theory?theory=ria",
+      "tags": [
+        "立法與管制",
+        "法規影響",
+        "成本效益",
+        "替代方案",
+        "修法理由"
+      ],
+      "searchable": "法規影響評估 ria 立法與管制 法規影響評估 管制決策應明確定義問題 比較不作為與多種工具的成本 效益 風險 分配及執行影響 問題界定 替代方案比較 影響量化或質化 諮詢與事後評估 是否先決定修法才補理由 是否比較非立法方案 成本由誰承擔 如何設計日後評估 新管制 裁罰 許可 補助 稅費與高成本制度改革 可能淪為形式文件 量化結果受假設與資料品質限制 法規影響 成本效益 替代方案 修法理由 budget causal survey doctrinal radaelli2004 立法與管制 法規影響 成本效益 替代方案 修法理由",
+      "category": "立法與管制",
+      "official": false,
+      "peer_reviewed": true
+    },
+    {
+      "id": "theory:network_governance",
+      "kind": "theory",
+      "title": "網絡治理模式",
+      "body": "network_governance 組織與治理 網絡治理模式 跨組織合作的有效治理形式取決於信任、規模、目標共識與網絡能力。 參與者共同治理 主導組織協調 獨立網絡行政組織 信任與合法性 參與者數量與互賴程度？ 誰負責協調與決策？ 目標共識與信任是否足夠？ 是否有專職治理能力？ 跨部會、中央地方、公私協力與醫療照護網絡。 合作不必然優於層級制，交易成本與責任模糊可能升高。 跨機關 協作 網絡 公私協力 implementation comparative provankenis2008",
+      "url": "#theory?theory=network_governance",
+      "tags": [
+        "組織與治理",
+        "跨機關",
+        "協作",
+        "網絡",
+        "公私協力"
+      ],
+      "searchable": "網絡治理模式 network governance 組織與治理 網絡治理模式 跨組織合作的有效治理形式取決於信任 規模 目標共識與網絡能力 參與者共同治理 主導組織協調 獨立網絡行政組織 信任與合法性 參與者數量與互賴程度 誰負責協調與決策 目標共識與信任是否足夠 是否有專職治理能力 跨部會 中央地方 公私協力與醫療照護網絡 合作不必然優於層級制 交易成本與責任模糊可能升高 跨機關 協作 網絡 公私協力 implementation comparative provankenis2008 組織與治理 跨機關 協作 網絡 公私協力",
+      "category": "組織與治理",
+      "official": false,
+      "peer_reviewed": true
+    },
+    {
+      "id": "theory:street_level",
+      "kind": "theory",
+      "title": "街頭官僚與第一線組織",
+      "body": "street_level 政策執行 街頭官僚與第一線組織 第一線工作者在資源不足、案件壓力與模糊規範下，以裁量與工作常規實際塑造政策。 案件篩選 裁量簡化 績效指標替代目標 組織防禦與資源配給 第一線的時間與案件量為何？ 規則在哪些情境需裁量？ 績效指標是否扭曲服務？ 服務對象如何被分類？ 社福、醫療、警政、教育、勞檢與基層行政。 不能把所有落差都歸因第一線，也須分析法規、管理與資源。 第一線 裁量 案件量 SOP 執行 implementation content brodkin2011",
+      "url": "#theory?theory=street_level",
+      "tags": [
+        "政策執行",
+        "第一線",
+        "裁量",
+        "案件量",
+        "SOP",
+        "執行"
+      ],
+      "searchable": "街頭官僚與第一線組織 street level 政策執行 街頭官僚與第一線組織 第一線工作者在資源不足 案件壓力與模糊規範下 以裁量與工作常規實際塑造政策 案件篩選 裁量簡化 績效指標替代目標 組織防禦與資源配給 第一線的時間與案件量為何 規則在哪些情境需裁量 績效指標是否扭曲服務 服務對象如何被分類 社福 醫療 警政 教育 勞檢與基層行政 不能把所有落差都歸因第一線 也須分析法規 管理與資源 第一線 裁量 案件量 sop 執行 implementation content brodkin2011 政策執行 第一線 裁量 案件量 sop 執行",
+      "category": "政策執行",
+      "official": false,
+      "peer_reviewed": true
+    },
+    {
+      "id": "theory:evidence_certainty",
+      "kind": "theory",
+      "title": "證據確定性與建議強度",
+      "body": "evidence_certainty 證據評估 證據確定性與建議強度 證據確定性、效果大小、價值偏好、成本與可行性應分開評估，不能把單一研究直接轉成政策命令。 研究限制 不一致 間接性 不精確 發表偏誤 價值與資源考量 研究回答的是同一問題嗎？ 結果是否一致與精確？ 對目標群體是否間接？ 建議是否超越證據？ 醫療、健康政策及任何需綜合多項研究的建議。 GRADE原生於健康照護，其他政策領域應調整證據類型與決策準則。 證據品質 確定性 建議強度 系統性回顧 mixed causal guyatt2008grade",
+      "url": "#theory?theory=evidence_certainty",
+      "tags": [
+        "證據評估",
+        "證據品質",
+        "確定性",
+        "建議強度",
+        "系統性回顧"
+      ],
+      "searchable": "證據確定性與建議強度 evidence certainty 證據評估 證據確定性與建議強度 證據確定性 效果大小 價值偏好 成本與可行性應分開評估 不能把單一研究直接轉成政策命令 研究限制 不一致 間接性 不精確 發表偏誤 價值與資源考量 研究回答的是同一問題嗎 結果是否一致與精確 對目標群體是否間接 建議是否超越證據 醫療 健康政策及任何需綜合多項研究的建議 grade原生於健康照護 其他政策領域應調整證據類型與決策準則 證據品質 確定性 建議強度 系統性回顧 mixed causal guyatt2008grade 證據評估 證據品質 確定性 建議強度 系統性回顧",
+      "category": "證據評估",
+      "official": false,
+      "peer_reviewed": true
+    },
+    {
+      "id": "theory:hro",
+      "kind": "theory",
+      "title": "高可靠度組織",
+      "body": "hro 安全科學 高可靠度組織 高風險組織透過持續關注失敗、避免過早簡化、貼近現場、韌性與尊重專業來管理意外。 弱訊號偵測 多重解釋 現場情境覺察 快速升級與復原 異常是否被當作雜訊？ 案件是否過早結案？ 決策是否交給最有專業者？ 是否有閉環回饋？ 醫療、長照、交通、災害、核能與其他高風險服務。 需要組織文化與日常實作證據，不能只靠建立SOP。 高可靠度 弱訊號 安全 閉環 事故 safety implementation roberts1990",
+      "url": "#theory?theory=hro",
+      "tags": [
+        "安全科學",
+        "高可靠度",
+        "弱訊號",
+        "安全",
+        "閉環",
+        "事故"
+      ],
+      "searchable": "高可靠度組織 hro 安全科學 高可靠度組織 高風險組織透過持續關注失敗 避免過早簡化 貼近現場 韌性與尊重專業來管理意外 弱訊號偵測 多重解釋 現場情境覺察 快速升級與復原 異常是否被當作雜訊 案件是否過早結案 決策是否交給最有專業者 是否有閉環回饋 醫療 長照 交通 災害 核能與其他高風險服務 需要組織文化與日常實作證據 不能只靠建立sop 高可靠度 弱訊號 安全 閉環 事故 safety implementation roberts1990 安全科學 高可靠度 弱訊號 安全 閉環 事故",
+      "category": "安全科學",
+      "official": false,
+      "peer_reviewed": true
+    }
+  ],
+  "documents_sha256": "22203cc43a33097067864077f660d5789d1b66d071f8a7051bd5f9bf5ce7208b"
+}

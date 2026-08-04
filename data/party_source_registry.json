@@ -1,0 +1,113 @@
+{
+  "verified_at": "2026-08-04",
+  "notice": "只收錄中央黨部或可由中央黨部官方入口交叉確認的帳號。中央黨部官網可由受控後端擷取；Facebook、Instagram、Threads 的完整自動讀取受平台權限限制，預設採核准 API、研究者工具，或由使用者匯入官方貼文網址與原文。資料未完整時必須明示，不得把漏抓當成沒有立場。",
+  "parties": [
+    {
+      "id": "dpp",
+      "name": "民主進步黨",
+      "official_website": "https://www.dpp.org.tw/",
+      "channels": [
+        {
+          "platform": "Facebook",
+          "url": "https://www.facebook.com/dpptw",
+          "handle": "dpptw",
+          "verification": "中央黨部官方入口"
+        },
+        {
+          "platform": "Instagram",
+          "url": "https://www.instagram.com/dpp_taiwan/",
+          "handle": "dpp_taiwan",
+          "verification": "中央黨部官方入口"
+        },
+        {
+          "platform": "Threads",
+          "url": "https://www.threads.com/@dpp_taiwan",
+          "handle": "dpp_taiwan",
+          "verification": "中央黨部官方入口"
+        }
+      ],
+      "verification_sources": [
+        "https://www.dpp.org.tw/anti_rumor/contents/262",
+        "https://portaly.cc/dpphere"
+      ]
+    },
+    {
+      "id": "kmt",
+      "name": "中國國民黨",
+      "official_website": "https://www.kmt.org.tw/",
+      "channels": [
+        {
+          "platform": "Facebook",
+          "url": "https://www.facebook.com/mykmt",
+          "handle": "mykmt",
+          "verification": "中央黨部官方頁面"
+        },
+        {
+          "platform": "Instagram",
+          "url": "https://www.instagram.com/kmt_tw/",
+          "handle": "kmt_tw",
+          "verification": "中央黨部官方帳號"
+        },
+        {
+          "platform": "Threads",
+          "url": "https://www.threads.com/@kmt_tw",
+          "handle": "kmt_tw",
+          "verification": "中央黨部官方帳號"
+        }
+      ],
+      "verification_sources": [
+        "https://www.kmt.org.tw/",
+        "https://www.facebook.com/mykmt"
+      ]
+    },
+    {
+      "id": "tpp",
+      "name": "台灣民眾黨",
+      "official_website": "https://www.tpp.org.tw/",
+      "channels": [
+        {
+          "platform": "Facebook",
+          "url": "https://www.facebook.com/TPPfanpage",
+          "handle": "TPPfanpage",
+          "verification": "中央黨部官方頁面"
+        },
+        {
+          "platform": "Instagram",
+          "url": "https://www.instagram.com/tpp_taiwan/",
+          "handle": "tpp_taiwan",
+          "verification": "中央黨部官方帳號"
+        },
+        {
+          "platform": "Threads",
+          "url": "https://www.threads.com/@tpp_taiwan",
+          "handle": "tpp_taiwan",
+          "verification": "中央黨部官方帳號"
+        }
+      ],
+      "verification_sources": [
+        "https://www.tpp.org.tw/",
+        "https://linktr.ee/tpp_taiwan"
+      ]
+    }
+  ],
+  "collection_modes": [
+    {
+      "source": "中央黨部官網",
+      "default": "可由受控後端擷取",
+      "method": "擷取標題、日期、全文、網址、最終網址、HTTP 標頭、擷取時間與 SHA-256；網站改版後須重新驗證解析器。",
+      "risk": "動態載入、搜尋分頁、舊文下架及 robots 規則可能造成漏抓。"
+    },
+    {
+      "source": "Facebook",
+      "default": "需核准 API／研究者工具／人工匯入",
+      "method": "使用 Meta Page Public Content Access 或 Meta Content Library；無權限時只接受官方貼文網址、時間與原文。",
+      "risk": "公開可見不等於可由一般網站完整抓取；留言、觸及與歷史貼文通常不完整。"
+    },
+    {
+      "source": "Instagram／Threads",
+      "default": "需帳號授權、研究者工具或人工匯入",
+      "method": "使用 Meta 核准介面；否則匯入官方貼文網址、時間、文字、圖片替代文字及影音逐字稿。",
+      "risk": "API 範圍、帳號授權、歷史資料與刪文會造成遺漏，須報告涵蓋率。"
+    }
+  ]
+}

@@ -1,0 +1,56 @@
+name: Publish reviewed static site
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: pages-branch
+  cancel-in-progress: true
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - name: Clone exact revision
+        env:
+          REPOSITORY: ${{ github.repository }}
+          SHA: ${{ github.sha }}
+          TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          git init repo
+          git -C repo remote add origin "https://x-access-token:$%7BTOKEN%7D@github.com/$%7BREPOSITORY%7D.git%22
+          git -C repo fetch --depth=1 origin "${SHA}"
+          git -C repo checkout --detach FETCH_HEAD
+
+      - name: Build public allowlist
+        run: |
+          set -euo pipefail
+          cd repo
+          python3 scripts/build_search_index.py
+          python3 scripts/build_site.py
+          python3 scripts/check_site.py
+
+      - name: Publish only _site to gh-pages
+        env:
+          TOKEN: ${{ github.token }}
+          REPOSITORY: ${{ github.repository }}
+        run: |
+          set -euo pipefail
+          cp -a repo/_site site
+          cd site
+          git init
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add .
+          git commit -m "Deploy ${GITHUB_SHA}"
+          git branch -M gh-pages
+          git remote add origin "https://x-access-token:${TOKEN}@github.com/${REPOSITORY}.git"
+          git push --force origin gh-pages

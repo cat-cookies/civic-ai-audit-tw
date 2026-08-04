@@ -25,7 +25,7 @@ jobs:
           TOKEN: ${{ github.token }}
         run: |
           set -euo pipefail
-          git clone --depth 1 --branch main https://x-access-token:$%7BTOKEN%7D@github.com/$%7BREPOSITORY%7D.git repo
+          git clone --depth 1 --branch main https://github.com/cat-cookies/civic-ai-audit-tw.git repo
 
       - name: Build public site
         run: |

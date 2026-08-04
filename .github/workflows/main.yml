@@ -2,7 +2,8 @@ name: Publish reviewed static site
 
 on:
   push:
-    branches: [main]
+    branches:
+      - main
   workflow_dispatch:
 
 permissions:
@@ -18,19 +19,15 @@ jobs:
     timeout-minutes: 10
 
     steps:
-      - name: Clone exact revision
+      - name: Clone repository
         env:
           REPOSITORY: ${{ github.repository }}
-          SHA: ${{ github.sha }}
           TOKEN: ${{ github.token }}
         run: |
           set -euo pipefail
-          git init repo
-          git -C repo remote add origin "https://x-access-token:$%7BTOKEN%7D@github.com/$%7BREPOSITORY%7D.git%22
-          git -C repo fetch --depth=1 origin "${SHA}"
-          git -C repo checkout --detach FETCH_HEAD
+          git clone --depth 1 --branch main https://x-access-token:$%7BTOKEN%7D@github.com/$%7BREPOSITORY%7D.git repo
 
-      - name: Build public allowlist
+      - name: Build public site
         run: |
           set -euo pipefail
           cd repo
@@ -38,19 +35,19 @@ jobs:
           python3 scripts/build_site.py
           python3 scripts/check_site.py
 
-      - name: Publish only _site to gh-pages
+      - name: Publish to gh-pages
         env:
-          TOKEN: ${{ github.token }}
           REPOSITORY: ${{ github.repository }}
+          TOKEN: ${{ github.token }}
         run: |
           set -euo pipefail
           cp -a repo/_site site
           cd site
           git init
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git config user.name github-actions-bot
+          git config user.email 41898282+github-actions-bot@users.noreply.github.com
           git add .
-          git commit -m "Deploy ${GITHUB_SHA}"
+          git commit -m deploy
           git branch -M gh-pages
-          git remote add origin "https://x-access-token:${TOKEN}@github.com/${REPOSITORY}.git"
+          git remote add origin https://x-access-token:${TOKEN}@github.com/${REPOSITORY}.git
           git push --force origin gh-pages

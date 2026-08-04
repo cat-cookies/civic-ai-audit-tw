@@ -4,7 +4,7 @@
   "public_api_base_url": "",
   "enable_remote_ai": false,
   "enable_issue_submission": true,
-  "build_label": "公開測試版 v6.1.0；網域感知即時搜尋、合法擷取與本地索引補充",
+  "build_label": "公開測試版 v7.0.0；提示詞中心研究流程、概念網絡、動態文獻與反思",
   "enable_browser_byok": true,
-  "schema_version": "6.1"
+  "schema_version": "7.0"
 }

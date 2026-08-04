@@ -25,10 +25,10 @@ class V5Test(unittest.TestCase):
         for name in ['academic.js','data/literature_catalog.json','data/concept_ontology.json']:
             self.assertTrue((ROOT/'_site'/name).exists())
         index=(ROOT/'_site/index.html').read_text(encoding='utf-8')
-        self.assertIn('學說與期刊',index)
+        self.assertIn('文獻、學說與方法',index)
     def test_backend_compile(self):
         subprocess.run([sys.executable,'-m','py_compile','backend/hf-space/app.py'],cwd=ROOT,check=True)
         text=(ROOT/'backend/hf-space/app.py').read_text(encoding='utf-8')
         self.assertIn('/api/literature',text)
-        self.assertRegex(text, r'version=["\']6\.[0-9]+\.[0-9]+["\']')
+        self.assertRegex(text, r'version=["\']7\.[0-9]+\.[0-9]+["\']')
 if __name__=='__main__': unittest.main()

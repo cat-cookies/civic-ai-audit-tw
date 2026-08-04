@@ -26,8 +26,8 @@ class PoliticalMediaFeatureTest(unittest.TestCase):
     def test_public_templates(self):
         import subprocess, sys
         subprocess.run([sys.executable, "scripts/build_site.py"], cwd=ROOT, check=True)
-        self.assertTrue((ROOT/"_site/examples/party_social_import_template.csv").exists())
-        self.assertTrue((ROOT/"_site/examples/media_corpus_template.csv").exists())
+        self.assertFalse((ROOT/"_site/examples/party_social_import_template.csv").exists())
+        self.assertFalse((ROOT/"_site/examples/media_corpus_template.csv").exists())
 
     def test_comparative_applicability(self):
         data=json.loads((ROOT/"data/comparative_applicability.json").read_text(encoding="utf-8"))

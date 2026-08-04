@@ -96,10 +96,14 @@ python -m compileall -q scripts tests backend/hf-space
 python -m unittest discover -s tests -v
 node --check search.js
 node --check academic.js
+node --check workflow.js
+node --check network.js
+node --check discovery.js
 node --check ai-engine.js
 node --check legislation.js
 node --check xlsx-export.js
 node --check app.js
+node tests/workflow_quality.test.js
 node tests/search_quality.test.js
 node tests/academic_quality.test.js
 node tests/legislation_xlsx.test.js
@@ -117,7 +121,7 @@ python scripts/sbom.py
 - 免費模型、免費額度與供應商政策可能變更，系統不保證永久可用。
 - 已完成靜態、單元、資料契約、XLSX 及建置測試；外部 API、模型供應商與正式瀏覽器環境仍須於部署後驗證。
 
-工程自我批判、殘餘風險與發布驗收門檻見 `docs/SELF_CRITIQUE_V5.md`。
+工程自我批判、殘餘風險與發布驗收門檻見 `docs/SELF_CRITIQUE_V7.md`。
 
 
 ## v6.0.0 政黨、媒體與跨國文獻
@@ -140,3 +144,16 @@ python scripts/sbom.py
 - 全文擷取通過 DNS、SSRF、重新導向、robots.txt、內容類型、大小及頻率檢查。
 - AI優先使用已擷取全文；搜尋片段只供來源定位。
 - 不依使用者IP、職業或個人身分推定訪問範圍。
+
+
+## v7.0.0 提示詞中心社會議題研究版
+
+- 所有分頁共用同一研究提示，並依「問題界定→概念網絡→證據→文獻與學說→跨國比較→政黨媒體→改革修法→反思」推進。
+- 提示過廣時先以 Grill-me 追問對象、機制、結果、時間、法域與使用目的。
+- 線上搜尋優先；查詢擴張須由使用者主動啟用並顯示展開詞，只允許正式名稱、縮寫、翻譯及明確上下位詞。
+- 學說、研究方法與期刊頁只顯示與目前問題相符的內容，文獻分為入門、核心、進階，並可由AI整理研究缺口與研究方向。
+- 新增議題概念網絡，呈現行動者、制度、法規、機制、結果、價值、反方、證據與改革工具；明確標示不是統計學上的網絡統合分析。
+- 證據評讀改為問題類型路由；GRADE用於評估整體證據體確定性，而非單篇研究永久分級。
+- 受控後端支援合法公開URL的HTML、PDF、DOCX、PPTX與選配OCR圖檔解析；不提供使用者檔案上傳。
+- 所有研究摘要與修法草案要求APA參考資料及不能下的結論。
+- 新增OpenRouter、Gemini、Groq與Cloudflare Workers AI等非中國大陸模型來源；免費狀態動態查核，額度用盡即停止。

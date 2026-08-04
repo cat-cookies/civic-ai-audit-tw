@@ -1,23 +1,23 @@
 {
   "project": "國家資料 AI 查證與改革觀測站",
-  "version": "6.1.0",
-  "build_time": "2026-08-04T18:24:40+08:00",
+  "version": "7.0.0",
+  "build_time": "2026-08-04T19:23:00+08:00",
   "status": "可部署暨待線上模型、官方 API 與正式瀏覽器環境驗證 MVP",
   "tests": {
-    "offline_unit_tests": 20,
+    "offline_unit_tests": 41,
     "python_compile": true,
     "javascript_syntax": true,
     "yaml_parse": true,
     "public_allowlist_check": true,
     "live_api_tests": false,
     "live_model_tests": false,
-    "javascript_modules": 6,
+    "javascript_modules": 9,
     "xlsx_ooxml_import_verified": true,
     "virtual_backend_compile": true,
-    "offline_python_unit_tests": 27,
-    "javascript_quality_suites": 3,
+    "offline_python_unit_tests": 41,
+    "javascript_quality_suites": 6,
     "browser_runtime_smoke_test": false,
-    "browser_runtime_note": "容器瀏覽器政策阻擋 localhost 與 file 導航；已完成語法、資料契約、DOM必要檔案與建置測試，仍須在 GitHub Pages 正式環境人工驗收。"
+    "browser_runtime_note": "容器內 Chromium 無法完成 localhost DOM 導航；已完成41項Python單元測試、6組JavaScript品質測試、語法、資料契約、建置、公開白名單與最終ZIP重解壓測試，正式瀏覽器與外部API仍須部署後人工驗收。"
   },
   "source_archives": [
     {
@@ -51,21 +51,23 @@
     "期刊目錄為理論與方法的代表性起點，不是系統性回顧或臨床／法律權威層級判定。",
     "OpenRouter 只自動接受價格明確為零的模型；Gemini／Groq 預設須人工確認帳戶方案後啟用。",
     "v6.0.0：新增三黨中央黨部官方來源、黨綱意識形態基準、政黨跨期分析、媒體批評／稱讚／描述性指標、公共媒體所有權風險、跨國文獻中華民國適用性矩陣。",
-    "v6.1.0：本地索引降級為補充；新增資料領域與法域路由、使用者指定網域、Crossref／Europe PMC／OpenAlex／Brave搜尋、robots與SSRF全文擷取控制。"
+    "v6.1.0：本地索引降級為補充；新增資料領域與法域路由、使用者指定網域、Crossref／Europe PMC／OpenAlex／Brave搜尋、robots與SSRF全文擷取控制。",
+    "v7.0.0：提示詞中心研究流程、Grill-me問題界定、概念網絡、動態文獻學說、問題別證據評讀、跨國適用性、APA引用、公開文件解析與反思流程。"
   ],
-  "release_name": "研究型查證、可驗證推論、期刊文獻與節能免費模型版",
+  "release_name": "提示詞中心社會議題研究、概念網絡、證據評讀與反思版",
   "changes": [
-    "比較目前 GitHub 主線與 v4 學術版後，以目前主線為底重構，保留既有 Pages 部署、修法三版本與 XLSX 匯出。",
-    "搜尋加入問題意圖、自然問句核心詞切分、受控名稱變體、文件頻率與欄位權重；一般公共議題詞只用於切分，不建立任意近義關係。",
-    "新增學說—作用機制—診斷問題—適用限制—研究方法—代表性期刊論文的關聯資料庫。",
-    "納入22項理論／架構與33篇具 DOI 的代表性文獻，增加比例原則、法律安定性與法律明確性等法學內容。",
-    "學說頁支援本地文獻、Crossref、Europe PMC、APA複製、RIS與BibTeX下載；學術API只取中繼資料，不以排序或引用次數代替品質評讀。",
-    "AI輸出新增直接回答、回答範圍、精準摘要、原子主張—證據矩陣、反證、來源衝突、推論帳本、法律／政策／政治／執行分流、可檢驗理論命題與完整文獻引用。",
-    "前端驗證來源ID、文獻ID、理論ID與推論前提ID；法律主張缺少官方法源時自動降為證據不足。",
-    "AI工作流改為階段專屬輸出契約：規劃、批判與綜合不再共用同一JSON格式；一般題1次、複雜題2次、高風險題3次。",
-    "Hugging Face Docker Space後端加入零價格／人工核准模型政策、每小時任務上限、有限技術備援、輸入大小限制、疑似個資阻擋與重新導向網域二次檢查。",
-    "修正即時文獻查詢後重複綁定事件的問題，避免同一按鈕被多次執行。",
-    "新增第二輪自我批判文件，明示本地索引、中文斷詞、學術中繼資料、理論推薦、免費模型與正式瀏覽器驗收限制。"
+    "所有分頁共用同一研究提示與工作階段，依問題界定、概念網絡、證據、文獻、跨國比較、政黨媒體、改革修法及反思推進。",
+    "過廣問題先以Grill-me追問對象、機制、結果、時間、法域與使用目的；AI追加追問為選配。",
+    "線上合法公開網域與期刊API優先；本地索引不再作主要答案。",
+    "查詢擴張只在使用者主動要求後顯示，且必須逐項勾選確認才加入搜尋。",
+    "新增概念與社會結構網絡，邊線保留來源ID及有支持、部分支持或假設狀態，並明示不是統計網絡統合分析。",
+    "學術頁依目前提示搜尋Crossref、Europe PMC及選配OpenAlex，按入門、核心、進階排序，要求APA、文獻缺口及研究方向。",
+    "證據評讀依介入效果、危害、診斷、預後、政策因果、實施、質性、法學及描述問題路由；GRADE評估整體證據體。",
+    "跨國比較一律檢查政體、法制、語言、政黨競爭、資料可得性、歷史文化與執行能力。",
+    "公開URL解析支援HTML、PDF、DOCX、PPTX及選配OCR圖檔；沒有研究資料檔案上傳端點。",
+    "OpenRouter、Gemini、Groq及Cloudflare為可選非中國大陸模型來源；模型識別碼與前綴雙重阻擋，額度用盡即停止。",
+    "修法與政策方案維持A最小修正、B權衡修正、C制度性修正及XLSX匯出。",
+    "新增v7工程、方法與法律自我批判文件，明示外部API、瀏覽器、OCR、著作權、APA與免責文字的殘餘限制。"
   ],
   "academic_catalog": {
     "theories": 22,

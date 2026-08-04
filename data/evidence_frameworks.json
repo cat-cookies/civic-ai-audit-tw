@@ -1,0 +1,148 @@
+{
+  "notice": "不存在可適用所有問題的單一證據金字塔。研究設計須依效果、危害、診斷、預後、政策因果、實施、質性或法學問題選擇；證據確定性須另行評估，不能只看研究名稱。",
+  "grade": {
+    "levels": [
+      "高（High）",
+      "中（Moderate）",
+      "低（Low）",
+      "極低（Very Low）"
+    ],
+    "domains": [
+      "偏誤風險",
+      "不一致性",
+      "間接性",
+      "不精確性",
+      "出版偏誤"
+    ],
+    "upgrade": [
+      "大效果",
+      "劑量反應",
+      "所有合理混雜因素只會降低觀察到的效果"
+    ],
+    "note": "GRADE評的是特定結果的整體證據體，而不是給單篇研究貼永久等級。"
+  },
+  "frameworks": {
+    "intervention": {
+      "title": "介入效果／治療成效",
+      "preferred": [
+        "針對可比研究的系統性回顧與統合分析",
+        "低偏誤風險的隨機對照試驗",
+        "嚴謹準實驗或非隨機介入研究",
+        "前後測與描述性研究",
+        "專家意見"
+      ],
+      "caveat": "系統性回顧的品質取決於納入研究、偏誤評估、異質性與發表偏誤；單篇RCT也可能因失訪、執行偏離或結果選擇而降級。"
+    },
+    "harms": {
+      "title": "危害、副作用與長期風險",
+      "preferred": [
+        "系統性回顧：整合RCT與適切觀察性研究",
+        "大型世代研究或目標試驗模擬",
+        "病例對照研究",
+        "病例系列／病例報告：稀有危害警訊",
+        "動物、細胞與機制研究：支持合理性"
+      ],
+      "caveat": "稀有、延遲或長期危害常無法由RCT充分回答；觀察性研究可能是最適切的人體證據，但仍須處理混雜、選擇偏誤與暴露誤分類。"
+    },
+    "diagnosis": {
+      "title": "診斷與篩檢準確性",
+      "preferred": [
+        "診斷準確性研究的系統性回顧",
+        "以適當參考標準、盲法與連續收案進行的橫斷或世代研究",
+        "病例對照式診斷研究",
+        "病例系列"
+      ],
+      "caveat": "RCT不是診斷準確性的唯一或典型黃金標準；須檢查病人光譜、參考標準及驗證偏誤。"
+    },
+    "prognosis": {
+      "title": "預後與自然史",
+      "preferred": [
+        "預後研究的系統性回顧／個別資料統合",
+        "具代表性的前瞻世代研究",
+        "回溯世代研究",
+        "病例系列"
+      ],
+      "caveat": "重點是起始點一致、失訪、競爭風險、模型校準及外部驗證。"
+    },
+    "causal_policy": {
+      "title": "公共政策與社會干預的因果效果",
+      "preferred": [
+        "符合Campbell／PRISMA標準的系統性回顧與統合分析",
+        "可行且合乎倫理的隨機或叢集隨機試驗",
+        "可信準實驗：RDD、DiD、ITS、自然實驗、工具變數",
+        "具比較組的前後測或配對研究",
+        "單組前後測與描述性資料",
+        "專家判斷"
+      ],
+      "caveat": "政策無法隨機不等於無法推論；識別策略、平行趨勢、操弄檢查、外溢及政策執行差異比研究名稱更重要。"
+    },
+    "implementation": {
+      "title": "政策執行、可行性與實施科學",
+      "preferred": [
+        "混合方法與實施研究的系統性回顧",
+        "多場域混合方法、務實試驗或比較個案",
+        "過程評估、行政資料與時間序列",
+        "質性訪談、觀察與使用者研究",
+        "描述性流程與實務紀錄"
+      ],
+      "caveat": "效果研究不能單獨回答為何成功、誰能執行及如何擴散；須分析脈絡、忠實度、適應與資源。"
+    },
+    "qualitative": {
+      "title": "經驗、意義、文化與機制理解",
+      "preferred": [
+        "質性證據綜整／統合民族誌",
+        "具反身性與充分取樣的質性研究",
+        "比較個案研究",
+        "描述性訪談或焦點團體"
+      ],
+      "caveat": "不宜用RCT階層否定質性問題；應評估可信度、可轉移性、分析透明度與研究者反身性。"
+    },
+    "legal": {
+      "title": "法學與制度效力",
+      "preferred": [
+        "現行有效法源、憲法判決與具拘束力裁判",
+        "主管機關依法發布的命令、函釋與正式文件",
+        "法院實務趨勢與權威註釋",
+        "同儕審查法學研究與比較法資料",
+        "政策倡議、媒體與一般評論"
+      ],
+      "caveat": "法源效力與實證研究品質是不同軸線；外國法只能以功能比較檢查可移植性。"
+    },
+    "descriptive": {
+      "title": "現況描述、規模與分布",
+      "preferred": [
+        "完整度高且定義透明的官方／代表性資料",
+        "具抽樣設計的調查",
+        "行政資料與登錄資料",
+        "個案或便利樣本",
+        "印象與專家意見"
+      ],
+      "caveat": "代表性、測量定義、缺漏值、時間一致性與分母通常比研究標籤更重要。"
+    }
+  },
+  "special": {
+    "wwc": "WWC 5.0分為符合標準且無保留、符合標準但有保留、不符合標準；評級須依設計、失訪、基線等值與分析規則，不能簡化成『RCT一定百分之百確定』。",
+    "veerman": "Veerman與Van Yperen的描述、理論、指標、因果四層是方案發展階梯，用來配對介入成熟度與研究方法，不是把所有研究永久排成單一高低。",
+    "bradford_hill": "Bradford Hill的九項是因果判斷觀點而非機械打分表；時序性是必要條件，其餘應結合偏誤、混雜、反事實與整體證據判斷。",
+    "bradford_hill_viewpoints": [
+      "關聯強度（strength）",
+      "一致性（consistency）",
+      "特異性（specificity）",
+      "時序性（temporality）",
+      "生物梯度／劑量反應（biological gradient）",
+      "合理性（plausibility）",
+      "連貫性（coherence）",
+      "實驗證據（experiment）",
+      "類比（analogy）"
+    ],
+    "bradford_hill_required_note": "時序性是因果關係的必要條件；其餘觀點不是必須逐項通過的核對清單，也不能取代偏誤、混雜與反事實分析。"
+  },
+  "apa_references": [
+    "Cochrane. (2024). Cochrane handbook for systematic reviews of interventions (Version 6.5.1). https://training.cochrane.org/handbook/current",
+    "GRADE Working Group. (2026). GRADE book. https://book.gradepro.org/",
+    "Campbell Collaboration. (2025). Standards for reviews. https://www.campbellcollaboration.org/methods/standards/",
+    "What Works Clearinghouse. (2022). Procedures and standards handbook (Version 5.0). Institute of Education Sciences. https://ies.ed.gov/ncee/wwc/Handbooks",
+    "Veerman, J. W., & Van Yperen, T. A. (2007). Degrees of freedom and degrees of certainty: A developmental model for the establishment of evidence-based youth care. Evaluation and Program Planning, 30(2), 212–221.",
+    "Hill, A. B. (1965). The environment and disease: Association or causation? Proceedings of the Royal Society of Medicine, 58, 295–300."
+  ]
+}

@@ -42,8 +42,9 @@ class V4FeatureTest(unittest.TestCase):
             self.assertTrue((ROOT/'_site'/name).exists())
         self.assertTrue((ROOT/'_site/data/curiosity_examples.json').exists())
         app=(ROOT/'_site/app.js').read_text(encoding='utf-8')
-        self.assertIn('下載 Excel', app)
+        self.assertIn('下載Excel', app)
         self.assertIn('資源模式', app)
-        self.assertIn('Hugging Face', app)
+        self.assertIn('受控後端', app)
+        self.assertTrue((ROOT/'_site/network.js').exists())
 
 if __name__=='__main__': unittest.main()

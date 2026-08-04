@@ -1,0 +1,7 @@
+國家資料 AI 查證與改革觀測站 v3.0.0
+
+1. 解壓縮本 ZIP。
+2. 將解壓縮後的全部檔案與資料夾，上傳到現有 GitHub 儲存庫 civic-ai-audit-tw 的 main 分支。
+3. 保留目前已建立的 .github/workflows/main.yml；本 ZIP 內也附有相同的正式版本與可見備份。
+4. GitHub Actions 完成並顯示綠色勾勾後，網站會自動更新。
+5. AI Key 不要寫入任何檔案；請在網站的「AI 設定與限制」頁面輸入，金鑰只保存在目前瀏覽分頁。

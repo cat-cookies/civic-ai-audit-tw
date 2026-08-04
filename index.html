@@ -3,40 +3,41 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="以中華民國政府公開資料為基礎的 AI 輔助查證、政策檢視與立法研究原型。" />
+  <meta name="description" content="以官方公開資料為基礎的 AI 輔助查證、政策檢視、立法研究、跨國比較與改革觀測站。" />
   <meta name="color-scheme" content="light dark" />
   <title>國家資料 AI 查證與改革觀測站</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
   <div class="ai-warning" role="alert">
-    <strong>人工智慧生成內容警示：</strong>本站內容可能錯誤、不完整或過時。模型意見不是證據，應以官方原始資料、現行法規、文件效力與人工覆核為準；不得直接視為任何個人、政黨、機關或團體涉及犯罪、違法、貪腐、造假、失職或其他法律責任之認定。
+    <strong>人工智慧生成內容警示：</strong>本站的草稿、摘要、比較與建議可能錯誤、不完整或過時。模型意見不是證據，應以官方原始資料、現行法規、文件效力、時間版本及人工覆核為準；不得直接視為任何個人、政黨、機關或團體涉及犯罪、違法、貪腐、造假、失職或其他法律責任之認定。
   </div>
   <header class="site-header">
     <div>
       <div class="eyebrow">CIVIC DATA · EVIDENCE FIRST</div>
       <h1>國家資料 AI 查證與改革觀測站</h1>
-      <p class="subtitle">先搜尋官方資料，再拆分主張、核對效力、提出反方與改革問題。一般關鍵字採模糊搜尋；輸入「○○法第○條」時切換為法條精確模式。</p>
+      <p class="subtitle">先找官方資料，再拆分主張、核對效力、比較制度、選擇研究方法並形成可追溯草稿。一般關鍵字採模糊搜尋；完整「法規名稱＋第○條」採精確法條模式。</p>
     </div>
     <div class="header-actions">
       <a id="repo-link" class="secondary" href="#" target="_blank" rel="noopener noreferrer">GitHub 原始碼</a>
+      <a class="secondary" href="#ai">設定自己的 AI Key</a>
       <button id="theme-toggle" class="secondary" type="button" aria-label="切換明暗模式">切換顯示</button>
     </div>
   </header>
   <nav class="tabs" aria-label="主要功能">
     <a href="#home" data-route="home">首頁／搜尋</a>
-    <a href="#reform" data-route="reform">改革雷達</a>
+    <a href="#reform" data-route="reform">改革分析</a>
     <a href="#questions" data-route="questions">質詢題庫</a>
-    <a href="#parties" data-route="parties">政黨立場變動</a>
-    <a href="#theory" data-route="theory">現實與學說</a>
+    <a href="#parties" data-route="parties">政黨立場</a>
+    <a href="#compare" data-route="compare">跨國比較與研究</a>
     <a href="#legislation" data-route="legislation">修法草案</a>
     <a href="#sources" data-route="sources">國家資料入口</a>
-    <a href="#method" data-route="method">方法與限制</a>
+    <a href="#ai" data-route="ai">AI 設定與限制</a>
   </nav>
   <main id="app" tabindex="-1"><div class="empty">載入中……</div></main>
   <footer>
-    <p><strong>網站定位：</strong><span id="build-label">可部署暨待整合驗證 MVP</span>。公開網站僅提供靜態搜尋、官方入口與已核准內容；未設定受控後端時，不提供即時外部模型查證。</p>
-    <p>資料來源各有自己的授權、更新頻率與效力限制。雜湊只能驗證保存檔案是否變更，不能單獨證明內容真實、完整或具有法律效力。</p>
+    <p><strong>網站定位：</strong><span id="build-label">公開測試版</span>。搜尋、入口分類與本地草稿不需要 AI Key；即時 AI 潤稿採使用者自備金鑰，金鑰只保存在目前瀏覽分頁的 sessionStorage，不寫入 GitHub。</p>
+    <p>跨國比較採功能比較，不以外國制度直接取代中華民國現行法。資料來源各有自己的授權、更新頻率與效力限制；雜湊只能驗證保存檔案是否變更，不能單獨證明內容真實、完整或具有法律效力。</p>
   </footer>
   <script src="app.js" defer></script>
 </body>

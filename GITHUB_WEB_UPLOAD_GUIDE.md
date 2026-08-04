@@ -5,7 +5,7 @@
 ```text
 .github/
 └── workflows/
-    ├── pages.yml
+    ├── main.yml
     ├── test.yml
     ├── collect.yml
     ├── model-status.yml
@@ -23,11 +23,11 @@
 3. 將檔名改為：
 
 ```text
-.github/workflows/pages.yml
+.github/workflows/main.yml
 ```
 
 4. 刪除編輯器原有內容。
-5. 貼上本專案 `GITHUB_ACTIONS_BOOTSTRAP/pages.yml` 的全部內容。
+5. 貼上本專案 `GITHUB_ACTIONS_BOOTSTRAP/main.yml` 的全部內容。
 6. 按 **Commit changes**。
 7. 回到 Actions，確認出現 `Publish reviewed static site`。
 8. 工作流程成功後，前往：
@@ -38,7 +38,7 @@ Settings → Pages → Deploy from a branch → gh-pages → /(root) → Save
 
 ## 其餘工作流程
 
-網站先以 `pages.yml` 啟動即可。之後可依相同方法建立：
+網站先以 `main.yml` 啟動即可。之後可依相同方法建立：
 
 - `.github/workflows/test.yml`
 - `.github/workflows/collect.yml`

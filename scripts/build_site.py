@@ -4,7 +4,7 @@ import json, shutil
 from pathlib import Path
 ROOT=Path(__file__).resolve().parents[1]; OUT=ROOT/"_site"
 PUBLIC_FILES=["index.html","styles.css","app.js","DISCLAIMER.md","SECURITY.md","LICENSE","VERSION"]
-PUBLIC_DATA=["sources.json","analyses.json","party_positions.json","theory_catalog.json","methodology.json","search-index.json","model-status.json","connector-status.json"]
+PUBLIC_DATA=["sources.json","analyses.json","party_positions.json","theory_catalog.json","methodology.json","search-index.json","model-status.json","connector-status.json","jurisdictions.json","research_methods.json"]
 
 def main() -> int:
     if OUT.exists(): shutil.rmtree(OUT)

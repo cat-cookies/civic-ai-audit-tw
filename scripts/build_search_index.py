@@ -54,17 +54,17 @@ def main() -> int:
     docs: list[dict[str, Any]] = []
     for idx, source in enumerate(load("sources.json", [])):
         title = source.get("name", "未命名官方入口")
-        body = " ".join(str(source.get(k, "")) for k in ("agency", "category", "data", "best_for", "limitations"))
+        body = " ".join(str(source.get(k, "")) for k in ("country", "agency", "portal_category", "category", "data", "best_for", "limitations"))
         docs.append(make_doc(
             "official_source", str(idx), title, body, source.get("url", ""),
-            [source.get("agency", ""), source.get("category", ""), source.get("level", "")],
-            agency=source.get("agency", ""), category=source.get("category", ""), level=source.get("level", ""), official=True,
+            [source.get("country", ""), source.get("agency", ""), source.get("portal_category", source.get("category", "")), source.get("level", "")],
+            agency=source.get("agency", ""), country=source.get("country", ""), country_code=source.get("country_code", ""), category=source.get("portal_category", source.get("category", "")), level=source.get("level", ""), official=True,
         ))
 
     for item in load("analyses.json", []):
         body = compact({k: item.get(k) for k in ("domain", "summary", "reform_need", "question_targets", "legal_policy_split", "theory_comparison", "limitations")})
         docs.append(make_doc(
-            "analysis", item.get("id", "unknown"), item.get("title", "未命名分析"), body, "#reform",
+            "analysis", item.get("id", "unknown"), item.get("title", "未命名分析"), body, f"#reform?id={item.get('id', 'unknown')}",
             [item.get("domain", ""), item.get("evidence_grade", ""), item.get("publication_status", "")],
             publication_status=item.get("publication_status", "draft"), evidence_grade=item.get("evidence_grade", "D"),
             human_reviewed=bool(item.get("human_reviewed")), official=False,
@@ -82,8 +82,15 @@ def main() -> int:
 
     for idx, theory in enumerate(load("theory_catalog.json", [])):
         docs.append(make_doc(
-            "theory", str(idx), theory.get("name", "未命名理論"), compact(theory), "#theory",
+            "theory", str(idx), theory.get("name", "未命名理論"), compact(theory), "#compare",
             [theory.get("category", "")], category=theory.get("category", ""), official=False,
+        ))
+
+
+    for idx, method in enumerate(load("research_methods.json", [])):
+        docs.append(make_doc(
+            "research_method", method.get("id", str(idx)), method.get("name", "未命名研究方法"), compact(method), "#compare",
+            method.get("triggers", []), official=False,
         ))
 
     # 固定的法律研究導引，不聲稱取得特定條文全文。
@@ -99,7 +106,7 @@ def main() -> int:
 
     docs.sort(key=lambda x: (x["kind"], x["title"]))
     payload = {
-        "schema_version": "2.0",
+        "schema_version": "3.0",
         "built_at": datetime.now(timezone(timedelta(hours=8))).isoformat(timespec="seconds"),
         "document_count": len(docs),
         "documents": docs,

@@ -1,0 +1,49 @@
+name: Publish reviewed static site
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: pages-branch
+  cancel-in-progress: true
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Clone repository
+        run: |
+          set -euo pipefail
+          git clone --depth 1 --branch main https://github.com/cat-cookies/civic-ai-audit-tw.git repo
+
+      - name: Build public site
+        run: |
+          set -euo pipefail
+          cd repo
+          python3 scripts/build_search_index.py
+          python3 scripts/build_site.py
+          python3 scripts/check_site.py
+
+      - name: Publish to gh-pages
+        env:
+          REPOSITORY: ${{ github.repository }}
+          TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          cp -a repo/_site site
+          cd site
+          git init
+          git config user.name github-actions-bot
+          git config user.email 41898282+github-actions-bot@users.noreply.github.com
+          git add .
+          git commit -m deploy
+          git branch -M gh-pages
+          git remote add origin https://x-access-token:${TOKEN}@github.com/${REPOSITORY}.git
+          git push --force origin gh-pages

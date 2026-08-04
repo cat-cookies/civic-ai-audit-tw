@@ -7,10 +7,15 @@
 })(typeof globalThis !== 'undefined' ? globalThis : this, function() {
   const BLOCKED_PREFIXES = ['deepseek/', 'qwen/', 'z-ai/', 'moonshotai/', 'minimax/', 'baidu/', 'tencent/', '01-ai/', 'thudm/', 'stepfun/'];
   const ALLOWED_PREFIXES = ['google/', 'meta-llama/', 'mistralai/', 'openai/', 'nvidia/', 'microsoft/', 'cohere/', 'ai21/'];
+  const BLOCKED_MODEL_FRAGMENTS = ['deepseek','qwen','z-ai','zai-org','glm','moonshot','kimi','minimax','baidu','tencent','01-ai','thudm','stepfun'];
+  function blockedModelId(id){const value=String(id||'').toLowerCase();return BLOCKED_MODEL_FRAGMENTS.some(fragment=>value.includes(fragment));}
 
   const schemas = {
-    research: { type:'object', required:['answer_status','research_question','direct_answer','executive_summary','atomic_claims','inference_ledger','legal_policy_split','methods','uncertainties'] },
-    legislation: { type:'object', required:['versions','sharedChecks','sourceMatrix'] },
+    research: { type:'object', required:['answer_status','research_question','direct_answer','executive_summary','atomic_claims','inference_ledger','legal_policy_split','methods','uncertainties','apa_references'] },
+    legislation: { type:'object', required:['versions','sharedChecks','sourceMatrix','apa_references'] },
+    grill: { type:'object', required:['questions'] },
+    expand: { type:'object', required:['terms'] },
+    network: { type:'object', required:['nodes','edges','notice'] },
   };
 
   function safeJson(text) {
@@ -43,13 +48,24 @@
 11. direct_answer 必須直接回答問題；executive_summary 以120至250字為原則，且不得出現原子主張表中不存在的新主張。
 12. 學說只能用來提出可檢驗機制，不得當成個案事實；文獻只能引用 evidence_packet 中存在的 literature_id。`;
     const stageRule = {planner:'只拆解主張、證據缺口、方法與最小充分路徑，不寫結論。',critic:'檢查前一階段的來源錯配、過度推論、因果跳躍、法律效力錯誤與遺漏反方。',synth:'依規劃與批判形成最終結構化結果，所有來源ID必須可驗證。',single:'一次完成主張拆解、證據評估、推論帳本、方法與限制。'}[stage] || '';
-    const taskRule = task === 'legislation' ? '提出A最小修正、B權衡修正、C制度性修正；每版含修正條文、現行條文、逐點理由、優點、風險、執行與財政影響。沒有現行條文不得虛構。' : '輸出精準摘要、回答狀態、原子主張、推論帳本、法律政策分流、理論、文獻、方法、替代方案、不確定性與下一步。';
+    const taskRule = task === 'legislation'
+      ? '提出A最小修正、B權衡修正、C制度性修正；每版含修正條文、現行條文、逐點理由、優點、風險、執行與財政影響。沒有現行條文不得虛構。所有摘要附APA參考資料。'
+      : task === 'grill'
+        ? '只提出3至6個能讓問題變得可研究的追問，涵蓋對象、機制、結果、時間、法域與使用目的；不得回答原問題。'
+        : task === 'expand'
+          ? '只提出正式名稱、常用縮寫、英文對應、上位詞、下位詞與替代術語。每個詞標示type、reason、risk；不得把相關概念冒充近義詞。'
+          : task === 'network'
+            ? '建立12至24個概念網絡節點與可驗證邊。節點類型限issue、actor、institution、law、mechanism、outcome、value、evidence、counter、intervention；每條邊列source_ids，無來源則標示hypothesis。'
+            : '輸出精準摘要、回答狀態、原子主張、推論帳本、法律政策分流、理論、文獻、文獻缺口、研究方向、方法、替代方案、不確定性、下一步與APA參考資料。';
     return `${common}\n${stageRule}\n${taskRule}\n資源模式：${mode}。`;
   }
   function finalContract(task) {
+    if (task === 'grill') return {questions:[{id:'Q1',question:'',why_needed:'',answer_type:'short_text|choice|date|jurisdiction'}]};
+    if (task === 'expand') return {terms:[{term:'',type:'official_name|abbreviation|english_translation|broader|narrower|alternative',reason:'',risk:'low|medium|high',enabled:false}]};
+    if (task === 'network') return {nodes:[{id:'N1',label:'',type:'issue|actor|institution|law|mechanism|outcome|value|evidence|counter|intervention',weight:1,source_ids:['SRC-1']}],edges:[{source:'N1',target:'N2',label:'',source_ids:['SRC-1'],status:'supported|partial|hypothesis'}],notice:''};
     if (task === 'legislation') return {
       versions:[{id:'A|B|C',name:'',strategy:'',amendedText:'',currentText:'',reasons:[''],benefits:[''],risks:[''],implementation:'',fiscalImpact:''}],
-      sharedChecks:[''],sourceMatrix:[{claim:'',source_ids:['SRC-1'],support:'direct|partial|insufficient',limitation:''}]
+      sharedChecks:[''],sourceMatrix:[{claim:'',source_ids:['SRC-1'],support:'direct|partial|insufficient',limitation:''}],apa_references:['']
     };
     return {
       answer_status:'supported|partially_supported|insufficient|contested|normative',
@@ -62,7 +78,7 @@
       theories:[{theory_id:'',name:'',application:'',testable_implication:'',limitation:''}],
       literature:[{literature_id:'',relevance:'',limitation:''}],
       methods:[{name:'',why:'',design:'',data_needed:'',identification_assumptions:'',limitation:''}],
-      alternatives:[{option:'',advantage:'',risk:''}],uncertainties:[''],next_actions:[''],confidence:'high|medium|low'
+      alternatives:[{option:'',advantage:'',risk:''}],literature_gap:'',research_directions:[{direction:'',method:'',data_needed:'',why_valuable:''}],apa_references:[''],uncertainties:[''],next_actions:[''],confidence:'high|medium|low'
     };
   }
   function stageContract(task, stage) {
@@ -97,7 +113,8 @@
           const price = model.pricing || {};
           return Number(price.prompt) === 0 && Number(price.completion) === 0
             && ALLOWED_PREFIXES.some(prefix => id.startsWith(prefix))
-            && !BLOCKED_PREFIXES.some(prefix => id.startsWith(prefix));
+            && !BLOCKED_PREFIXES.some(prefix => id.startsWith(prefix))
+            && !blockedModelId(id);
         })
         .sort((a, b) => Number(b.context_length || 0) - Number(a.context_length || 0))
         .map(model => model.id);
@@ -111,13 +128,17 @@
         .map(model => String(model.name || '').replace(/^models\//, ''))
         .filter(id => /flash|lite/i.test(id));
     }
+    if (cfg.provider === 'cloudflare') {
+      const modelList=String(cfg.model||'@cf/meta/llama-3.2-3b-instruct').split(',').map(x=>x.trim()).filter(x=>x&&!blockedModelId(x));
+      return modelList;
+    }
     if (cfg.provider === 'groq') {
       const response = await fetch('https://api.groq.com/openai/v1/models', { headers: { authorization: `Bearer ${cfg.key}` } });
       if (!response.ok) throw new Error(`Groq 模型清單 ${response.status}`);
       const data = await response.json();
       return (data.data || [])
         .map(model => String(model.id || ''))
-        .filter(id => id && !BLOCKED_PREFIXES.some(prefix => id.startsWith(prefix)));
+        .filter(id => id && !BLOCKED_PREFIXES.some(prefix => id.startsWith(prefix)) && !blockedModelId(id));
     }
     return [];
   }
@@ -156,6 +177,17 @@
       const data = await response.json();
       return data.candidates?.[0]?.content?.parts?.map(part => part.text || '').join('') || '';
     }
+    if (cfg.provider === 'cloudflare') {
+      if(blockedModelId(model)) throw new Error('此模型來源不符合非中國大陸模型政策');
+      if(!cfg.account_id) throw new Error('Cloudflare需設定account_id');
+      const response=await fetch(`https://api.cloudflare.com/client/v4/accounts/${encodeURIComponent(cfg.account_id)}/ai/run/${model}`,{
+        method:'POST',headers:{'content-type':'application/json',authorization:`Bearer ${cfg.key}`},
+        body:JSON.stringify({messages:[{role:'system',content:system},{role:'user',content:user}],max_tokens:maxTokens,temperature:0.1,response_format:{type:'json_object'}})
+      });
+      if(!response.ok) throw new Error(`Cloudflare Workers AI ${response.status}`);
+      const data=await response.json();
+      return data.result?.response||data.result?.output_text||JSON.stringify(data.result||{});
+    }
     if (cfg.provider === 'groq') {
       const response = await fetch('https://api.groq.com/openai/v1/chat/completions', {
         method: 'POST',
@@ -176,7 +208,7 @@
   }
 
   async function callBackend(cfg, task, payload, mode) {
-    const endpoint = `${String(cfg.backend_url).replace(/\/$/, '')}/api/${task === 'legislation' ? 'legislation' : 'research'}`;
+    const endpoint = `${String(cfg.backend_url).replace(/\/$/, '')}/api/${['legislation','grill','expand','network'].includes(task) ? task : 'research'}`;
     const rawUrls = [];
     const sourceText = String(payload?.data?.sources || '');
     sourceText.split(/\n+/).forEach(item => { if (/^https?:\/\//i.test(item.trim())) rawUrls.push(item.trim()); });
@@ -195,6 +227,7 @@
   }
 
   function stagePlan(mode, task, payload) {
+    if (['grill','expand','network'].includes(task)) return ['single'];
     if (mode === 'critical') return ['planner','critic','synth'];
     if (mode === 'standard') return ['planner','synth'];
     if (mode === 'economy') return ['single'];
@@ -234,5 +267,5 @@
     return { result: prior, trace, mode, schema: schemas[task] || schemas.research };
   }
 
-  return { run, fetchEligibleModels, safeJson, sensitiveText, controlledPolicy: { BLOCKED_PREFIXES, ALLOWED_PREFIXES } };
+  return { run, fetchEligibleModels, safeJson, sensitiveText, controlledPolicy: { BLOCKED_PREFIXES, BLOCKED_MODEL_FRAGMENTS, ALLOWED_PREFIXES } };
 });

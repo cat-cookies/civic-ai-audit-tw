@@ -1,871 +1,97 @@
 'use strict';
 
-const state = {
-  runtime: {},
-  searchIndex: { documents: [] },
-  analyses: [],
-  parties: { parties: [], comparison_rules: [] },
-  theories: [],
-  literature: [],
-  conceptOntology: [],
-  methodology: {},
-  sources: [],
-  jurisdictions: [],
-  researchMethods: [],
-  examples: [],
-  route: 'home',
-  params: new URLSearchParams(),
-  query: '',
-  citizenMode: true,
-  sourceCountry: 'TW',
-  sourceCategory: '',
-  sourceQuery: '',
-  sourceCoreOnly: true,
-  lastLegislationDraft: null,
-  theoryQuery: '',
-  theoryCategory: '',
-  literatureDomain: '',
-  liveLiterature: [],
-  lastEvidencePacket: null,
-  partySources: { parties: [], collection_modes: [] },
-  partyIdeology: { profiles: [], comparison_dimensions: [] },
-  mediaMethodology: {},
-  mediaOwnership: { records: [], verification_portals: [] },
-  comparativeApplicability: { records: [], dimensions: [] },
-};
-
-const LAW_SUFFIXES = ['自治條例', '施行細則', '條例', '通則', '規則', '規程', '辦法', '標準', '準則', '細則', '綱要', '法'];
-const CN_DIGITS = { 零: 0, 〇: 0, 一: 1, 二: 2, 兩: 2, 三: 3, 四: 4, 五: 5, 六: 6, 七: 7, 八: 8, 九: 9 };
-const CN_UNITS = { 十: 10, 百: 100, 千: 1000, 萬: 10000 };
-
-function esc(value) {
-  return String(value ?? '').replace(/[&<>'"]/g, ch => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', "'": '&#39;', '"': '&quot;' }[ch]));
-}
-
-function normalize(value) {
-  return CivicSearch.normalize(value);
-}
-
-function clean(value) {
-  return String(value ?? '').replace(/\s+/g, ' ').trim();
-}
-
-function safeUrl(value) {
-  try {
-    const url = new URL(String(value), location.href);
-    return ['http:', 'https:'].includes(url.protocol) ? url.href : '#';
-  } catch {
-    return '#';
-  }
-}
-
-function cnNumber(text) {
-  if (/^\d+$/.test(text)) return Number(text);
-  let total = 0;
-  let section = 0;
-  let number = 0;
-  for (const ch of text) {
-    if (ch in CN_DIGITS) number = CN_DIGITS[ch];
-    else if (ch in CN_UNITS) {
-      const unit = CN_UNITS[ch];
-      if (unit === 10000) {
-        section = (section + number) * unit;
-        total += section;
-        section = 0;
-        number = 0;
-      } else {
-        if (number === 0) number = 1;
-        section += number * unit;
-        number = 0;
-      }
-    }
-  }
-  return total + section + number;
-}
-
-function parseHash() {
-  const raw = location.hash.replace(/^#/, '') || 'home';
-  const qpos = raw.indexOf('?');
-  const route = qpos >= 0 ? raw.slice(0, qpos) : raw;
-  const params = new URLSearchParams(qpos >= 0 ? raw.slice(qpos + 1) : '');
-  state.route = ['home', 'reform', 'questions', 'parties', 'media', 'theory', 'compare', 'legislation', 'sources', 'ai'].includes(route) ? route : 'home';
-  state.params = params;
-  if (params.has('q')) state.query = params.get('q') || '';
-}
-
-function routeQuery(query) {
-  const raw = String(query ?? '').trim();
-  if (!raw) return { mode: 'empty', raw };
-  const compact = raw.replace(/\s+/g, '');
-  const suffix = [...LAW_SUFFIXES].sort((a, b) => b.length - a.length).map(x => x.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')).join('|');
-  const exact = compact.match(new RegExp(`^(.+?(?:${suffix}))第([0-9零〇一二兩三四五六七八九十百千萬]+)(?:之([0-9零〇一二兩三四五六七八九十百千萬]+))?條$`));
-  if (exact) {
-    const article = cnNumber(exact[2]);
-    const sub = exact[3] ? cnNumber(exact[3]) : null;
-    return { mode: 'exact_law', raw, law_name: exact[1], article, sub_article: sub, canonical: `${exact[1]}第${article}${sub ? `之${sub}` : ''}條` };
-  }
-  const ambiguous = compact.match(/^第([0-9零〇一二兩三四五六七八九十百千萬]+)(?:之([0-9零〇一二兩三四五六七八九十百千萬]+))?條$/);
-  if (ambiguous) return { mode: 'law_article_ambiguous', raw, article: cnNumber(ambiguous[1]), sub_article: ambiguous[2] ? cnNumber(ambiguous[2]) : null };
-  if (LAW_SUFFIXES.some(suffixName => compact.endsWith(suffixName))) return { mode: 'law_name', raw, law_name: compact };
-  return { mode: 'fuzzy', raw };
-}
-
-function kindLabel(kind) {
-  return ({
-    analysis: '制度分析',
-    official_source: '官方入口',
-    party_position: '政黨資料',
-    theory: '理論',
-    law_guide: '法規入口',
-    research_method: '研究方法',
-    literature: '期刊文獻',
-  })[kind] || kind || '資料';
-}
-
-function searchDocuments(query, limit = 15) {
-  return CivicSearch.searchDocuments(state.searchIndex.documents, query, limit);
-}
-
-function exactLawPanel(parsed) {
-  const query = parsed.canonical;
-  const ppg = `https://ppg.ly.gov.tw/ppg/bills/search?criteria=keyword&value=${encodeURIComponent(parsed.law_name)}`;
-  const law = `https://www.google.com/search?q=${encodeURIComponent(`site:law.moj.gov.tw ${query}`)}`;
-  const judgment = `https://www.google.com/search?q=${encodeURIComponent(`site:judgment.judicial.gov.tw ${query}`)}`;
-  return `<section class="card exact-law-panel">
-    <div class="badges"><span class="badge">法條精確模式</span><span class="badge">不由模型猜測條次</span></div>
-    <h2>${esc(query)}</h2>
-    <p>依序核對現行條文、沿革、施行日期、立法歷程與裁判適用。搜尋連結只用於定位官方原文。</p>
-    <div class="action-row">
-      <a class="primary" href="${esc(law)}" target="_blank" rel="noopener noreferrer">核對現行法規</a>
-      <a class="secondary" href="${esc(ppg)}" target="_blank" rel="noopener noreferrer">追查立法歷程</a>
-      <a class="secondary" href="${esc(judgment)}" target="_blank" rel="noopener noreferrer">查裁判適用</a>
-      <button class="secondary copy-button" type="button" data-copy="${esc(query)}">複製查詢詞</button>
-    </div>
-  </section>`;
-}
-
-function resultCard(doc) {
-  const raw = String(doc.url || '#');
-  const internal = raw.startsWith('#');
-  const url = internal ? raw : safeUrl(raw);
-  const flags = [kindLabel(doc.kind), doc.country || '', doc.official ? '官方來源' : '', doc.evidence_grade ? `證據 ${doc.evidence_grade}` : ''].filter(Boolean);
-  return `<article class="card result-card">
-    <div class="badges">${flags.map(flag => `<span class="badge">${esc(flag)}</span>`).join('')}</div>
-    <h3>${esc(doc.title)}</h3>
-    <p>${esc(String(doc.body || '').slice(0, 280))}${String(doc.body || '').length > 280 ? '……' : ''}</p>
-    <p class="match-reason"><strong>符合原因：</strong>${esc(doc.match_reason || '詞彙相關')}</p>
-    ${url !== '#' ? `<a class="source-link" href="${esc(url)}" ${internal ? '' : 'target="_blank" rel="noopener noreferrer"'}>${internal ? '在本站查看' : '開啟來源'}</a>` : ''}
-  </article>`;
-}
-
-
-function literatureById(id) { return state.literature.find(item => item.id === id); }
-function theoryById(id) { return state.theories.find(item => item.id === id); }
-function queryInsightPanel(query, results) {
-  if (!String(query || '').trim()) return '';
-  const plan = CivicSearch.planQuery(query);
-  const methods = CivicAcademic.recommendMethods(state.researchMethods, query, 3);
-  const theories = CivicAcademic.recommendTheories(state.theories, query, 4);
-  const papers = CivicAcademic.searchLiterature(state.literature, query, {limit:5, minScore:4});
-  const evidence = results.filter(item => item.kind !== 'theory' && item.kind !== 'research_method' && item.kind !== 'literature');
-  const status = evidence.length >= 3 ? '已有多項可定位資料' : evidence.length ? '只有有限可定位資料' : '本站本地索引不足';
-  return `<section class="card query-insight">
-    <div class="badges"><span class="badge">查詢意圖：${esc(plan.primary_intent)}</span><span class="badge">${esc(status)}</span></div>
-    <h2>系統如何理解這個問題</h2>
-    <div class="grid-2"><div><h3>檢索策略</h3><p><strong>核心詞：</strong>${esc(plan.terms.join('、') || '未辨識')}</p><p><strong>受控名稱變體：</strong>${esc(plan.controlled_aliases.map(x => x.term).join('、') || '無')}</p><p class="muted">${esc(plan.excluded_rule)}</p></div>
-    <div><h3>推論邊界</h3><p>${evidence.length ? '目前結果可用於定位來源與形成待查主張；尚不能直接證明政策有效、違法或應修法。' : '目前只能建立查詢與研究路徑，不能形成實質結論。'}</p><p><a href="#theory?q=${encodeURIComponent(query)}">查看相符學說與期刊文獻</a></p></div></div>
-    <details open><summary>建議的最小充分研究組合</summary>
-      <div class="grid-3">
-        <div><h4>研究方法</h4><ul>${(methods.length?methods:[methodRecommendation(query).primary].filter(Boolean)).map(x=>`<li>${esc(x.name)}</li>`).join('')}</ul></div>
-        <div><h4>分析學說</h4><ul>${theories.length?theories.map(x=>`<li><a href="#theory?theory=${encodeURIComponent(x.id)}">${esc(x.name)}</a></li>`).join(''):'<li>尚無高相關理論，應先界定問題。</li>'}</ul></div>
-        <div><h4>基礎文獻</h4><ul>${papers.length?papers.map(x=>`<li><a href="${esc(CivicAcademic.doiUrl(x.doi))}" target="_blank" rel="noopener noreferrer">${esc(x.authors[0]||'')}（${esc(x.year)}）</a></li>`).join(''):'<li>可到學說與期刊頁進行 Crossref／Europe PMC 查詢。</li>'}</ul></div>
-      </div>
-    </details>
-  </section>`;
-}
-
-function renderSearchResults(query) {
-  const parsed = routeQuery(query);
-  if (parsed.mode === 'empty') return '<div class="empty">輸入一般問題、政策名稱、機關、法案或完整法條。</div>';
-  if (parsed.mode === 'exact_law') {
-    const related = searchDocuments(`${parsed.law_name} 第${parsed.article}條`, 8);
-    return `${exactLawPanel(parsed)}<h2>本站相關索引</h2>${related.length ? related.map(resultCard).join('') : '<div class="empty">本站索引尚無直接結果；不代表官方資料不存在。</div>'}`;
-  }
-  if (parsed.mode === 'law_article_ambiguous') {
-    return `<section class="card danger-note"><h2>缺少法規名稱</h2><p>請輸入完整格式，例如「個人資料保護法第19條」。</p></section>`;
-  }
-  const results = searchDocuments(parsed.raw, 15);
-  const expansion = CivicSearch.explainExpansion(parsed.raw);
-  const direct = results.filter(result => result.tier === 'direct');
-  const related = results.filter(result => result.tier === 'related');
-  return `${queryInsightPanel(parsed.raw, results)}<div class="search-mode">
-      <span class="badge">${parsed.mode === 'law_name' ? '法規名稱搜尋' : '詞彙證據搜尋'}</span>
-      <span>${results.length} 筆結果</span>
-      ${expansion.length ? `<details><summary>受控名稱變體</summary>${expansion.map(item => `<span class="badge">${esc(item.term)} × ${item.weight}</span>`).join(' ')}</details>` : ''}
-    </div>
-    ${direct.length ? `<section class="result-group"><h2>直接命中</h2>${direct.map(resultCard).join('')}</section>` : ''}
-    ${related.length ? `<section class="result-group"><h2>名稱變體或部分關鍵字命中</h2>${related.map(resultCard).join('')}</section>` : ''}
-    ${!results.length ? `<section class="card notice"><h2>沒有足夠相關的本地索引結果</h2><p>系統不會用「官方」身分硬塞無關資料。可改用較正式的政策名稱、法規全名或主管機關，也可啟用 AI 研究工作流產生查詢策略。</p></section>` : ''}
-    <div class="action-row">
-      <button class="primary" type="button" id="research-query" data-query="${esc(parsed.raw)}">用 AI 建立研究摘要</button>
-      <a class="secondary" href="#sources">到多國官方入口</a>
-    </div>
-    <div id="research-query-output"></div>`;
-}
-
-function examplesHtml() {
-  return `<div class="example-chips" aria-label="一般民眾常見問題">${state.examples.map(example => `<button type="button" class="example-chip" data-query="${esc(example.query)}">${esc(example.label)}</button>`).join('')}</div>`;
-}
-
-function searchShell(query = '') {
-  return `<section class="search-shell">
-    <form id="search-form" class="search-row">
-      <input id="global-search" name="q" value="${esc(query)}" autocomplete="off" placeholder="例如：政府今年把錢花在哪裡？個人資料保護法第19條" aria-label="搜尋國家資料"/>
-      <button class="primary" type="submit">搜尋</button>
-    </form>
-    ${examplesHtml()}
-    <p class="search-hint">搜尋先依詞彙證據排序；僅展開正式名稱與常用縮寫，不把同一議題的不同概念誤當近義詞。AI 查詢擴張必須由使用者主動啟用並顯示展開詞。</p>
-  </section>`;
-}
-
-function homePage() {
-  return `${searchShell(state.query)}
-    <section id="search-results">${renderSearchResults(state.query)}</section>
-    <section class="grid-4">
-      <article class="card"><div class="kpi">${esc(state.sources.length)}</div><h3>多國官方入口</h3><p>按國家與資料類別定位法規、國會、裁判、預算、統計與審計。</p></article>
-      <article class="card"><div class="kpi">3</div><h3>AI 資源模式</h3><p>節能一階、標準二階、高風險三階；只有需要時才增加模型批判。</p></article>
-      <article class="card"><div class="kpi">${esc(state.researchMethods.length)}</div><h3>研究方法引擎</h3><p>依問題類型選擇法釋義、因果推論、比較法、執行研究或混合方法。</p></article>
-      <article class="card"><div class="kpi">XLSX</div><h3>修法三版本</h3><p>最小、權衡、制度性三種版本，含理由、風險、配套與 Excel 輸出。</p></article>
-    </section>`;
-}
-
-function methodRecommendation(question) {
-  const normalized = normalize(question);
-  const scores = state.researchMethods.map(method => ({
-    method,
-    score: (method.triggers || []).reduce((sum, trigger) => sum + (normalized.includes(normalize(trigger)) ? 3 : 0), 0),
-  })).sort((a, b) => b.score - a.score);
-  const primary = scores[0]?.score > 0 ? scores[0].method : state.researchMethods.find(method => method.id === 'mixed') || state.researchMethods[0];
-  const supplemental = scores.filter(item => item.method.id !== primary.id && item.score > 0).slice(0, 1).map(item => item.method);
-  return { primary, supplemental };
-}
-
-function methodCard(question) {
-  const recommendation = methodRecommendation(question);
-  if (!recommendation.primary) return '';
-  const method = recommendation.primary;
-  return `<article class="card method-card">
-    <div class="badge">主要研究方法</div>
-    <h3>${esc(method.name)}</h3>
-    <p><strong>選擇理由：</strong>${esc(method.why)}</p>
-    <ol>${(method.steps || []).map(step => `<li>${esc(step)}</li>`).join('')}</ol>
-    <p><strong>限制：</strong>${esc(method.caveat)}</p>
-    ${recommendation.supplemental.length ? `<p><strong>必要時補充：</strong>${esc(recommendation.supplemental[0].name)}</p>` : ''}
-  </article>`;
-}
-
-function reformPage() {
-  return `<h2>國家改革分析</h2>
-    <section class="card notice"><p>改革判斷不是單純真偽題。系統分開問題規模、現行法、政策工具、政治可行性、執行能力與價值取捨。</p></section>
-    <form id="reform-form" class="form-grid card">
-      <label>議題<input name="topic" required placeholder="例如：電價調整決策透明度"/></label>
-      <label>主要機關<input name="agency" placeholder="例如：經濟部、台電、立法院"/></label>
-      <label class="full">目前掌握的官方資料或來源網址<textarea name="evidence" required placeholder="可貼官方資料摘要與網址；不要貼個資"></textarea></label>
-      <label class="full">希望釐清的核心問題<textarea name="goal" required placeholder="例如：調整依據、成本結構、替代方案及分配效果"></textarea></label>
-      <label>輸出模式<select name="audience"><option value="citizen">公民易讀</option><option value="research">研究摘要</option><option value="policy">政策備忘錄</option></select></label>
-      <div class="full action-row"><button class="primary" type="submit">建立研究設計</button><button class="secondary ai-action" type="button" data-task="research" data-form="reform-form" data-output="reform-output">AI 批判與綜合</button></div>
-    </form>
-    <div id="reform-output" class="output-panel empty">尚未產生。</div>`;
-}
-
-function questionsPage() {
-  return `<h2>立法委員質詢題庫</h2>
-    <section class="card notice"><p>質詢題目從證據缺口、法源、政策選擇、預算執行、責任與期限導出，不先預設違法或失職。</p></section>
-    <form id="question-form" class="form-grid card">
-      <label>議題<input name="topic" required placeholder="例如：少子化預算成效"/></label>
-      <label>被詢答機關<input name="agency" required placeholder="例如：行政院、教育部、衛福部"/></label>
-      <label class="full">官方資料與資料缺口<textarea name="evidence" required></textarea></label>
-      <label class="full">希望取得的可驗證答案<textarea name="goal" required></textarea></label>
-      <div class="full action-row"><button class="primary" type="submit">產生分層質詢</button><button class="secondary ai-action" type="button" data-task="research" data-form="question-form" data-output="question-output">AI 強化追問與反方</button></div>
-    </form>
-    <div id="question-output" class="output-panel empty">尚未產生。</div>`;
-}
-
-function partyChannelCards() {
-  return (state.partySources.parties || []).map(party => `<article class="card"><h3>${esc(party.name)}</h3><p><a href="${esc(safeUrl(party.official_website))}" target="_blank" rel="noopener noreferrer">中央黨部官網</a></p><div class="action-row">${(party.channels||[]).map(channel=>`<a class="secondary" href="${esc(safeUrl(channel.url))}" target="_blank" rel="noopener noreferrer">${esc(channel.platform)} @${esc(channel.handle)}</a>`).join('')}</div></article>`).join('');
-}
-function ideologyMatrix() {
-  return `<div class="table-wrap"><table><thead><tr><th>政黨</th><th>可區辨的意識形態基準</th><th>低權重一般口號</th><th>來源狀態</th></tr></thead><tbody>${(state.partyIdeology.profiles||[]).map(profile=>`<tr><td>${esc(profile.party_name)}</td><td>${(profile.dimensions||[]).map(d=>`<p><strong>${esc(d.dimension)}：</strong>${esc(d.baseline)}<br/><span class="muted">${esc(d.source_location)}</span></p>`).join('')}</td><td>${esc((profile.generic_low_weight||[]).join('、'))}</td><td>${esc(profile.source_status)}</td></tr>`).join('')}</tbody></table></div>`;
-}
-function partiesPage() {
-  return `<h2>政黨政策立場一致性、變動與意識形態分析</h2>
-    <section class="card notice"><p>資料來源以中央黨部官網、正式黨綱／黨章、政策綱領、立法院黨團正式提案及中央黨部官方社群為主。地方黨部、個別政治人物與支持者言論不得自動視為全黨立場。</p></section>
-    <details class="card" open><summary>三黨中央黨部官方來源</summary><div class="grid-3">${partyChannelCards()}</div><p class="muted">${esc(state.partySources.notice||'')}</p></details>
-    <details class="card"><summary>社群資料如何取得，以及為何不能假裝全自動</summary><div class="grid-3">${(state.partySources.collection_modes||[]).map(item=>`<article><h3>${esc(item.source)}</h3><p><strong>${esc(item.default)}</strong></p><p>${esc(item.method)}</p><p class="muted">${esc(item.risk)}</p></article>`).join('')}</div><p><a class="secondary" href="examples/party_social_import_template.csv" download>下載社群匯入 CSV 範本</a></p></details>
-    <details class="card" open><summary>黨綱／黨章意識形態基準</summary><p>${esc(state.partyIdeology.notice||'')}</p>${ideologyMatrix()}</details>
-    <div class="split-pane">
-      <form id="party-change-form" class="card mini-form sticky-card">
-        <h3>同一政黨跨期檢查</h3>
-        <label>政黨<select name="party_id">${(state.partyIdeology.profiles||[]).map(p=>`<option value="${esc(p.party_id)}">${esc(p.party_name)}</option>`).join('')}</select></label>
-        <label>比較議題<input name="issue" required placeholder="例如：核能、國會改革、兩岸政策"/></label>
-        <label>前期日期<input name="earlier_date" type="date"/></label>
-        <label>前期主體層級<select name="earlier_actor"><option>中央黨部</option><option>立法院黨團</option><option>黨主席</option><option>個別政治人物</option><option>地方黨部</option></select></label>
-        <label>前期官方來源<input name="earlier_url" type="url"/></label>
-        <label>前期原文<textarea name="earlier_text" required></textarea></label>
-        <label>近期日期<input name="current_date" type="date"/></label>
-        <label>近期主體層級<select name="current_actor"><option>中央黨部</option><option>立法院黨團</option><option>黨主席</option><option>個別政治人物</option><option>地方黨部</option></select></label>
-        <label>近期官方來源<input name="current_url" type="url"/></label>
-        <label>近期原文<textarea name="current_text" required></textarea></label>
-        <div class="action-row"><button class="primary" type="submit">規則式初篩</button><button class="secondary ai-action" type="button" data-task="research" data-form="party-change-form" data-output="party-change-output">AI 拆命題、文獻與引用</button></div>
-      </form>
-      <section><div id="party-change-output" class="empty">輸入同一議題的兩期官方原文。</div>
-        <section class="card"><h3>判斷類別</h3><p>立場一致、立場延續但手段調整、有條件差異、發言主體不同、政策層級不同、立場明確變更、表面不一致尚待釐清、具有實質衝突、證據不足。</p><p class="muted">「實質衝突」必須是同一主體、同一命題、可比條件與相近政策層級下的互斥主張。</p></section></section>
-    </div>`;
-}
-
-
-function literatureCard(item, compactMode = false) {
-  const citation = CivicAcademic.apa(item);
-  return `<article class="card literature-card" id="lit-${esc(item.id)}">
-    <div class="badges"><span class="badge">${esc(['journal_article','journal-article','article-journal'].includes(item.type) ? '期刊論文' : '會議或其他研究文獻')}</span><span class="badge">${esc(item.year)}</span>${item.peer_reviewed ? '<span class="badge">同儕審查</span>' : ''}</div>
-    <h3>${esc(item.title)}</h3><p>${esc((item.authors||[]).join('、'))}</p><p><em>${esc(item.journal||'')}</em></p>
-    ${compactMode ? '' : `<p><strong>適合用途：</strong>${esc(item.use||'')}</p><p><strong>限制：</strong>${esc(item.limitation||'')}</p>`}
-    <div class="action-row"><a class="secondary" href="${esc(CivicAcademic.doiUrl(item.doi)||item.url)}" target="_blank" rel="noopener noreferrer">DOI／原始頁面</a><button type="button" class="secondary copy-button" data-copy="${esc(citation)}">複製 APA</button></div>
-  </article>`;
-}
-function theoryCard(theory) {
-  const refs=(theory.literature_ids||[]).map(literatureById).filter(Boolean);
-  return `<article class="card theory-card" id="theory-${esc(theory.id)}"><div class="badges"><span class="badge">${esc(theory.category)}</span></div><h3>${esc(theory.name)}</h3>
-    <p><strong>核心主張：</strong>${esc(theory.proposition)}</p>
-    <details open><summary>作用機制與診斷問題</summary><div class="grid-2"><div><h4>作用機制</h4><ul>${(theory.mechanisms||[]).map(x=>`<li>${esc(x)}</li>`).join('')}</ul></div><div><h4>診斷問題</h4><ul>${(theory.diagnostic_questions||[]).map(x=>`<li>${esc(x)}</li>`).join('')}</ul></div></div></details>
-    <p><strong>適用：</strong>${esc(theory.when_to_use)}</p><p><strong>限制：</strong>${esc(theory.limitations)}</p>
-    <p><strong>建議方法：</strong>${esc((theory.suitable_methods||[]).map(id=>state.researchMethods.find(x=>x.id===id)?.name||id).join('、'))}</p>
-    <h4>代表性文獻</h4><ul class="reference-list">${refs.map(ref=>`<li><a href="${esc(CivicAcademic.doiUrl(ref.doi))}" target="_blank" rel="noopener noreferrer">${esc(CivicAcademic.apa(ref))}</a></li>`).join('')}</ul></article>`;
-}
-function comparativeLiteratureSection() {
-  const rows = state.comparativeApplicability.records || [];
-  return `<details class="card" open><summary>跨國文獻如何批判中華民國制度</summary><p>${esc(state.comparativeApplicability.notice||'')}</p><div class="table-wrap"><table><thead><tr><th>文獻／方法</th><th>可帶回臺灣的機制</th><th>中華民國適用性</th><th>不可直接移植</th></tr></thead><tbody>${rows.map(x=>`<tr><td><strong>${esc(x.topic)}</strong><br/><span class="muted">${esc(x.citation)}</span></td><td>${esc(x.lesson)}<br/><strong>移植條件：</strong>${esc((x.transfer_conditions||[]).join('、'))}</td><td>${esc(x.roc_applicability)}</td><td>${esc(x.non_transferable)}</td></tr>`).join('')}</tbody></table></div></details>`;
-}
-
-function theoryPage() {
-  const query=state.params.get('q')||state.theoryQuery||''; const selected=state.params.get('theory')||''; const litSelected=state.params.get('lit')||'';
-  const categories=[...new Set(state.theories.map(x=>x.category))].sort();
-  let theories=selected?state.theories.filter(x=>x.id===selected):CivicAcademic.recommendTheories(state.theories,query,50);
-  if(!query&&!selected) theories=state.theories;
-  if(state.theoryCategory) theories=theories.filter(x=>x.category===state.theoryCategory);
-  let papers=litSelected?state.literature.filter(x=>x.id===litSelected):CivicAcademic.searchLiterature(state.literature,query||state.theoryCategory,{limit:30,minScore:query||state.theoryCategory?3:0,domain:state.literatureDomain});
-  if(!query&&!state.theoryCategory&&!state.literatureDomain&&!litSelected) papers=state.literature.slice().sort((a,b)=>b.year-a.year);
-  return `<h2>學說、研究方法與期刊論文</h2>${comparativeLiteratureSection()}<section class="card notice"><p>學說不是裝飾性標籤。每張卡片均列核心主張、作用機制、可檢查問題、適用限制及代表性期刊文獻。文獻可以支撐理論選擇，不能取代個案的官方資料與研究設計。</p></section>
-    <form id="academic-form" class="source-toolbar card"><label>研究問題或關鍵字<input id="academic-query" value="${esc(query)}" placeholder="例如：政策執行為何出現中央地方落差？"/></label><label>理論類別<select id="academic-category"><option value="">全部類別</option>${categories.map(x=>`<option ${state.theoryCategory===x?'selected':''}>${esc(x)}</option>`).join('')}</select></label><label>文獻領域<input id="academic-domain" value="${esc(state.literatureDomain)}" placeholder="例如：因果推論、實施科學"/></label><button class="primary" type="submit">分析並找文獻</button></form>
-    <section class="card academic-actions"><div><strong>即時學術中繼資料：</strong>先查本地人工整理文獻；需要擴充時再呼叫公開API，不消耗LLM額度。</div><div class="action-row"><button id="crossref-search" type="button" class="secondary">查 Crossref</button><button id="epmc-search" type="button" class="secondary">查 Europe PMC（醫療／健康）</button><button id="export-ris" type="button" class="secondary">下載 RIS</button><button id="export-bib" type="button" class="secondary">下載 BibTeX</button></div><div id="academic-live-status" class="status-line"></div></section>
-    <div class="split-pane academic-layout"><section><h2>建議學說（${theories.length}）</h2><div id="theory-results">${theories.length?theories.map(theoryCard).join(''):'<div class="empty">沒有高相關學說。請換用較明確的機制、行為者或結果詞。</div>'}</div></section><section><h2>本地代表性文獻（${papers.length}）</h2><div id="literature-results">${papers.length?papers.map(x=>literatureCard(x,true)).join(''):'<div class="empty">本地目錄沒有直接命中，可使用 Crossref 或 Europe PMC。</div>'}</div><h2>即時查詢結果</h2><div id="live-literature-results" class="empty">尚未呼叫公開學術API。</div></section></div>`;
-}
-
-function mediaOwnershipCards() {
-  return (state.mediaOwnership.records||[]).map(record=>`<article class="card"><div class="badges"><span class="badge">${esc(record.ownership_type)}</span></div><h3>${esc(record.name)}</h3><p><strong>政府關係：</strong>${esc((record.government_links||[]).join('、'))}</p><p><strong>獨立防火牆：</strong>${esc((record.independence_safeguards||[]).join('、'))}</p><p class="danger-text">${esc(record.risk_note)}</p><ul>${(record.sources||[]).map(url=>`<li><a href="${esc(safeUrl(url))}" target="_blank" rel="noopener noreferrer">官方來源</a></li>`).join('')}</ul></article>`).join('');
-}
-function mediaPage() {
-  const requirement=state.mediaMethodology.outlet_level_requirements||{};
-  return `<h2>媒體內容、政黨論述與所有權風險分析</h2>
-    <section class="card danger-note"><p>本站不會因媒體有政府資金、官股或任命關係，就直接標示「偏向執政者」。這些只構成結構性依賴風險；是否存在內容偏向，仍須長期、多議題、跨黨與人工複核。</p></section>
-    <details class="card" open><summary>公共／政府關係媒體的可驗證分類</summary><div class="grid-2">${mediaOwnershipCards()}</div><h3>其他媒體所有權查核入口</h3><div class="action-row">${(state.mediaOwnership.verification_portals||[]).map(x=>`<a class="secondary" href="${esc(safeUrl(x.url))}" target="_blank" rel="noopener noreferrer">${esc(x.name)}</a>`).join('')}</div></details>
-    <div class="split-pane">
-      <form id="media-form" class="card mini-form sticky-card">
-        <h3>單篇文本分析</h3>
-        <label>媒體名稱<input name="outlet" required/></label>
-        <label>文章類型<select name="article_type"><option>新聞</option><option>評論／社論</option><option>政論節目逐字稿</option><option>轉載</option></select></label>
-        <label>標題<textarea name="headline" required class="compact-textarea"></textarea></label>
-        <label>內文<textarea name="body" required></textarea></label>
-        <label>原始來源與引述對象（每行一個）<textarea name="sources" class="compact-textarea"></textarea></label>
-        <label><input type="checkbox" name="right_of_reply"/> 有提供主要被批評方回應，或明確說明未回應</label>
-        <div class="action-row"><button class="primary" type="submit">分析單篇文本</button><button class="secondary ai-action" type="button" data-task="research" data-form="media-form" data-output="media-output">AI 框架、文獻與反證分析</button></div>
-      </form>
-      <section><div id="media-output" class="empty">貼入文章後，顯示各黨批評、稱讚、描述性表述、官方論述接近度與語句證據。</div>
-        <section class="card"><h3>媒體層級判斷門檻</h3><p>至少 ${esc(requirement.minimum_articles||30)} 篇、${esc(requirement.minimum_issues||3)} 個議題、${esc(requirement.minimum_weeks||4)} 週，並區分新聞、評論與轉載。</p><ul>${(requirement.required_controls||[]).map(x=>`<li>${esc(x)}</li>`).join('')}</ul></section></section>
-    </div>
-    <section class="card"><h3>整批語料分析</h3><p>下載範本後匯入同一媒體的文章。未達門檻時只顯示描述統計，不判定媒體整體較接近哪一黨。</p><div class="action-row"><a class="secondary" href="examples/media_corpus_template.csv" download>下載 CSV 範本</a><input id="media-corpus-file" type="file" accept=".csv,text/csv"/><button id="analyze-media-corpus" class="primary" type="button">分析語料庫</button></div><div id="media-corpus-output" class="empty">尚未匯入。</div></section>
-    <details class="card"><summary>指標與限制</summary><div class="grid-3">${(state.mediaMethodology.article_indicators||[]).map(x=>`<article><h3>${esc(x.name)}</h3><p>${esc(x.meaning)}</p></article>`).join('')}</div><p>${esc(state.mediaMethodology.ownership_rule||'')}</p><h3>方法文獻</h3><ul class="reference-list">${['entman1993','gentzkow2010','budak2016','hamborg2019','gehlbach2014'].map(id=>{const ref=literatureById(id);return ref?`<li><a href="${esc(CivicAcademic.doiUrl(ref.doi)||ref.url)}" target="_blank" rel="noopener noreferrer">${esc(CivicAcademic.apa(ref))}</a></li>`:'';}).join('')}</ul></details>`;
-}
-
-function comparePage() {
-  const checks = state.jurisdictions.filter(jurisdiction => jurisdiction.code !== 'INT').map(jurisdiction => `<label><input type="checkbox" name="countries" value="${esc(jurisdiction.code)}" ${['TW', 'JP', 'UK'].includes(jurisdiction.code) ? 'checked' : ''}/><span>${esc(jurisdiction.name)}</span></label>`).join('');
-  return `<h2>跨國比較與研究方法</h2>
-    <section class="card notice"><p>先定義共同功能問題，再以相同分析問題比較各國；不依「先進國家」標籤任意選國，也不把外國制度直接移植。</p></section>
-    <div class="split-pane">
-      <form id="compare-form" class="card mini-form sticky-card">
-        <label>研究問題<textarea name="question" required placeholder="例如：臺灣、日本與英國如何管理高齡駕駛風險？"></textarea></label>
-        <div><strong>比較法域（最多5個）</strong><div class="checkbox-grid">${checks}</div></div>
-        <label>可用資料<input name="available" placeholder="法規、事故統計、政策評估、預算、訪談等"/></label>
-        <div class="action-row"><button class="primary" type="submit">建立比較設計</button><button class="secondary ai-action" type="button" data-task="research" data-form="compare-form" data-output="compare-output">AI 完整比較架構</button></div>
-      </form>
-      <section><div id="method-result" class="empty">輸入問題後推薦研究方法、比較維度與官方入口。</div><div id="compare-output"></div></section>
-    </div>`;
-}
-
-function renderDraftTable(draft) {
-  return `<section class="draft-result">
-    <div class="action-row"><button class="primary" id="download-draft-xlsx" type="button">下載 Excel（.xlsx）</button><button class="secondary" id="copy-draft-json" type="button">複製結構化草稿</button></div>
-    <div class="table-wrap"><table class="draft-table"><thead><tr><th>版本</th><th>策略定位</th><th>修正條文草稿</th><th>修法理由</th><th>優點</th><th>風險與配套</th></tr></thead><tbody>
-    ${draft.versions.map(version => `<tr><td><strong>${esc(version.name)}</strong></td><td>${esc(version.strategy)}</td><td>${esc(version.amendedText)}</td><td><ol>${(version.reasons || []).map(reason => `<li>${esc(reason)}</li>`).join('')}</ol></td><td><ul>${(version.benefits || []).map(item => `<li>${esc(item)}</li>`).join('')}</ul></td><td><ul>${(version.risks || []).map(item => `<li>${esc(item)}</li>`).join('')}</ul><p><strong>執行：</strong>${esc(version.implementation || '')}</p><p><strong>財政：</strong>${esc(version.fiscalImpact || '')}</p></td></tr>`).join('')}
-    </tbody></table></div>
-    <section class="card"><h3>共同待查核事項</h3><ol>${(draft.sharedChecks || []).map(item => `<li>${esc(item)}</li>`).join('')}</ol></section>
-  </section>`;
-}
-
-function legislationPage() {
-  return `<h2>人工智慧／規則式修法草案</h2>
-    <section class="card danger-note"><p>先產生三種政策強度版本，再由 AI 依現行條文逐句潤飾。未提供現行條文時，系統只建立策略框架，不虛構法條。</p></section>
-    <form id="draft-form" class="form-grid card">
-      <label>法規名稱<input name="law" required placeholder="例如：個人資料保護法"/></label>
-      <label>條次<input name="article" required placeholder="例如：第19條"/></label>
-      <label class="full">現行條文<textarea name="current_text" placeholder="建議從全國法規資料庫貼入完整現行條文"></textarea></label>
-      <label class="full">制度問題與證據<textarea name="problem" required placeholder="說明制度問題、證據與不能過度推論之處"></textarea></label>
-      <label class="full">政策目的<textarea name="goal" required placeholder="說明公共利益、受影響群體與預期結果"></textarea></label>
-      <label class="full">擬修正方向<textarea name="change" required placeholder="說明主體、要件、程序、期限、法律效果與配套"></textarea></label>
-      <label class="full">官方來源網址（每行一個）<textarea name="sources" class="compact-textarea"></textarea></label>
-      <div class="full action-row"><button class="primary" type="submit">產生三種規則式版本</button><button class="secondary ai-action" type="button" data-task="legislation" data-form="draft-form" data-output="draft-output">AI 逐句潤稿三版本</button></div>
-    </form>
-    <div id="draft-output" class="output-panel empty">尚未產生草稿。</div>`;
-}
-
-function countryOptions(selected) {
-  return state.jurisdictions.map(jurisdiction => `<option value="${esc(jurisdiction.code)}" ${jurisdiction.code === selected ? 'selected' : ''}>${esc(jurisdiction.name)}</option>`).join('');
-}
-
-function sourceCard(source) {
-  return `<article class="card portal-card"><div class="badges"><span class="badge">${esc(source.portal_category)}</span><span class="badge">${esc(source.level)}</span></div><h3>${esc(source.name)}</h3><p>${esc(source.best_for)}</p><a class="primary" href="${esc(safeUrl(source.url))}" target="_blank" rel="noopener noreferrer">開啟官方入口</a><details class="research-only"><summary>研究使用與限制</summary><p>${esc(source.data)}</p><p>${esc(source.limitations)}</p></details></article>`;
-}
-
-function filteredSources() {
-  const query = normalize(state.sourceQuery);
-  return state.sources.filter(source =>
-    (!state.sourceCountry || source.country_code === state.sourceCountry)
-    && (!state.sourceCategory || source.portal_category === state.sourceCategory)
-    && (!state.sourceCoreOnly || source.priority === 1)
-    && (!query || normalize(`${source.name} ${source.agency} ${source.data} ${source.best_for} ${source.portal_category}`).includes(query))
-  ).sort((a, b) => a.priority - b.priority || a.name.localeCompare(b.name, 'zh-Hant'));
-}
-
-function sourcesPage() {
-  const selected = state.sourceCountry || 'TW';
-  const categories = [...new Set(state.sources.filter(source => source.country_code === selected).map(source => source.portal_category))].sort();
-  const rows = filteredSources();
-  return `<h2>國家資料與政府文檔入口</h2>
-    <section class="card notice"><p>預設只顯示研究最常用的核心入口。先選國家，再選法規、國會、司法、預算、統計、審計或政策研究。</p></section>
-    <section class="source-toolbar card">
-      <label>國家／法域<select id="source-country">${countryOptions(selected)}</select></label>
-      <label>資料類別<select id="source-category"><option value="">全部類別</option>${categories.map(category => `<option value="${esc(category)}" ${state.sourceCategory === category ? 'selected' : ''}>${esc(category)}</option>`).join('')}</select></label>
-      <label>篩選<input id="source-filter" value="${esc(state.sourceQuery)}" placeholder="例如：預算、裁判、統計"/></label>
-      <label class="inline-check"><input id="source-core" type="checkbox" ${state.sourceCoreOnly ? 'checked' : ''}/>只顯示核心入口</label>
-      <label class="inline-check"><input id="research-mode" type="checkbox" ${state.citizenMode ? '' : 'checked'}/>顯示研究限制</label>
-    </section>
-    <p><strong id="source-count">${rows.length}</strong> 個入口</p><div id="source-grid" class="portal-grid">${rows.map(sourceCard).join('')}</div>`;
-}
-
-function getAIConfig() {
-  try { return JSON.parse(sessionStorage.getItem('civic-ai-config') || '{}'); } catch { return {}; }
-}
-
-function setAIConfig(config) {
-  sessionStorage.setItem('civic-ai-config', JSON.stringify(config));
-}
-
-function aiPage() {
-  const cfg = getAIConfig();
-  return `<h2>免費 AI、資源模式與虛擬後端</h2>
-    <section class="card danger-note"><p>免費額度、模型名稱與速率限制會變動。OpenRouter 僅接受價格欄位明確為零的模型；Gemini 與 Groq 的模型清單不能證明帳戶不會被計費，必須由使用者先確認方案。系統不自動轉付費。</p></section>
-    <form id="ai-form" class="form-grid card">
-      <label>使用方式<select name="connection"><option value="backend" ${cfg.connection === 'backend' ? 'selected' : ''}>受控虛擬後端（建議）</option><option value="direct" ${cfg.connection !== 'backend' ? 'selected' : ''}>瀏覽器自備 Key</option></select></label>
-      <label>資源模式<select name="resource_mode"><option value="auto" ${!cfg.resource_mode || cfg.resource_mode === 'auto' ? 'selected' : ''}>自動：依問題風險決定1～3次</option><option value="economy" ${cfg.resource_mode === 'economy' ? 'selected' : ''}>節能：1次主要呼叫</option><option value="standard" ${cfg.resource_mode === 'standard' ? 'selected' : ''}>標準：規劃＋綜合</option><option value="critical" ${cfg.resource_mode === 'critical' ? 'selected' : ''}>高風險：規劃＋批判＋綜合</option></select></label>
-      <label class="full">Hugging Face Space／受控後端網址<input name="backend_url" value="${esc(cfg.backend_url || '')}" placeholder="https://你的-space.hf.space"/></label>
-      <label class="full">後端存取權杖（選填）<input name="backend_token" type="password" value="${esc(cfg.backend_token || '')}"/></label>
-      <label>直接供應商<select name="provider"><option value="openrouter" ${cfg.provider === 'openrouter' ? 'selected' : ''}>OpenRouter 零價格模型</option><option value="gemini" ${cfg.provider === 'gemini' ? 'selected' : ''}>Gemini（須自行確認免費層）</option><option value="groq" ${cfg.provider === 'groq' ? 'selected' : ''}>Groq（須自行確認開發方案）</option></select></label>
-      <label>模型<select name="model"><option value="${esc(cfg.model || '')}">${esc(cfg.model || '先檢查模型')}</option></select></label>
-      <label class="full">API Key<input name="key" type="password" value="${esc(cfg.key || '')}" autocomplete="off"/></label>
-      <label>OpenRouter 推論供應商（選填）<input name="actual_provider" value="${esc(cfg.actual_provider || '')}" placeholder="例如 Google 或 Groq"/></label>
-      <label>本分頁呼叫上限<input name="daily_limit" type="number" min="1" max="50" value="${esc(cfg.daily_limit || 8)}"/></label>
-      <label class="full"><input name="confirm" type="checkbox" ${cfg.confirm ? 'checked' : ''}/>我了解：僅能外送公開資料；免費模型可能停用；不保證服務水準；系統不自動轉付費。</label>
-      <div class="full action-row"><button id="test-backend" class="primary" type="button">測試虛擬後端</button><button id="discover-models" class="secondary" type="button">檢查免費模型</button><button class="secondary" type="submit">儲存到本分頁</button><button id="clear-ai" class="danger-button" type="button">清除</button></div>
-      <div id="ai-status" class="full status-line">${cfg.backend_url ? `已設定後端：${esc(cfg.backend_url)}` : cfg.model ? `已設定：${esc(cfg.provider)} / ${esc(cfg.model)}` : '尚未設定；本地搜尋、研究方法與規則式草稿仍可使用。'}</div>
-    </form>
-    <section class="grid-2"><article class="card"><h3>最省資源的策略</h3><ol><li>規則式分類與搜尋先行，不用模型做可重現的工作。</li><li>一般問題只做一次結構化呼叫。</li><li>法律、指控、跨國或證據衝突才啟動第二、第三階段批判。</li><li>中間結果短而結構化，避免多模型重複寫長文。</li></ol></article><article class="card"><h3>虛擬空間</h3><p>ZIP 內含 <code>backend/hf-space</code>，可部署為 Hugging Face Docker Space，將 Gemini、Groq、OpenRouter 等金鑰存為 Space Secrets；網站只連到後端，不在瀏覽器暴露金鑰。</p><p><a href="https://huggingface.co/new-space" target="_blank" rel="noopener noreferrer">建立 Hugging Face Space</a></p></article></section>`;
-}
-
-function pageFor(route) {
-  return ({ home: homePage, reform: reformPage, questions: questionsPage, parties: partiesPage, media: mediaPage, theory: theoryPage, compare: comparePage, legislation: legislationPage, sources: sourcesPage, ai: aiPage }[route] || homePage)();
-}
-
-function formDataObject(form) {
-  const data = {};
-  for (const [key, value] of new FormData(form).entries()) {
-    if (Object.prototype.hasOwnProperty.call(data, key)) data[key] = Array.isArray(data[key]) ? [...data[key], value] : [data[key], value];
-    else data[key] = value;
-  }
-  return data;
-}
-
-function researchStatusLabel(value) {
-  return ({supported:'有充分支持',partially_supported:'部分支持',insufficient:'證據不足',contested:'來源衝突',normative:'價值／規範判斷'}[value] || value || '未標示');
-}
-function confidenceLabel(value) {
-  return ({high:'高',medium:'中',low:'低'}[value] || value || '未標示');
-}
-function supportLabel(value) {
-  return ({direct:'直接支持',partial:'部分支持',insufficient:'不足',contested:'有爭議'}[value] || value || '未標示');
-}
-function packetSource(id) {
-  return (state.lastEvidencePacket?.sources || []).find(item => item.source_id === id);
-}
-function packetSourceText(ids) {
-  return (ids || []).map(id => {
-    const source = packetSource(id);
-    return source ? `${id}｜${source.title}` : id;
-  }).join('；');
-}
-function renderResearchResult(result, trace = [], validationWarnings = []) {
-  const data = result?.result || result;
-  if (!data || typeof data !== 'object') return `<pre>${esc(JSON.stringify(result, null, 2))}</pre>`;
-  const claims = data.atomic_claims || (data.findings||[]).map((x,i)=>({claim_id:`C${i+1}`,claim:x.claim,claim_type:'fact',source_ids:[x.source].filter(Boolean),support:x.support,confidence:x.confidence,limits:x.evidence}));
-  const citedLiterature = (data.literature || []).map(item => ({...item, record: literatureById(item.literature_id)}));
-  const packetSources = state.lastEvidencePacket?.sources || [];
-  return `<section class="research-dossier">
-    <div class="badges"><span class="badge">${esc(data.question_type || '研究摘要')}</span><span class="badge">狀態：${esc(researchStatusLabel(data.answer_status))}</span><span class="badge">信心：${esc(confidenceLabel(data.confidence))}</span>${trace.map(item => `<span class="badge">${esc(item.stage)} / ${esc(item.model)}</span>`).join('')}</div>
-    <h3>${esc(data.research_question || '研究問題')}</h3>
-    ${data.scope?`<p class="scope-note"><strong>回答範圍：</strong>${esc(data.scope)}</p>`:''}
-    ${data.direct_answer?`<section class="card direct-answer"><h4>直接回答</h4><p>${esc(data.direct_answer)}</p></section>`:''}
-    ${data.executive_summary?`<section class="card executive-summary"><h4>精準摘要</h4><p>${esc(data.executive_summary)}</p></section>`:''}
-    ${(data.what_cannot_be_concluded||[]).length?`<section class="card caution-note"><h4>目前不能下的結論</h4><ul>${data.what_cannot_be_concluded.map(x=>`<li>${esc(x)}</li>`).join('')}</ul></section>`:''}
-    ${validationWarnings.length?`<section class="card danger-note"><h4>來源驗證警告</h4><ul>${validationWarnings.map(x=>`<li>${esc(x)}</li>`).join('')}</ul></section>`:''}
-    ${claims.length?`<h4>原子主張—證據矩陣</h4><div class="table-wrap"><table><thead><tr><th>ID</th><th>主張</th><th>性質</th><th>來源</th><th>支持</th><th>反證／衝突</th><th>信心</th><th>限制</th></tr></thead><tbody>${claims.map(x=>`<tr><td>${esc(x.claim_id||'')}</td><td>${esc(x.claim||'')}</td><td>${esc(x.claim_type||'')}</td><td>${esc(packetSourceText(x.source_ids||[]))}</td><td>${esc(supportLabel(x.support))}</td><td>${esc(x.counterevidence||'')}</td><td>${esc(confidenceLabel(x.confidence))}</td><td>${esc(Array.isArray(x.limits)?x.limits.join('；'):x.limits||'')}</td></tr>`).join('')}</tbody></table></div>`:''}
-    ${(data.source_conflicts||[]).length?`<h4>來源衝突</h4><div class="table-wrap"><table><thead><tr><th>爭點</th><th>來源</th><th>處理方式</th></tr></thead><tbody>${data.source_conflicts.map(x=>`<tr><td>${esc(x.issue||'')}</td><td>${esc(packetSourceText(x.source_ids||[]))}</td><td>${esc(x.handling||'')}</td></tr>`).join('')}</tbody></table></div>`:''}
-    ${(data.inference_ledger||[]).length?`<h4>推論帳本</h4><div class="table-wrap"><table><thead><tr><th>推論</th><th>前提主張</th><th>推論方式</th><th>可能失敗原因</th></tr></thead><tbody>${data.inference_ledger.map(x=>`<tr><td>${esc(x.inference||'')}</td><td>${esc((x.premises||[]).join('；'))}</td><td>${esc(x.reasoning||'')}</td><td>${esc((x.failure_conditions||[]).join('；'))}</td></tr>`).join('')}</tbody></table></div>`:''}
-    ${data.legal_policy_split ? `<div class="grid-2"><article class="card"><h4>法律形成</h4><p>${esc(data.legal_policy_split.law || '')}</p><h4>政治／議事</h4><p>${esc(data.legal_policy_split.politics || '')}</p></article><article class="card"><h4>政策形成</h4><p>${esc(data.legal_policy_split.policy || '')}</p><h4>執行</h4><p>${esc(data.legal_policy_split.implementation || '')}</p></article></div>` : ''}
-    ${(data.theories||[]).length?`<h4>學說適用與可檢驗命題</h4><div class="grid-3">${data.theories.map(x=>{const record=theoryById(x.theory_id);return `<article class="card"><strong>${record?`<a href="#theory?theory=${encodeURIComponent(record.id)}">${esc(record.name)}</a>`:esc(x.name||x.theory_id||'')}</strong><p>${esc(x.application||'')}</p>${x.testable_implication?`<p><strong>可檢驗命題：</strong>${esc(x.testable_implication)}</p>`:''}<p><strong>限制：</strong>${esc(x.limitation||record?.limitations||'')}</p></article>`;}).join('')}</div>`:''}
-    ${citedLiterature.length?`<h4>引用文獻與用途</h4><ul class="reference-list">${citedLiterature.map(x=>{const ref=x.record;return `<li>${ref?`<a href="${esc(CivicAcademic.doiUrl(ref.doi))}" target="_blank" rel="noopener noreferrer">${esc(CivicAcademic.apa(ref))}</a>`:esc(x.literature_id||'')}<br/><span>${esc(x.relevance||'')}</span>${x.limitation?`<br/><small>限制：${esc(x.limitation)}</small>`:''}</li>`;}).join('')}</ul>`:''}
-    ${(data.comparative_transfer||[]).length?`<h4>跨國文獻與中華民國適用性</h4><div class="table-wrap"><table><thead><tr><th>文獻</th><th>可用機制</th><th>適用性</th><th>不可直接移植</th></tr></thead><tbody>${data.comparative_transfer.map(x=>`<tr><td>${esc(x.literature_id||x.citation||'')}</td><td>${esc(x.lesson||'')}</td><td>${esc(x.roc_applicability||'')}</td><td>${esc(x.non_transferable||'')}</td></tr>`).join('')}</tbody></table></div>`:''}
-    ${(data.methods || []).length ? `<h4>研究方法</h4>${data.methods.map(method => `<article class="card"><strong>${esc(method.name)}</strong><p>${esc(method.why)}</p><p><strong>設計：</strong>${esc(method.design)}</p><p><strong>需要資料：</strong>${esc(method.data_needed)}</p>${method.identification_assumptions?`<p><strong>識別假設：</strong>${esc(method.identification_assumptions)}</p>`:''}<p><strong>限制：</strong>${esc(method.limitation||'')}</p></article>`).join('')}` : ''}
-    ${(data.alternatives||data.counterarguments||[]).length?`<h4>替代方案與反方</h4><ul>${(data.alternatives||data.counterarguments||[]).map(x=>typeof x==='string'?`<li>${esc(x)}</li>`:`<li><strong>${esc(x.option||'')}</strong>：${esc(x.advantage||'')}；風險：${esc(x.risk||'')}</li>`).join('')}</ul>`:''}
-    ${(data.uncertainties||data.limitations||[]).length?`<h4>不確定性與限制</h4><ul>${(data.uncertainties||data.limitations||[]).map(x=>`<li>${esc(typeof x==='string'?x:x.issue||JSON.stringify(x))}</li>`).join('')}</ul>`:''}
-    ${(data.next_actions||data.next_steps||[]).length?`<h4>下一步</h4><ol>${(data.next_actions||data.next_steps||[]).map(x=>`<li>${esc(typeof x==='string'?x:x.action||JSON.stringify(x))}</li>`).join('')}</ol>`:''}
-    ${packetSources.length?`<details class="card evidence-packet-view"><summary>本次證據封包（${packetSources.length}筆）</summary><div class="table-wrap"><table><thead><tr><th>ID</th><th>來源</th><th>屬性</th><th>網址</th></tr></thead><tbody>${packetSources.map(x=>`<tr><td>${esc(x.source_id)}</td><td>${esc(x.title)}</td><td>${x.official?'官方':''}${x.peer_reviewed?'同儕審查':''}</td><td>${x.url?`<a href="${esc(safeUrl(x.url))}" target="_blank" rel="noopener noreferrer">開啟</a>`:''}</td></tr>`).join('')}</tbody></table></div></details>`:''}
-  </section>`;
-}
-
-function localResearchPlan(data) {
-  const query = `${data.topic || data.question || data.issue || ''} ${data.goal || ''}`;
-  const sources = searchDocuments(query, 8);
-  const plan = CivicSearch.planQuery(query);
-  const theories = CivicAcademic.recommendTheories(state.theories, query, 4);
-  const papers = CivicAcademic.searchLiterature(state.literature, query, {limit:5,minScore:3});
-  const methods = CivicAcademic.recommendMethods(state.researchMethods, query, 3);
-  return `<section class="research-dossier"><h3>不使用AI的研究前置分析</h3><section class="card"><p><strong>問題類型：</strong>${esc(plan.intents.join('、'))}</p><p><strong>可先定位的本地來源：</strong>${sources.length}項</p><p><strong>目前可做：</strong>建立主張清單、來源定位、研究設計與理論假設。</p><p><strong>目前不可做：</strong>在未讀取原始全文與確認日期效力前，不宣稱政策有效、違法、因果成立或某機關應負責。</p></section>
-    <div class="grid-3"><article class="card"><h4>最小充分方法</h4><ol>${(methods.length?methods:[methodRecommendation(query).primary].filter(Boolean)).map(x=>`<li>${esc(x.name)}</li>`).join('')}</ol></article><article class="card"><h4>可檢驗學說</h4><ul>${theories.map(x=>`<li>${esc(x.name)}</li>`).join('')||'<li>先界定機制</li>'}</ul></article><article class="card"><h4>代表性文獻</h4><ul>${papers.map(x=>`<li>${esc(x.authors[0]||'')}（${esc(x.year)}）</li>`).join('')||'<li>尚無直接命中</li>'}</ul></article></div>
-    <h4>來源清單</h4>${sources.length?`<div class="table-wrap"><table><thead><tr><th>ID</th><th>來源</th><th>符合原因</th><th>用途限制</th></tr></thead><tbody>${sources.map(x=>`<tr><td>${esc(x.id)}</td><td>${esc(x.title)}</td><td>${esc(x.match_reason)}</td><td>僅供定位；須開啟原文核對。</td></tr>`).join('')}</tbody></table></div>`:'<div class="empty">本地索引不足，需至官方入口或學術API查詢。</div>'}</section>`;
-}
-
-function localQuestions(data) {
-  return `<section class="research-dossier"><h3>${esc(data.topic)}：分層質詢草稿</h3><ol><li>請說明目前掌握的資料期間、分母、來源、更新頻率及統計口徑。</li><li>請指出現行法源、主管權限、中央地方分工及救濟程序。</li><li>目前政策目標與可量測的結果指標為何？</li><li>曾評估哪些替代方案？不採其他方案的理由為何？</li><li>預算、人力、資訊系統及第一線執行能力是否足夠？</li><li>請說明政策成效的識別方法，如何排除景氣、人口結構或資料口徑改變等替代解釋？</li><li>請提出改善期限、主責單位、里程碑及公開檢核方式。</li></ol><p><strong>核心目標：</strong>${esc(data.goal)}</p><p><strong>已知證據：</strong>${esc(data.evidence)}</p></section>`;
-}
-
-function localParty(data) {
-  const rows = (state.parties.parties || []).map(party => ({ name: party.name, date: data[`${party.id}_date`] || '', url: data[`${party.id}_url`] || '', text: data[`${party.id}_text`] || '' }));
-  return `<section class="research-dossier"><h3>${esc(data.issue)}：可比性檢查</h3><div class="table-wrap"><table><thead><tr><th>政黨</th><th>日期</th><th>來源</th><th>主張</th><th>可比性</th></tr></thead><tbody>${rows.map(row => `<tr><td>${esc(row.name)}</td><td>${esc(row.date || '缺少')}</td><td>${row.url ? `<a href="${esc(safeUrl(row.url))}" target="_blank" rel="noopener noreferrer">官方來源</a>` : '缺少'}</td><td>${esc(row.text || '缺少')}</td><td>${row.date && row.url && row.text ? '可進一步比較' : '證據不足'}</td></tr>`).join('')}</tbody></table></div><p>只有同一命題、相近條件與明確主體下的互斥主張，才可能構成實質衝突。</p></section>`;
-}
-
-function localPartyChange(data) {
-  const profile=(state.partyIdeology.profiles||[]).find(x=>x.party_id===data.party_id);
-  const result=CivicPolitical.compareStatements(data.earlier_text,data.current_text);
-  const earlier=CivicPolitical.ideologySimilarity(data.earlier_text,profile);
-  const current=CivicPolitical.ideologySimilarity(data.current_text,profile);
-  const actorComparable=data.earlier_actor===data.current_actor;
-  return `<section class="research-dossier"><h3>${esc(profile?.party_name||data.party_id)}：${esc(data.issue)}</h3><div class="badges"><span class="badge">${esc(result.status)}</span><span class="badge">信心：${esc(result.confidence)}</span>${actorComparable?'':'<span class="badge warning">發言主體不同</span>'}</div><p><strong>初篩理由：</strong>${esc((result.reasons||[]).join('；'))}</p><div class="grid-2"><article class="card"><h4>前期與黨綱基準</h4><p>${Math.round(earlier.score*100)}%</p><p>${esc(earlier.hits.join('、')||'未命中高權重意識形態詞')}</p></article><article class="card"><h4>近期與黨綱基準</h4><p>${Math.round(current.score*100)}%</p><p>${esc(current.hits.join('、')||'未命中高權重意識形態詞')}</p></article></div><p class="muted">黨綱接近度不是立場正確性，也不是黨紀判斷。社群短文可能只談單一事件，需與同文類、同層級資料比較。</p></section>`;
-}
-function localMedia(data) {
-  const result=CivicPolitical.analyzeMedia({headline:data.headline,body:data.body,sources:data.sources,right_of_reply:Boolean(data.right_of_reply),profiles:state.partyIdeology.profiles||[]});
-  const labels={dpp:'民主進步黨',kmt:'中國國民黨',tpp:'台灣民眾黨'};
-  return `<section class="research-dossier"><h3>${esc(data.outlet)}：單篇文本初篩</h3><div class="badges"><span class="badge">相對中立表述指標 ${esc(result.neutrality)}/100</span><span class="badge">${esc(result.alignmentLabel)}</span></div><div class="table-wrap"><table><thead><tr><th>政黨</th><th>批評</th><th>稱讚</th><th>描述性</th><th>官方論述接近度</th><th>語句證據</th></tr></thead><tbody>${Object.entries(result.partyScores).map(([id,x])=>`<tr><td>${esc(labels[id])}</td><td>${esc(x.criticism)}</td><td>${esc(x.praise)}</td><td>${esc(x.descriptive)}</td><td>${Math.round(x.ideology.score*100)}%<br/><span class="muted">${esc(x.ideology.hits.join('、'))}</span></td><td>${(x.evidence_windows||[]).map(w=>`<blockquote>${esc(w)}</blockquote>`).join('')||'未直接提及'}</td></tr>`).join('')}</tbody></table></div><h4>中立指標組成</h4><ul><li>描述性表述 ${Math.round(result.components.descriptiveShare*100)}%</li><li>正負語氣平衡 ${Math.round(result.components.toneBalance*100)}%</li><li>來源多樣性 ${Math.round(result.components.sourceDiversity*100)}%</li><li>回應機會 ${Math.round(result.components.reply*100)}%</li><li>標題內文一致性 ${Math.round(result.components.headlineConsistency*100)}%</li><li>證據連結密度 ${Math.round(result.components.evidenceDensity*100)}%</li></ul><section class="card danger-note"><ul>${result.caveats.map(x=>`<li>${esc(x)}</li>`).join('')}</ul></section></section>`;
-}
-function renderMediaCorpus(result) {
-  const labels={dpp:'民主進步黨',kmt:'中國國民黨',tpp:'台灣民眾黨'};
-  return `<section class="research-dossier"><div class="badges"><span class="badge">${result.items}篇</span><span class="badge">${result.issues}議題</span><span class="badge">${result.weeks}週</span><span class="badge">平均相對中立表述 ${result.avgNeutral}/100</span><span class="badge ${result.threshold?'':'warning'}">${result.threshold?'達最低描述門檻':'未達媒體層級判斷門檻'}</span></div><p><strong>${esc(result.label)}</strong></p><div class="table-wrap"><table><thead><tr><th>政黨</th><th>批評</th><th>稱讚</th><th>描述性</th><th>平均官方論述接近度</th></tr></thead><tbody>${Object.entries(result.aggregate).map(([id,x])=>`<tr><td>${esc(labels[id])}</td><td>${esc(x.criticism)}</td><td>${esc(x.praise)}</td><td>${esc(x.descriptive)}</td><td>${Math.round(x.ideology*100)}%</td></tr>`).join('')}</tbody></table></div><p class="muted">即使達門檻，仍需事件母體、未報導內容、新聞／評論分流與人工雙人標註，才能形成可公開的媒體層級結論。</p></section>`;
-}
-
-function localCompare(data) {
-  const countries = Array.isArray(data.countries) ? data.countries : [data.countries].filter(Boolean);
-  const recommendation = methodRecommendation(data.question);
-  const portals = state.sources.filter(source => countries.includes(source.country_code) && source.priority === 1).slice(0, 18);
-  return `<section class="research-dossier">${methodCard(data.question)}<h3>功能比較矩陣</h3><div class="table-wrap"><table><thead><tr><th>比較維度</th><th>共同問題</th></tr></thead><tbody><tr><td>規範目的</td><td>各法域要降低什麼風險或保障什麼權利？</td></tr><tr><td>主管權限</td><td>由中央、地方、獨立機關或法院負責？</td></tr><tr><td>政策工具</td><td>法律義務、補助、價格、資訊揭露或自律？</td></tr><tr><td>程序與救濟</td><td>如何通知、聽取意見、申訴與司法審查？</td></tr><tr><td>執行與成效</td><td>資料、人力、預算、績效指標與實證效果為何？</td></tr><tr><td>可移植性</td><td>憲政、行政能力、文化與資料口徑差異為何？</td></tr></tbody></table></div><h3>核心官方入口</h3><div class="portal-grid">${portals.map(sourceCard).join('')}</div></section>`;
-}
-
-function aiPayload(task, form) {
-  const data = formDataObject(form);
-  const query = data.topic || data.question || data.issue || data.headline || `${data.law || ''}${data.article || ''}`;
-  const relevant = searchDocuments(query, 10);
-  const plan = CivicSearch.planQuery(query);
-  const theories = CivicAcademic.recommendTheories(state.theories, query, 6);
-  const papers = CivicAcademic.searchLiterature(state.literature, query, {limit:10,minScore:3});
-  const methods = CivicAcademic.recommendMethods(state.researchMethods, query, 4);
-  const packet = CivicAcademic.buildEvidencePacket({question:query,documents:relevant,theories,literature:papers,methods,queryPlan:plan});
-  state.lastEvidencePacket = packet;
-  return { data, query, query_plan:plan, evidence_packet:packet, warning:'來源摘要只供定位；AI只能引用封包內存在的識別碼。' };
-}
-
-function callUsage() {
-  const day = new Date().toISOString().slice(0, 10);
-  try {
-    const usage = JSON.parse(sessionStorage.getItem('civic-ai-usage') || '{}');
-    return usage.day === day ? usage : { day, count: 0 };
-  } catch { return { day, count: 0 }; }
-}
-
-function bumpUsage() {
-  const usage = callUsage();
-  usage.count += 1;
-  sessionStorage.setItem('civic-ai-usage', JSON.stringify(usage));
-}
-
-async function runAI(task, form, outputId) {
-  const config = getAIConfig();
-  if (!config.confirm) { location.hash = '#ai'; return; }
-  if (!config.backend_url && (!config.key || !config.model)) { location.hash = '#ai'; return; }
-  const usage = callUsage();
-  if (usage.count >= Number(config.daily_limit || 8)) {
-    document.getElementById(outputId).innerHTML = '<section class="card danger-note">已達本分頁呼叫上限。</section>';
-    return;
-  }
-  const output = document.getElementById(outputId);
-  output.className = 'output-panel';
-  output.innerHTML = '<div class="loading">準備 AI 研究工作流……</div>';
-  try {
-    const payload = aiPayload(task, form);
-    const response = await CivicAI.run({ task, payload, cfg: config, mode: config.resource_mode || 'auto', onProgress: message => { output.innerHTML = `<div class="loading">${esc(message)}</div>`; } });
-    bumpUsage();
-    if (task === 'legislation') {
-      const fallback = CivicLegislation.buildDrafts(formDataObject(form));
-      const normalized = CivicLegislation.normalizeAIResult(response.result || response, fallback);
-      state.lastLegislationDraft = normalized;
-      output.innerHTML = renderDraftTable(normalized);
-      bindDraftActions();
-    } else {
-      const checked = CivicAcademic.validateResearchResult(response.result || response, payload.evidence_packet);
-      output.innerHTML = renderResearchResult(checked.result, response.trace || [], checked.warnings);
-    }
-  } catch (error) {
-    output.innerHTML = `<section class="card danger-note"><h3>AI 工作流停止</h3><p>${esc(error.message)}</p><p>沒有自動轉入付費模型。可改用規則式結果或重新檢查後端與模型。</p></section>`;
-  }
-}
-
-function bindDraftActions() {
-  document.getElementById('download-draft-xlsx')?.addEventListener('click', () => {
-    if (!state.lastLegislationDraft) return;
-    const safeName = String(state.lastLegislationDraft.title || '修法草案').replace(/[\\/:*?"<>|]/g, '_');
-    CivicXLSX.downloadDraftXlsx(state.lastLegislationDraft, `${safeName}_三版本比較.xlsx`);
-  });
-  document.getElementById('copy-draft-json')?.addEventListener('click', () => copyText(JSON.stringify(state.lastLegislationDraft, null, 2)));
-}
-
-async function copyText(text) {
-  try { await navigator.clipboard.writeText(text); toast('已複製'); } catch { toast('瀏覽器未允許複製'); }
-}
-
-function toast(message) {
-  let element = document.getElementById('toast');
-  if (!element) { element = document.createElement('div'); element.id = 'toast'; document.body.appendChild(element); }
-  element.textContent = message;
-  element.classList.add('show');
-  setTimeout(() => element.classList.remove('show'), 1800);
-}
-
-function bindPage() {
-  document.querySelectorAll('.tabs a').forEach(link => link.classList.toggle('active', link.dataset.route === state.route));
-  document.querySelectorAll('.copy-button').forEach(button => button.addEventListener('click', () => copyText(button.dataset.copy || '')));
-  document.querySelectorAll('.example-chip').forEach(button => button.addEventListener('click', () => { state.query = button.dataset.query || ''; location.hash = `#home?q=${encodeURIComponent(state.query)}`; }));
-
-  const searchForm = document.getElementById('search-form');
-  searchForm?.addEventListener('submit', event => {
-    event.preventDefault();
-    state.query = document.getElementById('global-search').value.trim();
-    location.hash = `#home${state.query ? `?q=${encodeURIComponent(state.query)}` : ''}`;
-  });
-
-  document.getElementById('research-query')?.addEventListener('click', async buttonEvent => {
-    const query = buttonEvent.currentTarget.dataset.query || '';
-    const pseudoForm = document.createElement('form');
-    pseudoForm.innerHTML = `<input name="question" value="${esc(query)}"/><textarea name="evidence">${esc(searchDocuments(query, 8).map(item => `${item.title}: ${item.body} ${item.url || ''}`).join('\n'))}</textarea>`;
-    await runAI('research', pseudoForm, 'research-query-output');
-  });
-
-  const reform = document.getElementById('reform-form');
-  reform?.addEventListener('submit', event => { event.preventDefault(); document.getElementById('reform-output').className = 'output-panel'; document.getElementById('reform-output').innerHTML = localResearchPlan(formDataObject(reform)); });
-  const questions = document.getElementById('question-form');
-  questions?.addEventListener('submit', event => { event.preventDefault(); document.getElementById('question-output').className = 'output-panel'; document.getElementById('question-output').innerHTML = localQuestions(formDataObject(questions)); });
-  const partyChange=document.getElementById('party-change-form');
-  partyChange?.addEventListener('submit',event=>{event.preventDefault();const output=document.getElementById('party-change-output');output.className='output-panel';output.innerHTML=localPartyChange(formDataObject(partyChange));});
-  const mediaForm=document.getElementById('media-form');
-  mediaForm?.addEventListener('submit',event=>{event.preventDefault();const output=document.getElementById('media-output');output.className='output-panel';output.innerHTML=localMedia(formDataObject(mediaForm));});
-  document.getElementById('analyze-media-corpus')?.addEventListener('click',async()=>{
-    const file=document.getElementById('media-corpus-file')?.files?.[0];const output=document.getElementById('media-corpus-output');
-    if(!file){output.className='empty';output.textContent='請先選擇 CSV。';return;}
-    const rows=CivicPolitical.parseCsv(await file.text());const result=CivicPolitical.analyzeCorpus(rows,state.partyIdeology.profiles||[]);output.className='output-panel';output.innerHTML=renderMediaCorpus(result);
-  });
-  const compare = document.getElementById('compare-form');
-  compare?.addEventListener('submit', event => { event.preventDefault(); const data = formDataObject(compare); const checked = [...compare.querySelectorAll('input[name="countries"]:checked')]; if (checked.length > 5) { toast('最多5個法域'); return; } data.countries = checked.map(item => item.value); document.getElementById('method-result').innerHTML = methodCard(data.question); document.getElementById('compare-output').innerHTML = localCompare(data); });
-  const draft = document.getElementById('draft-form');
-  draft?.addEventListener('submit', event => { event.preventDefault(); state.lastLegislationDraft = CivicLegislation.buildDrafts(formDataObject(draft)); const output = document.getElementById('draft-output'); output.className = 'output-panel'; output.innerHTML = renderDraftTable(state.lastLegislationDraft); bindDraftActions(); });
-
-  document.querySelectorAll('.ai-action').forEach(button => button.addEventListener('click', async () => {
-    const form = document.getElementById(button.dataset.form);
-    if (form) await runAI(button.dataset.task || 'research', form, button.dataset.output);
-  }));
-
-
-  const academicForm = document.getElementById('academic-form');
-  academicForm?.addEventListener('submit', event => {
-    event.preventDefault(); state.theoryQuery = document.getElementById('academic-query').value.trim(); state.theoryCategory = document.getElementById('academic-category').value; state.literatureDomain = document.getElementById('academic-domain').value.trim();
-    location.hash = `#theory${state.theoryQuery?`?q=${encodeURIComponent(state.theoryQuery)}`:''}`;
-  });
-  const liveSearch = async source => {
-    const query = document.getElementById('academic-query')?.value.trim() || state.theoryQuery;
-    const status = document.getElementById('academic-live-status'); const target = document.getElementById('live-literature-results');
-    if(!query){status.textContent='請先輸入研究問題或關鍵字。';return;}
-    status.textContent=`正在查詢 ${source} 公開中繼資料……`; target.className='loading'; target.textContent='查詢中……';
-    try {
-      if(CivicAI.sensitiveText(query)) throw new Error('查詢詞可能含個人資料，已阻擋外送');
-      const cfg=getAIConfig();
-      const rows=cfg.backend_url
-        ? await CivicAcademic.fetchBackendLiterature(cfg.backend_url,cfg.backend_token||'',query,source==='Crossref'?'crossref':'europepmc',10)
-        : source==='Crossref'?await CivicAcademic.fetchCrossref(query,10):await CivicAcademic.fetchEuropePMC(query,10);
-      state.liveLiterature=rows;
-      target.className='';
-      target.innerHTML=rows.length?rows.map(x=>literatureCard(x,true)).join(''):'<div class="empty">沒有結果。</div>';
-      status.innerHTML=`<span class="status-ok">取得 ${rows.length} 筆中繼資料。相關排序與引用次數不等於研究品質。</span>`;
-      target.querySelectorAll('.copy-button').forEach(button=>button.addEventListener('click',()=>copyText(button.dataset.copy||'')));
-    }
-    catch(error){target.className='empty';target.textContent='查詢失敗。';status.innerHTML=`<span class="status-error">${esc(error.message)}</span>`;}
-  };
-  document.getElementById('crossref-search')?.addEventListener('click',()=>liveSearch('Crossref'));
-  document.getElementById('epmc-search')?.addEventListener('click',()=>liveSearch('Europe PMC'));
-  document.getElementById('export-ris')?.addEventListener('click',()=>{const q=document.getElementById('academic-query')?.value||'';const rows=state.liveLiterature.length?state.liveLiterature:CivicAcademic.searchLiterature(state.literature,q,{limit:50,minScore:q?2:0});CivicAcademic.downloadText('civic-literature.ris',CivicAcademic.ris(rows),'application/x-research-info-systems');});
-  document.getElementById('export-bib')?.addEventListener('click',()=>{const q=document.getElementById('academic-query')?.value||'';const rows=state.liveLiterature.length?state.liveLiterature:CivicAcademic.searchLiterature(state.literature,q,{limit:50,minScore:q?2:0});CivicAcademic.downloadText('civic-literature.bib',CivicAcademic.bibtex(rows),'application/x-bibtex');});
-
-  const country = document.getElementById('source-country');
-  const category = document.getElementById('source-category');
-  const filter = document.getElementById('source-filter');
-  const core = document.getElementById('source-core');
-  const researchMode = document.getElementById('research-mode');
-  const refreshSources = () => {
-    state.sourceCategory = category?.value || '';
-    state.sourceQuery = filter?.value || '';
-    state.sourceCoreOnly = Boolean(core?.checked);
-    state.citizenMode = !researchMode?.checked;
-    document.body.classList.toggle('citizen-mode', state.citizenMode);
-    const rows = filteredSources();
-    const grid = document.getElementById('source-grid');
-    if (grid) grid.innerHTML = rows.length ? rows.map(sourceCard).join('') : '<div class="empty">沒有符合條件的入口。</div>';
-    const count = document.getElementById('source-count');
-    if (count) count.textContent = String(rows.length);
-  };
-  country?.addEventListener('change', () => { state.sourceCountry = country.value; state.sourceCategory = ''; render(); });
-  category?.addEventListener('change', refreshSources);
-  filter?.addEventListener('input', refreshSources);
-  core?.addEventListener('change', refreshSources);
-  researchMode?.addEventListener('change', refreshSources);
-
-  const aiForm = document.getElementById('ai-form');
-  if (aiForm) {
-    document.getElementById('discover-models')?.addEventListener('click', async () => {
-      const data = formDataObject(aiForm);
-      const status = document.getElementById('ai-status');
-      status.textContent = '正在取得符合政策的模型清單……';
-      try {
-        const models = await CivicAI.fetchEligibleModels(data);
-        if (!models.length) throw new Error('沒有符合條件的候選模型');
-        aiForm.dataset.models = JSON.stringify(models);
-        aiForm.elements.model.innerHTML = models.slice(0, 30).map(model => `<option value="${esc(model)}">${esc(model)}</option>`).join('');
-        status.innerHTML = `<span class="status-ok">找到 ${models.length} 個候選。模型可用不等於永久免費；呼叫失敗時停止，不自動付款。</span>`;
-      } catch (error) { status.innerHTML = `<span class="status-error">${esc(error.message)}</span>`; }
-    });
-    document.getElementById('test-backend')?.addEventListener('click', async () => {
-      const data = formDataObject(aiForm);
-      const status = document.getElementById('ai-status');
-      if (!data.backend_url) { status.textContent = '請先輸入後端網址。'; return; }
-      try {
-        const response = await fetch(`${String(data.backend_url).replace(/\/$/, '')}/health`, { headers: data.backend_token ? { authorization: `Bearer ${data.backend_token}` } : {} });
-        if (!response.ok) throw new Error(`HTTP ${response.status}`);
-        const result = await response.json();
-        status.innerHTML = `<span class="status-ok">後端正常：${esc(JSON.stringify(result))}</span>`;
-      } catch (error) { status.innerHTML = `<span class="status-error">後端測試失敗：${esc(error.message)}</span>`; }
-    });
-    aiForm.addEventListener('submit', event => {
-      event.preventDefault();
-      const data = formDataObject(aiForm);
-      data.confirm = aiForm.elements.confirm.checked;
-      if (!data.confirm) { document.getElementById('ai-status').innerHTML = '<span class="status-error">請先確認使用限制。</span>'; return; }
-      data.connection = aiForm.elements.connection.value;
-      data.model = aiForm.elements.model.value;
-      data.candidate_models = JSON.parse(aiForm.dataset.models || '[]');
-      setAIConfig(data);
-      document.getElementById('ai-status').innerHTML = '<span class="status-ok">設定只保存在目前分頁。</span>';
-    });
-    document.getElementById('clear-ai')?.addEventListener('click', () => { sessionStorage.removeItem('civic-ai-config'); sessionStorage.removeItem('civic-ai-usage'); aiForm.reset(); document.getElementById('ai-status').textContent = '已清除。'; });
-  }
-
-  bindDraftActions();
-}
-
-function render() {
-  parseHash();
-  document.getElementById('app').innerHTML = pageFor(state.route);
-  document.body.classList.toggle('citizen-mode', state.citizenMode);
-  bindPage();
-  document.getElementById('app').focus({ preventScroll: true });
-}
-
-async function loadJson(path, fallback) {
-  try {
-    const response = await fetch(path, { cache: 'no-store' });
-    if (!response.ok) throw new Error(`${response.status}`);
-    return response.json();
-  } catch (error) {
-    console.warn(`無法載入 ${path}`, error);
-    return fallback;
-  }
-}
-
-async function init() {
-  const [runtime, searchIndex, analyses, parties, theories, literature, conceptOntology, methodology, sources, jurisdictions, researchMethods, examples, partySources, partyIdeology, mediaMethodology, mediaOwnership, comparativeApplicability] = await Promise.all([
-    loadJson('config/runtime.json', {}),
-    loadJson('data/search-index.json', { documents: [] }),
-    loadJson('data/analyses.json', []),
-    loadJson('data/party_positions.json', { parties: [], comparison_rules: [] }),
-    loadJson('data/theory_catalog.json', []),
-    loadJson('data/literature_catalog.json', []),
-    loadJson('data/concept_ontology.json', []),
-    loadJson('data/methodology.json', {}),
-    loadJson('data/sources.json', []),
-    loadJson('data/jurisdictions.json', []),
-    loadJson('data/research_methods.json', []),
-    loadJson('data/curiosity_examples.json', []),
-    loadJson('data/party_source_registry.json', { parties: [], collection_modes: [] }),
-    loadJson('data/party_ideology_profiles.json', { profiles: [], comparison_dimensions: [] }),
-    loadJson('data/media_methodology.json', {}),
-    loadJson('data/media_ownership_registry.json', { records: [], verification_portals: [] }),
-    loadJson('data/comparative_applicability.json', { records: [], dimensions: [] }),
-  ]);
-  Object.assign(state, { runtime, searchIndex, analyses, parties, theories, literature, conceptOntology, methodology, sources, jurisdictions, researchMethods, examples, partySources, partyIdeology, mediaMethodology, mediaOwnership, comparativeApplicability });
-  CivicSearch.configure(conceptOntology);
-  const repo = document.getElementById('repo-link');
-  if (runtime.repository_url) repo.href = safeUrl(runtime.repository_url); else repo.style.display = 'none';
-  document.getElementById('build-label').textContent = runtime.build_label || '公開測試版';
-  render();
-}
-
-document.getElementById('theme-toggle').addEventListener('click', () => {
-  const next = document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark';
-  document.documentElement.dataset.theme = next;
-  localStorage.setItem('theme', next);
-});
-const savedTheme = localStorage.getItem('theme');
-if (savedTheme) document.documentElement.dataset.theme = savedTheme;
-window.addEventListener('hashchange', render);
+const STORE='civic-research-session-v7';
+const CFG_STORE='civic-ai-config-v7';
+const ROUTES=['home','network','evidence','literature','compare','politics','reform','reflection','settings'];
+const state={route:'home',runtime:{},jurisdictions:[],domainPolicy:{subjects:{},jurisdictions:{}},evidenceFrameworks:{frameworks:{}},session:CivicWorkflow.sessionTemplate(),partySources:{parties:[]},partyIdeology:{profiles:[]},mediaMethodology:{},mediaOwnership:{records:[]},theories:[],methods:[],catalogLiterature:[]};
+
+function esc(v){return String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));}
+function safeUrl(v){try{const u=new URL(String(v));return['http:','https:'].includes(u.protocol)?u.href:'#';}catch{return'#';}}
+async function loadJson(path,fallback){try{const r=await fetch(path,{cache:'no-store'});if(!r.ok)throw new Error();return await r.json();}catch{return fallback;}}
+function saveSession(){state.session.updatedAt=new Date().toISOString();localStorage.setItem(STORE,JSON.stringify(state.session));}
+function loadSession(){try{return{...CivicWorkflow.sessionTemplate(),...JSON.parse(localStorage.getItem(STORE)||'{}')};}catch{return CivicWorkflow.sessionTemplate();}}
+function getAIConfig(){try{return JSON.parse(sessionStorage.getItem(CFG_STORE)||'{}');}catch{return{};}}
+function setAIConfig(cfg){sessionStorage.setItem(CFG_STORE,JSON.stringify(cfg));}
+function parseRoute(){const route=(location.hash.replace(/^#/,'').split('?')[0]||'home');state.route=ROUTES.includes(route)?route:'home';}
+function activePrompt(){return state.session.refinedPrompt||state.session.prompt||'';}
+function currentSubject(){return state.session.subject==='auto'?CivicDiscovery.inferSubject(activePrompt()):state.session.subject;}
+function stageIndex(){return ROUTES.indexOf(state.route);}
+function subjectOptions(){return Object.entries(state.domainPolicy.subjects||{}).map(([id,x])=>`<option value="${esc(id)}" ${state.session.subject===id?'selected':''}>${esc(x.label||id)}</option>`).join('');}
+function jurisdictionOptions(){return state.jurisdictions.map(x=>`<option value="${esc(x.code)}" ${state.session.jurisdiction===x.code?'selected':''}>${esc(x.name)}</option>`).join('');}
+function processNav(){const labels=['問題界定','概念網絡','證據來源','文獻學說','跨國比較','政黨媒體','改革修法','反思'];return`<div class="process">${labels.map((x,i)=>`<a href="#${ROUTES[i]}" class="${i===stageIndex()?'current':''}">${i+1} ${x}</a>`).join('')}</div>`;}
+function legalReminder(){return`<p class="legal-small">研究輔助內容可能錯誤。請開啟原始來源並核對作者、日期、版本、法源效力、研究設計與利益衝突。不得把本站輸出直接作為具名指控、法律認定、醫療處置或其他高風險決定。</p>`;}
+function sessionBanner(title,desc){const p=activePrompt();return`${processNav()}<section class="stage-banner"><div><div class="eyebrow">CURRENT RESEARCH QUESTION</div><h2>${esc(title)}</h2><p>${p?esc(p):'尚未建立研究問題。請先回到第一頁輸入提示。'}</p><p class="muted">${esc(desc)}</p></div><div class="action-row"><a class="secondary" href="#home">修改問題</a><button class="secondary" type="button" id="reset-session">清除本次研究</button></div></section>`;}
+function noPrompt(){return`${sessionBanner('尚未設定研究問題','所有頁面都由同一提示詞驅動。')}<section class="card"><p>請先輸入你真正想理解的社會問題。系統會在問題太廣時追問，而不是直接產生空泛答案。</p><a class="primary" href="#home">開始問題界定</a></section>`;}
+function apaWeb(item){const title=item.title||'未命名資料';const year=(String(item.published_at||item.retrieved_at||'').match(/20\d{2}/)||[])[0]||'n.d.';let org=item.host||item.provider||'來源機構';try{org=new URL(item.url).hostname.replace(/^www\./,'');}catch{}return`${org}. (${year}). ${title}. ${item.url||''}`;}
+function sourceId(item,i){return item.source_id||item.id||`SRC-${i+1}`;}
+function sourceCard(item,i,selectable=true){const url=safeUrl(item.url||'');return`<article class="card source-card"><div class="badges"><span class="badge">${esc(item.provider||item.source||'公開來源')}</span><span class="badge">${esc(item.source_type||item.kind||'資料')}</span>${item.official?'<span class="badge">官方</span>':''}<span class="badge">${esc(item.evidence_status||'須核對原文')}</span></div>${selectable?`<label class="mini"><input type="checkbox" class="source-select" value="${i}"/>納入全文擷取與AI分析</label>`:''}<h3>${esc(item.title||item.url||`來源${i+1}`)}</h3><p>${esc(String(item.text||item.snippet||item.body||'').slice(0,520))}</p><p class="apa"><strong>APA：</strong>${esc(apaWeb(item))}</p>${url!=='#'?`<a href="${esc(url)}" target="_blank" rel="noopener noreferrer">開啟原始來源</a>`:''}</article>`;}
+function aiConfigReady(){const c=getAIConfig();return Boolean(c.backend_url||c.key);}
+function renderProgress(message){return`<div class="progress-log">${esc(message)}</div>`;}
+function allEvidenceItems(){const d=state.session.discovery?.results||[];const x=state.session.extracted||[];return x.length?x:d;}
+function referencesHtml(items){if(!items?.length)return'';return`<h3>APA參考資料</h3><ol class="reference-list">${items.map(x=>`<li>${esc(typeof x==='string'?x:apaWeb(x))}</li>`).join('')}</ol>`;}
+
+function promptControls(){return`<div class="controls"><label>資料領域<select id="subject">${subjectOptions()}</select></label><label>法域／國家<select id="jurisdiction">${jurisdictionOptions()}</select></label><label>合法訪問範圍<select id="scope"><option value="official" ${state.session.scope==='official'?'selected':''}>只限官方網域</option><option value="official_professional" ${state.session.scope==='official_professional'?'selected':''}>官方＋專業／學術網域</option><option value="custom" ${state.session.scope==='custom'?'selected':''}>只限指定網域</option></select></label><label>時間<select id="freshness"><option value="any">不限</option><option value="year" ${state.session.freshness==='year'?'selected':''}>近一年</option><option value="month" ${state.session.freshness==='month'?'selected':''}>近一月</option><option value="week" ${state.session.freshness==='week'?'selected':''}>近一週</option></select></label><label class="custom-domain-field ${state.session.scope==='custom'?'active':''}">指定完整網域<input id="domains" value="${esc(state.session.domains)}" placeholder="law.moj.gov.tw, ppg.ly.gov.tw"/></label></div>`;}
+function expansionBoxHtml(){const terms=state.session.expansionTerms||[];if(!terms.length)return'';return`<form id="expansion-form" class="card expansion-review"><h3>確認查詢擴張詞</h3><p>只有勾選並按下確認的詞才會加入搜尋。上位詞、下位詞及替代術語可能改變問題範圍，請逐項檢查。</p>${terms.map((x,i)=>`<label class="expansion-item"><input type="checkbox" name="term" value="${i}" ${x.enabled?'checked':''}/><span><strong>${esc(x.term)}</strong>｜${esc(x.type||'未分類')}｜風險：${esc(x.risk||'低')}<br/><span class="muted">${esc(x.reason||x.source||'')}</span></span></label>`).join('')}<div class="action-row"><button class="primary" type="submit">套用選取詞並重新搜尋</button><button class="secondary" type="button" id="clear-expansion">不使用擴張詞</button></div></form>`;}
+function grillPanel(){const qs=CivicWorkflow.grillQuestions(state.session.prompt,currentSubject());return`<section class="card warn-note"><h2>問題仍太廣，先 Grill-me</h2><p>這些追問用來縮小問題，不會替你預設立場。可回答其中最重要的幾題。</p><form id="grill-form" class="grill-grid">${qs.map(q=>`<label>${esc(q.label)}<textarea name="${esc(q.id)}" placeholder="${esc(q.placeholder)}">${esc(state.session.grillAnswers?.[q.id]||'')}</textarea></label>`).join('')}<div class="action-row"><button class="primary" type="submit">形成可研究問題並搜尋</button><button class="secondary" type="button" id="ai-grill">AI追加精準追問</button></div></form><div id="grill-ai-output"></div></section>`;}
+function homePage(){const diagnosis=state.session.prompt?CivicWorkflow.broadness(state.session.prompt,currentSubject()):null;return`${sessionBanner('1. 問題界定與合法搜尋','先把疑問變成可回答、可查證、可比較的研究問題。')}<section class="prompt-hub"><form id="prompt-form"><label>你想理解的社會問題<textarea id="prompt" required placeholder="例如：近五年中華民國地方政府社會住宅政策，是否真的降低青年租屋負擔？應如何比較其他民主國家？">${esc(state.session.prompt)}</textarea></label>${promptControls()}<div class="action-row"><button class="primary" type="submit">界定問題並搜尋</button><button class="secondary" type="button" id="exact-expand">顯示正式名稱／縮寫</button><button class="secondary" type="button" id="ai-expand">主動啟用AI查詢擴張</button></div></form><div id="expansion-box">${expansionBoxHtml()}</div><p class="hint">AI不會默默擴張查詢。只有你主動啟用並確認顯示的詞，才會加入搜尋。</p></section>${diagnosis?.isBroad?grillPanel():''}<section id="home-search-results">${state.session.discovery?discoveryHtml(state.session.discovery):'<div class="empty">尚未執行線上搜尋。</div>'}</section>${legalReminder()}`;}
+function discoveryHtml(data){const items=data?.results||[];return`<section class="card notice"><div class="status-line"><span class="badge">${esc(data.inferred_subject||currentSubject())}</span><span class="badge">${esc(data.jurisdiction||state.session.jurisdiction)}</span><span class="badge">${items.length}筆線上結果</span></div><p>${esc(data.coverage_notice||'')}</p>${data.applied_domains?.length?`<details><summary>實際允許網域</summary><p>${esc(data.applied_domains.join('、'))}</p></details>`:''}${data.search_plan?.length?`<ul>${data.search_plan.map(x=>`<li>${esc(x)}</li>`).join('')}</ul>`:''}</section><div class="result-group">${items.map((x,i)=>sourceCard(x,i)).join('')}</div>${items.length?`<div class="action-row"><button class="primary" id="extract-selected">擷取勾選的公開文件</button><a class="secondary" href="#network">下一步：建立概念網絡</a></div><div id="extract-output"></div>`:''}${referencesHtml(items)}`;}
+
+function networkPage(){if(!activePrompt())return noPrompt();const graph=state.session.graph||CivicNetwork.fallbackGraph(activePrompt(),allEvidenceItems());return`${sessionBanner('2. 議題概念與社會結構網絡','圖中關係是待驗證的概念、行動者、機制、結果、反方與改革工具，不等於已證明因果。')}<section class="card"><div class="action-row"><button class="primary" id="build-network">依目前來源重建</button><button class="secondary" id="ai-network">用AI提出可引用的概念網絡</button></div><div id="network-canvas"></div></section><section class="card"><h3>閱讀順序</h3><ol class="sequence-guide"><li>先辨識核心議題與受影響者。</li><li>分開法律規範、政策工具、資源配置與實際執行。</li><li>把「相關」和「因果」分開，找出每條邊需要什麼證據。</li><li>保留反方機制與可能副作用。</li></ol></section>${legalReminder()}`;}
+function frameworkForPrompt(){const type=CivicWorkflow.inferQuestionType(activePrompt());return{type,data:state.evidenceFrameworks.frameworks?.[type]||state.evidenceFrameworks.frameworks?.descriptive};}
+function evidencePage(){if(!activePrompt())return noPrompt();const items=allEvidenceItems(),fw=frameworkForPrompt();return`${sessionBanner('3. 證據、來源與研究設計評讀','先問這是什麼問題，再選證據，而不是把所有研究塞進同一金字塔。')}<section class="card"><h2>${esc(fw.data?.title||'證據評讀')}</h2><p>${esc(state.evidenceFrameworks.notice||'')}</p><ol>${(fw.data?.preferred||[]).map(x=>`<li>${esc(x)}</li>`).join('')}</ol><p class="muted">${esc(fw.data?.caveat||'')}</p></section><section class="card"><h2>GRADE確定性不是單篇研究等級</h2><div class="grid-2"><div><h3>四級確定性</h3><ul>${(state.evidenceFrameworks.grade?.levels||[]).map(x=>`<li>${esc(x)}</li>`).join('')}</ul></div><div><h3>降級與升級</h3><p>${esc((state.evidenceFrameworks.grade?.domains||[]).join('、'))}</p><p>${esc((state.evidenceFrameworks.grade?.upgrade||[]).join('、'))}</p></div></div><p>${esc(state.evidenceFrameworks.grade?.note||'')}</p></section><section class="card"><h2>已取得的來源</h2>${items.length?`<div class="result-group">${items.map((x,i)=>sourceCard(x,i,false)).join('')}</div>`:'<div class="empty">尚未取得來源。回到第一頁執行搜尋，或在下方貼入合法公開網址。</div>'}<form id="url-form"><label>補充合法公開網址（每行一個；不接受檔案上傳）<textarea id="public-urls" placeholder="https://...pdf\nhttps://...docx"></textarea></label><button class="primary" type="submit">檢查網域並擷取</button></form><div id="url-output"></div></section><details class="card"><summary>WWC、Campbell、Veerman與Bradford Hill如何使用</summary><p><strong>WWC：</strong>${esc(state.evidenceFrameworks.special?.wwc||'')}</p><p><strong>Veerman：</strong>${esc(state.evidenceFrameworks.special?.veerman||'')}</p><p><strong>Bradford Hill：</strong>${esc(state.evidenceFrameworks.special?.bradford_hill||'')}</p><ol>${(state.evidenceFrameworks.special?.bradford_hill_viewpoints||[]).map(x=>`<li>${esc(x)}</li>`).join('')}</ol><p class="muted">${esc(state.evidenceFrameworks.special?.bradford_hill_required_note||'')}</p></details>${referencesHtml(state.evidenceFrameworks.apa_references||[])}${legalReminder()}`;}
+function literatureTier(item){const t=String(item.title||'').toLowerCase(),type=String(item.type||'').toLowerCase();if(/systematic review|meta-analysis|review|overview|handbook|guideline/.test(t)||/review/.test(type))return'intro';if(Number(item.cited_by||0)>100||/method|theory|framework|causal|mechanism/.test(t))return'advanced';return'core';}
+function literatureCard(item,i){const apa=CivicAcademic.apa(item);return`<article class="card literature-tier"><label class="mini"><input type="checkbox" class="literature-select" value="${i}" ${state.session.selectedLiterature?.includes(item.id)?'checked':''}/>納入文獻綜整</label><h3>${esc(item.title)}</h3><p>${esc((item.abstract||'').slice(0,500))}</p><p class="apa">${esc(apa)}</p><div class="citation-actions"><a href="${esc(safeUrl(item.url||CivicAcademic.doiUrl(item.doi)))}" target="_blank" rel="noopener noreferrer">原文／DOI</a><button class="secondary copy-citation" data-citation="${esc(apa)}">複製APA</button></div></article>`;}
+function theoryMethodRecommendations(){
+  const theories=CivicAcademic.recommendTheories(state.theories||[],activePrompt(),6);
+  const methods=CivicAcademic.recommendMethods(state.methods||[],activePrompt(),5);
+  const litMap=new Map((state.catalogLiterature||[]).map(x=>[x.id,x]));
+  return `<section class="card"><h2>依目前問題推薦的學說與研究方法</h2><div class="grid-2"><div><h3>相符學說／理論</h3>${theories.length?theories.map(t=>`<article><h4>${esc(t.name)}</h4><p>${esc(t.proposition||'')}</p><p><strong>可檢驗機制：</strong>${esc((t.mechanisms||[]).join('、'))}</p><p class="muted">限制：${esc(t.limitations||'')}</p>${(t.literature_ids||[]).map(id=>litMap.get(id)).filter(Boolean).map(x=>`<p class="apa">${esc(CivicAcademic.apa(x))}</p>`).join('')}</article>`).join(''):'<p>目前沒有足夠詞彙證據推薦特定學說。</p>'}</div><div><h3>相符研究方法</h3>${methods.length?methods.map(m=>`<article><h4>${esc(m.name)}</h4><p>${esc(m.why||m.description||'')}</p><p class="muted">${esc(m.caveat||'')}</p></article>`).join(''):'<p>請進一步界定是描述、因果、比較、實施或法學問題。</p>'}</div></div><p class="hint">推薦只表示概念與問題相符，不表示理論已證明個案事實，也不表示方法一定可行。</p></section>`;
+}
+function literaturePage(){if(!activePrompt())return noPrompt();const lit=state.session.literature||[],groups={intro:lit.filter(x=>literatureTier(x)==='intro'),core:lit.filter(x=>literatureTier(x)==='core'),advanced:lit.filter(x=>literatureTier(x)==='advanced')};return`${sessionBanner('4. 文獻、學說與研究方法','頁面不預先灌入固定學說；先依目前問題搜尋期刊與資料庫，再推薦最相符的理論與方法。')}${theoryMethodRecommendations()}<section class="card"><div class="action-row"><button class="primary" id="search-literature">依目前問題搜尋Crossref／Europe PMC／OpenAlex</button><button class="secondary" id="synthesize-literature">綜整選取文獻、研究缺口與方向</button></div><p class="hint">入門優先顯示回顧與綜整；核心顯示直接相關研究；進階顯示方法、機制與理論文章。分類只供閱讀排序，不等於品質評級。</p></section><div id="literature-output">${lit.length?`<section><h2>入門：先掌握全貌</h2><div class="result-group">${groups.intro.map((x,i)=>literatureCard(x,lit.indexOf(x))).join('')||'<div class="empty">尚無回顧型文獻。</div>'}</div><h2>核心：直接回答目前問題</h2><div class="result-group">${groups.core.map(x=>literatureCard(x,lit.indexOf(x))).join('')||'<div class="empty">尚無核心文獻。</div>'}</div><h2>進階：理論、方法與機制</h2><div class="result-group">${groups.advanced.map(x=>literatureCard(x,lit.indexOf(x))).join('')||'<div class="empty">尚無進階文獻。</div>'}</div>`:'<div class="empty">尚未依問題搜尋期刊文獻。</div>'}</div><div id="academic-synthesis">${state.session.academicSynthesis?renderResearchResult(state.session.academicSynthesis):''}</div>${legalReminder()}`;}
+function comparePage(){if(!activePrompt())return noPrompt();return`${sessionBanner('5. 跨國文獻與中華民國適用性','外國研究只提供可檢驗機制、測量方法或制度比較；不能因期刊排名高就直接移植。')}<section class="card"><form id="compare-form"><label>選擇比較法域（可複選）<select id="compare-countries" multiple size="7">${state.jurisdictions.filter(x=>!['TW','INT'].includes(x.code)).map(x=>`<option value="${esc(x.code)}">${esc(x.name)}</option>`).join('')}</select></label><div class="action-row"><button class="primary" type="submit">搜尋各國官方與專業來源</button><button class="secondary" type="button" id="ai-compare">評估可移植性與制度差異</button></div></form></section><section class="card"><h2>適用性檢查</h2><div class="grid-3">${['政體與權力關係','法律體系與法源效力','語言與概念等值','政黨競爭與媒體制度','資料可得性與測量','歷史、文化與執行能力'].map(x=>`<article><h3>${x}</h3><p>要求列出相似處、差異、可移植機制、需在臺灣重新驗證之處及不可移植部分。</p></article>`).join('')}</div></section><div id="compare-output">${state.session.comparisons?.length?state.session.comparisons.map(x=>discoveryHtml(x)).join(''):''}</div>${legalReminder()}`;}
+function politicsPage(){if(!activePrompt())return noPrompt();return`${sessionBanner('6. 政黨、媒體與公共論述','只分析與目前議題相符的官方主張與媒體文本，不預設任何黨或媒體立場。')}<section class="card"><h2>依目前議題搜尋三黨中央官方來源</h2><div class="action-row"><button class="primary" id="search-parties">搜尋中央黨部官網</button><button class="secondary" id="search-party-social">顯示官方社群入口與資料限制</button></div><div id="party-output"></div></section><section class="card"><h2>媒體文章初步分析</h2><form id="media-form"><label>公開文章網址<input name="url" type="url" placeholder="https://..."/></label><label>或貼入文章標題<input name="headline"/></label><label>文章內文<textarea name="body"></textarea></label><label>原始來源／被引述對象（每行一個）<textarea name="sources"></textarea></label><label><input type="checkbox" name="right_of_reply"/>有提供主要被批評方回應</label><button class="primary" type="submit">分析批評、稱讚、描述性表述與框架</button></form><div id="media-output"></div><p class="hint">單篇文章只能描述該篇文本。媒體整體立場須有多議題、足夠樣本、新聞／評論分流及人工複核。</p></section>${legalReminder()}`;}
+function reformPage(){if(!activePrompt())return noPrompt();return`${sessionBanner('7. 從分析到改革與修法','先比較維持現狀、行政措施、預算工具、資訊揭露與修法；修法不是唯一答案。')}<section class="card"><form id="reform-form"><label>目前制度問題<textarea name="problem">${esc(activePrompt())}</textarea></label><label>現行條文或制度原文（沒有就留白，系統不得捏造）<textarea name="current"></textarea></label><label>改革目標<textarea name="goal"></textarea></label><label>執行限制與利害關係人<textarea name="constraints"></textarea></label><div class="action-row"><button class="primary" type="submit">產生規則式三版本草案</button><button class="secondary" type="button" id="ai-reform">AI依證據潤飾與提出理由</button><button class="secondary" type="button" id="download-xlsx">下載Excel</button></div></form></section><div id="reform-output">${state.session.legislation?renderLegislation(state.session.legislation):''}</div>${legalReminder()}`;}
+function reflectionPage(){if(!activePrompt())return noPrompt();const qs=['我目前把哪些價值判斷誤當成事實？','哪一項反證最可能推翻目前結論？','哪些群體或執行者沒有被納入？','若政策有效，可能產生哪些替代、外溢或分配效果？','什麼新資料會讓我改變立場？','外國制度在臺灣最可能在哪個環節失效？','AI是否因來源、語言或提示方式而放大單一敘事？'];return`${sessionBanner('8. 反思 Grill-me 與反方檢驗','研究完成後再追問一次，避免因AI的流暢文字而僵化。')}<section class="card"><h2>自我批判問題</h2>${qs.map((q,i)=>`<p class="reflection-question"><strong>${i+1}.</strong> ${esc(q)}</p>`).join('')}<div class="action-row"><button class="primary" id="ai-reflect">讓AI扮演嚴格反方</button><button class="secondary" id="export-report">匯出研究摘要與APA參考資料</button></div></section><div id="reflection-output">${state.session.reflection?renderResearchResult(state.session.reflection):''}</div>${legalReminder()}`;}
+function settingsPage(){const cfg=getAIConfig();return`${sessionBanner('設定、AI供應商與方法限制','AI可選；搜尋、證據評讀與引用仍以公開來源為核心。')}<section class="card"><h2>受控後端／瀏覽器自備金鑰</h2><form id="ai-config"><label>受控後端網址<input name="backend_url" value="${esc(cfg.backend_url||state.runtime.public_api_base_url||'')}" placeholder="https://你的-space.hf.space"/></label><label>後端Token<input name="backend_token" type="password" value="${esc(cfg.backend_token||'')}"/></label><label>或直接供應商<select name="provider"><option value="openrouter" ${cfg.provider==='openrouter'?'selected':''}>OpenRouter免費變體</option><option value="gemini" ${cfg.provider==='gemini'?'selected':''}>Gemini免費層</option><option value="groq" ${cfg.provider==='groq'?'selected':''}>Groq免費層</option><option value="cloudflare" ${cfg.provider==='cloudflare'?'selected':''}>Cloudflare Workers AI免費配額</option></select></label><label>API Key<input name="key" type="password" value="${esc(cfg.key||'')}"/></label><label>Cloudflare Account ID（僅Cloudflare）<input name="account_id" value="${esc(cfg.account_id||'')}"/></label><label>模型（可留白自動選）<input name="model" value="${esc(cfg.model||'')}"/></label><label>資源模式<select name="mode"><option value="economy" ${cfg.mode==='economy'?'selected':''}>節能：一次綜合</option><option value="standard" ${cfg.mode==='standard'?'selected':''}>標準：規劃＋綜合</option><option value="critical" ${cfg.mode==='critical'?'selected':''}>高風險：規劃＋批判＋綜合</option></select></label><button class="primary" type="submit">只儲存在目前分頁</button></form><p class="hint">免費額度、模型與政策會變動。系統不得在未經管理者明確同意下切換付費方案。Gemini免費層可能用內容改善產品；不得外送個資、醫療個案或未公開資料。</p></section><section class="card"><h2>公開文件解析</h2><p>受控後端可從合法公開網址解析 HTML、PDF、DOCX、PPTX與圖檔；圖檔及掃描PDF只有在管理者明確啟用OCR時處理。本站不提供檔案上傳，也不保證動態網頁、圖表或受限制內容能完整擷取。</p></section><section class="card"><h2>方法基準</h2>${referencesHtml(state.evidenceFrameworks.apa_references||[])}</section>${legalReminder()}`;}
+function page(){return({home:homePage,network:networkPage,evidence:evidencePage,literature:literaturePage,compare:comparePage,politics:politicsPage,reform:reformPage,reflection:reflectionPage,settings:settingsPage}[state.route]||homePage)();}
+
+function renderResearchResult(value){const r=value?.result||value;if(!r)return'';return`<section class="card"><div class="badges"><span class="badge">${esc(r.answer_status||'AI草稿')}</span><span class="badge">信心：${esc(r.confidence||'未評估')}</span></div><h2>直接回答</h2><p>${esc(r.direct_answer||r.executive_summary||'')}</p>${r.executive_summary?`<h3>摘要</h3><p>${esc(r.executive_summary)}</p>`:''}${r.what_cannot_be_concluded?.length?`<h3>目前不能下的結論</h3><ul>${r.what_cannot_be_concluded.map(x=>`<li>${esc(x)}</li>`).join('')}</ul>`:''}${r.atomic_claims?.length?`<h3>主張—證據矩陣</h3><div class="table-wrap"><table><thead><tr><th>主張</th><th>類型</th><th>來源</th><th>支持度</th><th>限制</th></tr></thead><tbody>${r.atomic_claims.map(x=>`<tr><td>${esc(x.claim)}</td><td>${esc(x.claim_type)}</td><td>${esc((x.source_ids||[]).join(', '))}</td><td>${esc(x.support)}</td><td>${esc(x.limits||x.counterevidence||'')}</td></tr>`).join('')}</tbody></table></div>`:''}${r.literature_gap?`<section class="gap-card card"><h3>研究缺口</h3><p>${esc(r.literature_gap)}</p></section>`:''}${r.research_directions?.length?`<h3>可行研究方向</h3><ul>${r.research_directions.map(x=>`<li>${esc(typeof x==='string'?x:x.direction||JSON.stringify(x))}</li>`).join('')}</ul>`:''}${r.apa_references?.length?referencesHtml(r.apa_references):referencesHtml([...state.session.selectedLiterature.map(id=>state.session.literature.find(x=>x.id===id)).filter(Boolean).map(CivicAcademic.apa),...allEvidenceItems().map(apaWeb)])}${legalReminder()}</section>`;}
+function renderLegislation(d){if(!d?.versions)return'';return`<section class="card"><h2>三版本修法／政策草案</h2><div class="table-wrap"><table><thead><tr><th>版本</th><th>策略</th><th>修正內容</th><th>理由</th><th>優點</th><th>風險／執行</th></tr></thead><tbody>${d.versions.map(v=>`<tr><td>${esc(v.id)} ${esc(v.name)}</td><td>${esc(v.strategy)}</td><td><pre>${esc(v.amendedText)}</pre></td><td>${(v.reasons||[]).map(x=>`<p>${esc(x)}</p>`).join('')}</td><td>${esc((v.benefits||[]).join('；'))}</td><td>${esc((v.risks||[]).join('；'))}<br/>${esc(v.implementation||'')}</td></tr>`).join('')}</tbody></table></div>${referencesHtml(d.apa_references||allEvidenceItems().map(apaWeb))}</section>`;}
+
+async function runDiscovery(){const target=document.getElementById('home-search-results');if(target)target.innerHTML='<div class="loading">正在合法公開網域搜尋……</div>';const cfg=getAIConfig();const query=[activePrompt(),...(state.session.expansionEnabled?state.session.expansionTerms.filter(x=>x.enabled).map(x=>x.term):[])].join(' ');try{const data=await CivicDiscovery.discover({query,subject:currentSubject(),jurisdiction:state.session.jurisdiction,scope:state.session.scope,customDomains:state.session.domains,freshness:state.session.freshness,maxResults:16,runtime:state.runtime,config:cfg});state.session.discovery=data;state.session.extracted=[];saveSession();render();}catch(e){if(target)target.innerHTML=`<section class="card danger-note"><h3>搜尋停止</h3><p>${esc(e.message)}</p><p>請到設定頁建立受控後端。本站不會用本地索引冒充已完成線上搜尋。</p></section>`;}}
+async function extractUrls(urls,targetId='extract-output'){const target=document.getElementById(targetId);if(target)target.innerHTML='<div class="loading">正在檢查網域、robots.txt、重新導向與文件格式……</div>';try{const data=await CivicDiscovery.extract({urls,subject:currentSubject(),jurisdiction:state.session.jurisdiction,scope:state.session.scope,customDomains:state.session.domains,runtime:state.runtime,config:getAIConfig()});state.session.extracted=[...(state.session.extracted||[]),...(data.items||[])];saveSession();if(target)target.innerHTML=`<section class="card notice"><strong>成功擷取 ${data.items?.length||0} 份公開文件。</strong>${data.errors?.length?`<ul>${data.errors.map(x=>`<li>${esc(x.url)}：${esc(x.detail)}</li>`).join('')}</ul>`:''}</section>`;}catch(e){if(target)target.innerHTML=`<section class="card danger-note">${esc(e.message)}</section>`;}}
+async function runAI(task,payload,targetId,mode){const target=document.getElementById(targetId);if(!target)return;target.innerHTML=renderProgress('準備AI研究流程……');try{const cfg={...getAIConfig()};const result=await CivicAI.run({task,payload,cfg,mode:mode||cfg.mode||'economy',onProgress:m=>target.innerHTML=renderProgress(m)});target.innerHTML=renderResearchResult(result);return result;}catch(e){target.innerHTML=`<section class="card danger-note"><h3>AI停止</h3><p>${esc(e.message)}</p><p>可繼續使用搜尋、來源與規則式方法；AI不是必要條件。</p></section>`;}}
+function researchPayload(extra={}){const evidence=allEvidenceItems().map((x,i)=>({source_id:sourceId(x,i),title:x.title,url:x.url,text:String(x.text||x.snippet||x.body||'').slice(0,20000),apa:apaWeb(x),limitations:x.limitations||x.evidence_status||''}));const literature=(state.session.literature||[]).filter(x=>state.session.selectedLiterature?.includes(x.id)).map((x,i)=>({literature_id:x.id||`LIT-${i+1}`,title:x.title,abstract:x.abstract||'',apa:CivicAcademic.apa(x),doi:x.doi||'',url:x.url||''}));return{question:activePrompt(),subject:currentSubject(),jurisdiction:state.session.jurisdiction,evidence_packet:{sources:evidence,literature},question_type:CivicWorkflow.inferQuestionType(activePrompt()),requirements:{apa_references:true,retain_counterarguments:true,roc_transferability:true},...extra};}
+
+function bind(){document.querySelectorAll('.tabs a').forEach(a=>a.classList.toggle('active',a.dataset.route===state.route));document.getElementById('reset-session')?.addEventListener('click',()=>{if(confirm('清除本次研究問題與結果？')){state.session=CivicWorkflow.sessionTemplate();saveSession();location.hash='#home';render();}});document.getElementById('theme-toggle')?.addEventListener('click',()=>document.documentElement.classList.toggle('dark'));
+  document.getElementById('scope')?.addEventListener('change',e=>document.querySelector('.custom-domain-field')?.classList.toggle('active',e.target.value==='custom'));
+  document.getElementById('prompt-form')?.addEventListener('submit',async e=>{e.preventDefault();state.session.prompt=document.getElementById('prompt').value.trim();state.session.subject=document.getElementById('subject').value;state.session.jurisdiction=document.getElementById('jurisdiction').value;state.session.scope=document.getElementById('scope').value;state.session.domains=document.getElementById('domains')?.value.trim()||'';state.session.freshness=document.getElementById('freshness').value;state.session.refinedPrompt='';state.session.discovery=null;state.session.literature=[];state.session.graph=null;state.session.expansionTerms=[];state.session.expansionEnabled=false;const b=CivicWorkflow.broadness(state.session.prompt,currentSubject());saveSession();if(b.isBroad)render();else await runDiscovery();});
+  document.getElementById('grill-form')?.addEventListener('submit',async e=>{e.preventDefault();const fd=Object.fromEntries(new FormData(e.target).entries());state.session.grillAnswers=fd;state.session.refinedPrompt=CivicWorkflow.refinePrompt(state.session.prompt,fd,currentSubject());saveSession();await runDiscovery();});
+  document.getElementById('exact-expand')?.addEventListener('click',()=>{state.session.expansionTerms=CivicWorkflow.exactExpansion(state.session.prompt).map(x=>({...x,enabled:false,risk:'low'}));state.session.expansionEnabled=false;saveSession();render();});
+  document.getElementById('ai-expand')?.addEventListener('click',async()=>{const target=document.getElementById('expansion-box');if(!aiConfigReady()){target.innerHTML='<div class="empty">請先在設定頁設定AI。系統不會默默擴張。</div>';return;}const r=await runAI('expand',{prompt:state.session.prompt,subject:currentSubject(),rules:'只提出明確英文翻譯、正式名稱、上位詞、下位詞與替代術語；不得把相關概念冒充近義詞。'},'expansion-box','economy');const data=r?.result||r;if(data?.terms){state.session.expansionTerms=data.terms.map(x=>({...x,enabled:false}));state.session.expansionEnabled=false;saveSession();render();}});
+  document.getElementById('expansion-form')?.addEventListener('submit',async e=>{e.preventDefault();const selected=new Set([...new FormData(e.target).getAll('term')].map(Number));state.session.expansionTerms=(state.session.expansionTerms||[]).map((x,i)=>({...x,enabled:selected.has(i)}));state.session.expansionEnabled=state.session.expansionTerms.some(x=>x.enabled);saveSession();await runDiscovery();});
+  document.getElementById('clear-expansion')?.addEventListener('click',async()=>{state.session.expansionTerms=(state.session.expansionTerms||[]).map(x=>({...x,enabled:false}));state.session.expansionEnabled=false;saveSession();render();});
+  document.getElementById('ai-grill')?.addEventListener('click',async()=>{const out=document.getElementById('grill-ai-output');out.innerHTML=renderProgress('AI正在追加追問……');try{const r=await CivicAI.run({task:'grill',payload:{prompt:state.session.prompt,subject:currentSubject(),existing_questions:CivicWorkflow.grillQuestions(state.session.prompt,currentSubject())},cfg:getAIConfig(),mode:'economy',onProgress:m=>out.innerHTML=renderProgress(m)});const qs=r.result?.questions||[];out.innerHTML=`<section class="card"><h3>AI追加追問</h3>${qs.map(q=>`<p class="reflection-question">${esc(q.question)}<br/><span class="muted">${esc(q.why_needed||'')}</span></p>`).join('')}</section>`;}catch(e){out.innerHTML=`<div class="card danger-note">${esc(e.message)}</div>`;}});
+  document.getElementById('extract-selected')?.addEventListener('click',()=>{const selected=[...document.querySelectorAll('.source-select:checked')].map(x=>state.session.discovery.results[Number(x.value)]).filter(Boolean);extractUrls(selected.map(x=>x.url).filter(Boolean));});
+  document.getElementById('build-network')?.addEventListener('click',()=>{state.session.graph=CivicNetwork.fallbackGraph(activePrompt(),allEvidenceItems());saveSession();CivicNetwork.render(document.getElementById('network-canvas'),state.session.graph);});
+  document.getElementById('ai-network')?.addEventListener('click',async()=>{const holder=document.getElementById('network-canvas');holder.innerHTML=renderProgress('AI正在提出可引用的概念關係……');const r=await CivicAI.run({task:'network',payload:researchPayload({network_requirements:'節點限12至24個；每條邊標示關係與source_ids；保留反方、風險與制度執行節點。'}),cfg:getAIConfig(),mode:getAIConfig().mode||'economy',onProgress:m=>holder.innerHTML=renderProgress(m)}).catch(e=>{holder.innerHTML=`<div class="danger-note card">${esc(e.message)}</div>`;});const data=r?.result||r;if(data?.nodes){state.session.graph={nodes:data.nodes,edges:data.edges,notice:data.notice};saveSession();CivicNetwork.render(holder,state.session.graph);}});
+  document.getElementById('url-form')?.addEventListener('submit',e=>{e.preventDefault();const urls=document.getElementById('public-urls').value.split(/\s+/).filter(x=>/^https?:\/\//.test(x)).slice(0,6);extractUrls(urls,'url-output');});
+  document.getElementById('search-literature')?.addEventListener('click',async()=>{const out=document.getElementById('literature-output');out.innerHTML='<div class="loading">正在搜尋期刊與學術資料庫……</div>';try{const q=activePrompt();const [a,b]=await Promise.allSettled([CivicAcademic.fetchCrossref(q,15),CivicAcademic.fetchEuropePMC(q,15)]);const items=[...(a.status==='fulfilled'?a.value:[]),...(b.status==='fulfilled'?b.value:[])];const unique=[...new Map(items.map(x=>[x.doi||x.url||x.title,x])).values()];const terms=CivicAcademic.meaningfulTokens(q);unique.forEach((x,idx)=>{const text=`${x.title||''} ${x.abstract||''}`.toLowerCase();const lexical=terms.reduce((sum,t)=>sum+(text.includes(String(t).toLowerCase())?12:0),0);const review=/systematic review|meta-analysis|scoping review|evidence synthesis/i.test(x.title||'')?6:0;const recency=Number(x.year)>=2020?2:0;x._relevance=lexical+review+recency+Math.min(4,Number(x.cited_by||0)/50)-idx*0.05;});state.session.literature=unique.sort((a,b)=>b._relevance-a._relevance).slice(0,24);state.session.selectedLiterature=[];saveSession();render();}catch(e){out.innerHTML=`<div class="danger-note card">${esc(e.message)}</div>`;}});
+  document.querySelectorAll('.literature-select').forEach(el=>el.addEventListener('change',()=>{const selected=[...document.querySelectorAll('.literature-select:checked')].map(x=>state.session.literature[Number(x.value)]?.id).filter(Boolean);state.session.selectedLiterature=selected;saveSession();}));
+  document.querySelectorAll('.copy-citation').forEach(b=>b.addEventListener('click',()=>navigator.clipboard.writeText(b.dataset.citation||'')));
+  document.getElementById('synthesize-literature')?.addEventListener('click',async()=>{const r=await runAI('research',researchPayload({academic_task:'依選取文獻分成入門、核心、進階；比較研究問題、方法、結果、限制；總結文獻gap並提出3至5個可行研究方向；每段附literature_id與APA。'}),'academic-synthesis',getAIConfig().mode||'standard');if(r){state.session.academicSynthesis=r;saveSession();}});
+  document.getElementById('compare-form')?.addEventListener('submit',async e=>{e.preventDefault();const codes=[...document.getElementById('compare-countries').selectedOptions].map(x=>x.value);const out=document.getElementById('compare-output');out.innerHTML='<div class="loading">正在依各法域搜尋……</div>';const results=[];for(const code of codes){try{results.push(await CivicDiscovery.discover({query:activePrompt(),subject:currentSubject(),jurisdiction:code,scope:'official_professional',freshness:state.session.freshness,maxResults:8,runtime:state.runtime,config:getAIConfig()}));}catch(err){results.push({jurisdiction:code,results:[],search_plan:[err.message]});}}state.session.comparisons=results;saveSession();render();});
+  document.getElementById('ai-compare')?.addEventListener('click',()=>runAI('research',researchPayload({comparative_sources:state.session.comparisons,comparative_task:'功能比較；逐一評估政體、法制、語言、政黨競爭、資料可得性、歷史文化與執行能力；列可移植機制、需在臺灣驗證之處、不可移植之處。'}),'compare-output','standard'));
+  document.getElementById('search-parties')?.addEventListener('click',async()=>{const out=document.getElementById('party-output');out.innerHTML='<div class="loading">搜尋三黨中央官網……</div>';const rows=[];for(const p of state.partySources.parties||[]){try{rows.push({party:p.name,data:await CivicDiscovery.discover({query:activePrompt(),subject:'politics',jurisdiction:'TW',scope:'custom',customDomains:new URL(p.official_website).hostname,freshness:state.session.freshness,maxResults:6,runtime:state.runtime,config:getAIConfig()})});}catch(e){rows.push({party:p.name,data:{results:[],search_plan:[e.message]}});}}out.innerHTML=rows.map(x=>`<h3>${esc(x.party)}</h3>${discoveryHtml(x.data)}`).join('');});
+  document.getElementById('search-party-social')?.addEventListener('click',()=>{document.getElementById('party-output').innerHTML=(state.partySources.parties||[]).map(p=>`<section class="card"><h3>${esc(p.name)}</h3><p><a href="${esc(safeUrl(p.official_website))}" target="_blank">官網</a></p>${(p.channels||[]).map(x=>`<a class="secondary" href="${esc(safeUrl(x.url))}" target="_blank">${esc(x.platform)} @${esc(x.handle)}</a>`).join(' ')}</section>`).join('')+'<p class="hint">社群自動蒐集受平台API、研究者資格與可見性限制；不得以未授權爬蟲宣稱已取得全部貼文。</p>';});
+  document.getElementById('media-form')?.addEventListener('submit',async e=>{e.preventDefault();const data=Object.fromEntries(new FormData(e.target).entries());const out=document.getElementById('media-output');if(data.url&&!data.body){await extractUrls([data.url],'media-output');const item=state.session.extracted.at(-1);if(item)data.body=item.text||'';}const result=CivicPolitical.analyzeMedia({headline:data.headline,body:data.body,sources:data.sources,right_of_reply:Boolean(data.right_of_reply),profiles:state.partyIdeology.profiles||[]});out.innerHTML=`<section class="card"><h3>單篇文本初篩：相對中立表述 ${esc(result.neutrality)}/100</h3><p>${esc(result.alignmentLabel)}</p><div class="table-wrap"><table><tr><th>政黨</th><th>批評</th><th>稱讚</th><th>描述</th><th>意識形態詞彙接近度</th></tr>${Object.entries(result.partyScores).map(([id,x])=>`<tr><td>${esc(id.toUpperCase())}</td><td>${x.criticism}</td><td>${x.praise}</td><td>${x.descriptive}</td><td>${Math.round(x.ideology.score*100)}%</td></tr>`).join('')}</table></div><ul>${result.caveats.map(x=>`<li>${esc(x)}</li>`).join('')}</ul></section>`;});
+  document.getElementById('reform-form')?.addEventListener('submit',e=>{e.preventDefault();const data=Object.fromEntries(new FormData(e.target).entries());state.session.legislation=CivicLegislation.buildDrafts({law:'待確認法規',article:'待確認條次',problem:data.problem,current:data.current,goal:data.goal,direction:data.constraints,sources:allEvidenceItems().map(x=>x.url).join('\n')});saveSession();render();});
+  document.getElementById('ai-reform')?.addEventListener('click',async()=>{const fd=Object.fromEntries(new FormData(document.getElementById('reform-form')).entries());const r=await CivicAI.run({task:'legislation',payload:researchPayload({data:fd,requirements:'三版；表格；逐點理由；替代行政與預算方案；APA參考資料；無現行條文不得捏造。'}),cfg:getAIConfig(),mode:getAIConfig().mode||'standard',onProgress:m=>document.getElementById('reform-output').innerHTML=renderProgress(m)}).catch(e=>{document.getElementById('reform-output').innerHTML=`<div class="card danger-note">${esc(e.message)}</div>`;});if(r){state.session.legislation=CivicLegislation.normalizeAIResult(r.result,state.session.legislation||CivicLegislation.buildDrafts(fd));saveSession();render();}});
+  document.getElementById('download-xlsx')?.addEventListener('click',()=>{if(!state.session.legislation)return alert('請先產生草案');CivicXLSX.downloadDraftXlsx(state.session.legislation,'修法與政策方案.xlsx');});
+  document.getElementById('ai-reflect')?.addEventListener('click',async()=>{const r=await runAI('research',researchPayload({reflection_task:'扮演嚴格但公平的反方。找出隱含價值、最強反證、遺漏群體、替代機制、外溢效果、會改變結論的新資料，以及AI來源偏誤。不可只重複警語。'}),'reflection-output','critical');if(r){state.session.reflection=r;saveSession();}});
+  document.getElementById('export-report')?.addEventListener('click',()=>{const refs=[...state.session.literature.map(CivicAcademic.apa),...allEvidenceItems().map(apaWeb)];const text=`研究問題\n${activePrompt()}\n\n目前摘要\n${state.session.analysis?.result?.executive_summary||state.session.academicSynthesis?.result?.executive_summary||''}\n\nAPA參考資料\n${[...new Set(refs)].join('\n')}`;const blob=new Blob([text],{type:'text/plain;charset=utf-8'});const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='社會議題研究摘要.txt';a.click();URL.revokeObjectURL(a.href);});
+  document.getElementById('ai-config')?.addEventListener('submit',e=>{e.preventDefault();setAIConfig(Object.fromEntries(new FormData(e.target).entries()));alert('設定只保存在目前分頁。');});
+}
+function render(){parseRoute();document.getElementById('app').innerHTML=page();document.getElementById('repo-link').href=state.runtime.repository_url||'#';document.getElementById('app').focus();bind();if(state.route==='network'&&activePrompt())CivicNetwork.render(document.getElementById('network-canvas'),state.session.graph||CivicNetwork.fallbackGraph(activePrompt(),allEvidenceItems()));}
+async function init(){state.session=loadSession();const [runtime,jurisdictions,domainPolicy,evidenceFrameworks,partySources,partyIdeology,mediaMethodology,mediaOwnership,theories,methods,catalogLiterature]=await Promise.all([loadJson('config/runtime.json',{}),loadJson('data/jurisdictions.json',[]),loadJson('config/domain_policy.json',{subjects:{}}),loadJson('data/evidence_frameworks.json',{frameworks:{}}),loadJson('data/party_source_registry.json',{parties:[]}),loadJson('data/party_ideology_profiles.json',{profiles:[]}),loadJson('data/media_methodology.json',{}),loadJson('data/media_ownership_registry.json',{records:[]}),loadJson('data/theory_catalog.json',[]),loadJson('data/research_methods.json',[]),loadJson('data/literature_catalog.json',[])]);Object.assign(state,{runtime,jurisdictions,domainPolicy,evidenceFrameworks,partySources,partyIdeology,mediaMethodology,mediaOwnership,theories,methods,catalogLiterature});window.addEventListener('hashchange',render);render();}
 init();

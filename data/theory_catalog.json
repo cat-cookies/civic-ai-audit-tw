@@ -765,5 +765,113 @@
     "literature_ids": [
       "paunio2009"
     ]
+  },
+  {
+    "id": "media_framing",
+    "name": "媒體框架分析",
+    "category": "政治傳播與媒體",
+    "proposition": "新聞可透過問題定義、因果歸屬、道德評價及解決方案選擇，使特定理解較為突出。",
+    "mechanisms": [
+      "選擇或排除特定事實",
+      "強調特定責任主體",
+      "使用不同道德與風險語彙"
+    ],
+    "diagnostic_questions": [
+      "文章把問題定義成什麼？",
+      "責任歸給誰？",
+      "哪些替代解釋被忽略？"
+    ],
+    "when_to_use": "比較同一事件在不同媒體或不同時期的報導。",
+    "limitations": "不能只看正負情緒；需人工驗證框架類別與語境。",
+    "suitable_methods": [
+      "content_analysis",
+      "mixed"
+    ],
+    "literature_ids": [
+      "entman1993",
+      "hamborg2019",
+      "budak2016"
+    ]
+  },
+  {
+    "id": "media_slant",
+    "name": "媒體論述接近度與選擇偏誤",
+    "category": "政治傳播與媒體",
+    "proposition": "媒體偏向可能出現在報導量、議題選擇、來源選擇與語言接近特定政黨等不同層次。",
+    "mechanisms": [
+      "報導選擇",
+      "來源不平衡",
+      "語言接近政黨",
+      "閱聽人需求"
+    ],
+    "diagnostic_questions": [
+      "同一事件是否被等量報導？",
+      "媒體使用誰的語彙？",
+      "是否提供回應權？"
+    ],
+    "when_to_use": "建立媒體長期、跨議題與跨黨比較。",
+    "limitations": "單篇文章不能推論媒體整體立場；語言接近不等於支持。",
+    "suitable_methods": [
+      "content_analysis",
+      "causal"
+    ],
+    "literature_ids": [
+      "gentzkow2010",
+      "budak2016",
+      "hamborg2019"
+    ]
+  },
+  {
+    "id": "party_text_scaling",
+    "name": "政黨文本位置與跨期變動",
+    "category": "政黨政治與文字分析",
+    "proposition": "政黨立場可由同類型政治文本估計，但須預先界定維度、文類與外部錨點。",
+    "mechanisms": [
+      "參考文本計分",
+      "詞頻尺度",
+      "跨期位置估計"
+    ],
+    "diagnostic_questions": [
+      "比較的是黨綱、新聞稿還是社群貼文？",
+      "維度由誰定義？",
+      "是否有外部驗證？"
+    ],
+    "when_to_use": "分析政黨意識形態、政策主張與長期變動。",
+    "limitations": "臺灣至少需分開國家認同、經濟社會、治理與兩岸外交等軸線。",
+    "suitable_methods": [
+      "content_analysis",
+      "mixed"
+    ],
+    "literature_ids": [
+      "laver2003",
+      "slapin2008"
+    ]
+  },
+  {
+    "id": "public_media_independence",
+    "name": "公共媒體獨立與結構性依賴",
+    "category": "政治傳播與媒體",
+    "proposition": "公共資金或政府任命可能造成依賴風險，但獨立法制、任期、跨黨審查與編採防火牆可降低干預。",
+    "mechanisms": [
+      "預算依賴",
+      "任命控制",
+      "所有權控制",
+      "法律與組織防火牆"
+    ],
+    "diagnostic_questions": [
+      "誰任命董事？",
+      "財源是否穩定？",
+      "是否有同黨比例限制與編採自主？"
+    ],
+    "when_to_use": "分析公共服務媒體、法定通訊社或官股媒體。",
+    "limitations": "所有權與資金只能形成風險假設，仍需內容與治理證據。",
+    "suitable_methods": [
+      "legal_doctrinal",
+      "content_analysis",
+      "mixed"
+    ],
+    "literature_ids": [
+      "gehlbach2014"
+    ]
   }
 ]

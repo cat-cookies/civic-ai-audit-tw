@@ -4,7 +4,7 @@
   "public_api_base_url": "",
   "enable_remote_ai": false,
   "enable_issue_submission": true,
-  "build_label": "公開研究版 v5.0.0；主張—證據推論、期刊文獻、最小充分 AI 工作流",
+  "build_label": "公開測試版 v6.0.0；政黨官方來源、媒體論述、跨國文獻適用性評估",
   "enable_browser_byok": true,
   "schema_version": "5.0"
 }

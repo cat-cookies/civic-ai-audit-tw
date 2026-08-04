@@ -34,3 +34,8 @@ The router never intentionally selects paid fallback models. OpenRouter models m
 - `POST /api/literature`
 
 The backend accepts only public-source research material. Personal data, medical records, private complaints and unpublished documents are rejected.
+
+
+## 政黨社群資料限制
+
+中央黨部官網可由 `/api/fetch-official` 擷取。Facebook Page Public Content Access、Meta Content Library、Instagram 與 Threads API 另有核准、帳號授權及研究者資格限制。後端只把核准介面或使用者提供的官方貼文原文納入分析，不使用未經授權的隱蔽爬蟲，也不宣稱資料完整。

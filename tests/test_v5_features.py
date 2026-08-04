@@ -30,5 +30,5 @@ class V5Test(unittest.TestCase):
         subprocess.run([sys.executable,'-m','py_compile','backend/hf-space/app.py'],cwd=ROOT,check=True)
         text=(ROOT/'backend/hf-space/app.py').read_text(encoding='utf-8')
         self.assertIn('/api/literature',text)
-        self.assertIn('5.0.0',text)
+        self.assertIn('6.0.0',text)
 if __name__=='__main__': unittest.main()

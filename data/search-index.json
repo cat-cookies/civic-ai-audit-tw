@@ -1,7 +1,7 @@
 {
   "schema_version": "5.0",
-  "built_at": "2026-08-04T17:09:44+08:00",
-  "document_count": 211,
+  "built_at": "2026-08-04T18:02:00+08:00",
+  "document_count": 222,
   "documents": [
     {
       "id": "law_guide:0",
@@ -144,6 +144,28 @@
       "year": 2021
     },
     {
+      "id": "literature:slapin2008",
+      "kind": "literature",
+      "title": "A Scaling Model for Estimating Time-Series Party Positions from Texts",
+      "body": "slapin2008 journal_article True A Scaling Model for Estimating Time-Series Party Positions from Texts Jonathan B. Slapin Sven-Oliver Proksch 2008 American Journal of Political Science 10.1111/j.1540-5907.2008.00338.x 政黨政治 文字分析 Wordfish 跨期變動 政黨立場 時間序列 觀察同類政黨文本的相對位置變動。 不同文類、平台與篇幅不可直接混合。",
+      "url": "#theory?lit=slapin2008",
+      "tags": [
+        "American Journal of Political Science",
+        "2008",
+        "政黨政治",
+        "文字分析",
+        "Wordfish",
+        "跨期變動",
+        "政黨立場",
+        "時間序列"
+      ],
+      "searchable": "a scaling model for estimating time series party positions from texts slapin2008 journal article true a scaling model for estimating time series party positions from texts jonathan b slapin sven oliver proksch 2008 american journal of political science 10 1111 j 1540 5907 2008 00338 x 政黨政治 文字分析 wordfish 跨期變動 政黨立場 時間序列 觀察同類政黨文本的相對位置變動 不同文類 平台與篇幅不可直接混合 american journal of political science 2008 政黨政治 文字分析 wordfish 跨期變動 政黨立場 時間序列",
+      "official": false,
+      "peer_reviewed": true,
+      "doi": "10.1111/j.1540-5907.2008.00338.x",
+      "year": 2008
+    },
+    {
       "id": "literature:guo2022factcheck",
       "kind": "literature",
       "title": "A Survey on Automated Fact-Checking",
@@ -205,6 +227,28 @@
       "peer_reviewed": true,
       "doi": "10.1111/j.1468-0386.2007.00378.x",
       "year": 2007
+    },
+    {
+      "id": "literature:hamborg2019",
+      "kind": "literature",
+      "title": "Automated Identification of Media Bias in News Articles: An Interdisciplinary Literature Review",
+      "body": "hamborg2019 journal_article True Automated Identification of Media Bias in News Articles: An Interdisciplinary Literature Review Felix Hamborg Karsten Donnay Bela Gipp 2019 International Journal on Digital Libraries 10.1007/s00799-018-0261-y 媒體偏向 自然語言處理 自動偵測 框架 選擇偏誤 可解釋性 設計可解釋、多層次的偏向分析。 模型表現需以臺灣繁體中文人工標註資料驗證。",
+      "url": "#theory?lit=hamborg2019",
+      "tags": [
+        "International Journal on Digital Libraries",
+        "2019",
+        "媒體偏向",
+        "自然語言處理",
+        "自動偵測",
+        "框架",
+        "選擇偏誤",
+        "可解釋性"
+      ],
+      "searchable": "automated identification of media bias in news articles an interdisciplinary literature review hamborg2019 journal article true automated identification of media bias in news articles an interdisciplinary literature review felix hamborg karsten donnay bela gipp 2019 international journal on digital libraries 10 1007 s00799 018 0261 y 媒體偏向 自然語言處理 自動偵測 框架 選擇偏誤 可解釋性 設計可解釋 多層次的偏向分析 模型表現需以臺灣繁體中文人工標註資料驗證 international journal on digital libraries 2019 媒體偏向 自然語言處理 自動偵測 框架 選擇偏誤 可解釋性",
+      "official": false,
+      "peer_reviewed": true,
+      "doi": "10.1007/s00799-018-0261-y",
+      "year": 2019
     },
     {
       "id": "literature:paunio2009",
@@ -315,6 +359,28 @@
       "year": 1999
     },
     {
+      "id": "literature:laver2003",
+      "kind": "literature",
+      "title": "Extracting Policy Positions from Political Texts Using Words as Data",
+      "body": "laver2003 journal_article True Extracting Policy Positions from Political Texts Using Words as Data Michael Laver Kenneth Benoit John Garry 2003 American Political Science Review 10.1017/S0003055403000698 政黨政治 文字分析 Wordscores 政黨位置 政策文本 參考文本 依明確參考文本估計政黨位置。 參考文本與政治維度設定會決定結果。",
+      "url": "#theory?lit=laver2003",
+      "tags": [
+        "American Political Science Review",
+        "2003",
+        "政黨政治",
+        "文字分析",
+        "Wordscores",
+        "政黨位置",
+        "政策文本",
+        "參考文本"
+      ],
+      "searchable": "extracting policy positions from political texts using words as data laver2003 journal article true extracting policy positions from political texts using words as data michael laver kenneth benoit john garry 2003 american political science review 10 1017 s0003055403000698 政黨政治 文字分析 wordscores 政黨位置 政策文本 參考文本 依明確參考文本估計政黨位置 參考文本與政治維度設定會決定結果 american political science review 2003 政黨政治 文字分析 wordscores 政黨位置 政策文本 參考文本",
+      "official": false,
+      "peer_reviewed": true,
+      "doi": "10.1017/S0003055403000698",
+      "year": 2003
+    },
+    {
       "id": "literature:min2023factscore",
       "kind": "literature",
       "title": "FActScore: Fine-grained Atomic Evaluation of Factual Precision in Long Form Text Generation",
@@ -357,6 +423,28 @@
       "year": 2018
     },
     {
+      "id": "literature:budak2016",
+      "kind": "literature",
+      "title": "Fair and Balanced? Quantifying Media Bias through Crowdsourced Content Analysis",
+      "body": "budak2016 journal_article True Fair and Balanced? Quantifying Media Bias through Crowdsourced Content Analysis Ceren Budak Sharad Goel Justin M. Rao 2016 Public Opinion Quarterly 10.1093/poq/nfw007 https://academic.oup.com/poq/article/80/S1/250/2223443 媒體偏向 內容分析 選擇偏誤 內容偏誤 人工標註 新聞 區分報導選擇與報導內容，避免單一語氣分數代表媒體偏向。 需要事件母體、足夠樣本與標註一致性。",
+      "url": "#theory?lit=budak2016",
+      "tags": [
+        "Public Opinion Quarterly",
+        "2016",
+        "媒體偏向",
+        "內容分析",
+        "選擇偏誤",
+        "內容偏誤",
+        "人工標註",
+        "新聞"
+      ],
+      "searchable": "fair and balanced quantifying media bias through crowdsourced content analysis budak2016 journal article true fair and balanced quantifying media bias through crowdsourced content analysis ceren budak sharad goel justin m rao 2016 public opinion quarterly 10 1093 poq nfw007 https academic oup com poq article 80 s1 250 2223443 媒體偏向 內容分析 選擇偏誤 內容偏誤 人工標註 新聞 區分報導選擇與報導內容 避免單一語氣分數代表媒體偏向 需要事件母體 足夠樣本與標註一致性 public opinion quarterly 2016 媒體偏向 內容分析 選擇偏誤 內容偏誤 人工標註 新聞",
+      "official": false,
+      "peer_reviewed": true,
+      "doi": "10.1093/poq/nfw007",
+      "year": 2016
+    },
+    {
       "id": "literature:damschroder2009",
       "kind": "literature",
       "title": "Fostering Implementation of Health Services Research Findings into Practice: A Consolidated Framework for Advancing Implementation Science",
@@ -378,6 +466,28 @@
       "year": 2009
     },
     {
+      "id": "literature:entman1993",
+      "kind": "literature",
+      "title": "Framing: Toward Clarification of a Fractured Paradigm",
+      "body": "entman1993 journal_article True Framing: Toward Clarification of a Fractured Paradigm Robert M. Entman 1993 Journal of Communication 10.1111/j.1460-2466.1993.tb01304.x 媒體框架 政治傳播 框架 因果歸屬 媒體 政治 分析媒體如何選擇問題定義、因果、道德評價與解方。 需轉化為可重現的繁體中文標註規則。",
+      "url": "#theory?lit=entman1993",
+      "tags": [
+        "Journal of Communication",
+        "1993",
+        "媒體框架",
+        "政治傳播",
+        "框架",
+        "因果歸屬",
+        "媒體",
+        "政治"
+      ],
+      "searchable": "framing toward clarification of a fractured paradigm entman1993 journal article true framing toward clarification of a fractured paradigm robert m entman 1993 journal of communication 10 1111 j 1460 2466 1993 tb01304 x 媒體框架 政治傳播 框架 因果歸屬 媒體 政治 分析媒體如何選擇問題定義 因果 道德評價與解方 需轉化為可重現的繁體中文標註規則 journal of communication 1993 媒體框架 政治傳播 框架 因果歸屬 媒體 政治",
+      "official": false,
+      "peer_reviewed": true,
+      "doi": "10.1111/j.1460-2466.1993.tb01304.x",
+      "year": 1993
+    },
+    {
       "id": "literature:guyatt2008grade",
       "kind": "literature",
       "title": "GRADE: An Emerging Consensus on Rating Quality of Evidence and Strength of Recommendations",
@@ -397,6 +507,28 @@
       "peer_reviewed": true,
       "doi": "10.1136/bmj.39489.470347.AD",
       "year": 2008
+    },
+    {
+      "id": "literature:gehlbach2014",
+      "kind": "literature",
+      "title": "Government Control of the Media",
+      "body": "gehlbach2014 journal_article True Government Control of the Media Scott Gehlbach Konstantin Sonin 2014 Journal of Public Economics 10.1016/j.jpubeco.2014.06.004 媒體所有權 政治經濟 政府控制 媒體 所有權 補貼 提出政府影響媒體的可能機制，作為風險假設。 理論機制不能取代個別媒體的治理與內容證據。",
+      "url": "#theory?lit=gehlbach2014",
+      "tags": [
+        "Journal of Public Economics",
+        "2014",
+        "媒體所有權",
+        "政治經濟",
+        "政府控制",
+        "媒體",
+        "所有權",
+        "補貼"
+      ],
+      "searchable": "government control of the media gehlbach2014 journal article true government control of the media scott gehlbach konstantin sonin 2014 journal of public economics 10 1016 j jpubeco 2014 06 004 媒體所有權 政治經濟 政府控制 媒體 所有權 補貼 提出政府影響媒體的可能機制 作為風險假設 理論機制不能取代個別媒體的治理與內容證據 journal of public economics 2014 媒體所有權 政治經濟 政府控制 媒體 所有權 補貼",
+      "official": false,
+      "peer_reviewed": true,
+      "doi": "10.1016/j.jpubeco.2014.06.004",
+      "year": 2014
     },
     {
       "id": "literature:mayfinch2009",
@@ -758,6 +890,28 @@
       "peer_reviewed": true,
       "doi": "10.1111/j.1540-6210.2006.00667.x",
       "year": 2006
+    },
+    {
+      "id": "literature:gentzkow2010",
+      "kind": "literature",
+      "title": "What Drives Media Slant? Evidence From U.S. Daily Newspapers",
+      "body": "gentzkow2010 journal_article True What Drives Media Slant? Evidence From U.S. Daily Newspapers Matthew Gentzkow Jesse M. Shapiro 2010 Econometrica 10.3982/ECTA7195 媒體偏向 政治經濟 媒體論述 政黨語言 所有權 閱聽人 建立媒體語言與政黨語料接近度，但須多維且依議題分層。 美國兩黨單軸設計不能直接移植臺灣。",
+      "url": "#theory?lit=gentzkow2010",
+      "tags": [
+        "Econometrica",
+        "2010",
+        "媒體偏向",
+        "政治經濟",
+        "媒體論述",
+        "政黨語言",
+        "所有權",
+        "閱聽人"
+      ],
+      "searchable": "what drives media slant evidence from u s daily newspapers gentzkow2010 journal article true what drives media slant evidence from u s daily newspapers matthew gentzkow jesse m shapiro 2010 econometrica 10 3982 ecta7195 媒體偏向 政治經濟 媒體論述 政黨語言 所有權 閱聽人 建立媒體語言與政黨語料接近度 但須多維且依議題分層 美國兩黨單軸設計不能直接移植臺灣 econometrica 2010 媒體偏向 政治經濟 媒體論述 政黨語言 所有權 閱聽人",
+      "official": false,
+      "peer_reviewed": true,
+      "doi": "10.3982/ECTA7195",
+      "year": 2010
     },
     {
       "id": "literature:pierson1993",
@@ -3865,6 +4019,20 @@
       "peer_reviewed": true
     },
     {
+      "id": "theory:public_media_independence",
+      "kind": "theory",
+      "title": "公共媒體獨立與結構性依賴",
+      "body": "public_media_independence 公共媒體獨立與結構性依賴 政治傳播與媒體 公共資金或政府任命可能造成依賴風險，但獨立法制、任期、跨黨審查與編採防火牆可降低干預。 預算依賴 任命控制 所有權控制 法律與組織防火牆 誰任命董事？ 財源是否穩定？ 是否有同黨比例限制與編採自主？ 分析公共服務媒體、法定通訊社或官股媒體。 所有權與資金只能形成風險假設，仍需內容與治理證據。 legal_doctrinal content_analysis mixed gehlbach2014",
+      "url": "#theory?theory=public_media_independence",
+      "tags": [
+        "政治傳播與媒體"
+      ],
+      "searchable": "公共媒體獨立與結構性依賴 public media independence 公共媒體獨立與結構性依賴 政治傳播與媒體 公共資金或政府任命可能造成依賴風險 但獨立法制 任期 跨黨審查與編採防火牆可降低干預 預算依賴 任命控制 所有權控制 法律與組織防火牆 誰任命董事 財源是否穩定 是否有同黨比例限制與編採自主 分析公共服務媒體 法定通訊社或官股媒體 所有權與資金只能形成風險假設 仍需內容與治理證據 legal doctrinal content analysis mixed gehlbach2014 政治傳播與媒體",
+      "category": "政治傳播與媒體",
+      "official": false,
+      "peer_reviewed": true
+    },
+    {
       "id": "theory:accountability",
       "kind": "theory",
       "title": "公共課責與責任政治",
@@ -3980,6 +4148,34 @@
       "peer_reviewed": true
     },
     {
+      "id": "theory:media_framing",
+      "kind": "theory",
+      "title": "媒體框架分析",
+      "body": "media_framing 媒體框架分析 政治傳播與媒體 新聞可透過問題定義、因果歸屬、道德評價及解決方案選擇，使特定理解較為突出。 選擇或排除特定事實 強調特定責任主體 使用不同道德與風險語彙 文章把問題定義成什麼？ 責任歸給誰？ 哪些替代解釋被忽略？ 比較同一事件在不同媒體或不同時期的報導。 不能只看正負情緒；需人工驗證框架類別與語境。 content_analysis mixed entman1993 hamborg2019 budak2016",
+      "url": "#theory?theory=media_framing",
+      "tags": [
+        "政治傳播與媒體"
+      ],
+      "searchable": "媒體框架分析 media framing 媒體框架分析 政治傳播與媒體 新聞可透過問題定義 因果歸屬 道德評價及解決方案選擇 使特定理解較為突出 選擇或排除特定事實 強調特定責任主體 使用不同道德與風險語彙 文章把問題定義成什麼 責任歸給誰 哪些替代解釋被忽略 比較同一事件在不同媒體或不同時期的報導 不能只看正負情緒 需人工驗證框架類別與語境 content analysis mixed entman1993 hamborg2019 budak2016 政治傳播與媒體",
+      "category": "政治傳播與媒體",
+      "official": false,
+      "peer_reviewed": true
+    },
+    {
+      "id": "theory:media_slant",
+      "kind": "theory",
+      "title": "媒體論述接近度與選擇偏誤",
+      "body": "media_slant 媒體論述接近度與選擇偏誤 政治傳播與媒體 媒體偏向可能出現在報導量、議題選擇、來源選擇與語言接近特定政黨等不同層次。 報導選擇 來源不平衡 語言接近政黨 閱聽人需求 同一事件是否被等量報導？ 媒體使用誰的語彙？ 是否提供回應權？ 建立媒體長期、跨議題與跨黨比較。 單篇文章不能推論媒體整體立場；語言接近不等於支持。 content_analysis causal gentzkow2010 budak2016 hamborg2019",
+      "url": "#theory?theory=media_slant",
+      "tags": [
+        "政治傳播與媒體"
+      ],
+      "searchable": "媒體論述接近度與選擇偏誤 media slant 媒體論述接近度與選擇偏誤 政治傳播與媒體 媒體偏向可能出現在報導量 議題選擇 來源選擇與語言接近特定政黨等不同層次 報導選擇 來源不平衡 語言接近政黨 閱聽人需求 同一事件是否被等量報導 媒體使用誰的語彙 是否提供回應權 建立媒體長期 跨議題與跨黨比較 單篇文章不能推論媒體整體立場 語言接近不等於支持 content analysis causal gentzkow2010 budak2016 hamborg2019 政治傳播與媒體",
+      "category": "政治傳播與媒體",
+      "official": false,
+      "peer_reviewed": true
+    },
+    {
       "id": "theory:npt",
       "kind": "theory",
       "title": "常態化歷程理論（NPT）",
@@ -4031,6 +4227,20 @@
       ],
       "searchable": "政策移轉與法律刺激 policy transfer 比較政策 政策移轉與法律刺激 跨國借鏡會受移轉動機 內容 制度脈絡與執行能力影響 常產生變形而非複製 自願學習或外部壓力 制度選擇與翻譯 法律文化互動 不完全移轉 為何選這個國家 移轉的是目標 工具還是制度 哪些背景條件不可比 失敗來自資訊 設計或執行 外國法 國際指標 最佳實務與制度移植 不得用 先進國家 作為充分選國理由 跨國 外國法 移植 借鏡 最佳實務 comparative doctrinal dolowitzmarsh2000 teubner1998 比較政策 跨國 外國法 移植 借鏡 最佳實務",
       "category": "比較政策",
+      "official": false,
+      "peer_reviewed": true
+    },
+    {
+      "id": "theory:party_text_scaling",
+      "kind": "theory",
+      "title": "政黨文本位置與跨期變動",
+      "body": "party_text_scaling 政黨文本位置與跨期變動 政黨政治與文字分析 政黨立場可由同類型政治文本估計，但須預先界定維度、文類與外部錨點。 參考文本計分 詞頻尺度 跨期位置估計 比較的是黨綱、新聞稿還是社群貼文？ 維度由誰定義？ 是否有外部驗證？ 分析政黨意識形態、政策主張與長期變動。 臺灣至少需分開國家認同、經濟社會、治理與兩岸外交等軸線。 content_analysis mixed laver2003 slapin2008",
+      "url": "#theory?theory=party_text_scaling",
+      "tags": [
+        "政黨政治與文字分析"
+      ],
+      "searchable": "政黨文本位置與跨期變動 party text scaling 政黨文本位置與跨期變動 政黨政治與文字分析 政黨立場可由同類型政治文本估計 但須預先界定維度 文類與外部錨點 參考文本計分 詞頻尺度 跨期位置估計 比較的是黨綱 新聞稿還是社群貼文 維度由誰定義 是否有外部驗證 分析政黨意識形態 政策主張與長期變動 臺灣至少需分開國家認同 經濟社會 治理與兩岸外交等軸線 content analysis mixed laver2003 slapin2008 政黨政治與文字分析",
+      "category": "政黨政治與文字分析",
       "official": false,
       "peer_reviewed": true
     },
@@ -4223,5 +4433,5 @@
       "peer_reviewed": true
     }
   ],
-  "documents_sha256": "37f51941c84e976b1d41d164a7f6b166df60fd9978c09d88bdd74eb0da00aba4"
+  "documents_sha256": "22203cc43a33097067864077f660d5789d1b66d071f8a7051bd5f9bf5ce7208b"
 }

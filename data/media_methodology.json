@@ -1,0 +1,74 @@
+{
+  "notice": "單篇文章只能分析該篇文本，不能直接推論整家媒體。媒體層級判斷須跨議題、跨黨、跨時間並人工複核。",
+  "article_indicators": [
+    {
+      "id": "criticism",
+      "name": "批評指標",
+      "meaning": "針對各黨的負面評價、責任歸屬或質疑語句。"
+    },
+    {
+      "id": "praise",
+      "name": "稱讚指標",
+      "meaning": "針對各黨的正面評價、成功敘事或支持語句。"
+    },
+    {
+      "id": "descriptive",
+      "name": "描述性表述",
+      "meaning": "陳述事件、程序、數字或引述而未直接加入正負評價。"
+    },
+    {
+      "id": "frame_similarity",
+      "name": "官方論述接近度",
+      "meaning": "文本與各黨可區辨的意識形態及政策詞彙之接近度；不等於支持或控制。"
+    },
+    {
+      "id": "source_balance",
+      "name": "消息來源平衡",
+      "meaning": "是否提供多方原始來源、被批評方回應與可追溯證據。"
+    },
+    {
+      "id": "headline_body",
+      "name": "標題與內文一致性",
+      "meaning": "標題是否增加內文未支持的斷言、責任歸屬或情緒。"
+    }
+  ],
+  "outlet_level_requirements": {
+    "minimum_articles": 30,
+    "minimum_issues": 3,
+    "minimum_weeks": 4,
+    "required_controls": [
+      "區分新聞、社論、政論與轉載",
+      "依議題與事件嚴重度配對",
+      "衡量未報導或報導量差異的選擇偏誤",
+      "人工雙人標註至少10%樣本",
+      "報告信賴區間、模型錯誤與缺漏資料"
+    ]
+  },
+  "neutrality_formula": [
+    {
+      "component": "描述性語句比例",
+      "weight": 0.25
+    },
+    {
+      "component": "正負語氣平衡",
+      "weight": 0.2
+    },
+    {
+      "component": "消息來源多樣性",
+      "weight": 0.2
+    },
+    {
+      "component": "被批評方回應機會",
+      "weight": 0.15
+    },
+    {
+      "component": "標題內文一致性",
+      "weight": 0.1
+    },
+    {
+      "component": "證據與原始連結密度",
+      "weight": 0.1
+    }
+  ],
+  "ownership_rule": "政府持股、政府預算或政府任命關係屬於結構性依賴風險指標，不是內容必然偏向執政者的證明。判斷時須同時檢查董事產生方式、同黨比例限制、任期保障、編採自主、穩定財源、申訴更正與實際內容。"
+}

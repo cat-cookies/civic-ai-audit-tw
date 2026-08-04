@@ -890,5 +890,183 @@
     "peer_reviewed": true,
     "url": "https://doi.org/10.1017/S2071832200018332",
     "citation_key": "paunio2009"
+  },
+  {
+    "id": "entman1993",
+    "type": "journal_article",
+    "peer_reviewed": true,
+    "title": "Framing: Toward Clarification of a Fractured Paradigm",
+    "authors": [
+      "Robert M. Entman"
+    ],
+    "year": 1993,
+    "journal": "Journal of Communication",
+    "doi": "10.1111/j.1460-2466.1993.tb01304.x",
+    "domains": [
+      "媒體框架",
+      "政治傳播"
+    ],
+    "keywords": [
+      "框架",
+      "因果歸屬",
+      "媒體",
+      "政治"
+    ],
+    "use": "分析媒體如何選擇問題定義、因果、道德評價與解方。",
+    "limitation": "需轉化為可重現的繁體中文標註規則。"
+  },
+  {
+    "id": "gentzkow2010",
+    "type": "journal_article",
+    "peer_reviewed": true,
+    "title": "What Drives Media Slant? Evidence From U.S. Daily Newspapers",
+    "authors": [
+      "Matthew Gentzkow",
+      "Jesse M. Shapiro"
+    ],
+    "year": 2010,
+    "journal": "Econometrica",
+    "doi": "10.3982/ECTA7195",
+    "domains": [
+      "媒體偏向",
+      "政治經濟"
+    ],
+    "keywords": [
+      "媒體論述",
+      "政黨語言",
+      "所有權",
+      "閱聽人"
+    ],
+    "use": "建立媒體語言與政黨語料接近度，但須多維且依議題分層。",
+    "limitation": "美國兩黨單軸設計不能直接移植臺灣。"
+  },
+  {
+    "id": "budak2016",
+    "type": "journal_article",
+    "peer_reviewed": true,
+    "title": "Fair and Balanced? Quantifying Media Bias through Crowdsourced Content Analysis",
+    "authors": [
+      "Ceren Budak",
+      "Sharad Goel",
+      "Justin M. Rao"
+    ],
+    "year": 2016,
+    "journal": "Public Opinion Quarterly",
+    "doi": "10.1093/poq/nfw007",
+    "url": "https://academic.oup.com/poq/article/80/S1/250/2223443",
+    "domains": [
+      "媒體偏向",
+      "內容分析"
+    ],
+    "keywords": [
+      "選擇偏誤",
+      "內容偏誤",
+      "人工標註",
+      "新聞"
+    ],
+    "use": "區分報導選擇與報導內容，避免單一語氣分數代表媒體偏向。",
+    "limitation": "需要事件母體、足夠樣本與標註一致性。"
+  },
+  {
+    "id": "hamborg2019",
+    "type": "journal_article",
+    "peer_reviewed": true,
+    "title": "Automated Identification of Media Bias in News Articles: An Interdisciplinary Literature Review",
+    "authors": [
+      "Felix Hamborg",
+      "Karsten Donnay",
+      "Bela Gipp"
+    ],
+    "year": 2019,
+    "journal": "International Journal on Digital Libraries",
+    "doi": "10.1007/s00799-018-0261-y",
+    "domains": [
+      "媒體偏向",
+      "自然語言處理"
+    ],
+    "keywords": [
+      "自動偵測",
+      "框架",
+      "選擇偏誤",
+      "可解釋性"
+    ],
+    "use": "設計可解釋、多層次的偏向分析。",
+    "limitation": "模型表現需以臺灣繁體中文人工標註資料驗證。"
+  },
+  {
+    "id": "laver2003",
+    "type": "journal_article",
+    "peer_reviewed": true,
+    "title": "Extracting Policy Positions from Political Texts Using Words as Data",
+    "authors": [
+      "Michael Laver",
+      "Kenneth Benoit",
+      "John Garry"
+    ],
+    "year": 2003,
+    "journal": "American Political Science Review",
+    "doi": "10.1017/S0003055403000698",
+    "domains": [
+      "政黨政治",
+      "文字分析"
+    ],
+    "keywords": [
+      "Wordscores",
+      "政黨位置",
+      "政策文本",
+      "參考文本"
+    ],
+    "use": "依明確參考文本估計政黨位置。",
+    "limitation": "參考文本與政治維度設定會決定結果。"
+  },
+  {
+    "id": "slapin2008",
+    "type": "journal_article",
+    "peer_reviewed": true,
+    "title": "A Scaling Model for Estimating Time-Series Party Positions from Texts",
+    "authors": [
+      "Jonathan B. Slapin",
+      "Sven-Oliver Proksch"
+    ],
+    "year": 2008,
+    "journal": "American Journal of Political Science",
+    "doi": "10.1111/j.1540-5907.2008.00338.x",
+    "domains": [
+      "政黨政治",
+      "文字分析"
+    ],
+    "keywords": [
+      "Wordfish",
+      "跨期變動",
+      "政黨立場",
+      "時間序列"
+    ],
+    "use": "觀察同類政黨文本的相對位置變動。",
+    "limitation": "不同文類、平台與篇幅不可直接混合。"
+  },
+  {
+    "id": "gehlbach2014",
+    "type": "journal_article",
+    "peer_reviewed": true,
+    "title": "Government Control of the Media",
+    "authors": [
+      "Scott Gehlbach",
+      "Konstantin Sonin"
+    ],
+    "year": 2014,
+    "journal": "Journal of Public Economics",
+    "doi": "10.1016/j.jpubeco.2014.06.004",
+    "domains": [
+      "媒體所有權",
+      "政治經濟"
+    ],
+    "keywords": [
+      "政府控制",
+      "媒體",
+      "所有權",
+      "補貼"
+    ],
+    "use": "提出政府影響媒體的可能機制，作為風險假設。",
+    "limitation": "理論機制不能取代個別媒體的治理與內容證據。"
   }
 ]

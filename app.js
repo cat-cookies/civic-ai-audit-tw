@@ -42,17 +42,15 @@ function routeQuery(query) {
   if(ambiguous)return{mode:'law_article_ambiguous',raw,article:cnNumber(ambiguous[1]),sub_article:ambiguous[2]?cnNumber(ambiguous[2]):null};
   if(LAW_SUFFIXES.some(s=>compact.endsWith(s)))return{mode:'law_name',raw,law_name:compact}; return{mode:'fuzzy',raw};
 }
-function expandTerms(query){const base=normalize(query).split(' ').filter(Boolean),terms=new Set(base);for(const [k,vals] of Object.entries(SYNONYMS)){if(base.some(t=>t.includes(k)||k.includes(t)))vals.forEach(v=>terms.add(normalize(v)));}return[...terms];}
-function bigrams(text){const s=normalize(text).replace(/\s/g,''),out=new Set();if(s.length<2){if(s)out.add(s);return out;}for(let i=0;i<s.length-1;i++)out.add(s.slice(i,i+2));return out;}
-function jaccard(a,b){if(!a.size||!b.size)return 0;let inter=0;for(const x of a)if(b.has(x))inter++;return inter/(a.size+b.size-inter);}
-function rankDocument(doc,query){const hay=normalize(`${doc.title||''} ${doc.searchable||''} ${(doc.tags||[]).join(' ')}`),title=normalize(doc.title||''),terms=expandTerms(query);let score=0;for(const term of terms){if(!term)continue;if(title===term)score+=80;if(title.includes(term))score+=30;if(hay.includes(term))score+=15;score+=term.split(' ').filter(Boolean).filter(p=>hay.includes(p)).length*5;}score+=jaccard(bigrams(query),bigrams(`${doc.title||''} ${doc.body||''}`))*40;if(doc.official)score+=4;if(doc.human_reviewed)score+=3;return Math.max(0,Math.round(score*10)/10);}
-function fuzzySearch(query,limit=20){return state.searchIndex.documents.map(d=>({...d,score:rankDocument(d,query)})).filter(x=>x.score>1).sort((a,b)=>b.score-a.score||String(a.title).localeCompare(String(b.title),'zh-Hant')).slice(0,limit);}
-function kindLabel(kind){return({analysis:'制度分析',official_source:'官方入口',party_position:'政黨資料',theory:'理論',law_guide:'法規入口',research_method:'研究方法'})[kind]||kind||'資料';}
+function fuzzySearch(query,limit=12){return CivicSearch.searchDocuments(state.searchIndex.documents,query,limit);}
+function topicSuggestions(query){return CivicSearch.topicSuggestions(query);}
+function genericOfficialSuggestions(query){return CivicSearch.genericOfficialSuggestions(query);}
+function kindLabel(kind){return({analysis:'制度分析',official_source:'官方入口',party_position:'政黨資料',theory:'理論',law_guide:'法規入口',research_method:'研究方法',topic_guide:'官方議題入口'})[kind]||kind||'資料';}
 function internalLink(url){return String(url||'').startsWith('#');}
 function resultCard(doc){
   const raw=String(doc.url||'#'),internal=internalLink(raw),url=internal?raw:safeUrl(raw),snippet=String(doc.body||'').slice(0,260);
   const flags=[kindLabel(doc.kind),doc.country||'',doc.official?'官方來源':'',doc.evidence_grade?`證據 ${doc.evidence_grade}`:'',doc.human_reviewed?'已人工覆核':''].filter(Boolean);
-  return `<article class="card result-card"><div class="badges">${flags.map(x=>`<span class="badge">${esc(x)}</span>`).join('')}</div><h3>${esc(doc.title)}</h3><p>${esc(snippet)}${String(doc.body||'').length>260?'……':''}</p><p class="result-score">本地搜尋分數：${esc(doc.score)}</p>${url!=='#'?`<a class="source-link" href="${esc(url)}" ${internal?'':'target="_blank" rel="noopener noreferrer"'}>${internal?'在本站查看':'開啟官方來源'}</a>`:''}</article>`;
+  return `<article class="card result-card"><div class="badges">${flags.map(x=>`<span class="badge">${esc(x)}</span>`).join('')}</div><h3>${esc(doc.title)}</h3><p>${esc(snippet)}${String(doc.body||'').length>260?'……':''}</p>${doc.match_reason?`<p class="match-reason"><strong>符合原因：</strong>${esc(doc.match_reason)}</p>`:''}${url!=='#'?`<a class="source-link" href="${esc(url)}" ${internal?'':'target="_blank" rel="noopener noreferrer"'}>${internal?'在本站查看':'開啟官方來源'}</a>`:''}</article>`;
 }
 function siteSearchUrl(domain,query){return `https://www.google.com/search?q=${encodeURIComponent(`site:${domain} ${query}`)}`;}
 function exactLawPanel(parsed){
@@ -68,11 +66,22 @@ function exactLawPanel(parsed){
 }
 function renderSearchResults(query){
   const parsed=routeQuery(query);if(parsed.mode==='empty')return`<div class="empty">輸入制度、法案、機關、政策或完整法條開始搜尋。</div>`;
-  if(parsed.mode==='exact_law'){const related=fuzzySearch(`${parsed.law_name} 第${parsed.article}條`,8);return`${exactLawPanel(parsed)}<h2>本站相關資料</h2>${related.length?related.map(resultCard).join(''):'<div class="empty">索引尚無相關資料；這不代表官方資料不存在。</div>'}`;}
+  if(parsed.mode==='exact_law'){const related=fuzzySearch(`${parsed.law_name} 第${parsed.article}條`,8);return`${exactLawPanel(parsed)}<h2>本站相關資料</h2>${related.length?related.map(resultCard).join(''):'<div class="empty">索引尚無直接相關資料；這不代表官方資料不存在。</div>'}`;}
   if(parsed.mode==='law_article_ambiguous')return`<section class="card danger-note"><h2>缺少法規名稱</h2><p>「第${esc(parsed.article)}${parsed.sub_article?`之${esc(parsed.sub_article)}`:''}條」可能出現在多部法規。請輸入完整格式，例如「長期照顧服務法第38條」。</p></section>`;
-  const results=fuzzySearch(parsed.raw);return`<div class="search-mode"><span class="badge">${parsed.mode==='law_name'?'法規名稱搜尋':'關鍵字模糊搜尋'}</span><span>${esc(results.length)} 筆相關結果</span></div>${results.length?results.map(resultCard).join(''):'<div class="empty">沒有找到高相關結果。可改用完整法規名稱、機關名稱或較短的政策關鍵字。</div>'}`;
+  const results=fuzzySearch(parsed.raw,12);
+  const direct=results.filter(x=>x.tier==='direct');
+  const related=results.filter(x=>x.tier==='related');
+  const guides=topicSuggestions(parsed.raw);
+  const fallback=!direct.length&&!related.length&&!guides.length?genericOfficialSuggestions(parsed.raw):[];
+  const total=direct.length+related.length+guides.length+fallback.length;
+  return `<div class="search-mode"><span class="badge">${parsed.mode==='law_name'?'法規名稱搜尋':'精準模糊搜尋'}</span><span>${esc(total)} 筆結果</span></div>
+    ${direct.length?`<section class="result-group"><h2>直接命中</h2>${direct.map(resultCard).join('')}</section>`:''}
+    ${related.length?`<section class="result-group"><h2>近義詞或高度相關</h2>${related.map(resultCard).join('')}</section>`:''}
+    ${guides.length?`<section class="result-group"><h2>議題直達的官方入口</h2><p class="group-note">這些入口依查詢議題選出，不代表任何政策結論。</p>${guides.map(resultCard).join('')}</section>`:''}
+    ${fallback.length?`<section class="result-group"><h2>尚無直接索引結果</h2><p class="group-note">系統不再以「官方來源」身分強行補足無關結果；以下僅提供官方網站定位入口。</p>${fallback.map(resultCard).join('')}</section>`:''}
+    ${!total?'<div class="empty">沒有找到具有實質詞彙命中的資料。請改用法規全名、主管機關、政策專有名詞或較短的核心詞。</div>':''}`;
 }
-function searchShell(query=''){return`<section class="search-shell"><form id="search-form" class="search-row"><input id="global-search" name="q" value="${esc(query)}" autocomplete="off" placeholder="例如：長照 未應門、國會改革、老人福利法第48條" aria-label="搜尋國家資料"/><button class="primary" type="submit">搜尋</button></form><p class="search-hint">搜尋先行、AI 後置。一般文字採本地模糊排序；完整法條採精確解析。搜尋結果可再交由你設定的 AI Key 潤稿，但模型不得取代官方證據。</p></section>`;}
+function searchShell(query=''){return`<section class="search-shell"><form id="search-form" class="search-row"><input id="global-search" name="q" value="${esc(query)}" autocomplete="off" placeholder="例如：長照 未應門、國會改革、老人福利法第48條" aria-label="搜尋國家資料"/><button class="primary" type="submit">搜尋</button></form><p class="search-hint">搜尋先行、AI 後置。只有實際命中查詢詞、近義詞或明確議題關聯的資料才會列入；「官方來源」只作同分排序，不會讓無關入口進榜。</p></section>`;}
 
 function homePage(){return`${searchShell(state.query)}<section id="search-results">${renderSearchResults(state.query)}</section><section class="grid-4"><article class="card"><div class="kpi">${esc(state.sources.length)}</div><h3>多國官方入口</h3><p>先選國家，再依法規、立法、司法、統計、審計等類別查找。</p></article><article class="card"><div class="kpi">${esc(state.jurisdictions.length)}</div><h3>比較法域</h3><p>中華民國為基準，並納入美、英、加、澳、紐、日、韓、新加坡、歐盟及國際組織。</p></article><article class="card"><div class="kpi">${esc(state.researchMethods.length)}</div><h3>研究方法引擎</h3><p>依問題自動推薦法釋義、比較法、因果推論、執行研究或安全科學。</p></article><article class="card"><div class="kpi">BYOK</div><h3>自備 AI Key</h3><p>可選 OpenRouter 零價格模型、Gemini 或 Groq；未知或額度不足即停止，不自動轉付費。</p></article></section>`;}
 function analysisCard(a,questionsOnly=false){

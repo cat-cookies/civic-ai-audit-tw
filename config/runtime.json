@@ -4,6 +4,6 @@
   "public_api_base_url": "",
   "enable_remote_ai": false,
   "enable_issue_submission": true,
-  "build_label": "公開測試版 v3.0.0；官方來源優先、BYOK AI 可選",
+  "build_label": "公開測試版 v3.1.0；精準搜尋、官方來源優先、BYOK AI 可選",
   "enable_browser_byok": true
 }

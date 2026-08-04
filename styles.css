@@ -33,3 +33,14 @@ main{max-width:1180px;margin:0 auto;padding:0 1rem 3rem;min-height:70vh}footer{b
 .code-inline{font-family:ui-monospace,SFMono-Regular,Consolas,monospace;background:var(--surface-2);padding:.1rem .35rem;border-radius:6px}.copy-toast{position:fixed;right:1rem;bottom:1rem;background:var(--text);color:var(--bg);padding:.7rem 1rem;border-radius:10px;z-index:200;box-shadow:var(--shadow)}
 @media (max-width:900px){.site-header{align-items:flex-start;flex-direction:column}.hero-grid,.grid-2,.grid-3,.grid-4,.form-grid,.portal-grid,.split-pane{grid-template-columns:1fr}.form-grid .full{grid-column:auto}.tabs{top:104px}.search-row{grid-template-columns:1fr}.checkbox-grid{grid-template-columns:1fr 1fr}.sticky-card{position:static}}
 @media (max-width:560px){.checkbox-grid{grid-template-columns:1fr}.ai-warning{font-size:.82rem}.site-header{padding-top:1.4rem}.tabs{top:118px}}
+
+.match-reason{
+  margin:.8rem 0;
+  padding:.7rem .85rem;
+  border-left:3px solid var(--accent);
+  background:var(--soft);
+  font-size:.92rem;
+}
+.result-group{margin:1.5rem 0 2rem}
+.result-group>h2{margin-bottom:.65rem}
+.group-note{margin-top:-.3rem;color:var(--muted)}

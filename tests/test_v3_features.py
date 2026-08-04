@@ -35,5 +35,6 @@ class V3FeatureTest(unittest.TestCase):
         self.assertIn('discoverModels', app)
         self.assertIn('methodRecommendation', app)
         self.assertIn('OpenRouter', app)
+        self.assertTrue((ROOT/'_site/search.js').exists())
 
 if __name__=='__main__': unittest.main()

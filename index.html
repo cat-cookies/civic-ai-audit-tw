@@ -16,11 +16,11 @@
     <div>
       <div class="eyebrow">CIVIC DATA · EVIDENCE FIRST</div>
       <h1>國家資料 AI 查證與改革觀測站</h1>
-      <p class="subtitle">先找官方資料，再拆分主張、核對效力、比較制度、選擇研究方法並形成可追溯草稿。一般關鍵字採模糊搜尋；完整「法規名稱＋第○條」採精確法條模式。</p>
+      <p class="subtitle">從一般民眾的問題出發，先搜尋官方資料，再拆分主張、核對法律效力、選擇研究方法、比較制度並形成可追溯的 AI 草稿。</p>
     </div>
     <div class="header-actions">
       <a id="repo-link" class="secondary" href="#" target="_blank" rel="noopener noreferrer">GitHub 原始碼</a>
-      <a class="secondary" href="#ai">設定自己的 AI Key</a>
+      <a class="secondary" href="#ai">設定免費 AI／虛擬後端</a>
       <button id="theme-toggle" class="secondary" type="button" aria-label="切換明暗模式">切換顯示</button>
     </div>
   </header>
@@ -32,14 +32,17 @@
     <a href="#compare" data-route="compare">跨國比較與研究</a>
     <a href="#legislation" data-route="legislation">修法草案</a>
     <a href="#sources" data-route="sources">國家資料入口</a>
-    <a href="#ai" data-route="ai">AI 設定與限制</a>
+    <a href="#ai" data-route="ai">免費 AI 與後端</a>
   </nav>
   <main id="app" tabindex="-1"><div class="empty">載入中……</div></main>
   <footer>
-    <p><strong>網站定位：</strong><span id="build-label">公開測試版</span>。搜尋、入口分類與本地草稿不需要 AI Key；即時 AI 潤稿採使用者自備金鑰，金鑰只保存在目前瀏覽分頁的 sessionStorage，不寫入 GitHub。</p>
-    <p>跨國比較採功能比較，不以外國制度直接取代中華民國現行法。資料來源各有自己的授權、更新頻率與效力限制；雜湊只能驗證保存檔案是否變更，不能單獨證明內容真實、完整或具有法律效力。</p>
+    <p><strong>網站定位：</strong><span id="build-label">公開測試版</span>。搜尋、法條解析、研究方法初選、三版本修法框架與 Excel 匯出不需要 AI。即時研究可使用受控 Hugging Face Space 後端，或由使用者在目前分頁自備金鑰。</p>
+    <p>跨國比較採功能比較，不以外國制度直接取代中華民國現行法。AI 輸出須列出選國理由、資料缺口、替代解釋與不可移植之處。資料來源各有自己的授權、更新頻率與效力限制；雜湊只能驗證保存檔案是否變更，不能單獨證明內容真實、完整或具有法律效力。</p>
   </footer>
   <script src="search.js" defer></script>
+  <script src="legislation.js" defer></script>
+  <script src="xlsx-export.js" defer></script>
+  <script src="ai-engine.js" defer></script>
   <script src="app.js" defer></script>
 </body>
 </html>

@@ -1,37 +1,25 @@
 {
-  "schema_version": "2.0",
-  "checked_at": "2026-08-04T01:00:31.136004+00:00",
+  "schema_version": "4.0",
+  "checked_at": "2026-08-04T08:04:34.622051+00:00",
   "paid_fallback_allowed": false,
   "providers": [
     {
-      "provider": "gemini",
-      "eligible": [],
+      "provider": "openrouter",
       "status": "not_configured",
-      "reason": "缺少環境變數：GEMINI_API_KEY"
+      "eligible": [],
+      "reason": "缺少 OPENROUTER_API_KEY"
+    },
+    {
+      "provider": "gemini",
+      "status": "not_configured",
+      "eligible": [],
+      "reason": "缺少 GEMINI_API_KEY"
     },
     {
       "provider": "groq",
-      "eligible": [],
       "status": "not_configured",
-      "reason": "缺少環境變數：GROQ_API_KEY"
-    },
-    {
-      "provider": "cloudflare",
       "eligible": [],
-      "status": "not_configured",
-      "reason": "缺少環境變數：CLOUDFLARE_ACCOUNT_ID, CLOUDFLARE_AUTH_TOKEN"
-    },
-    {
-      "provider": "openrouter",
-      "eligible": [],
-      "status": "not_configured",
-      "reason": "缺少環境變數：OPENROUTER_API_KEY, OPENROUTER_ALLOWED_PROVIDER_SLUGS"
-    },
-    {
-      "provider": "ollama",
-      "eligible": [],
-      "status": "not_configured",
-      "reason": "缺少環境變數：OLLAMA_MODEL"
+      "reason": "缺少 GROQ_API_KEY"
     }
   ]
 }

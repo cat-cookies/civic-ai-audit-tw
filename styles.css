@@ -44,3 +44,26 @@ main{max-width:1180px;margin:0 auto;padding:0 1rem 3rem;min-height:70vh}footer{b
 .result-group{margin:1.5rem 0 2rem}
 .result-group>h2{margin-bottom:.65rem}
 .group-note{margin-top:-.3rem;color:var(--muted)}
+
+/* v4: public curiosity, research dossiers and legislation tables */
+.match-reason{background:var(--surface-2)}
+.example-chips{display:flex;gap:.5rem;flex-wrap:wrap;margin:.8rem 0 .2rem}
+.example-chip{background:var(--surface-2);color:var(--text);border:1px solid var(--line);border-radius:999px;padding:.38rem .7rem;font-size:.88rem}
+.example-chip:hover{border-color:var(--accent);color:var(--accent)}
+.output-panel{margin:1rem 0;padding:1rem;background:var(--surface);border:1px solid var(--line);border-radius:16px;box-shadow:var(--shadow)}
+.research-dossier>h3{margin-top:0}
+.research-dossier h4{margin:1.2rem 0 .5rem}
+.loading{padding:2rem;text-align:center;color:var(--accent);font-weight:700}
+.draft-table{min-width:1500px}
+.draft-table td:nth-child(3),.draft-table td:nth-child(4){min-width:320px}
+.draft-table ol,.draft-table ul{padding-left:1.2rem;margin:.2rem 0}
+.draft-result .table-wrap{margin:1rem 0}
+.source-toolbar{display:grid;grid-template-columns:1.1fr 1.2fr 1.4fr auto auto;gap:.7rem;align-items:end}
+.source-toolbar label{display:grid;gap:.3rem;font-weight:700}
+.inline-check{display:flex!important;align-items:center;gap:.4rem;padding:.65rem 0}
+.citizen-mode .research-only{display:none}
+#toast{position:fixed;right:1rem;bottom:1rem;z-index:500;background:var(--text);color:var(--bg);padding:.7rem 1rem;border-radius:10px;opacity:0;transform:translateY(12px);transition:.2s;pointer-events:none}
+#toast.show{opacity:1;transform:none}
+code{font-family:ui-monospace,SFMono-Regular,Consolas,monospace;background:var(--surface-2);padding:.12rem .35rem;border-radius:5px}
+@media (max-width:900px){.source-toolbar{grid-template-columns:1fr 1fr}.draft-table{min-width:1200px}}
+@media (max-width:560px){.source-toolbar{grid-template-columns:1fr}}

@@ -37,5 +37,5 @@ jobs:
         run: |
           cat data/model-status.json
           if [ -n "${GEMINI_API_KEY}${GROQ_API_KEY}${OPENROUTER_API_KEY}${CLOUDFLARE_AUTH_TOKEN}" ]; then
-            python3 -c "import json; d=json.load(open('data/model-status.json',encoding='utf-8')); assert any(p.get('status')=='ready' and p.get('eligible') for p in d.get('providers',[])), '已設定模型金鑰，但沒有任何符合免費與白名單政策的模型。'"
+            python3 -c "import json; d=json.load(open('data/model-status.json',encoding='utf-8')); assert any(p.get('status') in {'ready','account_check_required'} and p.get('eligible') for p in d.get('providers',[])), '已設定模型金鑰，但沒有任何符合候選政策的模型。'"
           fi

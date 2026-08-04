@@ -6,7 +6,7 @@ ROOT=Path(__file__).resolve().parents[1]; OUT=ROOT/"_site"
 
 def main() -> int:
     errors=[]
-    for f in ["index.html","app.js","styles.css","data/search-index.json","config/runtime.json"]:
+    for f in ["index.html","search.js","legislation.js","xlsx-export.js","ai-engine.js","app.js","styles.css","data/search-index.json","data/curiosity_examples.json","config/runtime.json"]:
         if not (OUT/f).exists(): errors.append(f"缺少 {f}")
     html=(OUT/"index.html").read_text(encoding="utf-8") if (OUT/"index.html").exists() else ""
     if "人工智慧生成內容警示" not in html: errors.append("缺少固定 AI 警示")

@@ -1,0 +1,20 @@
+{
+  "schema_version": "1.0",
+  "providers": [
+    {
+      "model_id": "replace-with-discovered-model-id",
+      "model_rights_holder": "",
+      "model_development_origin": "",
+      "inference_provider_slug": "",
+      "forbidden_provider_slugs": [],
+      "data_processing_regions": [],
+      "training_use_policy": "deny-or-contractually-defined",
+      "log_retention": "",
+      "zero_data_retention_supported": false,
+      "allowed_data_class": "public_official_only",
+      "approved_at": "YYYY-MM-DD",
+      "policy_last_checked_at": "YYYY-MM-DD",
+      "approved_by": ""
+    }
+  ]
+}

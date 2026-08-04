@@ -1,0 +1,16 @@
+name = "civic-ai-audit-api"
+main = "src/index.js"
+compatibility_date = "2026-08-04"
+workers_dev = true
+
+# 使用 wrangler secret put GROQ_API_KEY / GEMINI_API_KEY，禁止把金鑰寫入本檔。
+[vars]
+ALLOWED_ORIGINS = "https://OWNER.github.io"
+DAILY_REQUEST_LIMIT = "10"
+GROQ_MODEL = ""
+GEMINI_MODEL = ""
+
+# 建立 KV 後解除註解
+# [[kv_namespaces]]
+# binding = "RATE_LIMIT"
+# id = "YOUR_KV_NAMESPACE_ID"

@@ -1,0 +1,180 @@
+{
+  "schema_version": "2.0",
+  "policy": {
+    "allow_paid_fallback": false,
+    "maximum_estimated_cost_usd": 0,
+    "external_models_public_official_data_only": true,
+    "block_personal_data_before_model_call": true,
+    "fail_closed_when_free_status_unknown": true,
+    "free_assertion_max_age_days": 35,
+    "no_model_majority_as_evidence": true,
+    "openrouter_requires_explicit_provider_allowlist": true
+  },
+  "budget": {
+    "max_items_per_run": 8,
+    "max_source_chars_per_item": 24000,
+    "max_model_calls_per_item": 6,
+    "max_output_tokens_per_call": 1800,
+    "max_calls_per_provider_per_run": 12,
+    "fail_closed_on_quota": true,
+    "max_fallback_attempts_per_role": 2,
+    "max_total_model_attempts_per_item": 10
+  },
+  "adaptive_pipeline": {
+    "low": [
+      "evidence_extractor",
+      "skeptical_auditor",
+      "synthesizer"
+    ],
+    "medium": [
+      "evidence_extractor",
+      "skeptical_auditor",
+      "legal_policy_reviewer",
+      "synthesizer"
+    ],
+    "high": [
+      "evidence_extractor",
+      "skeptical_auditor",
+      "legal_policy_reviewer",
+      "source_conflict_reviewer",
+      "legal_risk_reviewer",
+      "synthesizer"
+    ]
+  },
+  "providers": [
+    {
+      "id": "gemini",
+      "type": "gemini_dynamic",
+      "enabled_if_env": [
+        "GEMINI_API_KEY"
+      ],
+      "discovery_url": "https://generativelanguage.googleapis.com/v1beta/models",
+      "candidate_models": [
+        "gemini-3.5-flash-lite",
+        "gemini-3.6-flash",
+        "gemini-3-flash"
+      ],
+      "developer_origin": "United States",
+      "data_policy": "public_official_only",
+      "free_assertion": {
+        "checked_at": "2026-08-04",
+        "source": "https://ai.google.dev/gemini-api/docs/pricing",
+        "eligible_candidates": [
+          "gemini-3.5-flash-lite",
+          "gemini-3.6-flash",
+          "gemini-3-flash"
+        ]
+      },
+      "notes": "只在未啟用付費備援的專案使用；免費層資料政策需由管理者定期確認。"
+    },
+    {
+      "id": "groq",
+      "type": "openai_dynamic",
+      "enabled_if_env": [
+        "GROQ_API_KEY"
+      ],
+      "base_url": "https://api.groq.com/openai/v1",
+      "discovery_path": "/models",
+      "candidate_models": [
+        "openai/gpt-oss-120b",
+        "openai/gpt-oss-20b",
+        "llama-3.3-70b-versatile",
+        "llama-3.1-8b-instant"
+      ],
+      "blocked_prefixes": [
+        "deepseek/",
+        "qwen/",
+        "moonshotai/",
+        "z-ai/",
+        "minimax/",
+        "baidu/",
+        "tencent/",
+        "01-ai/"
+      ],
+      "developer_origin": "Non-PRC curated list",
+      "data_policy": "public_official_only",
+      "free_assertion": {
+        "checked_at": "2026-08-04",
+        "source": "https://console.groq.com/docs/rate-limits",
+        "eligible_candidates": [
+          "openai/gpt-oss-120b",
+          "openai/gpt-oss-20b",
+          "llama-3.3-70b-versatile",
+          "llama-3.1-8b-instant"
+        ]
+      },
+      "notes": "服務可能限流或停用模型；自動替換僅在預先核准候選清單內。"
+    },
+    {
+      "id": "cloudflare",
+      "type": "cloudflare_dynamic",
+      "enabled_if_env": [
+        "CLOUDFLARE_ACCOUNT_ID",
+        "CLOUDFLARE_AUTH_TOKEN"
+      ],
+      "candidate_models": [
+        "@cf/meta/llama-4-scout-17b-16e-instruct",
+        "@cf/meta/llama-3.3-70b-instruct-fp8-fast",
+        "@cf/google/gemma-3-12b-it"
+      ],
+      "developer_origin": "United States / approved non-PRC developers",
+      "data_policy": "public_official_only",
+      "daily_neuron_soft_cap": 8000,
+      "free_assertion": {
+        "checked_at": "2026-08-04",
+        "source": "https://developers.cloudflare.com/workers-ai/platform/pricing/",
+        "eligible_candidates": [
+          "@cf/meta/llama-4-scout-17b-16e-instruct",
+          "@cf/meta/llama-3.3-70b-instruct-fp8-fast",
+          "@cf/google/gemma-3-12b-it"
+        ]
+      },
+      "notes": "軟上限低於官方每日免費配置；無法證明帳戶沒有付費方案時，仍應由管理者設定 Cloudflare 預算警示。"
+    },
+    {
+      "id": "openrouter",
+      "type": "openrouter_zero_price_dynamic",
+      "enabled_if_env": [
+        "OPENROUTER_API_KEY",
+        "OPENROUTER_ALLOWED_PROVIDER_SLUGS"
+      ],
+      "base_url": "https://openrouter.ai/api/v1",
+      "preferred_model_prefixes": [
+        "google/",
+        "meta-llama/",
+        "mistralai/",
+        "openai/",
+        "nvidia/"
+      ],
+      "blocked_model_prefixes": [
+        "deepseek/",
+        "qwen/",
+        "z-ai/",
+        "moonshotai/",
+        "minimax/",
+        "baidu/",
+        "tencent/",
+        "01-ai/"
+      ],
+      "developer_origin": "Non-PRC allowlist",
+      "data_policy": "public_official_only",
+      "routing": {
+        "allow_fallbacks": false,
+        "data_collection": "deny",
+        "require_parameters": true
+      },
+      "notes": "只有模型輸入與輸出價格均為零，且管理者明確指定實際推論供應商白名單時才啟用。"
+    },
+    {
+      "id": "ollama",
+      "type": "ollama_dynamic",
+      "enabled_if_env": [
+        "OLLAMA_MODEL"
+      ],
+      "base_url": "http://127.0.0.1:11434",
+      "developer_origin": "User-selected",
+      "data_policy": "local_only",
+      "notes": "本機優先；適合敏感資料，但仍需控制本機權限與日誌。"
+    }
+  ]
+}

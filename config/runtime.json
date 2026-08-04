@@ -1,0 +1,8 @@
+{
+  "site_name": "國家資料 AI 查證與改革觀測站",
+  "repository_url": "https://github.com/OWNER/civic-ai-audit",
+  "public_api_base_url": "",
+  "enable_remote_ai": false,
+  "enable_issue_submission": true,
+  "build_label": "可部署暨待整合驗證 MVP"
+}

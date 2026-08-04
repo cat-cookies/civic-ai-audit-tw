@@ -1,0 +1,14 @@
+{
+  "notice": "政黨主張與政府事實資料分庫保存。只有同一議題、明確日期、可追溯官方來源的主張，才可進行跨黨或跨期比較。",
+  "parties": [
+    {"id": "dpp", "name": "民主進步黨", "official_url": "https://www.dpp.org.tw/", "positions": []},
+    {"id": "kmt", "name": "中國國民黨", "official_url": "https://www.kmt.org.tw/", "positions": []},
+    {"id": "tpp", "name": "台灣民眾黨", "official_url": "https://www.tpp.org.tw/", "positions": []}
+  ],
+  "comparison_rules": [
+    "不得以新聞標題代替政黨完整主張。",
+    "同一政黨不同時間、不同層級發言應分開標示，不得自行視為一致。",
+    "所謂矛盾須列出可比較的命題、日期、發言主體、原文與情境，不能只貼標籤。",
+    "政黨主張不得混入政府官方事實庫；政府資料也不得被表述為特定政黨宣傳。"
+  ]
+}

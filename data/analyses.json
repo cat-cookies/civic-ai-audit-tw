@@ -1,0 +1,102 @@
+[
+  {
+    "id": "demo-legislative-open-data",
+    "title": "立法資料可機器介接，但不能把提案版本當成現行法",
+    "domain": "國會透明與法制",
+    "summary": "立法院開放資料平臺提供議案提案、法律條文對照表及其他議事資料的 JSON、XML、CSV 等介接方式。資料可用於重建立法歷程，但提案、審查、協商、二讀、三讀與總統公布具有不同程序地位，必須分層標示。",
+    "reform_need": "建立統一的『法律形成事件鏈』資料模型，將同一法案的提案版本、委員會審查、協商結論、院會表決、三讀文本及公布法規連結起來。",
+    "question_targets": [
+      "立法院是否能提供跨資料集穩定識別碼，使同一法案在提案、審查、協商與三讀資料間可直接關聯？",
+      "資料欄位或介接方式變更時，是否提供版本紀錄、停用期與向下相容政策？"
+    ],
+    "legal_policy_split": {
+      "policy": "提升開放國會、民眾理解與研究可重現性。",
+      "law": "不得將尚未通過的提案條文表述為現行有效法規；法律效力須依正式議事與公布程序判斷。"
+    },
+    "theory_comparison": [
+      {
+        "theory": "開放政府",
+        "assessment": "資料已具可再利用性，但跨程序鏈結與版本治理仍可加強。"
+      },
+      {
+        "theory": "法治國原則",
+        "assessment": "應清楚區分提案、議決、公布與施行，避免效力誤認。"
+      }
+    ],
+    "evidence_grade": "A",
+    "confidence": 0.92,
+    "ai_generated": true,
+    "human_reviewed": false,
+    "publication_status": "demonstration",
+    "generated_at": "2026-08-04T07:30:00+08:00",
+    "limitations": "這是用於展示網站欄位與查證方法的 AI 範例，未完成獨立人工覆核，不得作為正式結論。 本項只說明資料治理與效力分層，不評價特定法案、政黨或立法委員。",
+    "sources": [
+      {
+        "title": "立法院開放資料服務平臺開發指南",
+        "url": "https://data.ly.gov.tw/developer.action",
+        "type": "官方技術文件",
+        "date": "2026-08-04"
+      },
+      {
+        "title": "議案提案資料集",
+        "url": "https://data.ly.gov.tw/getds.action?id=20",
+        "type": "官方資料集",
+        "date": "2026-08-02"
+      },
+      {
+        "title": "法律條文對照表資料集",
+        "url": "https://data.ly.gov.tw/getds.action?id=19",
+        "type": "官方資料集",
+        "date": "2026-08-03"
+      }
+    ],
+    "is_demo": true
+  },
+  {
+    "id": "demo-judgment-api-governance",
+    "title": "裁判書資料庫必須同步處理異動、移除與隱私風險",
+    "domain": "司法資料治理",
+    "summary": "司法院裁判書開放 API 提供異動清單與裁判全文，但官方規格要求後取得資料覆蓋舊資料，若裁判書已移除，使用者也應刪除先前保存內容。系統設計不能只新增資料，還要處理更正與撤除。",
+    "reform_need": "在查證網站中建立資料撤除清單、版本雜湊、同步紀錄與去識別檢核，避免持續公開已被官方移除的裁判資料。",
+    "question_targets": [
+      "使用裁判書開放資料的政府或民間系統，是否具備自動覆蓋異動版本與刪除已移除資料的機制？",
+      "資料同步失敗時，是否有告警、稽核紀錄與人工補正程序？"
+    ],
+    "legal_policy_split": {
+      "policy": "兼顧司法透明、研究利用與個人隱私。",
+      "law": "資料利用者仍須遵守公開範圍、個人資料保護及官方撤除要求；資料存在不等於可無限制再散布。"
+    },
+    "theory_comparison": [
+      {
+        "theory": "資訊生命週期治理",
+        "assessment": "應涵蓋取得、更新、保存、撤除與稽核，而非只做一次性下載。"
+      },
+      {
+        "theory": "資料最小化",
+        "assessment": "只保留查證所需欄位，並避免建立可重新識別個人的索引。"
+      }
+    ],
+    "evidence_grade": "A",
+    "confidence": 0.95,
+    "ai_generated": true,
+    "human_reviewed": false,
+    "publication_status": "demonstration",
+    "generated_at": "2026-08-04T07:30:00+08:00",
+    "limitations": "這是用於展示網站欄位與查證方法的 AI 範例，未完成獨立人工覆核，不得作為正式結論。 本項不是個案裁判分析，也不提供訴訟結果預測。",
+    "sources": [
+      {
+        "title": "司法院裁判書開放 API 規格說明（114.08.22版）",
+        "url": "https://opendata.judicial.gov.tw/api/Newses/42/file",
+        "type": "官方技術文件",
+        "date": "2025-08-22"
+      },
+      {
+        "title": "司法院資料開放平臺",
+        "url": "https://opendata.judicial.gov.tw/",
+        "type": "官方資料入口",
+        "date": "2026-08-04"
+      }
+    ],
+    "is_demo": true
+  }
+]

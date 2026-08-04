@@ -1,0 +1,906 @@
+{
+  "bomFormat": "CycloneDX",
+  "specVersion": "1.6",
+  "serialNumber": "urn:uuid:civic-ai-audit-v2",
+  "version": 1,
+  "metadata": {
+    "timestamp": "2026-08-04T01:03:02.392984+00:00",
+    "component": {
+      "type": "application",
+      "name": "civic-ai-audit",
+      "version": "2.0.0"
+    }
+  },
+  "components": [
+    {
+      "type": "file",
+      "name": ".github/ISSUE_TEMPLATE/config.yml",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "1932b1bf8c291653309ea98b5878f76f8a524c856d924d6ea4c03da208bbc8cf"
+        }
+      ]
+    },
+    {
+      "type": "file",
+      "name": ".github/ISSUE_TEMPLATE/correction.yml",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "a7ed7dafc2cfcdf6f87f52d8a0e57501fbb8c9979286076ce7bd768a0ae43ddf"
+        }
+      ]
+    },
+    {
+      "type": "file",
+      "name": ".github/ISSUE_TEMPLATE/response.yml",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "0acb79c566fa172ccadc90f5d4a56f83e4c9332c5d5c06a126915b8ba69c2766"
+        }
+      ]
+    },
+    {
+      "type": "file",
+      "name": ".github/dependabot.yml",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "5e54c7e473646e7b15345ac8dc7749922495be1cac57135cdf3cde5e4d20911f"
+        }
+      ]
+    },
+    {
+      "type": "file",
+      "name": ".github/workflows/codeql.yml",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "4ec572c4a18d8e79226aedd9fd76a23126232cb59c10b6d25b18dded7539ebd8"
+        }
+      ]
+    },
+    {
+      "type": "file",
+      "name": ".github/workflows/collect.yml",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "5ada205088903edda5c14b7ba8852ccdbac9b45e0426aba5fecc93578b5cc254"
+        }
+      ]
+    },
+    {
+      "type": "file",
+      "name": ".github/workflows/model-status.yml",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "f66e9c228f9b10c97061f9f8c6e2143e68ae2786f38a3a792f26fa146992fe3a"
+        }
+      ]
+    },
+    {
+      "type": "file",
+      "name": ".github/workflows/pages.yml",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "d5bf4c86ebda27fc3d58ebef2e5ea2ac188023f32072317f3c8d4b72f450d3dc"
+        }
+      ]
+    },
+    {
+      "type": "file",
+      "name": ".github/workflows/test.yml",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "9f07f2142ccc98d3bff3ca5a0e0ce80ffd813cbc96cdef7000a05c3158c3dbde"
+        }
+      ]
+    },
+    {
+      "type": "file",
+      "name": ".gitignore",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "834005e47ce0936986962d4b5fe312eafe890aac3ff42af475cc8259ce36925e"
+        }
+      ]
+    },
+    {
+      "type": "file",
+      "name": ".nojekyll",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      ]
+    },
+    {
+      "type": "file",
+      "name": "CONTRIBUTING.md",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "333912a01780cbdfe431ae92ea3f64f8bc22ad5f25a4d2038a59650c21fcac64"
+        }
+      ]
+    },
+    {
+      "type": "file",
+      "name": "DISCLAIMER.md",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "5d8b5f0aa98a98e24aebc3920b1d4d42b4162a56e5c31dd60bcd914233f148c4"
+        }
+      ]
+    },
+    {
+      "type": "file",
+      "name": "LICENSE",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "6a614356e95134c4e90eb80c30a58765b6aeb36463d92c0b71bbd20311d17262"
+        }
+      ]
+    },
+    {
+      "type": "file",
+      "name": "NOTICE.md",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "c6d1f93e41beabce7529cf03d0b2bb8f51306fa9dfd9d08a0cfa123c6fde0a99"
+        }
+      ]
+    },
+    {
+      "type": "file",
+      "name": "README.md",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "411b027f36f377cb6545961fddbf90d31f29fab1e19bf7dc250bfacffccaa29e"
+        }
+      ]
+    },
+    {
+      "type": "file",
+      "name": "SBOM.cdx.json",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "565ae97368aa70c3f2524f8c066801cd3f28d33f0b10f8d11c7c0bd2ca127e4c"
+        }
+      ]
+    },
+    {
+      "type": "file",
+      "name": "SECURITY.md",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "fd992753f0c9658b7eb27ab1cfbda4512952b6c3e4abbb919eeb529467715548"
+        }
+      ]
+    },
+    {
+      "type": "file",
+      "name": "VERSION",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "c28fcca53637bc88e124af1725df13cb98c69dedefd62fb3cdbe1cdb6b760624"
+        }
+      ]
+    },
+    {
+      "type": "file",
+      "name": "app.js",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "2ff971d9f773587c9594d1e970133e076d732effcc03d48abeecb6baff014fc2"
+        }
+      ]
+    },
+    {
+      "type": "file",
+      "name": "config/connectors.json",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "992aa06d15d6cbcd093082e9a52ea7ffe095a90720a6e4dd48f20a5a07a08660"
+        }
+      ]
+    },
+    {
+      "type": "file",
+      "name": "config/models.json",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "b445c327fc6073d649d6094ecaf5f9eec2be561d783c5a96750cc0593185ba2c"
+        }
+      ]
+    },
+    {
+      "type": "file",
+      "name": "config/provider_allowlist.example.json",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "740d994ef02c4244ec4d4863ae31078765809462909b7cf3b0595b2837d94d91"
+        }
+      ]
+    },
+    {
+      "type": "file",
+      "name": "config/runtime.example.json",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "786cff6678b63feef67aa2eac05221dabe62f027e4889757089afe5e5fac60fa"
+        }
+      ]
+    },
+    {
+      "type": "file",
+      "name": "config/runtime.json",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "786cff6678b63feef67aa2eac05221dabe62f027e4889757089afe5e5fac60fa"
+        }
+      ]
+    },
+    {
+      "type": "file",
+      "name": "config/search.json",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "118cd1a2fac63bfb5158bbc9b73d3329987bdc1c7433d3729f0d06ede8260dd7"
+        }
+      ]
+    },
+    {
+      "type": "file",
+      "name": "data/analyses.json",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "94fdede9b438bc4b16eab425e37c70e9b06c291323e1ae0c5c755d5f9afed918"
+        }
+      ]
+    },
+    {
+      "type": "file",
+      "name": "data/connector-status.json",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "fd68d32f3ac7650ad8f66ea30d186d92f684e4baa02c623f71e89816e904946a"
+        }
+      ]
+    },
+    {
+      "type": "file",
+      "name": "data/methodology.json",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "b390e4228e78060ffdc1872caf77f07d9baa6421f94cbea174cef65947aca836"
+        }
+      ]
+    },
+    {
+      "type": "file",
+      "name": "data/model-status.json",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "89e59e90c7d7eab668211299d61172eda0c88332f92a16bea58b1d3a17b4f538"
+        }
+      ]
+    },
+    {
+      "type": "file",
+      "name": "data/party_positions.json",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "23d63a7b4501f7de8274bae02b1adb22040a90645728e820a35d5ec8c7a646e8"
+        }
+      ]
+    },
+    {
+      "type": "file",
+      "name": "data/private/.gitkeep",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      ]
+    },
+    {
+      "type": "file",
+      "name": "data/raw/.gitkeep",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      ]
+    },
+    {
+      "type": "file",
+      "name": "data/search-index.json",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "74c46775503e8c3c3ea9a1dc1a02c531b8143795163acdc22dea3aa857dd20a4"
+        }
+      ]
+    },
+    {
+      "type": "file",
+      "name": "data/sources.json",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "872db1bb746179ec6c35f87e9e0478d560b3a50f6431f55d460140c4f4cf857c"
+        }
+      ]
+    },
+    {
+      "type": "file",
+      "name": "data/theory_catalog.json",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "7c4b859e72073d41338566d6907982d5a0f68bd19b05176b9167a00d4144ee72"
+        }
+      ]
+    },
+    {
+      "type": "file",
+      "name": "docs/ARCHITECTURE.md",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "acb5e9665340d60ca8b175698192afba56a53d476d27e532a42bbe2a1d4d47a2"
+        }
+      ]
+    },
+    {
+      "type": "file",
+      "name": "docs/COMPARISON.md",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "ad24c54a866e84ff9c5f2976109ab6ac6e3748e8716be6845a441908f79930a0"
+        }
+      ]
+    },
+    {
+      "type": "file",
+      "name": "docs/DATA_POLICY.md",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "d35122381bf09e3c44457304cb4f505be518a361c0e4ed847f9ab6383fbc89d1"
+        }
+      ]
+    },
+    {
+      "type": "file",
+      "name": "docs/LEGAL_GOVERNANCE.md",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "d491e16a4ad6cc24c84e9879b1b059dfc7c9cb86751f180ce14ef280585ca2d0"
+        }
+      ]
+    },
+    {
+      "type": "file",
+      "name": "docs/MODEL_POLICY.md",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "1c9786697ad286c284b3f4779947f5ae552b93a0ac5db98ce650e75bd28d16bf"
+        }
+      ]
+    },
+    {
+      "type": "file",
+      "name": "index.html",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "83bb25023eb27dddcfa6356f289c00075a6c68ead73589444b642472dedc2953"
+        }
+      ]
+    },
+    {
+      "type": "file",
+      "name": "review/review_queue.example.json",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "953b28906ad93beef2f02ca211eeb6e449a709d9b47cbdb377d5415e392691b5"
+        }
+      ]
+    },
+    {
+      "type": "file",
+      "name": "scripts/__init__.py",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      ]
+    },
+    {
+      "type": "file",
+      "name": "scripts/__pycache__/__init__.cpython-313.pyc",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "cb26e75c71237cca20346fd1c0ff8531eec4ee12941b02fbdc7e0c4b1015b0ea"
+        }
+      ]
+    },
+    {
+      "type": "file",
+      "name": "scripts/__pycache__/analyze.cpython-313.pyc",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "582197b096d002443fcb991f3a5d786555839107bfab36879af84daf5e895929"
+        }
+      ]
+    },
+    {
+      "type": "file",
+      "name": "scripts/__pycache__/build_search_index.cpython-313.pyc",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "b90db44be72658330fe71c6068fe600f047dcb5609ac10ccd3b0088a88cc3e58"
+        }
+      ]
+    },
+    {
+      "type": "file",
+      "name": "scripts/__pycache__/build_site.cpython-313.pyc",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "81da5cdc37cbe352c397c69f4eb1a2781803e69afb13997e448c47c4271228f3"
+        }
+      ]
+    },
+    {
+      "type": "file",
+      "name": "scripts/__pycache__/check_site.cpython-313.pyc",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "42d6098da463820faababb9e9a293047a60883dc9fad96e1cda58a4eb515d8b3"
+        }
+      ]
+    },
+    {
+      "type": "file",
+      "name": "scripts/__pycache__/collect.cpython-313.pyc",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "3c38e018e23a7f093a26faa78d0b8baed3954a442ad6398abd512253361c3481"
+        }
+      ]
+    },
+    {
+      "type": "file",
+      "name": "scripts/__pycache__/data_policy.cpython-313.pyc",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "e8e7604ae7913d1f63730b9688f8bfa3fefdb0d475ce56df3dc1380841473de4"
+        }
+      ]
+    },
+    {
+      "type": "file",
+      "name": "scripts/__pycache__/evidence.cpython-313.pyc",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "209b6f7742c0fca7358ce2e430c2bb4fbe646f5a15fbae751d34e8328a491c9c"
+        }
+      ]
+    },
+    {
+      "type": "file",
+      "name": "scripts/__pycache__/http_utils.cpython-313.pyc",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "1e0e40e6d98efd9cfa5ea15a3ef963671ab9e71c0a91e40210a6123fb2ff26f9"
+        }
+      ]
+    },
+    {
+      "type": "file",
+      "name": "scripts/__pycache__/init_repo.cpython-313.pyc",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "64eae3390b906d44aa3606da0d3dd6f89ec44ae8e08b00eaba802fd42ab13b0e"
+        }
+      ]
+    },
+    {
+      "type": "file",
+      "name": "scripts/__pycache__/model_registry.cpython-313.pyc",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "ddee8c3a43421ccc960a0106964e51766e9e1fa35f27418e948df80e42089535"
+        }
+      ]
+    },
+    {
+      "type": "file",
+      "name": "scripts/__pycache__/providers.cpython-313.pyc",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "df2f9a3d88d087a45bde23a70ae2daae6b6593d6c2feb51c0446d319257830a4"
+        }
+      ]
+    },
+    {
+      "type": "file",
+      "name": "scripts/__pycache__/publish_reviewed.cpython-313.pyc",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "a2cf5590bd64b377c4e6afd5b28eefae591ab9327748ca3add5313bd464baae7"
+        }
+      ]
+    },
+    {
+      "type": "file",
+      "name": "scripts/__pycache__/query_router.cpython-313.pyc",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "ddf37c74bf99260ec9b78e28ec94328e09c1492f9e6059cdedd48437b3374df9"
+        }
+      ]
+    },
+    {
+      "type": "file",
+      "name": "scripts/__pycache__/sbom.cpython-313.pyc",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "1e94d316acaf6f2020b37251b8fd851013d0c3f169e37a659624eb7af37ad990"
+        }
+      ]
+    },
+    {
+      "type": "file",
+      "name": "scripts/__pycache__/validators.cpython-313.pyc",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "b88e1a98fd064f5e573c2a847533c0b4e57bc3081bbebcc59a494a4e61776924"
+        }
+      ]
+    },
+    {
+      "type": "file",
+      "name": "scripts/analyze.py",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "05fe157b84a26673826eb84c16bf4043402fd61808ac8a3a5e2f39a850414986"
+        }
+      ]
+    },
+    {
+      "type": "file",
+      "name": "scripts/build_search_index.py",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "95946c4905ddcf29878eaf2e1be90ae6d8529fd61dd0a43f59197e09b25514a3"
+        }
+      ]
+    },
+    {
+      "type": "file",
+      "name": "scripts/build_site.py",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "2dc2e1190cb5a74397677677f16bec88272bdf745fd7a94b5b0b3d8bfc2661ae"
+        }
+      ]
+    },
+    {
+      "type": "file",
+      "name": "scripts/check_site.py",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "60de4d323949e40c8676f416104bc9e37e3d9d8a689ddc4e6f3e190c64485406"
+        }
+      ]
+    },
+    {
+      "type": "file",
+      "name": "scripts/collect.py",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "7b3c0c449431a9c404a25e5fc0441ee86e930fae0bacebb63284977ae1661124"
+        }
+      ]
+    },
+    {
+      "type": "file",
+      "name": "scripts/data_policy.py",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "26564e6648199bf4ef942ffdc440697de71c643d316ba40bb61120589b894b0e"
+        }
+      ]
+    },
+    {
+      "type": "file",
+      "name": "scripts/evidence.py",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "1a1f59406dda71a6b0ef534695580da424dd0afbfd1429e1e89f1bda98db0e9d"
+        }
+      ]
+    },
+    {
+      "type": "file",
+      "name": "scripts/http_utils.py",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "61bb0528c8c1b30186d3de79b4aa59ed195848c8afcdd17da757fe26f49d7b94"
+        }
+      ]
+    },
+    {
+      "type": "file",
+      "name": "scripts/init_repo.py",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "44a75efca40a034a825d48ad5ad0c08ec90b07a53161683c2d3beb6ee96711dc"
+        }
+      ]
+    },
+    {
+      "type": "file",
+      "name": "scripts/model_registry.py",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "8c7178e39689b8722ac72317ad98f4af77fdcfb17dcd2c47ba647842aabff3f3"
+        }
+      ]
+    },
+    {
+      "type": "file",
+      "name": "scripts/providers.py",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "af68a47b883504c5a14fea4ddb48d36804576dd5c235ca82b221d0ce2c0837da"
+        }
+      ]
+    },
+    {
+      "type": "file",
+      "name": "scripts/publish_reviewed.py",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "d523c90085a171afe1a68e14ad9b8a7a5bbe3728967d24dcf4a23bef2ac45ee5"
+        }
+      ]
+    },
+    {
+      "type": "file",
+      "name": "scripts/query_router.py",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "6c7fae2b8275a889545a6b7a91eac1dac637724c66016c86dc4e5bb251e33ade"
+        }
+      ]
+    },
+    {
+      "type": "file",
+      "name": "scripts/sbom.py",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "fc41ea3af01fc73234c18a49b8a956ddc8724d5093d60406c7e72e5d05bba1f8"
+        }
+      ]
+    },
+    {
+      "type": "file",
+      "name": "scripts/validators.py",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "eb021473e5a14fa4a434933caea44b07403286ceccebc80bf139558d958aaba4"
+        }
+      ]
+    },
+    {
+      "type": "file",
+      "name": "styles.css",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "c12b7826752186d8ecbadd03113895c33d9066f22985659512cbadc2ca648f79"
+        }
+      ]
+    },
+    {
+      "type": "file",
+      "name": "tests/__pycache__/test_build.cpython-313.pyc",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "f297f1f9a1d35f55e45ff3f900968b2d3a5dc1846bd8cb1156388ea22e61f1c6"
+        }
+      ]
+    },
+    {
+      "type": "file",
+      "name": "tests/__pycache__/test_data_policy.cpython-313.pyc",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "c731bdd2d578f7d62eac9f77280cbb6e7ecdee5c2da59d89e912d8202acad498"
+        }
+      ]
+    },
+    {
+      "type": "file",
+      "name": "tests/__pycache__/test_evidence.cpython-313.pyc",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "ec06e4abbf0e73e732b1bb96a51efbc1e217e50af1cc21fb66105cc6f2b9758f"
+        }
+      ]
+    },
+    {
+      "type": "file",
+      "name": "tests/__pycache__/test_query_router.cpython-313.pyc",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "ab0ed6a03cc35ac5a411db31a5c9838d28dbdbe1d44948f9aa5ab89c4d9fa54a"
+        }
+      ]
+    },
+    {
+      "type": "file",
+      "name": "tests/__pycache__/test_validators.cpython-313.pyc",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "e8585ab2a6e81fa3d58867105c35067188639b11d626b67b47cb0f3ca112d171"
+        }
+      ]
+    },
+    {
+      "type": "file",
+      "name": "tests/test_build.py",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "b8042fc03db590611f7af1e09206db27a070ff2d51f204af109205f05e9ad102"
+        }
+      ]
+    },
+    {
+      "type": "file",
+      "name": "tests/test_data_policy.py",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "99dcedd8f92209a9bdba1b6952b2e973e3c9a407043f87cd342307c745ff1b02"
+        }
+      ]
+    },
+    {
+      "type": "file",
+      "name": "tests/test_evidence.py",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "563a3db8d245886d59c12bd1ecba661f9ee49199b2ebd806af19a9e976b2ac0f"
+        }
+      ]
+    },
+    {
+      "type": "file",
+      "name": "tests/test_query_router.py",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "ce682e4f7b9bc0cf20fa94aa2ddf885b0a903cda07283e7d631f8a313f3469d8"
+        }
+      ]
+    },
+    {
+      "type": "file",
+      "name": "tests/test_validators.py",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "495986f53221a3f66af76045d965d8bd563c42f56b7bb2380763a98392ab0107"
+        }
+      ]
+    },
+    {
+      "type": "file",
+      "name": "worker/README.md",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "3db0e4452b01f4226bb27df430c1766e514870cd78e39dde6d63e06f37522c73"
+        }
+      ]
+    },
+    {
+      "type": "file",
+      "name": "worker/src/index.js",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "f1a91a481d224e27dffef596093fcf80428ab55a8332595782bab5bc0e5b2a1f"
+        }
+      ]
+    },
+    {
+      "type": "file",
+      "name": "worker/wrangler.toml.example",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "870889f2d7a8d6dc6177a02425abc16f762f644708ba2f685953cc9c21ddab49"
+        }
+      ]
+    }
+  ]
+}

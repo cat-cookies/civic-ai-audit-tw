@@ -1,0 +1,73 @@
+{
+  "schema_version": "2.0",
+  "connectors": [
+    {
+      "id": "ly_bill_webapi",
+      "name": "立法院近期議案 WebAPI",
+      "kind": "official_api",
+      "base_url": "https://www.ly.gov.tw/WebAPI/LegislativeBill.aspx",
+      "official_docs": "https://data.ly.gov.tw/developer.action",
+      "enabled": true,
+      "online_contract_status": "needs_live_validation",
+      "parser": "json",
+      "risk_notes": "提案資料不是現行法；欄位與端點需在正式環境做契約測試。"
+    },
+    {
+      "id": "ly_speech_webapi",
+      "name": "立法院委員發言 WebAPI",
+      "kind": "official_api",
+      "base_url": "https://www.ly.gov.tw/WebAPI/LegislativeSpeech.aspx",
+      "official_docs": "https://data.ly.gov.tw/developer.action",
+      "enabled": true,
+      "online_contract_status": "needs_live_validation",
+      "parser": "json",
+      "risk_notes": "個別委員發言不得直接推定為政黨正式立場。"
+    },
+    {
+      "id": "ly_open_dataset",
+      "name": "立法院開放資料集",
+      "kind": "official_api",
+      "base_url": "https://data.ly.gov.tw/odw/openDatasetJson.action",
+      "official_docs": "https://data.ly.gov.tw/developer.action",
+      "enabled": true,
+      "online_contract_status": "needs_live_validation",
+      "parser": "json",
+      "datasets": {"law_comparison": 19, "bill_proposals": 20},
+      "risk_notes": "需保存資料集編號、頁次、查詢參數與介接時間。"
+    },
+    {
+      "id": "data_gov_tw_catalog",
+      "name": "政府資料開放平臺資料集詮釋資料",
+      "kind": "official_api",
+      "base_url": "https://data.gov.tw/api/v2/rest/dataset",
+      "official_docs": "https://data.gov.tw/m2m",
+      "enabled": true,
+      "online_contract_status": "documented_not_live_tested",
+      "parser": "json",
+      "risk_notes": "資料集目錄只證明資料集存在，不等於資料內容正確或最新。"
+    },
+    {
+      "id": "law_moj_openapi",
+      "name": "全國法規資料庫 Open API",
+      "kind": "official_api",
+      "base_url": "https://law.moj.gov.tw/api",
+      "official_docs": "https://law.moj.gov.tw/api/swagger/index.html",
+      "enabled": false,
+      "online_contract_status": "requires_endpoint_discovery_and_live_validation",
+      "parser": "json",
+      "risk_notes": "正式啟用前須依 Swagger 驗證查詢路徑、欄位及更新頻率；失敗時前端只提供精確查詢式與官方入口。"
+    },
+    {
+      "id": "judicial_judgment_api",
+      "name": "司法院裁判書開放 API",
+      "kind": "credentialed_official_api",
+      "base_url": "https://data.judicial.gov.tw/jdg/api",
+      "official_docs": "https://opendata.judicial.gov.tw/api/Newses/42/file",
+      "enabled_if_env": ["JUDICIAL_USER", "JUDICIAL_PASSWORD"],
+      "online_contract_status": "documented_not_live_tested",
+      "service_window_taipei": "00:00-06:00",
+      "deletion_sync_required": true,
+      "risk_notes": "需同步更正與撤除；不得建立不必要的具名索引。"
+    }
+  ]
+}

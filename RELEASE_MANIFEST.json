@@ -1,0 +1,39 @@
+{
+  "project": "國家資料 AI 查證與改革觀測站",
+  "version": "2.0.0",
+  "build_time": "2026-08-04T09:03:07+08:00",
+  "status": "可部署暨待整合驗證 MVP",
+  "tests": {
+    "offline_unit_tests": 15,
+    "python_compile": true,
+    "javascript_syntax": true,
+    "yaml_parse": true,
+    "public_allowlist_check": true,
+    "live_api_tests": false,
+    "live_model_tests": false
+  },
+  "source_archives": [
+    {
+      "name": "multilingual-professor-academic-assistant-v3.0.0（備份）.zip",
+      "size": 48087311,
+      "sha256": "f39f25e2bd7cdab059d213443bdb00151383682e479d170dbdb1a8bbc4295139"
+    },
+    {
+      "name": "國家資料_AI查證改革觀測站_GitHub_MVP(1).zip",
+      "size": 76922,
+      "sha256": "a6182145ba1c0cfe4671eac61c1c82ed40fae26723d8e81657c44e0505bdb11e"
+    }
+  ],
+  "security": {
+    "paid_fallback": false,
+    "public_site_allowlist": true,
+    "review_queue_excluded": true,
+    "raw_and_private_data_excluded": true,
+    "codeql_workflow": true,
+    "sbom": "SBOM.cdx.json"
+  },
+  "notes": [
+    "封裝環境沒有外部DNS，官方API與模型僅完成連接器、政策與離線測試。",
+    "雜湊只能驗證檔案一致性，不能證明內容正確、安全或具有法律效力。"
+  ]
+}

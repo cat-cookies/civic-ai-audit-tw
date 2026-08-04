@@ -1,0 +1,18 @@
+[
+  {
+    "id": "example",
+    "title": "僅供欄位示範，不得直接發布",
+    "claims": [],
+    "supporting_evidence": [],
+    "contrary_evidence": [],
+    "model_disagreements": [],
+    "data_gaps": [],
+    "legal_characterization": "AI推論，不得發布",
+    "human_reviewed": false,
+    "reviewer_id": null,
+    "reviewed_at": null,
+    "review_reason": null,
+    "approvals": [],
+    "approved_sha256": null
+  }
+]

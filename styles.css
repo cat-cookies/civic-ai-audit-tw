@@ -84,3 +84,13 @@ code{font-family:ui-monospace,SFMono-Regular,Consolas,monospace;background:var(-
 .danger-text{border-left:4px solid var(--danger);padding-left:.8rem}
 .warning{background:#fff3cd;color:#5f4300}
 blockquote{margin:.35rem 0;padding:.45rem .65rem;border-left:3px solid var(--border);background:var(--soft);font-size:.86rem}
+
+.discovery-controls{display:grid;grid-template-columns:repeat(5,minmax(150px,1fr));gap:.75rem;margin-top:.8rem}
+.discovery-controls label{display:flex;flex-direction:column;gap:.35rem;font-size:.9rem}
+.custom-domain-field{display:none}.custom-domain-field.active{display:flex}
+.live-result{position:relative}
+.select-source{display:flex;align-items:center;gap:.4rem;font-size:.86rem;margin:.3rem 0 .6rem}
+.discovery-summary{border-left:5px solid var(--accent)}
+.local-index{margin-top:1.25rem}
+@media (max-width:960px){.discovery-controls{grid-template-columns:1fr 1fr}}
+@media (max-width:620px){.discovery-controls{grid-template-columns:1fr}}

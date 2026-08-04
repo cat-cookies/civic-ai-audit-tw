@@ -1,12 +1,15 @@
 from __future__ import annotations
 
 import io
+import ipaddress
 import json
 import os
 import re
+import socket
 import time
 from typing import Any, Literal
 from urllib.parse import urlparse
+from urllib.robotparser import RobotFileParser
 
 import httpx
 from bs4 import BeautifulSoup
@@ -15,7 +18,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel, Field
 from pypdf import PdfReader
 
-app = FastAPI(title="Civic AI Free Model Router", version="6.0.0")
+app = FastAPI(title="Civic AI Free Model Router", version="6.1.0")
 
 ALLOWED_ORIGINS = [x.strip() for x in os.getenv("ALLOWED_ORIGINS", "*").split(",") if x.strip()]
 app.add_middleware(
@@ -82,7 +85,7 @@ def is_allowed_source(url: str) -> bool:
 async def fetch_source(url: str) -> dict[str, str]:
     if not is_allowed_source(url):
         raise HTTPException(status_code=400, detail=f"source domain not allowlisted: {url}")
-    async with httpx.AsyncClient(follow_redirects=True, timeout=18, headers={"user-agent": "CivicAIResearch/6.0"}) as client:
+    async with httpx.AsyncClient(follow_redirects=True, timeout=18, headers={"user-agent": "CivicAIResearch/6.1"}) as client:
         response = await client.get(url)
         response.raise_for_status()
         if not is_allowed_source(str(response.url)):
@@ -292,6 +295,353 @@ async def execute(task: str, request: TaskRequest) -> dict[str, Any]:
     return {"result": prior, "trace": trace, "mode": request.mode, "task_limit_per_hour": MAX_TASKS_PER_HOUR}
 
 
+
+DOMAIN_POLICY_PATH = os.path.join(os.path.dirname(__file__), "domain_policy.json")
+with open(DOMAIN_POLICY_PATH, "r", encoding="utf-8") as _policy_file:
+    DOMAIN_POLICY = json.load(_policy_file)
+
+ENABLE_BRAVE_SEARCH = os.getenv("ENABLE_BRAVE_SEARCH", "false").lower() == "true"
+BRAVE_SEARCH_API_KEY = os.getenv("BRAVE_SEARCH_API_KEY", "")
+BRAVE_MONTHLY_QUERY_LIMIT = max(1, min(5000, int(os.getenv("BRAVE_MONTHLY_QUERY_LIMIT", "900"))))
+OPENALEX_API_KEY = os.getenv("OPENALEX_API_KEY", "")
+_DISCOVERY_USAGE: dict[str, int] = {}
+_HOST_LAST_FETCH: dict[str, float] = {}
+DISCOVERY_USER_AGENT = os.getenv("DISCOVERY_USER_AGENT", "CivicAIResearchBot/6.1 (+https://github.com/cat-cookies/civic-ai-audit-tw)")
+
+
+class DiscoveryRequest(BaseModel):
+    q: str = Field(min_length=2, max_length=500)
+    subject: Literal["auto", "law", "policy", "health", "science", "statistics", "budget", "politics", "media", "general"] = "auto"
+    jurisdiction: str = Field(default="TW", max_length=8)
+    scope: Literal["official", "official_professional", "custom"] = "official_professional"
+    user_domains: list[str] = Field(default_factory=list, max_length=8)
+    freshness: Literal["any", "year", "month", "week"] = "any"
+    max_results: int = Field(default=12, ge=1, le=20)
+
+
+class ExtractRequest(BaseModel):
+    urls: list[str] = Field(min_length=1, max_length=6)
+    subject: Literal["law", "policy", "health", "science", "statistics", "budget", "politics", "media", "general"] = "general"
+    jurisdiction: str = Field(default="TW", max_length=8)
+    scope: Literal["official", "official_professional", "custom"] = "official_professional"
+    user_domains: list[str] = Field(default_factory=list, max_length=8)
+
+
+def infer_subject(query: str) -> str:
+    text = query.lower()
+    rules = [
+        ("law", ("法", "條文", "判決", "裁判", "憲法", "司法", "訴願")),
+        ("health", ("醫療", "健康", "疾病", "照護", "長照", "臨床", "護理", "公共衛生")),
+        ("budget", ("預算", "決算", "採購", "標案", "審計", "財政")),
+        ("statistics", ("統計", "指標", "人口", "資料", "趨勢")),
+        ("politics", ("政黨", "選舉", "立委", "國會", "黨綱")),
+        ("media", ("媒體", "新聞", "報導", "社論", "偏向")),
+        ("science", ("論文", "期刊", "研究", "科技", "科學")),
+        ("policy", ("政策", "改革", "制度", "治理", "執行")),
+    ]
+    scores = [(subject, sum(term in text for term in terms)) for subject, terms in rules]
+    subject, score = max(scores, key=lambda item: item[1])
+    return subject if score else "general"
+
+
+def normalize_user_domain(value: str) -> str:
+    raw = value.strip().lower()
+    if "://" in raw:
+        raw = (urlparse(raw).hostname or "").lower()
+    raw = raw.split("/")[0].rstrip(".")
+    if not raw or len(raw) > 253 or "*" in raw or ":" in raw:
+        raise HTTPException(status_code=400, detail=f"invalid custom domain: {value}")
+    if not re.fullmatch(r"(?=.{1,253}$)(?:[a-z0-9](?:[a-z0-9-]{0,61}[a-z0-9])?\.)+[a-z]{2,63}", raw):
+        raise HTTPException(status_code=400, detail=f"invalid custom domain: {value}")
+    return raw
+
+
+def domain_matches(host: str, allowed: list[str]) -> bool:
+    host = host.lower().rstrip(".")
+    return any(host == domain or host.endswith("." + domain) for domain in allowed)
+
+
+def domains_for(subject: str, jurisdiction: str, scope: str, user_domains: list[str]) -> list[str]:
+    if scope == "custom":
+        domains = [normalize_user_domain(item) for item in user_domains]
+        if not domains:
+            raise HTTPException(status_code=400, detail="custom scope requires at least one exact domain")
+        return sorted(set(domains))
+    jurisdiction_item = DOMAIN_POLICY["jurisdictions"].get(jurisdiction) or DOMAIN_POLICY["jurisdictions"]["TW"]
+    domains = list(jurisdiction_item.get("official_domains", []))
+    if scope == "official_professional":
+        domains.extend(DOMAIN_POLICY["subjects"].get(subject, {}).get("professional_domains", []))
+    return sorted(set(domain.lower() for domain in domains))
+
+
+def public_host(host: str) -> None:
+    try:
+        infos = socket.getaddrinfo(host, None, type=socket.SOCK_STREAM)
+    except socket.gaierror as error:
+        raise HTTPException(status_code=400, detail=f"DNS lookup failed: {host}") from error
+    for info in infos:
+        address = info[4][0]
+        ip = ipaddress.ip_address(address)
+        if ip.is_private or ip.is_loopback or ip.is_link_local or ip.is_reserved or ip.is_multicast or ip.is_unspecified:
+            raise HTTPException(status_code=400, detail=f"non-public destination blocked: {host}")
+
+
+def discovery_month_key() -> str:
+    return time.strftime("%Y-%m", time.gmtime())
+
+
+def consume_brave_budget() -> None:
+    key = discovery_month_key()
+    count = _DISCOVERY_USAGE.get(key, 0)
+    if count >= BRAVE_MONTHLY_QUERY_LIMIT:
+        raise HTTPException(status_code=429, detail="local Brave monthly safety cap reached; no paid fallback")
+    _DISCOVERY_USAGE[key] = count + 1
+
+
+def brave_query(query: str, domains: list[str]) -> str:
+    filters = " OR ".join(f"site:{domain}" for domain in domains[:8])
+    return f"{query} ({filters})" if filters else query
+
+
+async def search_brave(query: str, domains: list[str], jurisdiction: str, freshness: str, count: int) -> list[dict[str, Any]]:
+    if not ENABLE_BRAVE_SEARCH or not BRAVE_SEARCH_API_KEY:
+        return []
+    consume_brave_budget()
+    jurisdiction_item = DOMAIN_POLICY["jurisdictions"].get(jurisdiction, {})
+    params: dict[str, Any] = {
+        "q": brave_query(query, domains), "count": min(count, 20), "safesearch": "moderate",
+        "text_decorations": False, "spellcheck": True,
+    }
+    country = jurisdiction_item.get("country")
+    if country and country != "all":
+        params["country"] = country
+    if freshness != "any":
+        params["freshness"] = freshness
+    async with httpx.AsyncClient(timeout=25, headers={"Accept": "application/json", "X-Subscription-Token": BRAVE_SEARCH_API_KEY}) as client:
+        response = await client.get("https://api.search.brave.com/res/v1/web/search", params=params)
+        response.raise_for_status()
+        rows = response.json().get("web", {}).get("results", [])
+    out = []
+    for item in rows:
+        url = str(item.get("url") or "")
+        host = (urlparse(url).hostname or "").lower()
+        if not host or not domain_matches(host, domains):
+            continue
+        out.append({
+            "provider": "Brave Search API", "source_type": "official_or_professional_web",
+            "title": item.get("title") or host, "url": url, "snippet": item.get("description") or "",
+            "host": host, "published_at": item.get("age") or "", "official": any(host.endswith(s) for s in (".gov.tw", ".gov", ".gov.uk", ".gov.au", ".govt.nz", ".gc.ca", ".go.jp", ".go.kr", ".gov.sg", ".europa.eu")),
+            "evidence_status": "搜尋片段；須擷取並核對原文", "selectable": True
+        })
+    return out
+
+
+async def search_crossref(query: str, count: int) -> list[dict[str, Any]]:
+    async with httpx.AsyncClient(timeout=25, headers={"user-agent": DISCOVERY_USER_AGENT}) as client:
+        response = await client.get("https://api.crossref.org/works", params={
+            "query.bibliographic": query, "rows": min(count, 10),
+            "select": "DOI,title,author,container-title,published,issued,URL,type,is-referenced-by-count"
+        })
+        response.raise_for_status()
+        rows = response.json().get("message", {}).get("items", [])
+    out = []
+    for item in rows:
+        title = (item.get("title") or ["未命名文獻"])[0]
+        doi = item.get("DOI") or ""
+        out.append({
+            "provider": "Crossref", "source_type": "scholarly_metadata", "title": title,
+            "url": item.get("URL") or (f"https://doi.org/{doi}" if doi else ""),
+            "snippet": "；".join(filter(None, [(item.get("container-title") or [""])[0], f"DOI: {doi}" if doi else "", f"引用中繼資料：{item.get('is-referenced-by-count')}" if item.get("is-referenced-by-count") is not None else ""])),
+            "host": "doi.org" if doi else "", "published_at": str((((item.get("published") or item.get("issued") or {}).get("date-parts") or [[""]])[0][0])),
+            "official": False, "evidence_status": "書目中繼資料；須開啟原文", "selectable": True
+        })
+    return out
+
+
+async def search_europepmc(query: str, count: int) -> list[dict[str, Any]]:
+    async with httpx.AsyncClient(timeout=25, headers={"user-agent": DISCOVERY_USER_AGENT}) as client:
+        response = await client.get("https://www.ebi.ac.uk/europepmc/webservices/rest/search", params={"query": query, "format": "json", "pageSize": min(count, 10), "resultType": "core"})
+        response.raise_for_status()
+        rows = response.json().get("resultList", {}).get("result", [])
+    out = []
+    for item in rows:
+        ident = item.get("pmcid") or item.get("pmid") or item.get("id") or ""
+        doi = item.get("doi") or ""
+        full_urls = ((item.get("fullTextUrlList") or {}).get("fullTextUrl") or [])
+        url = (full_urls[0].get("url") if full_urls else "") or (f"https://doi.org/{doi}" if doi else f"https://europepmc.org/article/{item.get('source','MED')}/{ident}")
+        out.append({
+            "provider": "Europe PMC", "source_type": "life_science_literature", "title": item.get("title") or "未命名文獻",
+            "url": url, "snippet": "；".join(filter(None, [item.get("authorString"), item.get("journalTitle"), str(item.get("pubYear") or ""), str(item.get("abstractText") or "")[:500]])),
+            "host": urlparse(url).hostname or "europepmc.org", "published_at": str(item.get("pubYear") or ""),
+            "official": False, "evidence_status": "含摘要或書目；全文仍須核對", "selectable": True
+        })
+    return out
+
+
+async def search_openalex(query: str, count: int) -> list[dict[str, Any]]:
+    if not OPENALEX_API_KEY:
+        return []
+    async with httpx.AsyncClient(timeout=25, headers={"user-agent": DISCOVERY_USER_AGENT}) as client:
+        response = await client.get("https://api.openalex.org/works", params={"search": query, "per-page": min(count, 10), "api_key": OPENALEX_API_KEY})
+        response.raise_for_status()
+        rows = response.json().get("results", [])
+    out = []
+    for item in rows:
+        location = item.get("primary_location") or {}
+        url = location.get("landing_page_url") or item.get("doi") or item.get("id") or ""
+        out.append({
+            "provider": "OpenAlex", "source_type": "scholarly_metadata", "title": item.get("title") or "未命名文獻",
+            "url": url, "snippet": "；".join(filter(None, [item.get("display_name"), str(item.get("publication_year") or ""), f"引用中繼資料：{item.get('cited_by_count')}" if item.get("cited_by_count") is not None else ""])),
+            "host": urlparse(url).hostname or "openalex.org", "published_at": str(item.get("publication_year") or ""),
+            "official": False, "evidence_status": "書目中繼資料；須開啟原文", "selectable": True
+        })
+    return out
+
+
+def deduplicate_results(items: list[dict[str, Any]], limit: int) -> list[dict[str, Any]]:
+    seen: set[str] = set()
+    out = []
+    for item in items:
+        key = (item.get("url") or item.get("title") or "").strip().lower()
+        if not key or key in seen:
+            continue
+        seen.add(key)
+        out.append(item)
+        if len(out) >= limit:
+            break
+    return out
+
+
+async def robots_permitted(url: str) -> bool:
+    parsed = urlparse(url)
+    robots_url = f"{parsed.scheme}://{parsed.netloc}/robots.txt"
+    async with httpx.AsyncClient(timeout=12, follow_redirects=True, headers={"user-agent": DISCOVERY_USER_AGENT}) as client:
+        try:
+            response = await client.get(robots_url)
+        except httpx.HTTPError:
+            return False
+    if response.status_code == 404:
+        return True
+    if response.status_code in (401, 403) or response.status_code >= 500:
+        return False
+    parser = RobotFileParser()
+    parser.set_url(robots_url)
+    parser.parse(response.text.splitlines())
+    return parser.can_fetch(DISCOVERY_USER_AGENT, url)
+
+
+async def extract_public_url(url: str, allowed_domains: list[str]) -> dict[str, Any]:
+    parsed = urlparse(url)
+    if parsed.scheme not in ("http", "https"):
+        raise HTTPException(status_code=400, detail=f"unsupported scheme: {url}")
+    host = (parsed.hostname or "").lower()
+    if not host or not domain_matches(host, allowed_domains):
+        raise HTTPException(status_code=400, detail=f"domain outside selected scope: {host}")
+    public_host(host)
+    if not await robots_permitted(url):
+        raise HTTPException(status_code=403, detail=f"robots or access policy disallows fetch: {host}")
+    wait = 1.0 - (time.time() - _HOST_LAST_FETCH.get(host, 0))
+    if wait > 0:
+        await __import__("asyncio").sleep(wait)
+    async with httpx.AsyncClient(follow_redirects=True, timeout=22, headers={"user-agent": DISCOVERY_USER_AGENT}) as client:
+        response = await client.get(url)
+        response.raise_for_status()
+    final_url = str(response.url)
+    final_host = (urlparse(final_url).hostname or "").lower()
+    if not domain_matches(final_host, allowed_domains):
+        raise HTTPException(status_code=400, detail=f"redirected outside selected scope: {final_host}")
+    public_host(final_host)
+    content_type = response.headers.get("content-type", "").lower()
+    content_length = int(response.headers.get("content-length") or 0)
+    if content_length and content_length > 3_000_000:
+        raise HTTPException(status_code=413, detail="source too large")
+    content = response.content[:3_000_000]
+    if "pdf" in content_type or final_url.lower().endswith(".pdf"):
+        reader = PdfReader(io.BytesIO(content))
+        text = "\n".join((page.extract_text() or "") for page in reader.pages[:50])
+        title = final_url.rsplit("/", 1)[-1]
+    elif any(kind in content_type for kind in ("text/html", "application/xhtml+xml", "text/plain")) or not content_type:
+        soup = BeautifulSoup(content, "html.parser")
+        title = (soup.title.string.strip() if soup.title and soup.title.string else final_host)
+        for tag in soup(["script", "style", "nav", "footer", "form", "noscript"]):
+            tag.decompose()
+        text = soup.get_text(" ", strip=True)
+    else:
+        raise HTTPException(status_code=415, detail=f"unsupported content type: {content_type}")
+    _HOST_LAST_FETCH[host] = time.time()
+    return {
+        "url": final_url, "title": title, "text": text[:50_000], "content_type": content_type,
+        "retrieved_at": datetime.now(timezone.utc).isoformat(), "host": final_host,
+        "limitations": "只擷取公開回應；動態內容、附檔、圖表、刪文與頁面更新可能未完整保存。"
+    }
+
+
+@app.post("/api/discover")
+async def discover_sources(request: DiscoveryRequest, authorization: str | None = Header(default=None)) -> dict[str, Any]:
+    require_token(authorization)
+    public_only(request.q)
+    subject = infer_subject(request.q) if request.subject == "auto" else request.subject
+    domains = domains_for(subject, request.jurisdiction, request.scope, request.user_domains)
+    provider_status: list[dict[str, str]] = []
+    results: list[dict[str, Any]] = []
+    if subject == "health":
+        try:
+            results.extend(await search_europepmc(request.q, request.max_results))
+            provider_status.append({"provider": "Europe PMC", "status": "ok"})
+        except Exception as error:
+            provider_status.append({"provider": "Europe PMC", "status": "failed", "detail": str(error)[:160]})
+    if subject in ("science", "health", "policy", "law", "statistics", "general"):
+        try:
+            results.extend(await search_crossref(request.q, min(8, request.max_results)))
+            provider_status.append({"provider": "Crossref", "status": "ok"})
+        except Exception as error:
+            provider_status.append({"provider": "Crossref", "status": "failed", "detail": str(error)[:160]})
+        if OPENALEX_API_KEY:
+            try:
+                results.extend(await search_openalex(request.q, min(8, request.max_results)))
+                provider_status.append({"provider": "OpenAlex", "status": "ok"})
+            except Exception as error:
+                provider_status.append({"provider": "OpenAlex", "status": "failed", "detail": str(error)[:160]})
+    if ENABLE_BRAVE_SEARCH and BRAVE_SEARCH_API_KEY:
+        try:
+            results = (await search_brave(request.q, domains, request.jurisdiction, request.freshness, request.max_results)) + results
+            provider_status.append({"provider": "Brave Search API", "status": "ok"})
+        except Exception as error:
+            provider_status.append({"provider": "Brave Search API", "status": "failed", "detail": str(error)[:160]})
+    else:
+        provider_status.append({"provider": "Brave Search API", "status": "disabled_or_no_key"})
+    results = deduplicate_results(results, request.max_results)
+    search_plan = []
+    if not ENABLE_BRAVE_SEARCH or not BRAVE_SEARCH_API_KEY:
+        search_plan.append("一般官方／專業網頁搜尋未啟用；請在後端設定 BRAVE_SEARCH_API_KEY 並明確啟用，或使用者指定來源網址。")
+    if not results:
+        search_plan.append("目前沒有即時結果；可縮短關鍵字、改選法域／領域、指定網域，或檢查供應商額度。")
+    return {
+        "query": request.q, "inferred_subject": subject, "jurisdiction": request.jurisdiction,
+        "scope": request.scope, "applied_domains": domains, "results": results,
+        "provider_status": provider_status, "search_plan": search_plan,
+        "coverage_notice": "線上結果依所選領域、法域與允許網域限制；搜尋片段不是完整證據，公開結論前應擷取原文並核對日期、版本與效力。"
+    }
+
+
+@app.post("/api/extract")
+async def extract_sources(request: ExtractRequest, authorization: str | None = Header(default=None)) -> dict[str, Any]:
+    require_token(authorization)
+    domains = domains_for(request.subject, request.jurisdiction, request.scope, request.user_domains)
+    items = []
+    errors = []
+    for url in request.urls:
+        try:
+            items.append(await extract_public_url(url, domains))
+        except HTTPException as error:
+            errors.append({"url": url, "status": error.status_code, "detail": error.detail})
+    return {
+        "items": items, "errors": errors, "applied_domains": domains,
+        "coverage_notice": "僅擷取通過公開DNS、允許網域、重新導向、robots.txt、內容類型與大小檢查的頁面；不繞過登入、付費牆或其他存取控制。"
+    }
+
+
+
 class SourceFetchRequest(BaseModel):
     urls: list[str] = Field(default_factory=list, min_length=1, max_length=6)
 
@@ -307,7 +657,7 @@ async def fetch_official(request: SourceFetchRequest, authorization: str | None 
 async def literature_search(q: str, source: Literal["crossref", "europepmc"] = "crossref", rows: int = 10, authorization: str | None = Header(default=None)) -> dict[str, Any]:
     require_token(authorization)
     rows = max(1, min(rows, 20))
-    async with httpx.AsyncClient(timeout=25, headers={"user-agent": "CivicAIResearch/6.0"}) as client:
+    async with httpx.AsyncClient(timeout=25, headers={"user-agent": "CivicAIResearch/6.1"}) as client:
         if source == "crossref":
             response = await client.get("https://api.crossref.org/works", params={"query.bibliographic": q, "rows": rows, "select": "DOI,title,author,container-title,published,issued,URL,type,is-referenced-by-count"})
             response.raise_for_status()
@@ -320,7 +670,7 @@ async def literature_search(q: str, source: Literal["crossref", "europepmc"] = "
 @app.get("/health")
 async def health(authorization: str | None = Header(default=None)) -> dict[str, Any]:
     require_token(authorization)
-    return {"ok": True, "version": "6.0.0"}
+    return {"ok": True, "version": "6.1.0"}
 
 
 @app.get("/models")

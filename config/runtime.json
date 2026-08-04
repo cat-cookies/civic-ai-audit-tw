@@ -4,7 +4,7 @@
   "public_api_base_url": "",
   "enable_remote_ai": false,
   "enable_issue_submission": true,
-  "build_label": "公開測試版 v6.0.0；政黨官方來源、媒體論述、跨國文獻適用性評估",
+  "build_label": "公開測試版 v6.1.0；網域感知即時搜尋、合法擷取與本地索引補充",
   "enable_browser_byok": true,
-  "schema_version": "5.0"
+  "schema_version": "6.1"
 }
